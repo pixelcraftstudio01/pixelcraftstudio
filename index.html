@@ -184,21 +184,13 @@ z-index:999;
 <section id="contact">
   <h2>Contact Us</h2>
   <div class="contact">
-    <form
-  action="https://formspree.io/f/xeeogedw"
-  method="POST"
->
-  <label>
-    <input type="text" name="message
-    <input type="tel" name="phone"
-  </label>
-  <label>
-    Your message:
-    <textarea name="message"></textarea>
-  </label>
-  <!-- your other form fields go here -->
-  <button type="submit">Send</button>
-</form>
+    <form action="https://formspree.io/f/xeeogedw" method="POST">
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Your Email" required>
+      <input type="tel" placeholder="Your Mobile Number" required>
+      <textarea placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
   </div>
 </section>
 
