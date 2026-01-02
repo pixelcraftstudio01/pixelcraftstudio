@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pixel Craft Studio | Premium Web Solutions</title>
+
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<!-- Font Awesome Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
+body{background:#0b0b14;color:#fff;scroll-behavior:smooth;}
+
+/* HEADER */
+header{
+background:linear-gradient(135deg,#0f0c29,#302b63,#24243e);
+padding:20px 8%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+position:sticky;
+top:0;
+z-index:100;
+}
+
+/* TEXT LOGO */
+.logo-text{
+font-size:28px;
+font-weight:800;
+letter-spacing:2px;
+color:#00d4ff;
+}
+
+/* NAVIGATION */
+nav a{
+margin-left:25px;
+color:white;
+text-decoration:none;
+font-weight:500;
+}
+nav a:hover{color:#00d4ff;}
+
+/* HERO SECTION */
+.hero{
+text-align:center;
+padding:120px 10%;
+background:linear-gradient(to bottom,#0f0c29,#0b0b14);
+}
+.hero h1{font-size:50px;}
+.hero p{max-width:650px;margin:20px auto;color:#ccc;}
+.btn{
+display:inline-block;
+margin-top:25px;
+padding:15px 40px;
+background:#00d4ff;
+color:#000;
+border-radius:30px;
+font-weight:600;
+}
+
+/* SECTIONS */
+section{padding:90px 8%;}
+
+/* SERVICES */
+.services{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:25px;
+}
+.card{
+background:#151528;
+padding:25px;
+border-radius:15px;
+transition:.4s;
+}
+.card:hover{
+transform:translateY(-10px);
+box-shadow:0 0 30px rgba(0,255,255,.3);
+}
+.card img{
+width:100%;
+border-radius:12px;
+margin-bottom:15px;
+}
+
+/* CONTACT */
+.contact{
+background:#111;
+border-radius:20px;
+padding:40px;
+max-width:700px;
+margin:auto;
+}
+input,textarea{
+width:100%;
+padding:14px;
+margin-top:10px;
+border:none;
+border-radius:6px;
+}
+button{
+background:#00c6ff;
+border:none;
+padding:14px;
+width:100%;
+margin-top:15px;
+font-weight:bold;
+cursor:pointer;
+}
+
+/* FOOTER */
+footer{
+background:#08080f;
+padding:30px;
+text-align:center;
+}
+
+/* FLOAT BUTTONS */
+.whatsapp,.call{
+position:fixed;
+right:20px;
+padding:14px;
+border-radius:50%;
+font-size:22px;
+color:white;
+z-index:999;
+}
+.whatsapp{bottom:90px;background:#25D366;}
+.call{bottom:20px;background:#007bff;}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo-text">PIXEL CRAFT STUDIO</div>
+  <nav>
+    <a href="#services">Services</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <h1>Premium Website & Branding Solutions</h1>
+  <p>We craft modern websites and digital experiences that elevate your brand.</p>
+  <a href="#contact" class="btn">Get Started</a>
+</section>
+
+<section id="services">
+  <h2>Our Services</h2>
+  <div class="services">
+    <div class="card">
+      <img src="https://source.unsplash.com/400x300/?website,design">
+      <h3>Website Design</h3>
+      <p>Modern, responsive and high-conversion websites.</p>
+    </div>
+    <div class="card">
+      <img src="https://source.unsplash.com/400x300/?branding,logo">
+      <h3>Brand Identity</h3>
+      <p>Logo, colors and visual identity for your brand.</p>
+    </div>
+    <div class="card">
+      <img src="https://source.unsplash.com/400x300/?digital,marketing">
+      <h3>Digital Marketing</h3>
+      <p>Complete online presence and digital strategy.</p>
+    </div>
+  </div>
+</section>
+
+<section id="why">
+  <h2>Why Choose Pixel Craft Studio?</h2>
+  <div class="services">
+    <div class="card"><h3>Premium Quality</h3><p>High-end designs built with precision.</p></div>
+    <div class="card"><h3>Modern Design</h3><p>Trendy and clean UI/UX layouts.</p></div>
+    <div class="card"><h3>Fast Delivery</h3><p>Quick turnaround without quality loss.</p></div>
+    <div class="card"><h3>Client Focused</h3><p>Your satisfaction is our priority.</p></div>
+  </div>
+</section>
+
+<section id="contact">
+  <h2>Contact Us</h2>
+  <div class="contact">
+    <form action="https://formspree.io/f/xkogrgoq" method="POST">
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Your Email" required>
+      <input type="tel" placeholder="Your Mobile Number" required>
+      <textarea placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 Pixel Craft Studio | Designed by Manish Yadav</p>
+</footer>
+
+<a href="https://wa.me/917627095009" class="whatsapp"><i class="fab fa-whatsapp"></i></a>
+<a href="tel:7627095009" class="call"><i class="fas fa-phone"></i></a>
+
+</body>
+</html>
