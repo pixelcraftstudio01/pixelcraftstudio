@@ -1,208 +1,364 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Pixel Craft Studio | Premium Web Solutions</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Pixel Craft Studio — Premium Web & Brand Experiences</title>
+  <meta name="description" content="Pixel Craft Studio builds premium websites, brand identities and digital strategies — modern, high-conversion designs delivered fast." />
+  <link rel="icon" href="/favicon.ico">
 
-<!-- Google Font -->
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <!-- Open Graph -->
+  <meta property="og:title" content="Pixel Craft Studio — Premium Web & Brand Experiences" />
+  <meta property="og:description" content="Modern websites, memorable brand identity and growth-focused digital marketing." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://pixelcraftstudio01.github.io/pixelcraftstudio/" />
+  <meta property="og:image" content="https://source.unsplash.com/1200x630/?design,branding" />
 
-<!-- Font Awesome Icons -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <!-- Preconnect & Fonts -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 
-<style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
-body{background:#0b0b14;color:#fff;scroll-behavior:smooth;}
+  <!-- Icons -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
 
-/* HEADER */
-header{
-background:linear-gradient(135deg,#0f0c29,#302b63,#24243e);
-padding:20px 8%;
-display:flex;
-justify-content:space-between;
-align-items:center;
-position:sticky;
-top:0;
-z-index:100;
-}
+  <!-- Main CSS -->
+  <link rel="stylesheet" href="assets/css/styles.css">
 
-/* TEXT LOGO */
-.logo-text{
-font-size:28px;
-font-weight:800;
-letter-spacing:2px;
-color:#00d4ff;
-}
-
-/* NAVIGATION */
-nav a{
-margin-left:25px;
-color:white;
-text-decoration:none;
-font-weight:500;
-}
-nav a:hover{color:#00d4ff;}
-
-/* HERO SECTION */
-.hero{
-text-align:center;
-padding:120px 10%;
-background:linear-gradient(to bottom,#0f0c29,#0b0b14);
-}
-.hero h1{font-size:50px;}
-.hero p{max-width:650px;margin:20px auto;color:#ccc;}
-.btn{
-display:inline-block;
-margin-top:25px;
-padding:15px 40px;
-background:#00d4ff;
-color:#000;
-border-radius:30px;
-font-weight:600;
-}
-
-/* SECTIONS */
-section{padding:90px 8%;}
-
-/* SERVICES */
-.services{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-gap:25px;
-}
-.card{
-background:#151528;
-padding:25px;
-border-radius:15px;
-transition:.4s;
-}
-.card:hover{
-transform:translateY(-10px);
-box-shadow:0 0 30px rgba(0,255,255,.3);
-}
-.card img{
-width:100%;
-border-radius:12px;
-margin-bottom:15px;
-}
-
-/* CONTACT */
-.contact{
-background:#111;
-border-radius:20px;
-padding:40px;
-max-width:700px;
-margin:auto;
-}
-input,textarea{
-width:100%;
-padding:14px;
-margin-top:10px;
-border:none;
-border-radius:6px;
-}
-button{
-background:#00c6ff;
-border:none;
-padding:14px;
-width:100%;
-margin-top:15px;
-font-weight:bold;
-cursor:pointer;
-}
-
-/* FOOTER */
-footer{
-background:#08080f;
-padding:30px;
-text-align:center;
-}
-
-/* FLOAT BUTTONS */
-.whatsapp,.call{
-position:fixed;
-right:20px;
-padding:14px;
-border-radius:50%;
-font-size:22px;
-color:white;
-z-index:999;
-}
-.whatsapp{bottom:90px;background:#25D366;}
-.call{bottom:20px;background:#007bff;}
-</style>
+  <!-- Structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Pixel Craft Studio",
+    "url": "https://pixelcraftstudio01.github.io/pixelcraftstudio/",
+    "logo": "https://pixelcraftstudio01.github.io/pixelcraftstudio/favicon.ico",
+    "sameAs": [
+      "https://www.linkedin.com/",
+      "https://www.twitter.com/"
+    ],
+    "contactPoint": [{
+      "@type": "ContactPoint",
+      "telephone": "+91-7627095009",
+      "contactType": "customer service"
+    }]
+  }
+  </script>
 </head>
-
 <body>
+  <a class="skip-link" href="#main">Skip to content</a>
 
-<header>
-  <div class="logo-text">PIXEL CRAFT STUDIO</div>
-  <nav>
-    <a href="#services">Services</a>
-    <a href="#contact">Contact</a>
-  </nav>
-</header>
+  <header class="site-header" role="banner">
+    <div class="container header-inner">
+      <div class="brand">
+        <a href="/" aria-label="Pixel Craft Studio home" class="logo">
+          <svg class="logo-mark" width="40" height="40" viewBox="0 0 64 64" aria-hidden="true">
+            <defs>
+              <linearGradient id="g1" x1="0" x2="1">
+                <stop offset="0" stop-color="#00d4ff"/>
+                <stop offset="1" stop-color="#7b61ff"/>
+              </linearGradient>
+            </defs>
+            <rect x="4" y="4" width="56" height="56" rx="10" fill="url(#g1)"></rect>
+            <path d="M18 44 L28 20 L38 44 Z" fill="rgba(255,255,255,0.95)"></path>
+          </svg>
+          <span class="logo-text">PIXEL CRAFT STUDIO</span>
+        </a>
+      </div>
 
-<section class="hero">
-  <h1>Premium Website & Branding Solutions</h1>
-  <p>We craft modern websites and digital experiences that elevate your brand.</p>
-  <a href="#contact" class="btn">Get Started</a>
-</section>
+      <nav class="nav" role="navigation" aria-label="Main navigation">
+        <ul class="nav-list">
+          <li><a href="#services">Services</a></li>
+          <li><a href="#portfolio">Portfolio</a></li>
+          <li><a href="#testimonials">Testimonials</a></li>
+          <li><a href="#pricing">Pricing</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
 
-<section id="services">
-  <h2>Our Services</h2>
-  <div class="services">
-    <div class="card">
-      <img src="https://source.unsplash.com/400x300/?website,design">
-      <h3>Website Design</h3>
-      <p>Modern, responsive and high-conversion websites.</p>
+      <div class="header-actions">
+        <a class="btn btn-primary" href="#contact">Get a Quote</a>
+      </div>
     </div>
-    <div class="card">
-      <img src="https://source.unsplash.com/400x300/?branding,logo">
-      <h3>Brand Identity</h3>
-      <p>Logo, colors and visual identity for your brand.</p>
+  </header>
+
+  <main id="main">
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <h1 class="display">Designs that convert. Brands that resonate.</h1>
+          <p class="lead">We craft pixel-perfect websites, memorable brand identities and growth-focused digital strategies that help ambitious companies stand out.</p>
+
+          <div class="hero-cta">
+            <a class="btn btn-primary" href="#contact">Start Your Project</a>
+            <a class="btn btn-ghost" href="#portfolio">View Portfolio</a>
+          </div>
+
+          <ul class="trust">
+            <li><strong>100+</strong> Projects</li>
+            <li><strong>50+</strong> Happy Clients</li>
+            <li><strong>4.9</strong> ⭐ Client Rating</li>
+          </ul>
+        </div>
+
+        <div class="hero-visual" aria-hidden="false">
+          <div class="device mock">
+            <img src="https://source.unsplash.com/800x600/?web,design" alt="Example website design" loading="lazy">
+          </div>
+          <div class="floating-cards">
+            <div class="card mini">Branding</div>
+            <div class="card mini">UI/UX</div>
+            <div class="card mini">Marketing</div>
+          </div>
+        </div>
+      </div>
+
+      <svg class="hero-wave" viewBox="0 0 1440 80" preserveAspectRatio="none" aria-hidden="true">
+        <path fill="#0b0b14" d="M0,32L48,42.7C96,53,192,75,288,80C384,85,480,75,576,64C672,53,768,43,864,42.7C960,43,1056,53,1152,58.7C1248,64,1344,64,1392,64L1440,64L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"></path>
+      </svg>
+    </section>
+
+    <!-- SERVICES -->
+    <section id="services" class="section">
+      <div class="container">
+        <h2 class="section-title">What we do</h2>
+        <p class="section-sub">End-to-end web and brand solutions — designed for growth.</p>
+
+        <div class="services-grid">
+          <article class="service-card" tabindex="0" aria-labelledby="s1">
+            <div class="icon"><i class="fa-solid fa-computer"></i></div>
+            <h3 id="s1">Website Design & Development</h3>
+            <p>Responsive, performant and conversion-optimized websites with modern CMS and headless options.</p>
+          </article>
+
+          <article class="service-card" tabindex="0" aria-labelledby="s2">
+            <div class="icon"><i class="fa-solid fa-pen-nib"></i></div>
+            <h3 id="s2">Brand Identity</h3>
+            <p>Logo systems, color libraries, typography and brand guidelines that create recognition and trust.</p>
+          </article>
+
+          <article class="service-card" tabindex="0" aria-labelledby="s3">
+            <div class="icon"><i class="fa-solid fa-bullhorn"></i></div>
+            <h3 id="s3">Digital Marketing</h3>
+            <p>Performance-driven campaigns, SEO, content strategy and analytics to accelerate growth.</p>
+          </article>
+
+          <article class="service-card" tabindex="0" aria-labelledby="s4">
+            <div class="icon"><i class="fa-solid fa-rocket"></i></div>
+            <h3 id="s4">Product Strategy</h3>
+            <p>Roadmaps, user research and interaction design to turn ideas into delightful products.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- PORTFOLIO -->
+    <section id="portfolio" class="section alt">
+      <div class="container">
+        <h2 class="section-title">Selected Work</h2>
+        <p class="section-sub">A small selection of recent projects with measurable impact.</p>
+
+        <div class="portfolio-controls">
+          <button class="filter-btn active" data-filter="all">All</button>
+          <button class="filter-btn" data-filter="web">Web</button>
+          <button class="filter-btn" data-filter="brand">Brand</button>
+          <button class="filter-btn" data-filter="marketing">Marketing</button>
+        </div>
+
+        <div class="portfolio-grid" id="portfolio-grid">
+          <!-- 6 sample items -->
+          <figure class="work-item" data-category="web" tabindex="0">
+            <img src="https://source.unsplash.com/600x400/?website,landing" alt="Website project" loading="lazy">
+            <figcaption>
+              <h4>Care+ Health Platform</h4>
+              <p>Web app redesign — +32% conversions</p>
+              <button class="view-btn" data-src="https://source.unsplash.com/1200x800/?website,landing">View</button>
+            </figcaption>
+          </figure>
+
+          <figure class="work-item" data-category="brand" tabindex="0">
+            <img src="https://source.unsplash.com/600x400/?logo,brand" alt="Brand identity" loading="lazy">
+            <figcaption>
+              <h4>Nova Coffee Branding</h4>
+              <p>Complete brand system & packaging</p>
+              <button class="view-btn" data-src="https://source.unsplash.com/1200x800/?logo,brand">View</button>
+            </figcaption>
+          </figure>
+
+          <figure class="work-item" data-category="marketing" tabindex="0">
+            <img src="https://source.unsplash.com/600x400/?marketing,ads" alt="Marketing campaign" loading="lazy">
+            <figcaption>
+              <h4>Skyline Campaign</h4>
+              <p>Paid ads & CRO — 3x ROI</p>
+              <button class="view-btn" data-src="https://source.unsplash.com/1200x800/?marketing,ads">View</button>
+            </figcaption>
+          </figure>
+
+          <figure class="work-item" data-category="web" tabindex="0">
+            <img src="https://source.unsplash.com/600x400/?startup,web" alt="Startup website" loading="lazy">
+            <figcaption>
+              <h4>LaunchPad Startup</h4>
+              <p>Early-stage product MVP</p>
+              <button class="view-btn" data-src="https://source.unsplash.com/1200x800/?startup,web">View</button>
+            </figcaption>
+          </figure>
+
+          <figure class="work-item" data-category="brand" tabindex="0">
+            <img src="https://source.unsplash.com/600x400/?packaging,brand" alt="Packaging design" loading="lazy">
+            <figcaption>
+              <h4>Moss Naturals</h4>
+              <p>Eco-friendly identity & packaging</p>
+              <button class="view-btn" data-src="https://source.unsplash.com/1200x800/?packaging,brand">View</button>
+            </figcaption>
+          </figure>
+
+          <figure class="work-item" data-category="marketing" tabindex="0">
+            <img src="https://source.unsplash.com/600x400/?analytics,seo" alt="SEO & analytics" loading="lazy">
+            <figcaption>
+              <h4>Releaf SEO Sprint</h4>
+              <p>SEO & content strategy — organic uplift</p>
+              <button class="view-btn" data-src="https://source.unsplash.com/1200x800/?analytics,seo">View</button>
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section id="testimonials" class="section">
+      <div class="container">
+        <h2 class="section-title">Client stories</h2>
+
+        <div class="testimonials">
+          <button class="t-prev" aria-label="Previous testimonial"><i class="fa-solid fa-chevron-left"></i></button>
+          <div class="t-track" id="t-track" aria-live="polite">
+            <blockquote class="testimonial">
+              <p>"Pixel Craft Studio redesigned our platform — engagement and conversions improved dramatically. The team is responsive and detail-oriented."</p>
+              <footer>— Priya, Head of Growth</footer>
+            </blockquote>
+
+            <blockquote class="testimonial">
+              <p>"Talented creatives and rock-solid delivery. The new brand identity elevated how our customers perceive us."</p>
+              <footer>— Rohit, Founder</footer>
+            </blockquote>
+
+            <blockquote class="testimonial">
+              <p>"Fast, communicative and excellent design taste. We loved the rollout and launch support."</p>
+              <footer>— Sara, Product Lead</footer>
+            </blockquote>
+          </div>
+          <button class="t-next" aria-label="Next testimonial"><i class="fa-solid fa-chevron-right"></i></button>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRICING -->
+    <section id="pricing" class="section alt">
+      <div class="container">
+        <h2 class="section-title">Pricing</h2>
+        <p class="section-sub">Simple packages for clarity — custom quotes available.</p>
+
+        <div class="pricing-grid">
+          <div class="price-card">
+            <h3>Starter</h3>
+            <p class="price">₹25,000</p>
+            <ul>
+              <li>Landing page</li>
+              <li>Basic SEO</li>
+              <li>Email support</li>
+            </ul>
+            <a class="btn btn-outline" href="#contact">Choose</a>
+          </div>
+
+          <div class="price-card featured">
+            <h3>Growth</h3>
+            <p class="price">₹75,000</p>
+            <ul>
+              <li>Full website (up to 8 pages)</li>
+              <li>Brand assets</li>
+              <li>3 months support</li>
+            </ul>
+            <a class="btn btn-primary" href="#contact">Choose</a>
+          </div>
+
+          <div class="price-card">
+            <h3>Enterprise</h3>
+            <p class="price">Custom</p>
+            <ul>
+              <li>Custom roadmap</li>
+              <li>Advanced integrations</li>
+              <li>Dedicated team</li>
+            </ul>
+            <a class="btn btn-outline" href="#contact">Talk to Sales</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section contact-section">
+      <div class="container">
+        <h2 class="section-title">Let's build something amazing</h2>
+        <p class="section-sub">Share a few details and we’ll get back within one business day.</p>
+
+        <div class="contact-grid">
+          <div class="contact-info">
+            <h3>Contact</h3>
+            <p><strong>Email:</strong> hello@pixelcraftstudio.com</p>
+            <p><strong>Phone:</strong> <a href="tel:+917627095009">+91 76270 95009</a></p>
+            <p><strong>Location:</strong> Remote / India</p>
+
+            <div class="contact-badges">
+              <a href="https://wa.me/917627095009" class="badge" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+              <a href="tel:+917627095009" class="badge"><i class="fa-solid fa-phone"></i> Call</a>
+            </div>
+          </div>
+
+          <form class="contact-form" id="contact-form" action="https://formspree.io/f/xeeogedw" method="POST" novalidate>
+            <!-- visible labels are hidden for compactness but accessible with sr-only -->
+            <label class="sr-only" for="name">Name</label>
+            <input id="name" name="name" type="text" placeholder="Your name" required>
+
+            <label class="sr-only" for="email">Email</label>
+            <input id="email" name="email" type="email" placeholder="Email address" required>
+
+            <label class="sr-only" for="company">Company</label>
+            <input id="company" name="company" type="text" placeholder="Company (optional)">
+
+            <label class="sr-only" for="message">Message</label>
+            <textarea id="message" name="message" rows="6" placeholder="Tell us about your project" required></textarea>
+
+            <!-- honeypot -->
+            <input type="text" name="_gotcha" style="display:none">
+
+            <button class="btn btn-primary" type="submit">Send message</button>
+
+            <p class="form-note">By submitting you agree to our terms. We will reply within 1 business day.</p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container footer-grid">
+      <div>
+        <p>© 2026 Pixel Craft Studio — Designed by Manish Yadav</p>
+      </div>
+      <div class="socials">
+        <a href="#" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
+        <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+      </div>
     </div>
-    <div class="card">
-      <img src="https://source.unsplash.com/400x300/?digital,marketing">
-      <h3>Digital Marketing</h3>
-      <p>Complete online presence and digital strategy.</p>
-    </div>
+  </footer>
+
+  <!-- Modal / lightbox for portfolio -->
+  <div id="lightbox" class="lightbox" aria-hidden="true" role="dialog" aria-modal="true">
+    <button class="lb-close" aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
+    <div class="lb-content"><img src="" alt="" id="lb-img" loading="lazy"></div>
   </div>
-</section>
 
-<section id="why">
-  <h2>Why Choose Pixel Craft Studio?</h2>
-  <div class="services">
-    <div class="card"><h3>Premium Quality</h3><p>High-end designs built with precision.</p></div>
-    <div class="card"><h3>Modern Design</h3><p>Trendy and clean UI/UX layouts.</p></div>
-    <div class="card"><h3>Fast Delivery</h3><p>Quick turnaround without quality loss.</p></div>
-    <div class="card"><h3>Client Focused</h3><p>Your satisfaction is our priority.</p></div>
-  </div>
-</section>
-
-<section id="contact">
-  <h2>Contact Us</h2>
-  <div class="contact">
-    <form action="https://formspree.io/f/xeeogedw" method="POST">
-      <input type="text" placeholder="Your Name" required>
-      <input type="email" placeholder="Your Email" required>
-      <input type="tel" placeholder="Your Mobile Number" required>
-      <textarea placeholder="Your Message" required></textarea>
-      <button type="submit">Send Message</button>
-    </form>
-  </div>
-</section>
-
-<footer>
-  <p>© 2026 Pixel Craft Studio | Designed by Manish Yadav</p>
-</footer>
-
-<a href="https://wa.me/917627095009" class="whatsapp"><i class="fab fa-whatsapp"></i></a>
-<a href="tel:7627095009" class="call"><i class="fas fa-phone"></i></a>
-
+  <!-- Scripts -->
+  <script src="assets/js/script.js" defer></script>
 </body>
-
 </html>
-
-
