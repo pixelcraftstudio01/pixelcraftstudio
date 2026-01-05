@@ -2,269 +2,408 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>AURELIA | Luxury Fashion</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pixel Craft Studio | Premium Web Solutions</title>
 
-<!-- Google Fonts -->
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-<!-- Icons -->
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+<!-- Font Awesome Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
-:root {
-  --black:#0b0b0b;
-  --beige:#f7f5f2;
-  --gold:#c9a24d;
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
+body{background:#0b0b14;color:#fff;scroll-behavior:smooth;}
+
+/* HEADER */
+header{
+background:linear-gradient(135deg,#0f0c29,#302b63,#24243e);
+padding:20px 8%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+position:sticky;
+top:0;
+z-index:100;
 }
 
-* {margin:0;padding:0;box-sizing:border-box}
-body {
-  font-family: 'Inter', sans-serif;
-  background: var(--beige);
-  color: var(--black);
+/* TEXT LOGO */
+.logo-text{
+font-size:28px;
+font-weight:800;
+letter-spacing:2px;
+color:#00d4ff;
 }
 
-/* NAVBAR */
-nav {
-  position: fixed;
-  top:0;
-  width:100%;
-  padding:20px 60px;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  background: rgba(255,255,255,0.7);
-  backdrop-filter: blur(10px);
-  z-index:1000;
+/* NAVIGATION */
+nav a{
+margin-left:25px;
+color:white;
+text-decoration:none;
+font-weight:500;
 }
-nav h1 {
-  font-family:'Playfair Display', serif;
-  letter-spacing:3px;
+nav a:hover{color:#00d4ff;}
+
+/* HERO SECTION */
+.hero{
+text-align:center;
+padding:120px 10%;
+background:linear-gradient(to bottom,#0f0c29,#0b0b14);
 }
-nav ul {
-  list-style:none;
-  display:flex;
-  gap:30px;
-}
-nav ul li {
-  cursor:pointer;
-  font-size:14px;
-  text-transform:uppercase;
+.hero h1{font-size:50px;}
+.hero p{max-width:650px;margin:20px auto;color:#ccc;}
+.btn{
+display:inline-block;
+margin-top:25px;
+padding:15px 40px;
+background:#00d4ff;
+color:#000;
+border-radius:30px;
+font-weight:600;
 }
 
-/* HERO */
-.hero {
-  height:100vh;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  position:relative;
-  overflow:hidden;
+/* SECTIONS */
+section{padding:90px 8%;}
+
+/* SERVICES */
+.services{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:25px;
 }
-.hero video {
-  position:absolute;
-  width:100%;
-  height:100%;
-  object-fit:cover;
+.card{
+background:#151528;
+padding:25px;
+border-radius:15px;
+transition:.4s;
 }
-.hero-content {
-  position:relative;
-  text-align:center;
-  color:white;
+.card:hover{
+transform:translateY(-10px);
+box-shadow:0 0 30px rgba(0,255,255,.3);
 }
-.hero h2 {
-  font-family:'Playfair Display', serif;
-  font-size:70px;
-}
-.hero button {
-  margin-top:30px;
-  padding:15px 40px;
-  border:1px solid white;
-  background:transparent;
-  color:white;
-  cursor:pointer;
-  transition:.4s;
-}
-.hero button:hover {
-  background:white;
-  color:black;
+.card img{
+width:100%;
+border-radius:12px;
+margin-bottom:15px;
 }
 
-/* PRODUCTS */
-.section {
-  padding:120px 60px;
+/* CONTACT */
+.contact{
+background:#111;
+border-radius:20px;
+padding:40px;
+max-width:700px;
+margin:auto;
 }
-.section h3 {
-  font-family:'Playfair Display', serif;
-  font-size:40px;
-  margin-bottom:40px;
+input,textarea{
+width:100%;
+padding:14px;
+margin-top:10px;
+border:none;
+border-radius:6px;
 }
-.products {
-  display:grid;
-  grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
-  gap:30px;
-}
-.product {
-  background:white;
-  border-radius:15px;
-  overflow:hidden;
-  box-shadow:0 20px 40px rgba(0,0,0,0.1);
-  transition:.4s;
-}
-.product:hover {
-  transform:translateY(-10px);
-}
-.product img {
-  width:100%;
-  height:350px;
-  object-fit:cover;
-}
-.product-info {
-  padding:20px;
-}
-.product-info h4 {
-  font-family:'Playfair Display', serif;
-}
-.product-info button {
-  margin-top:10px;
-  padding:10px 20px;
-  border:none;
-  background:var(--black);
-  color:white;
-  cursor:pointer;
-}
-
-/* CART */
-.cart {
-  position:fixed;
-  right:0;
-  top:0;
-  width:350px;
-  height:100%;
-  background:white;
-  box-shadow:-10px 0 30px rgba(0,0,0,0.1);
-  padding:20px;
-  transform:translateX(100%);
-  transition:.5s;
-  z-index:2000;
-}
-.cart.active {transform:translateX(0);}
-.cart h3 {
-  font-family:'Playfair Display', serif;
-}
-.cart-item {
-  margin-top:20px;
-  display:flex;
-  justify-content:space-between;
+button{
+background:#00c6ff;
+border:none;
+padding:14px;
+width:100%;
+margin-top:15px;
+font-weight:bold;
+cursor:pointer;
 }
 
 /* FOOTER */
-footer {
-  background:black;
-  color:white;
-  padding:60px;
-  text-align:center;
+footer{
+background:#08080f;
+padding:30px;
+text-align:center;
 }
 
-/* RESPONSIVE */
-@media(max-width:768px){
-  nav {padding:20px}
-  .hero h2 {font-size:40px}
+/* FLOAT BUTTONS */
+.whatsapp,.call{
+position:fixed;
+right:20px;
+padding:14px;
+border-radius:50%;
+font-size:22px;
+color:white;
+z-index:999;
 }
+.whatsapp{bottom:90px;background:#25D366;}
+.call{bottom:20px;background:#007bff;}
 </style>
 </head>
 
 <body>
 
-<!-- NAV -->
-<nav>
-  <h1>AURELIA</h1>
-  <ul>
-    <li onclick="toggleCart()">Cart 🛒</li>
-  </ul>
-</nav>
+<header>
+  <div class="logo-text">PIXEL CRAFT STUDIO</div>
+  <nav>
+    <a href="#services">Services</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
 
-<!-- HERO -->
 <section class="hero">
-  <video autoplay muted loop>
-    <source src="https://cdn.coverr.co/videos/coverr-fashion-model-1133/1080p.mp4">
-  </video>
-  <div class="hero-content">
-    <h2>Luxury Redefined</h2>
-    <button onclick="scrollToShop()">Shop Collection</button>
+  <h1>Premium Website & Branding Solutions</h1>
+  <p>We craft modern websites and digital experiences that elevate your brand.</p>
+  <a href="#contact" class="btn">Get Started</a>
+</section>
+
+<section id="services">
+  <h2>Our Services</h2>
+  <div class="services">
+    <div class="card">
+      <img src="https://source.unsplash.com/400x300/?website,design">
+      <h3>Website Design</h3>
+      <p>Modern, responsive and high-conversion websites.</p>
+    </div>
+    <div class="card">
+      <img src="https://source.unsplash.com/400x300/?branding,logo">
+      <h3>Brand Identity</h3>
+      <p>Logo, colors and visual identity for your brand.</p>
+    </div>
+    <div class="card">
+      <img src="https://source.unsplash.com/400x300/?digital,marketing">
+      <h3>Digital Marketing</h3>
+      <p>Complete online presence and digital strategy.</p>
+    </div>
   </div>
 </section>
 
-<!-- SHOP -->
-<section class="section" id="shop">
-  <h3>New Collection</h3>
-  <div class="products" id="products"></div>
+<section id="why">
+  <h2>Why Choose Pixel Craft Studio?</h2>
+  <div class="services">
+    <div class="card"><h3>Premium Quality</h3><p>High-end designs built with precision.</p></div>
+    <div class="card"><h3>Modern Design</h3><p>Trendy and clean UI/UX layouts.</p></div>
+    <div class="card"><h3>Fast Delivery</h3><p>Quick turnaround without quality loss.</p></div>
+    <div class="card"><h3>Client Focused</h3><p>Your satisfaction is our priority.</p></div>
+  </div>
 </section>
 
-<!-- CART -->
-<div class="cart" id="cart">
-  <h3>Your Cart</h3>
-  <div id="cartItems"></div>
-  <button style="margin-top:20px;width:100%;padding:15px;background:black;color:white;">
-    Checkout (Demo)
-  </button>
-</div>
+<section id="contact">
+  <h2>Contact Us</h2>
+  <div class="contact">
+    <form action="https://formspree.io/f/xkogrgoq" method="POST">
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Your Email" required>
+      <input type="tel" placeholder="Your Mobile Number" required>
+      <textarea placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </div>
+</section>
 
-<!-- FOOTER -->
 <footer>
-  <p>© 2026 AURELIA Luxury Fashion</p>
+  <p>© 2026 Pixel Craft Studio | Designed by Manish Yadav</p>
 </footer>
 
-<script>
-const products = [
-  {id:1,name:"Silk Evening Gown",price:450,image:"https://images.unsplash.com/photo-1520975916090-3105956dac38"},
-  {id:2,name:"Tailored Blazer",price:320,image:"https://images.unsplash.com/photo-1521334884684-d80222895322"},
-  {id:3,name:"Luxury Streetwear",price:280,image:"https://images.unsplash.com/photo-1520975661595-6453be3f7070"},
-];
+<a href="https://wa.me/917627095009" class="whatsapp"><i class="fab fa-whatsapp"></i></a>
+<a href="tel:7627095009" class="call"><i class="fas fa-phone"></i></a>
 
-const cart = [];
-const productsDiv = document.getElementById("products");
-const cartDiv = document.getElementById("cartItems");
+</body>
+</html><!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pixel Craft Studio | Premium Web Solutions</title>
 
-products.forEach(p=>{
-  productsDiv.innerHTML += `
-    <div class="product">
-      <img src="${p.image}">
-      <div class="product-info">
-        <h4>${p.name}</h4>
-        <p>$${p.price}</p>
-        <button onclick="addToCart('${p.name}',${p.price})">Add to Cart</button>
-      </div>
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<!-- Font Awesome Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
+body{background:#0b0b14;color:#fff;scroll-behavior:smooth;}
+
+/* HEADER */
+header{
+background:linear-gradient(135deg,#0f0c29,#302b63,#24243e);
+padding:20px 8%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+position:sticky;
+top:0;
+z-index:100;
+}
+
+/* TEXT LOGO */
+.logo-text{
+font-size:28px;
+font-weight:800;
+letter-spacing:2px;
+color:#00d4ff;
+}
+
+/* NAVIGATION */
+nav a{
+margin-left:25px;
+color:white;
+text-decoration:none;
+font-weight:500;
+}
+nav a:hover{color:#00d4ff;}
+
+/* HERO SECTION */
+.hero{
+text-align:center;
+padding:120px 10%;
+background:linear-gradient(to bottom,#0f0c29,#0b0b14);
+}
+.hero h1{font-size:50px;}
+.hero p{max-width:650px;margin:20px auto;color:#ccc;}
+.btn{
+display:inline-block;
+margin-top:25px;
+padding:15px 40px;
+background:#00d4ff;
+color:#000;
+border-radius:30px;
+font-weight:600;
+}
+
+/* SECTIONS */
+section{padding:90px 8%;}
+
+/* SERVICES */
+.services{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:25px;
+}
+.card{
+background:#151528;
+padding:25px;
+border-radius:15px;
+transition:.4s;
+}
+.card:hover{
+transform:translateY(-10px);
+box-shadow:0 0 30px rgba(0,255,255,.3);
+}
+.card img{
+width:100%;
+border-radius:12px;
+margin-bottom:15px;
+}
+
+/* CONTACT */
+.contact{
+background:#111;
+border-radius:20px;
+padding:40px;
+max-width:700px;
+margin:auto;
+}
+input,textarea{
+width:100%;
+padding:14px;
+margin-top:10px;
+border:none;
+border-radius:6px;
+}
+button{
+background:#00c6ff;
+border:none;
+padding:14px;
+width:100%;
+margin-top:15px;
+font-weight:bold;
+cursor:pointer;
+}
+
+/* FOOTER */
+footer{
+background:#08080f;
+padding:30px;
+text-align:center;
+}
+
+/* FLOAT BUTTONS */
+.whatsapp,.call{
+position:fixed;
+right:20px;
+padding:14px;
+border-radius:50%;
+font-size:22px;
+color:white;
+z-index:999;
+}
+.whatsapp{bottom:90px;background:#25D366;}
+.call{bottom:20px;background:#007bff;}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo-text">PIXEL CRAFT STUDIO</div>
+  <nav>
+    <a href="#services">Services</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <h1>Premium Website & Branding Solutions</h1>
+  <p>We craft modern websites and digital experiences that elevate your brand.</p>
+  <a href="#contact" class="btn">Get Started</a>
+</section>
+
+<section id="services">
+  <h2>Our Services</h2>
+  <div class="services">
+    <div class="card">
+      <img src="https://source.unsplash.com/400x300/?website,design">
+      <h3>Website Design</h3>
+      <p>Modern, responsive and high-conversion websites.</p>
     </div>
-  `;
-});
+    <div class="card">
+      <img src="https://source.unsplash.com/400x300/?branding,logo">
+      <h3>Brand Identity</h3>
+      <p>Logo, colors and visual identity for your brand.</p>
+    </div>
+    <div class="card">
+      <img src="https://source.unsplash.com/400x300/?digital,marketing">
+      <h3>Digital Marketing</h3>
+      <p>Complete online presence and digital strategy.</p>
+    </div>
+  </div>
+</section>
 
-function addToCart(name,price){
-  cart.push({name,price});
-  renderCart();
-}
+<section id="why">
+  <h2>Why Choose Pixel Craft Studio?</h2>
+  <div class="services">
+    <div class="card"><h3>Premium Quality</h3><p>High-end designs built with precision.</p></div>
+    <div class="card"><h3>Modern Design</h3><p>Trendy and clean UI/UX layouts.</p></div>
+    <div class="card"><h3>Fast Delivery</h3><p>Quick turnaround without quality loss.</p></div>
+    <div class="card"><h3>Client Focused</h3><p>Your satisfaction is our priority.</p></div>
+  </div>
+</section>
 
-function renderCart(){
-  cartDiv.innerHTML="";
-  cart.forEach(c=>{
-    cartDiv.innerHTML += `
-      <div class="cart-item">
-        <span>${c.name}</span>
-        <span>$${c.price}</span>
-      </div>
-    `;
-  });
-}
+<section id="contact">
+  <h2>Contact Us</h2>
+  <div class="contact">
+    <form action="https://formspree.io/f/xeeogedw" method="POST">
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Your Email" required>
+      <input type="tel" placeholder="Your Mobile Number" required>
+      <textarea placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </div>
+</section>
 
-function toggleCart(){
-  document.getElementById("cart").classList.toggle("active");
-}
+<footer>
+  <p>© 2026 Pixel Craft Studio | Designed by Manish Yadav</p>
+</footer>
 
-function scrollToShop(){
-  document.getElementById("shop").scrollIntoView({behavior:"smooth"});
-}
-</script>
+<a href="https://wa.me/917627095009" class="whatsapp"><i class="fab fa-whatsapp"></i></a>
+<a href="tel:7627095009" class="call"><i class="fas fa-phone"></i></a>
 
 </body>
 </html>
