@@ -2,213 +2,293 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Happy Birthday Tapasya 🎂</title>
+<title>For Tapasya 💖</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
+:root{
+  --pink:#ff6fae;
+  --lavender:#b388ff;
+  --peach:#ffd6a5;
+  --mint:#b8f2e6;
+  --gold:#ffd700;
+}
+
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:'Segoe UI', sans-serif;
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family: 'Segoe UI', sans-serif;
 }
 
 body{
-    height:100vh;
-    background: radial-gradient(circle at top, #1b2735, #090a0f);
-    overflow:hidden;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    text-align:center;
-    color:#fff;
+  background: linear-gradient(180deg,#0f1021,#1b1c3a,#2b2d63);
+  color:#fff;
+  overflow-x:hidden;
 }
 
-.container{
-    z-index:2;
-    padding:20px;
+section{
+  min-height:100vh;
+  padding:80px 20px;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
 }
 
 h1{
-    font-size:2.6rem;
-    margin-bottom:10px;
-    animation: glow 2s infinite alternate;
+  font-size:2.8rem;
+  background:linear-gradient(90deg,var(--pink),var(--lavender),var(--peach));
+  -webkit-background-clip:text;
+  color:transparent;
 }
 
 h2{
-    font-size:1.1rem;
-    opacity:0.85;
-    margin-bottom:30px;
+  font-weight:400;
+  opacity:.9;
+  margin-top:15px;
 }
 
-@keyframes glow{
-    from{ text-shadow:0 0 10px #fff; }
-    to{ text-shadow:0 0 25px #ffb703; }
+p{
+  max-width:700px;
+  margin:25px auto;
+  line-height:1.8;
+  font-size:1.1rem;
+  opacity:.95;
 }
 
-.gift{
-    width:160px;
-    height:160px;
-    background:#ff477e;
-    border-radius:12px;
-    margin:auto;
-    position:relative;
-    cursor:pointer;
-    animation: float 2s infinite;
-}
-
-.gift::before{
-    content:'';
-    position:absolute;
-    width:30px;
-    height:160px;
-    background:#fff;
-    left:65px;
-}
-
-.gift::after{
-    content:'';
-    position:absolute;
-    width:160px;
-    height:30px;
-    background:#fff;
-    top:65px;
+/* Floating flowers */
+.flower{
+  position:fixed;
+  font-size:24px;
+  animation: float 12s linear infinite;
+  opacity:0.6;
 }
 
 @keyframes float{
-    0%,100%{transform:translateY(0);}
-    50%{transform:translateY(-12px);}
+  from{transform:translateY(110vh) rotate(0deg);}
+  to{transform:translateY(-10vh) rotate(360deg);}
 }
 
-.message{
-    display:none;
-    margin-top:30px;
-    font-size:1.1rem;
-    line-height:1.7;
-    animation: fade 2s forwards;
+/* Gift */
+.gift{
+  width:180px;
+  height:180px;
+  background:linear-gradient(135deg,var(--pink),var(--lavender));
+  border-radius:18px;
+  margin:40px auto;
+  position:relative;
+  cursor:pointer;
+  box-shadow:0 25px 60px rgba(0,0,0,.4);
+  animation:pulse 2s infinite;
 }
 
-@keyframes fade{
-    from{opacity:0; transform:scale(0.95);}
-    to{opacity:1; transform:scale(1);}
+@keyframes pulse{
+  0%,100%{transform:scale(1);}
+  50%{transform:scale(1.05);}
 }
 
+.gift::before,.gift::after{
+  content:'';
+  position:absolute;
+  background:white;
+}
+
+.gift::before{
+  width:30px;height:180px;left:75px;
+}
+.gift::after{
+  width:180px;height:30px;top:75px;
+}
+
+/* Card */
+.card-area{
+  perspective:1200px;
+  display:none;
+}
+
+.card{
+  width:320px;
+  height:420px;
+  background:linear-gradient(135deg,#fff,#ffe4f2);
+  color:#333;
+  border-radius:20px;
+  transform-style:preserve-3d;
+  transition:transform 1s;
+  box-shadow:0 40px 80px rgba(0,0,0,.4);
+}
+
+.card.open{
+  transform:rotateY(-180deg);
+}
+
+.page{
+  position:absolute;
+  width:100%;
+  height:100%;
+  backface-visibility:hidden;
+  padding:30px;
+}
+
+.page.back{
+  transform:rotateY(180deg);
+}
+
+.page h3{
+  color:#ff5fa2;
+  margin-bottom:15px;
+}
+
+/* Footer */
+footer{
+  padding:40px;
+  text-align:center;
+  opacity:.6;
+}
+
+/* Canvas */
 canvas{
-    position:fixed;
-    top:0;
-    left:0;
-    pointer-events:none;
+  position:fixed;
+  top:0;
+  left:0;
+  pointer-events:none;
 }
 </style>
 </head>
 
 <body>
 
-<audio id="bgMusic" src="dooron_dooron.mp3" loop></audio>
+<audio id="music" src="dooron_dooron.mp3" loop></audio>
+<canvas id="fx"></canvas>
 
-<canvas id="effects"></canvas>
+<!-- FLOWERS -->
+<script>
+for(let i=0;i<25;i++){
+  let f=document.createElement('div');
+  f.className='flower';
+  f.style.left=Math.random()*100+'%';
+  f.style.animationDuration=8+Math.random()*8+'s';
+  f.innerText=['🌸','🌷','🌺','🌼','💮'][Math.floor(Math.random()*5)];
+  document.body.appendChild(f);
+}
+</script>
 
-<div class="container">
-    <h1>Happy Birthday Tapasya 🎉</h1>
-    <h2>Tap the gift… something beautiful awaits you 💝</h2>
-
+<!-- SECTION 1 -->
+<section>
+  <div>
+    <h1>Happy Birthday Tapasya 🎂</h1>
+    <h2>A day as beautiful as your soul</h2>
+    <p>
+      This is not just a website.  
+      This is a small universe of feelings, colours, memories and care —  
+      created only for you.
+    </p>
     <div class="gift" onclick="openGift()"></div>
+    <p style="opacity:.7">Tap the gift gently 💝</p>
+  </div>
+</section>
 
-    <div class="message" id="msg">
-        💖 Dear Tapasya 💖<br><br>
-        Some people enter our lives quietly,  
-        yet leave the deepest impact on our hearts.  
-        You are one of those rare souls. ✨<br><br>
+<!-- SECTION 2 -->
+<section id="cardSection">
+  <div>
+    <h1>A Greeting Card From Me 💌</h1>
+    <p>Tap the card to open… then tap again to turn the page</p>
 
-        Your smile heals, your kindness inspires,  
-        and your presence makes everything feel lighter.  
-        On your special day, I wish you endless happiness,  
-        peaceful nights, bright mornings, and dreams that come true. 🌸<br><br>
-
-        May life always be gentle with you,  
-        and may you always remember how special you are.  
-        Happy Birthday, beautiful soul. 🎂💕
+    <div class="card-area">
+      <div class="card" id="card" onclick="openCard()">
+        <div class="page front">
+          <h3>Dear Tapasya ✨</h3>
+          <p>
+            Some people don’t even realize how special they are —
+            but they quietly make the world softer just by being in it.
+          </p>
+        </div>
+        <div class="page back">
+          <h3>From Manish 💖</h3>
+          <p>
+            May your life always be filled with colours brighter than these,
+            smiles warmer than sunshine,
+            and dreams that never feel too far.
+            You deserve the very best.
+          </p>
+        </div>
+      </div>
     </div>
-</div>
+  </div>
+</section>
+
+<footer>
+  Designed with love by Manish Yadav
+</footer>
 
 <script>
-const canvas = document.getElementById('effects');
-const ctx = canvas.getContext('2d');
-canvas.width = innerWidth;
-canvas.height = innerHeight;
-
-let particles = [];
-let mode = "fireworks";
+const canvas=document.getElementById('fx');
+const ctx=canvas.getContext('2d');
+canvas.width=innerWidth;
+canvas.height=innerHeight;
+let particles=[],mode='fireworks';
 
 function openGift(){
-    document.querySelector('.gift').style.display="none";
-    document.querySelector('h2').style.display="none";
-    document.getElementById('msg').style.display="block";
-    document.getElementById('bgMusic').play();
-
-    startFireworks();
-
-    setTimeout(()=>{
-        particles=[];
-        mode="confetti";
-        startConfetti();
-    },6000);
+  document.getElementById('music').play();
+  startFireworks();
+  setTimeout(()=>{
+    particles=[];
+    mode='confetti';
+    startConfetti();
+    document.querySelector('.card-area').style.display='block';
+  },5000);
 }
 
-/* FIREWORKS */
 function startFireworks(){
-    mode="fireworks";
-    for(let i=0;i<120;i++){
-        particles.push({
-            x:Math.random()*canvas.width,
-            y:canvas.height,
-            vx:(Math.random()-0.5)*4,
-            vy:-Math.random()*7-5,
-            alpha:1,
-            color:`hsl(${Math.random()*360},100%,60%)`
-        });
-    }
-    animate();
+  mode='fireworks';
+  for(let i=0;i<150;i++){
+    particles.push({
+      x:Math.random()*canvas.width,
+      y:canvas.height,
+      vx:(Math.random()-.5)*5,
+      vy:-Math.random()*8-4,
+      a:1,
+      c:`hsl(${Math.random()*360},100%,60%)`
+    });
+  }
+  animate();
 }
 
-/* CONFETTI */
 function startConfetti(){
-    for(let i=0;i<200;i++){
-        particles.push({
-            x:Math.random()*canvas.width,
-            y:Math.random()*canvas.height-canvas.height,
-            r:Math.random()*6+3,
-            vy:Math.random()*4+2,
-            color:`hsl(${Math.random()*360},100%,50%)`
-        });
-    }
-    animate();
+  for(let i=0;i<200;i++){
+    particles.push({
+      x:Math.random()*canvas.width,
+      y:Math.random()*canvas.height-canvas.height,
+      r:Math.random()*6+4,
+      vy:Math.random()*4+2,
+      c:`hsl(${Math.random()*360},100%,50%)`
+    });
+  }
 }
 
 function animate(){
-    ctx.clearRect(0,0,canvas.width,canvas.height);
-    particles.forEach((p,i)=>{
-        ctx.beginPath();
-        ctx.fillStyle=p.color;
-        if(mode==="fireworks"){
-            ctx.globalAlpha=p.alpha;
-            ctx.arc(p.x,p.y,3,0,Math.PI*2);
-            p.x+=p.vx;
-            p.y+=p.vy;
-            p.alpha-=0.01;
-        }else{
-            ctx.globalAlpha=1;
-            ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
-            p.y+=p.vy;
-        }
-        ctx.fill();
-    });
-    requestAnimationFrame(animate);
+  ctx.clearRect(0,0,canvas.width,canvas.height);
+  particles.forEach(p=>{
+    ctx.fillStyle=p.c;
+    ctx.beginPath();
+    ctx.arc(p.x,p.y,mode==='fireworks'?3:p.r,0,Math.PI*2);
+    ctx.fill();
+    if(mode==='fireworks'){
+      p.x+=p.vx;p.y+=p.vy;p.a-=0.01;
+    }else{
+      p.y+=p.vy;
+    }
+  });
+  requestAnimationFrame(animate);
+}
+
+function openCard(){
+  document.getElementById('card').classList.toggle('open');
 }
 
 window.onresize=()=>{
-    canvas.width=innerWidth;
-    canvas.height=innerHeight;
+  canvas.width=innerWidth;
+  canvas.height=innerHeight;
 };
 </script>
 
