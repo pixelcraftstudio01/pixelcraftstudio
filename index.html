@@ -3,227 +3,212 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Happy Birthday Tapasya</title>
+<title>A Quiet Story</title>
 
 <!-- Google Fonts -->
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Poppins:wght@300;400;500&family=Dancing+Script:wght@500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400;500&family=Allura&display=swap" rel="stylesheet">
+
+<!-- AOS Animations -->
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
 <style>
-:root {
-  --blush: #f6d6de;
-  --lavender: #d8cce6;
-  --champagne: #d4af7a;
-  --ivory: #fffaf2;
-  --text-dark: #3d3d3d;
+:root{
+  --pink:#f7c6d0;
+  --lavender:#d6ccf5;
+  --cream:#fff6e9;
+  --peach:#ffd6c9;
+  --gold:#d4af37;
 }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+  font-family:'Poppins',sans-serif;
+  background:linear-gradient(135deg,var(--cream),var(--lavender));
+  color:#333;
+  overflow-x:hidden;
 }
 
-body {
-  background: linear-gradient(135deg, var(--ivory), var(--blush));
-  font-family: 'Poppins', sans-serif;
-  overflow-x: hidden;
-  color: var(--text-dark);
+section{
+  min-height:100vh;
+  padding:60px 20px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
 }
 
-.container {
-  perspective: 2000px;
-  display: flex;
-  justify-content: center;
-  padding: 60px 20px;
+h1,h2{
+  font-family:'Playfair Display',serif;
 }
 
-.book {
-  width: 900px;
-  max-width: 100%;
-  position: relative;
+.script{
+  font-family:'Allura',cursive;
 }
 
-.page {
-  background: var(--ivory);
-  border-radius: 18px;
-  box-shadow: 0 30px 80px rgba(0,0,0,0.12);
-  padding: 60px;
-  margin-bottom: 80px;
-  position: relative;
-  transform-style: preserve-3d;
-  animation: fadeUp 1.2s ease both;
+button{
+  padding:14px 32px;
+  border:none;
+  border-radius:40px;
+  background:linear-gradient(135deg,var(--pink),var(--peach));
+  color:#333;
+  font-size:16px;
+  cursor:pointer;
+  margin-top:30px;
+  transition:.3s;
+}
+button:hover{transform:scale(1.05)}
+
+.fade{opacity:0;transition:1.5s}
+.show{opacity:1}
+
+/* Love Letter */
+.letter{
+  background:#fff;
+  max-width:700px;
+  padding:40px;
+  box-shadow:0 20px 40px rgba(0,0,0,.2);
+  background-image:linear-gradient(#fafafa,#fdf3e7);
+  border-radius:12px;
 }
 
-.page::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: 18px;
-  background: linear-gradient(120deg, transparent, rgba(212,175,122,0.12), transparent);
-  pointer-events: none;
+/* Choices */
+.choice-btns button{
+  margin:20px;
 }
 
-h1, h2 {
-  font-family: 'Playfair Display', serif;
+/* Confetti */
+.confetti{
+  position:fixed;
+  width:8px;
+  height:8px;
+  background:red;
+  animation:fall 3s linear infinite;
 }
-
-.cover-title {
-  font-size: 56px;
-  text-align: center;
-  color: var(--champagne);
-  margin-bottom: 20px;
-  animation: glow 2.5s infinite alternate;
-}
-
-.cover-sub {
-  font-family: 'Dancing Script', cursive;
-  font-size: 30px;
-  text-align: center;
-  color: #8a6f8d;
-}
-
-.floating {
-  animation: float 4s ease-in-out infinite;
-}
-
-.message {
-  font-size: 18px;
-  line-height: 1.9;
-  max-width: 720px;
-  margin: auto;
-}
-
-.signature {
-  margin-top: 40px;
-  font-family: 'Dancing Script', cursive;
-  font-size: 26px;
-  color: var(--champagne);
-  text-align: right;
-}
-
-.gifts {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 25px;
-  margin-top: 40px;
-}
-
-.gift {
-  background: linear-gradient(145deg, #fff, var(--lavender));
-  padding: 25px;
-  border-radius: 16px;
-  box-shadow: 0 15px 40px rgba(0,0,0,0.1);
-  transition: all 0.4s ease;
-  cursor: pointer;
-}
-
-.gift:hover {
-  transform: translateY(-10px) scale(1.03);
-  box-shadow: 0 25px 60px rgba(212,175,122,0.35);
-}
-
-.gift h4 {
-  font-family: 'Playfair Display', serif;
-  margin-bottom: 10px;
-  color: var(--champagne);
-}
-
-.final-note {
-  text-align: center;
-  font-size: 20px;
-  line-height: 1.8;
-}
-
-.footer {
-  text-align: center;
-  margin-top: 40px;
-  font-size: 14px;
-  opacity: 0.7;
-}
-
-@keyframes fadeUp {
-  from { opacity: 0; transform: translateY(40px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes glow {
-  from { text-shadow: 0 0 10px rgba(212,175,122,0.4); }
-  to { text-shadow: 0 0 25px rgba(212,175,122,0.9); }
-}
-
-@keyframes float {
-  0%,100% { transform: translateY(0); }
-  50% { transform: translateY(-12px); }
+@keyframes fall{
+  to{transform:translateY(110vh) rotate(360deg)}
 }
 </style>
 </head>
 
 <body>
 
-<div class="container">
-<div class="book">
-
-<!-- PAGE 1 -->
-<section class="page">
-  <h1 class="cover-title floating">Happy Birthday Tapasya</h1>
-  <p class="cover-sub">A little world made just for you</p>
-</section>
-
-<!-- PAGE 2 -->
-<section class="page">
-  <h2 style="text-align:center;color:#b08ab3;margin-bottom:30px;">A Note From the Heart</h2>
-  <p class="message">
-    Dear Tapasya,<br><br>
-    On your special day, this little world was created just to remind you how rare and beautiful your presence is.
-    Some people walk into lives quietly, yet leave behind warmth that stays forever — you are one of them.
-    Your kindness, your strength, and the way you handle life with grace deserves celebration, not just today, but every day.
-    May this year give you calm mornings, meaningful dreams, and reasons to smile even on ordinary days.
-    Never forget how deeply appreciated you are, how much light you bring, and how effortlessly you make the world softer.
-    <br><br>
-    May 25th February always remind you that you matter — truly and deeply.
-  </p>
-  <div class="signature">— From Manish</div>
-</section>
-
-<!-- PAGE 3 -->
-<section class="page">
-  <h2 style="text-align:center;color:#b08ab3;">25 Gifts For You</h2>
-  <div class="gifts">
-    <script>
-      const gifts = [
-        "A Promise of Support","A Box of Courage","A Lifetime Smile","A Memory Keeper",
-        "A Peaceful Mind","A Confidence Booster","A Dream Encourager","A Calm Heart",
-        "A Strength Reminder","A Safe Space","A Hope Refill","A Happiness Spark",
-        "A Self-Belief Note","A Warm Hug (Forever)","A Motivation Whisper",
-        "A Healing Thought","A Patience Gift","A Fearless Spirit",
-        "A Positive Tomorrow","A Quiet Comfort","A Gentle Reminder",
-        "A Grateful Heart","A Light in Darkness","A Forever Cheer",
-        "A You-Are-Enough Note"
-      ];
-      document.write(gifts.map((g,i)=>`
-        <div class="gift">
-          <h4>Gift ${i+1}</h4>
-          <p>${g} — something money can’t buy, but hearts can give.</p>
-        </div>
-      `).join(""));
-    </script>
+<!-- Landing -->
+<section>
+  <div data-aos="fade-up">
+    <h1>Some stories don’t begin loudly…</h1>
+    <p>They begin quietly.</p>
+    <button onclick="next()">Continue</button>
   </div>
 </section>
 
-<!-- PAGE 4 -->
-<section class="page">
-  <p class="final-note">
-    Always stay the way you are, Tapasya.<br>
-    This little world was made with heart.<br><br>
-    <span style="font-family:'Dancing Script',cursive;font-size:28px;color:#c89b63;">
-      Designed with love — Manish
-    </span>
-  </p>
-  <div class="footer">Designed by Manish Yadav</div>
+<!-- Clues -->
+<section>
+  <div data-aos="fade-up">
+    <h2>Clue One</h2>
+    <p>Some people enter your life gently… and somehow make it warmer.</p>
+  </div>
 </section>
 
-</div>
-</div>
+<section>
+  <div data-aos="fade-up">
+    <h2>Clue Two</h2>
+    <p>Not every connection needs words. Some are simply felt.</p>
+  </div>
+</section>
+
+<section>
+  <div data-aos="fade-up">
+    <h2>Clue Three</h2>
+    <p>Comfort can feel like home, even in silence.</p>
+  </div>
+</section>
+
+<!-- Reveal -->
+<section>
+  <div data-aos="zoom-in">
+    <h1 class="script" style="font-size:60px;color:var(--gold)">Tapasya</h1>
+    <p>This website exists for only one reason… you.</p>
+  </div>
+</section>
+
+<!-- Love Letter -->
+<section>
+  <div class="letter" data-aos="fade-up">
+    <h2>Dear Tapasya,</h2>
+    <p>
+      This isn’t about impressing you.  
+      It’s about being honest in the most respectful way I know.
+    </p>
+    <p>
+      Somewhere between conversations, comfort, and shared moments,  
+      something genuine grew — admiration, trust, and a quiet affection.
+    </p>
+    <p class="script" style="font-size:28px">
+      But more than anything, I value *you* — your comfort, your peace,
+      and your freedom to choose.
+    </p>
+    <p>
+      There is absolutely no pressure here.  
+      Your feelings matter more than any answer.
+      Whatever you choose, the respect and warmth remain unchanged.
+    </p>
+  </div>
+</section>
+
+<!-- Choice -->
+<section>
+  <div data-aos="fade-up">
+    <h2>So… would you like to explore this feeling together?</h2>
+    <div class="choice-btns">
+      <button onclick="sendResponse('YES')">YES</button>
+      <button onclick="sendResponse('NO')">NO</button>
+    </div>
+    <p id="responseMsg"></p>
+  </div>
+</section>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+AOS.init();
+
+function next(){
+  window.scrollBy({top:window.innerHeight,behavior:'smooth'});
+}
+
+function sendResponse(ans){
+  // 🔗 Replace with real webhook (Twilio / Firebase / WhatsApp API)
+  fetch("https://example-webhook.com/send",{
+    method:"POST",
+    headers:{"Content-Type":"application/json"},
+    body:JSON.stringify({
+      answer:ans,
+      phone:"+917627095009"
+    })
+  }).catch(()=>{});
+
+  if(ans==="YES"){
+    celebrate();
+    document.getElementById("responseMsg").innerHTML =
+      "Thank you for choosing courage and honesty. This means more than words 💖";
+  }else{
+    document.body.style.background="linear-gradient(135deg,#eaeaea,#f5f5f5)";
+    document.getElementById("responseMsg").innerHTML =
+      "Thank you for your honesty. Your happiness will always be respected 🌸";
+  }
+}
+
+function celebrate(){
+  for(let i=0;i<80;i++){
+    let c=document.createElement("div");
+    c.className="confetti";
+    c.style.left=Math.random()*100+"vw";
+    c.style.background=`hsl(${Math.random()*360},80%,70%)`;
+    c.style.animationDuration=(Math.random()*3+2)+"s";
+    document.body.appendChild(c);
+    setTimeout(()=>c.remove(),4000);
+  }
+}
+</script>
 
 </body>
 </html>
