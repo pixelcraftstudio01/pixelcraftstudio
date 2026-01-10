@@ -2,408 +2,215 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<title>Happy Birthday Tapasya 🎂</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Pixel Craft Studio | Premium Web Solutions</title>
-
-<!-- Google Font -->
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-
-<!-- Font Awesome Icons -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
-body{background:#0b0b14;color:#fff;scroll-behavior:smooth;}
-
-/* HEADER */
-header{
-background:linear-gradient(135deg,#0f0c29,#302b63,#24243e);
-padding:20px 8%;
-display:flex;
-justify-content:space-between;
-align-items:center;
-position:sticky;
-top:0;
-z-index:100;
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI', sans-serif;
 }
 
-/* TEXT LOGO */
-.logo-text{
-font-size:28px;
-font-weight:800;
-letter-spacing:2px;
-color:#00d4ff;
+body{
+    height:100vh;
+    background: radial-gradient(circle at top, #1b2735, #090a0f);
+    overflow:hidden;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    color:#fff;
 }
 
-/* NAVIGATION */
-nav a{
-margin-left:25px;
-color:white;
-text-decoration:none;
-font-weight:500;
-}
-nav a:hover{color:#00d4ff;}
-
-/* HERO SECTION */
-.hero{
-text-align:center;
-padding:120px 10%;
-background:linear-gradient(to bottom,#0f0c29,#0b0b14);
-}
-.hero h1{font-size:50px;}
-.hero p{max-width:650px;margin:20px auto;color:#ccc;}
-.btn{
-display:inline-block;
-margin-top:25px;
-padding:15px 40px;
-background:#00d4ff;
-color:#000;
-border-radius:30px;
-font-weight:600;
+.container{
+    z-index:2;
+    padding:20px;
 }
 
-/* SECTIONS */
-section{padding:90px 8%;}
-
-/* SERVICES */
-.services{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-gap:25px;
-}
-.card{
-background:#151528;
-padding:25px;
-border-radius:15px;
-transition:.4s;
-}
-.card:hover{
-transform:translateY(-10px);
-box-shadow:0 0 30px rgba(0,255,255,.3);
-}
-.card img{
-width:100%;
-border-radius:12px;
-margin-bottom:15px;
+h1{
+    font-size:2.6rem;
+    margin-bottom:10px;
+    animation: glow 2s infinite alternate;
 }
 
-/* CONTACT */
-.contact{
-background:#111;
-border-radius:20px;
-padding:40px;
-max-width:700px;
-margin:auto;
-}
-input,textarea{
-width:100%;
-padding:14px;
-margin-top:10px;
-border:none;
-border-radius:6px;
-}
-button{
-background:#00c6ff;
-border:none;
-padding:14px;
-width:100%;
-margin-top:15px;
-font-weight:bold;
-cursor:pointer;
+h2{
+    font-size:1.1rem;
+    opacity:0.85;
+    margin-bottom:30px;
 }
 
-/* FOOTER */
-footer{
-background:#08080f;
-padding:30px;
-text-align:center;
+@keyframes glow{
+    from{ text-shadow:0 0 10px #fff; }
+    to{ text-shadow:0 0 25px #ffb703; }
 }
 
-/* FLOAT BUTTONS */
-.whatsapp,.call{
-position:fixed;
-right:20px;
-padding:14px;
-border-radius:50%;
-font-size:22px;
-color:white;
-z-index:999;
+.gift{
+    width:160px;
+    height:160px;
+    background:#ff477e;
+    border-radius:12px;
+    margin:auto;
+    position:relative;
+    cursor:pointer;
+    animation: float 2s infinite;
 }
-.whatsapp{bottom:90px;background:#25D366;}
-.call{bottom:20px;background:#007bff;}
+
+.gift::before{
+    content:'';
+    position:absolute;
+    width:30px;
+    height:160px;
+    background:#fff;
+    left:65px;
+}
+
+.gift::after{
+    content:'';
+    position:absolute;
+    width:160px;
+    height:30px;
+    background:#fff;
+    top:65px;
+}
+
+@keyframes float{
+    0%,100%{transform:translateY(0);}
+    50%{transform:translateY(-12px);}
+}
+
+.message{
+    display:none;
+    margin-top:30px;
+    font-size:1.1rem;
+    line-height:1.7;
+    animation: fade 2s forwards;
+}
+
+@keyframes fade{
+    from{opacity:0; transform:scale(0.95);}
+    to{opacity:1; transform:scale(1);}
+}
+
+canvas{
+    position:fixed;
+    top:0;
+    left:0;
+    pointer-events:none;
+}
 </style>
 </head>
 
 <body>
 
-<header>
-  <div class="logo-text">PIXEL CRAFT STUDIO</div>
-  <nav>
-    <a href="#services">Services</a>
-    <a href="#contact">Contact</a>
-  </nav>
-</header>
+<audio id="bgMusic" src="dooron_dooron.mp3" loop></audio>
 
-<section class="hero">
-  <h1>Premium Website & Branding Solutions</h1>
-  <p>We craft modern websites and digital experiences that elevate your brand.</p>
-  <a href="#contact" class="btn">Get Started</a>
-</section>
+<canvas id="effects"></canvas>
 
-<section id="services">
-  <h2>Our Services</h2>
-  <div class="services">
-    <div class="card">
-      <img src="https://source.unsplash.com/400x300/?website,design">
-      <h3>Website Design</h3>
-      <p>Modern, responsive and high-conversion websites.</p>
+<div class="container">
+    <h1>Happy Birthday Tapasya 🎉</h1>
+    <h2>Tap the gift… something beautiful awaits you 💝</h2>
+
+    <div class="gift" onclick="openGift()"></div>
+
+    <div class="message" id="msg">
+        💖 Dear Tapasya 💖<br><br>
+        Some people enter our lives quietly,  
+        yet leave the deepest impact on our hearts.  
+        You are one of those rare souls. ✨<br><br>
+
+        Your smile heals, your kindness inspires,  
+        and your presence makes everything feel lighter.  
+        On your special day, I wish you endless happiness,  
+        peaceful nights, bright mornings, and dreams that come true. 🌸<br><br>
+
+        May life always be gentle with you,  
+        and may you always remember how special you are.  
+        Happy Birthday, beautiful soul. 🎂💕
     </div>
-    <div class="card">
-      <img src="https://source.unsplash.com/400x300/?branding,logo">
-      <h3>Brand Identity</h3>
-      <p>Logo, colors and visual identity for your brand.</p>
-    </div>
-    <div class="card">
-      <img src="https://source.unsplash.com/400x300/?digital,marketing">
-      <h3>Digital Marketing</h3>
-      <p>Complete online presence and digital strategy.</p>
-    </div>
-  </div>
-</section>
+</div>
 
-<section id="why">
-  <h2>Why Choose Pixel Craft Studio?</h2>
-  <div class="services">
-    <div class="card"><h3>Premium Quality</h3><p>High-end designs built with precision.</p></div>
-    <div class="card"><h3>Modern Design</h3><p>Trendy and clean UI/UX layouts.</p></div>
-    <div class="card"><h3>Fast Delivery</h3><p>Quick turnaround without quality loss.</p></div>
-    <div class="card"><h3>Client Focused</h3><p>Your satisfaction is our priority.</p></div>
-  </div>
-</section>
+<script>
+const canvas = document.getElementById('effects');
+const ctx = canvas.getContext('2d');
+canvas.width = innerWidth;
+canvas.height = innerHeight;
 
-<section id="contact">
-  <h2>Contact Us</h2>
-  <div class="contact">
-    <form action="https://formspree.io/f/meeonbba" method="POST">
-      <input type="text" placeholder="Your Name" required>
-      <input type="email" placeholder="Your Email" required>
-      <input type="tel" placeholder="Your Mobile Number" required>
-      <textarea placeholder="Your Message" required></textarea>
-      <button type="submit">Send Message</button>
-    </form>
-  </div>
-</section>
+let particles = [];
+let mode = "fireworks";
 
-<footer>
-  <p>© 2026 Pixel Craft Studio | Designed by Manish Yadav</p>
-</footer>
+function openGift(){
+    document.querySelector('.gift').style.display="none";
+    document.querySelector('h2').style.display="none";
+    document.getElementById('msg').style.display="block";
+    document.getElementById('bgMusic').play();
 
-<a href="https://wa.me/917627095009" class="whatsapp"><i class="fab fa-whatsapp"></i></a>
-<a href="tel:7627095009" class="call"><i class="fas fa-phone"></i></a>
+    startFireworks();
 
-</body>
-</html><!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Pixel Craft Studio | Premium Web Solutions</title>
-
-<!-- Google Font -->
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-
-<!-- Font Awesome Icons -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
-<style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
-body{background:#0b0b14;color:#fff;scroll-behavior:smooth;}
-
-/* HEADER */
-header{
-background:linear-gradient(135deg,#0f0c29,#302b63,#24243e);
-padding:20px 8%;
-display:flex;
-justify-content:space-between;
-align-items:center;
-position:sticky;
-top:0;
-z-index:100;
+    setTimeout(()=>{
+        particles=[];
+        mode="confetti";
+        startConfetti();
+    },6000);
 }
 
-/* TEXT LOGO */
-.logo-text{
-font-size:28px;
-font-weight:800;
-letter-spacing:2px;
-color:#00d4ff;
+/* FIREWORKS */
+function startFireworks(){
+    mode="fireworks";
+    for(let i=0;i<120;i++){
+        particles.push({
+            x:Math.random()*canvas.width,
+            y:canvas.height,
+            vx:(Math.random()-0.5)*4,
+            vy:-Math.random()*7-5,
+            alpha:1,
+            color:`hsl(${Math.random()*360},100%,60%)`
+        });
+    }
+    animate();
 }
 
-/* NAVIGATION */
-nav a{
-margin-left:25px;
-color:white;
-text-decoration:none;
-font-weight:500;
-}
-nav a:hover{color:#00d4ff;}
-
-/* HERO SECTION */
-.hero{
-text-align:center;
-padding:120px 10%;
-background:linear-gradient(to bottom,#0f0c29,#0b0b14);
-}
-.hero h1{font-size:50px;}
-.hero p{max-width:650px;margin:20px auto;color:#ccc;}
-.btn{
-display:inline-block;
-margin-top:25px;
-padding:15px 40px;
-background:#00d4ff;
-color:#000;
-border-radius:30px;
-font-weight:600;
+/* CONFETTI */
+function startConfetti(){
+    for(let i=0;i<200;i++){
+        particles.push({
+            x:Math.random()*canvas.width,
+            y:Math.random()*canvas.height-canvas.height,
+            r:Math.random()*6+3,
+            vy:Math.random()*4+2,
+            color:`hsl(${Math.random()*360},100%,50%)`
+        });
+    }
+    animate();
 }
 
-/* SECTIONS */
-section{padding:90px 8%;}
-
-/* SERVICES */
-.services{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-gap:25px;
-}
-.card{
-background:#151528;
-padding:25px;
-border-radius:15px;
-transition:.4s;
-}
-.card:hover{
-transform:translateY(-10px);
-box-shadow:0 0 30px rgba(0,255,255,.3);
-}
-.card img{
-width:100%;
-border-radius:12px;
-margin-bottom:15px;
+function animate(){
+    ctx.clearRect(0,0,canvas.width,canvas.height);
+    particles.forEach((p,i)=>{
+        ctx.beginPath();
+        ctx.fillStyle=p.color;
+        if(mode==="fireworks"){
+            ctx.globalAlpha=p.alpha;
+            ctx.arc(p.x,p.y,3,0,Math.PI*2);
+            p.x+=p.vx;
+            p.y+=p.vy;
+            p.alpha-=0.01;
+        }else{
+            ctx.globalAlpha=1;
+            ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
+            p.y+=p.vy;
+        }
+        ctx.fill();
+    });
+    requestAnimationFrame(animate);
 }
 
-/* CONTACT */
-.contact{
-background:#111;
-border-radius:20px;
-padding:40px;
-max-width:700px;
-margin:auto;
-}
-input,textarea{
-width:100%;
-padding:14px;
-margin-top:10px;
-border:none;
-border-radius:6px;
-}
-button{
-background:#00c6ff;
-border:none;
-padding:14px;
-width:100%;
-margin-top:15px;
-font-weight:bold;
-cursor:pointer;
-}
-
-/* FOOTER */
-footer{
-background:#08080f;
-padding:30px;
-text-align:center;
-}
-
-/* FLOAT BUTTONS */
-.whatsapp,.call{
-position:fixed;
-right:20px;
-padding:14px;
-border-radius:50%;
-font-size:22px;
-color:white;
-z-index:999;
-}
-.whatsapp{bottom:90px;background:#25D366;}
-.call{bottom:20px;background:#007bff;}
-</style>
-</head>
-
-<body>
-
-<header>
-  <div class="logo-text">PIXEL CRAFT STUDIO</div>
-  <nav>
-    <a href="#services">Services</a>
-    <a href="#contact">Contact</a>
-  </nav>
-</header>
-
-<section class="hero">
-  <h1>Premium Website & Branding Solutions</h1>
-  <p>We craft modern websites and digital experiences that elevate your brand.</p>
-  <a href="#contact" class="btn">Get Started</a>
-</section>
-
-<section id="services">
-  <h2>Our Services</h2>
-  <div class="services">
-    <div class="card">
-      <img src="https://source.unsplash.com/400x300/?website,design">
-      <h3>Website Design</h3>
-      <p>Modern, responsive and high-conversion websites.</p>
-    </div>
-    <div class="card">
-      <img src="https://source.unsplash.com/400x300/?branding,logo">
-      <h3>Brand Identity</h3>
-      <p>Logo, colors and visual identity for your brand.</p>
-    </div>
-    <div class="card">
-      <img src="https://source.unsplash.com/400x300/?digital,marketing">
-      <h3>Digital Marketing</h3>
-      <p>Complete online presence and digital strategy.</p>
-    </div>
-  </div>
-</section>
-
-<section id="why">
-  <h2>Why Choose Pixel Craft Studio?</h2>
-  <div class="services">
-    <div class="card"><h3>Premium Quality</h3><p>High-end designs built with precision.</p></div>
-    <div class="card"><h3>Modern Design</h3><p>Trendy and clean UI/UX layouts.</p></div>
-    <div class="card"><h3>Fast Delivery</h3><p>Quick turnaround without quality loss.</p></div>
-    <div class="card"><h3>Client Focused</h3><p>Your satisfaction is our priority.</p></div>
-  </div>
-</section>
-
-<section id="contact">
-  <h2>Contact Us</h2>
-  <div class="contact">
-    <form action="https://formspree.io/f/xeeogedw" method="POST">
-      <input type="text" placeholder="Your Name" required>
-      <input type="email" placeholder="Your Email" required>
-      <input type="tel" placeholder="Your Mobile Number" required>
-      <textarea placeholder="Your Message" required></textarea>
-      <button type="submit">Send Message</button>
-    </form>
-  </div>
-</section>
-
-<footer>
-  <p>© 2026 Pixel Craft Studio | Designed by Manish Yadav</p>
-</footer>
-
-<a href="https://wa.me/917627095009" class="whatsapp"><i class="fab fa-whatsapp"></i></a>
-<a href="tel:7627095009" class="call"><i class="fas fa-phone"></i></a>
+window.onresize=()=>{
+    canvas.width=innerWidth;
+    canvas.height=innerHeight;
+};
+</script>
 
 </body>
 </html>
