@@ -1,409 +1,300 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Pixel Craft Studio | Premium Web Solutions</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>A Heartfelt Apology</title>
 
-<!-- Google Font -->
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
 
-<!-- Font Awesome Icons -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    :root {
+      --bg: #faf6f2;
+      --accent: #e8c4b8;
+      --lavender: #d8cfe6;
+      --text-dark: #3a3a3a;
+      --text-warm: #6b4f4f;
+    }
 
-<style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
-body{background:#0b0b14;color:#fff;scroll-behavior:smooth;}
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-/* HEADER */
-header{
-background:linear-gradient(135deg,#0f0c29,#302b63,#24243e);
-padding:20px 8%;
-display:flex;
-justify-content:space-between;
-align-items:center;
-position:sticky;
-top:0;
-z-index:100;
-}
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: var(--bg);
+      color: var(--text-dark);
+      scroll-behavior: smooth;
+      line-height: 1.8;
+    }
 
-/* TEXT LOGO */
-.logo-text{
-font-size:28px;
-font-weight:800;
-letter-spacing:2px;
-color:#00d4ff;
-}
+    section {
+      padding: 80px 20px;
+      max-width: 1100px;
+      margin: auto;
+    }
 
-/* NAVIGATION */
-nav a{
-margin-left:25px;
-color:white;
-text-decoration:none;
-font-weight:500;
-}
-nav a:hover{color:#00d4ff;}
+    h1, h2, h3 {
+      font-family: 'Playfair Display', serif;
+      color: var(--text-warm);
+    }
 
-/* HERO SECTION */
-.hero{
-text-align:center;
-padding:120px 10%;
-background:linear-gradient(to bottom,#0f0c29,#0b0b14);
-}
-.hero h1{font-size:50px;}
-.hero p{max-width:650px;margin:20px auto;color:#ccc;}
-.btn{
-display:inline-block;
-margin-top:25px;
-padding:15px 40px;
-background:#00d4ff;
-color:#000;
-border-radius:30px;
-font-weight:600;
-}
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+    }
 
-/* SECTIONS */
-section{padding:90px 8%;}
+    h2 {
+      font-size: 2.3rem;
+      margin-bottom: 20px;
+    }
 
-/* SERVICES */
-.services{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-gap:25px;
-}
-.card{
-background:#151528;
-padding:25px;
-border-radius:15px;
-transition:.4s;
-}
-.card:hover{
-transform:translateY(-10px);
-box-shadow:0 0 30px rgba(0,255,255,.3);
-}
-.card img{
-width:100%;
-border-radius:12px;
-margin-bottom:15px;
-}
+    p {
+      font-size: 1.05rem;
+      opacity: 0.9;
+    }
 
-/* CONTACT */
-.contact{
-background:#111;
-border-radius:20px;
-padding:40px;
-max-width:700px;
-margin:auto;
-}
-input,textarea{
-width:100%;
-padding:14px;
-margin-top:10px;
-border:none;
-border-radius:6px;
-}
-button{
-background:#00c6ff;
-border:none;
-padding:14px;
-width:100%;
-margin-top:15px;
-font-weight:bold;
-cursor:pointer;
-}
+    /* Hero */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      text-align: center;
+      background: linear-gradient(120deg, #fff, #f4ebe6);
+      position: relative;
+      overflow: hidden;
+    }
 
-/* FOOTER */
-footer{
-background:#08080f;
-padding:30px;
-text-align:center;
-}
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle, rgba(232,196,184,0.25), transparent 70%);
+      animation: float 10s infinite alternate;
+    }
 
-/* FLOAT BUTTONS */
-.whatsapp,.call{
-position:fixed;
-right:20px;
-padding:14px;
-border-radius:50%;
-font-size:22px;
-color:white;
-z-index:999;
-}
-.whatsapp{bottom:90px;background:#25D366;}
-.call{bottom:20px;background:#007bff;}
-</style>
+    @keyframes float {
+      from { transform: translateY(0); }
+      to { transform: translateY(-30px); }
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Divider */
+    .divider {
+      height: 2px;
+      width: 80px;
+      background: var(--accent);
+      margin: 40px auto;
+      border-radius: 5px;
+    }
+
+    /* Sorry Notes */
+    .notes {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+      margin-top: 40px;
+    }
+
+    .note {
+      background: white;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+      transition: transform 0.4s ease;
+    }
+
+    .note:hover {
+      transform: rotateX(5deg) rotateY(-5deg);
+    }
+
+    /* 3D Card */
+    .card-container {
+      perspective: 1200px;
+      display: flex;
+      justify-content: center;
+      margin-top: 60px;
+    }
+
+    .card {
+      width: 320px;
+      height: 220px;
+      position: relative;
+      transform-style: preserve-3d;
+      transition: transform 1s ease;
+      cursor: pointer;
+    }
+
+    .card.open {
+      transform: rotateY(-180deg);
+    }
+
+    .card-face {
+      position: absolute;
+      inset: 0;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+      padding: 20px;
+      backface-visibility: hidden;
+    }
+
+    .card-back {
+      transform: rotateY(180deg);
+    }
+
+    /* Buttons */
+    .response-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 40px;
+      flex-wrap: wrap;
+    }
+
+    button {
+      padding: 15px 28px;
+      border: none;
+      border-radius: 30px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .yes {
+      background: #cfe6d8;
+    }
+
+    .no {
+      background: #f0c7c7;
+    }
+
+    button:hover {
+      transform: scale(1.05);
+    }
+
+    footer {
+      text-align: center;
+      padding: 40px 20px;
+      font-size: 0.9rem;
+      opacity: 0.8;
+    }
+  </style>
 </head>
 
 <body>
 
-<header>
-  <div class="logo-text">PIXEL CRAFT STUDIO</div>
-  <nav>
-    <a href="#services">Services</a>
-    <a href="#contact">Contact</a>
-  </nav>
-</header>
-
-<section class="hero">
-  <h1>Premium Website & Branding Solutions</h1>
-  <p>We craft modern websites and digital experiences that elevate your brand.</p>
-  <a href="#contact" class="btn">Get Started</a>
-</section>
-
-<section id="services">
-  <h2>Our Services</h2>
-  <div class="services">
-    <div class="card">
-      <img src="https://source.unsplash.com/400x300/?website,design">
-      <h3>Website Design</h3>
-      <p>Modern, responsive and high-conversion websites.</p>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>A Heartfelt Apology</h1>
+      <p>Some words stay longer than intended.<br>This is my sincere attempt to heal one of them.</p>
     </div>
-    <div class="card">
-      <img src="https://source.unsplash.com/400x300/?branding,logo">
-      <h3>Brand Identity</h3>
-      <p>Logo, colors and visual identity for your brand.</p>
-    </div>
-    <div class="card">
-      <img src="https://source.unsplash.com/400x300/?digital,marketing">
-      <h3>Digital Marketing</h3>
-      <p>Complete online presence and digital strategy.</p>
-    </div>
-  </div>
-</section>
+  </section>
 
-<section id="why">
-  <h2>Why Choose Pixel Craft Studio?</h2>
-  <div class="services">
-    <div class="card"><h3>Premium Quality</h3><p>High-end designs built with precision.</p></div>
-    <div class="card"><h3>Modern Design</h3><p>Trendy and clean UI/UX layouts.</p></div>
-    <div class="card"><h3>Fast Delivery</h3><p>Quick turnaround without quality loss.</p></div>
-    <div class="card"><h3>Client Focused</h3><p>Your satisfaction is our priority.</p></div>
-  </div>
-</section>
+  <!-- REFLECTION -->
+  <section>
+    <h2>Owning My Mistake</h2>
+    <div class="divider"></div>
+    <p>
+      I spoke without thinking, and my words carried a tone that I never intended.
+      Saying “mind your own business” was wrong, not because of what I meant,
+      but because of how it made you feel. I deeply regret that.
+    </p>
+    <p>
+      Your feelings matter to me, and I respect you as family.
+    </p>
+  </section>
 
-<section id="contact">
-  <h2>Contact Us</h2>
-  <div class="contact">
-    <form action="https://formspree.io/f/xkogrgoq" method="POST">
-      <input type="text" placeholder="Your Name" required>
-      <input type="email" placeholder="Your Email" required>
-      <input type="tel" placeholder="Your Mobile Number" required>
-      <textarea placeholder="Your Message" required></textarea>
-      <button type="submit">Send Message</button>
+  <!-- SORRY NOTES -->
+  <section>
+    <h2>From My Heart</h2>
+    <div class="notes">
+      <div class="note">I spoke without thinking.</div>
+      <div class="note">Your feelings truly matter.</div>
+      <div class="note">I regret hurting you.</div>
+      <div class="note">I want to be better.</div>
+    </div>
+  </section>
+
+  <!-- 3D CARD -->
+  <section>
+    <h2>A Personal Apology</h2>
+    <div class="card-container">
+      <div class="card" id="card">
+        <div class="card-face">
+          <h3>Tap to Open</h3>
+          <p>This is my sincere apology.</p>
+        </div>
+        <div class="card-face card-back">
+          <p>
+            I am truly sorry for my words and the pain they caused.
+            I promise to speak with more patience, respect, and understanding.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- UNDERSTANDING -->
+  <section>
+    <h2>Understanding & Respect</h2>
+    <div class="divider"></div>
+    <p>
+      Family is built on trust, kindness, and learning from our mistakes.
+      I take this moment as a lesson to grow and communicate with care.
+    </p>
+  </section>
+
+  <!-- RESPONSE -->
+  <section>
+    <h2>Your Response Matters to Me</h2>
+    <p>I completely respect your feelings. Please respond only if and when you feel comfortable.</p>
+
+    <form action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST">
+      <input type="hidden" name="response" id="responseInput">
+      <div class="response-buttons">
+        <button type="submit" class="yes" onclick="setResponse('Yes, I forgive you')">
+          YES, I Forgive You
+        </button>
+        <button type="submit" class="no" onclick="setResponse('No, I need more time')">
+          NO, I Need More Time
+        </button>
+      </div>
     </form>
-  </div>
-</section>
+  </section>
 
-<footer>
-  <p>© 2026 Pixel Craft Studio | Designed by Manish Yadav</p>
-</footer>
+  <!-- CLOSING -->
+  <section>
+    <p style="text-align:center;">
+      Thank you for taking the time to read this.
+      No matter your response, I respect you and your feelings.
+    </p>
+  </section>
 
-<a href="https://wa.me/917627095009" class="whatsapp"><i class="fab fa-whatsapp"></i></a>
-<a href="tel:7627095009" class="call"><i class="fas fa-phone"></i></a>
+  <!-- FOOTER -->
+  <footer>
+    <div class="divider"></div>
+    Designed with sincerity by <strong>Manish Yadav</strong>
+  </footer>
 
-</body>
-</html><!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Pixel Craft Studio | Premium Web Solutions</title>
+  <script>
+    const card = document.getElementById('card');
+    card.addEventListener('click', () => {
+      card.classList.toggle('open');
+    });
 
-<!-- Google Font -->
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-
-<!-- Font Awesome Icons -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
-<style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
-body{background:#0b0b14;color:#fff;scroll-behavior:smooth;}
-
-/* HEADER */
-header{
-background:linear-gradient(135deg,#0f0c29,#302b63,#24243e);
-padding:20px 8%;
-display:flex;
-justify-content:space-between;
-align-items:center;
-position:sticky;
-top:0;
-z-index:100;
-}
-
-/* TEXT LOGO */
-.logo-text{
-font-size:28px;
-font-weight:800;
-letter-spacing:2px;
-color:#00d4ff;
-}
-
-/* NAVIGATION */
-nav a{
-margin-left:25px;
-color:white;
-text-decoration:none;
-font-weight:500;
-}
-nav a:hover{color:#00d4ff;}
-
-/* HERO SECTION */
-.hero{
-text-align:center;
-padding:120px 10%;
-background:linear-gradient(to bottom,#0f0c29,#0b0b14);
-}
-.hero h1{font-size:50px;}
-.hero p{max-width:650px;margin:20px auto;color:#ccc;}
-.btn{
-display:inline-block;
-margin-top:25px;
-padding:15px 40px;
-background:#00d4ff;
-color:#000;
-border-radius:30px;
-font-weight:600;
-}
-
-/* SECTIONS */
-section{padding:90px 8%;}
-
-/* SERVICES */
-.services{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-gap:25px;
-}
-.card{
-background:#151528;
-padding:25px;
-border-radius:15px;
-transition:.4s;
-}
-.card:hover{
-transform:translateY(-10px);
-box-shadow:0 0 30px rgba(0,255,255,.3);
-}
-.card img{
-width:100%;
-border-radius:12px;
-margin-bottom:15px;
-}
-
-/* CONTACT */
-.contact{
-background:#111;
-border-radius:20px;
-padding:40px;
-max-width:700px;
-margin:auto;
-}
-input,textarea{
-width:100%;
-padding:14px;
-margin-top:10px;
-border:none;
-border-radius:6px;
-}
-button{
-background:#00c6ff;
-border:none;
-padding:14px;
-width:100%;
-margin-top:15px;
-font-weight:bold;
-cursor:pointer;
-}
-
-/* FOOTER */
-footer{
-background:#08080f;
-padding:30px;
-text-align:center;
-}
-
-/* FLOAT BUTTONS */
-.whatsapp,.call{
-position:fixed;
-right:20px;
-padding:14px;
-border-radius:50%;
-font-size:22px;
-color:white;
-z-index:999;
-}
-.whatsapp{bottom:90px;background:#25D366;}
-.call{bottom:20px;background:#007bff;}
-</style>
-</head>
-
-<body>
-
-<header>
-  <div class="logo-text">PIXEL CRAFT STUDIO</div>
-  <nav>
-    <a href="#services">Services</a>
-    <a href="#contact">Contact</a>
-  </nav>
-</header>
-
-<section class="hero">
-  <h1>Premium Website & Branding Solutions</h1>
-  <p>We craft modern websites and digital experiences that elevate your brand.</p>
-  <a href="#contact" class="btn">Get Started</a>
-</section>
-
-<section id="services">
-  <h2>Our Services</h2>
-  <div class="services">
-    <div class="card">
-      <img src="https://source.unsplash.com/400x300/?website,design">
-      <h3>Website Design</h3>
-      <p>Modern, responsive and high-conversion websites.</p>
-    </div>
-    <div class="card">
-      <img src="https://source.unsplash.com/400x300/?branding,logo">
-      <h3>Brand Identity</h3>
-      <p>Logo, colors and visual identity for your brand.</p>
-    </div>
-    <div class="card">
-      <img src="https://source.unsplash.com/400x300/?digital,marketing">
-      <h3>Digital Marketing</h3>
-      <p>Complete online presence and digital strategy.</p>
-    </div>
-  </div>
-</section>
-
-<section id="why">
-  <h2>Why Choose Pixel Craft Studio?</h2>
-  <div class="services">
-    <div class="card"><h3>Premium Quality</h3><p>High-end designs built with precision.</p></div>
-    <div class="card"><h3>Modern Design</h3><p>Trendy and clean UI/UX layouts.</p></div>
-    <div class="card"><h3>Fast Delivery</h3><p>Quick turnaround without quality loss.</p></div>
-    <div class="card"><h3>Client Focused</h3><p>Your satisfaction is our priority.</p></div>
-  </div>
-</section>
-
-<section id="contact">
-  <h2>Contact Us</h2>
-  <div class="contact">
-    <form action="https://formspree.io/f/xkogrgoq" method="POST">
-      <input type="text" placeholder="Your Name" required>
-      <input type="email" placeholder="Your Email" required>
-      <input type="tel" placeholder="Your Mobile Number" required>
-      <textarea placeholder="Your Message" required></textarea>
-      <button type="submit">Send Message</button>
-    </form>
-  </div>
-</section>
-
-<footer>
-  <p>© 2026 Pixel Craft Studio | Designed by Manish Yadav</p>
-</footer>
-
-<a href="https://wa.me/917627095009" class="whatsapp"><i class="fab fa-whatsapp"></i></a>
-<a href="tel:7627095009" class="call"><i class="fas fa-phone"></i></a>
+    function setResponse(value) {
+      document.getElementById('responseInput').value = value;
+    }
+  </script>
 
 </body>
 </html>
