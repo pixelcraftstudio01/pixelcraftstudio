@@ -1,114 +1,254 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Teen Mass & Muscle Gain Plan</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #fdfdfd;
-            color: #333;
-        }
-        header {
-            background-color: #1e88e5;
-            color: white;
-            padding: 20px;
-            text-align: center;
-        }
-        h2 {
-            color: #43a047;
-        }
-        section {
-            padding: 15px 20px;
-            margin-bottom: 15px;
-        }
-        ul {
-            list-style-type: disc;
-            padding-left: 20px;
-        }
-        li {
-            margin-bottom: 8px;
-        }
-        .food-icons img, .supplement-icons img {
-            width: 50px;
-            height: 50px;
-            margin-right: 10px;
-        }
-        .grid {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 15px;
-        }
-        .grid-item {
-            flex: 1 1 100px;
-            text-align: center;
-            background-color: #f0f8ff;
-            padding: 10px;
-            border-radius: 8px;
-        }
-        .note {
-            font-size: 0.9em;
-            color: #6d4c41;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Malemist</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background: #0a0a0a;
+  color: #fff;
+  overflow-x: hidden;
+}
+
+/* NAVBAR */
+nav {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 60px;
+  background: rgba(0,0,0,0.5);
+  backdrop-filter: blur(12px);
+  z-index: 1000;
+}
+
+nav h1 {
+  font-weight: 600;
+  letter-spacing: 2px;
+}
+
+nav ul {
+  display: flex;
+  gap: 30px;
+  list-style: none;
+  font-size: 14px;
+}
+
+/* HERO */
+.hero {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 0 60px;
+  justify-content: space-between;
+}
+
+.hero-text h1 {
+  font-size: 70px;
+  font-weight: 600;
+}
+
+.hero-text span {
+  color: #ff2e88;
+}
+
+.hero-text p {
+  margin: 20px 0;
+  color: #aaa;
+}
+
+.btn {
+  padding: 14px 35px;
+  border: none;
+  border-radius: 30px;
+  background: linear-gradient(45deg, #ff2e88, #ff6aa8);
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  transform: scale(1.05);
+}
+
+/* IMAGE */
+.hero-img img {
+  width: 400px;
+  border-radius: 20px;
+}
+
+/* PRODUCTS */
+.products {
+  padding: 100px 60px;
+}
+
+.products h2 {
+  margin-bottom: 40px;
+  font-size: 32px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+  gap: 30px;
+}
+
+.card {
+  background: rgba(255,255,255,0.05);
+  border-radius: 20px;
+  padding: 20px;
+  backdrop-filter: blur(10px);
+  transition: 0.4s;
+}
+
+.card:hover {
+  transform: translateY(-10px) scale(1.02);
+}
+
+.card img {
+  width: 100%;
+  border-radius: 15px;
+}
+
+.card h3 {
+  margin-top: 15px;
+}
+
+.card p {
+  color: #ccc;
+}
+
+/* ABOUT */
+.about {
+  padding: 100px 60px;
+  text-align: center;
+}
+
+.about p {
+  max-width: 600px;
+  margin: auto;
+  color: #aaa;
+}
+
+/* FOOTER */
+footer {
+  padding: 40px;
+  text-align: center;
+  background: #111;
+  color: #777;
+}
+
+/* ANIMATION */
+.fade {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: 1s;
+}
+
+.fade.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  .hero {
+    flex-direction: column;
+    text-align: center;
+  }
+  .hero-img img {
+    width: 300px;
+    margin-top: 20px;
+  }
+}
+</style>
 </head>
+
 <body>
 
-<header>
-    <h1>Teen Mass & Muscle Gain Plan</h1>
-</header>
+<nav>
+  <h1>MALEMIST</h1>
+  <ul>
+    <li>Home</li>
+    <li>Shop</li>
+    <li>About</li>
+  </ul>
+</nav>
 
-<section>
-    <h2>Daily Diet Plan</h2>
-    <ul>
-        <li><strong>Morning:</strong> Warm water + banana/apple + optional milk with cocoa</li>
-        <li><strong>Breakfast:</strong> 3 eggs scrambled OR paneer bhurji OR 1 cup curd; 2 rotis OR oats porridge with honey & fruits; peanut butter optional</li>
-        <li><strong>Mid-Morning Snack:</strong> Handful of roasted peanuts/almonds/walnuts; 1 fruit (mango, guava, papaya, apple)</li>
-        <li><strong>Lunch:</strong> 2-3 rotis OR 1 cup rice; 1 cup dal OR rajma/chole; 1 cup mixed vegetables; salad with cucumber, tomato, lemon</li>
-        <li><strong>Evening Snack / Pre-Workout:</strong> Sprouts salad OR boiled chickpeas with spices; 1 glass milk or fruit shake</li>
-        <li><strong>Post-Workout:</strong> Milk + banana OR curd + oats; optional whey protein (if approved)</li>
-        <li><strong>Dinner:</strong> 2-3 rotis OR small rice portion; 1 cup dal OR eggs OR paneer; 1 cup vegetables; salad optional</li>
-        <li><strong>Before Bed:</strong> 1 glass milk OR 2-3 soaked almonds</li>
-    </ul>
+<section class="hero">
+  <div class="hero-text">
+    <h1>New <span>Arrivals</span></h1>
+    <p>Premium Shoes & Clothing Collection</p>
+    <button class="btn">Shop Now</button>
+  </div>
+
+  <div class="hero-img">
+    <img src="https://via.placeholder.com/400" alt="">
+  </div>
 </section>
 
-<section>
-    <h2>Tasteful & Budget-Friendly Foods & Fruits</h2>
-    <div class="grid food-icons">
-        <div class="grid-item"><img src="https://via.placeholder.com/50" alt="Banana"><br>Banana</div>
-        <div class="grid-item"><img src="https://via.placeholder.com/50" alt="Papaya"><br>Papaya</div>
-        <div class="grid-item"><img src="https://via.placeholder.com/50" alt="Apple"><br>Apple</div>
-        <div class="grid-item"><img src="https://via.placeholder.com/50" alt="Guava"><br>Guava</div>
-        <div class="grid-item"><img src="https://via.placeholder.com/50" alt="Mango"><br>Mango</div>
-        <div class="grid-item"><img src="https://via.placeholder.com/50" alt="Eggs"><br>Eggs</div>
-        <div class="grid-item"><img src="https://via.placeholder.com/50" alt="Paneer"><br>Paneer</div>
-        <div class="grid-item"><img src="https://via.placeholder.com/50" alt="Milk"><br>Milk</div>
+<section class="products fade">
+  <h2>Featured Collection</h2>
+
+  <div class="grid">
+
+    <div class="card">
+      <img src="https://via.placeholder.com/300">
+      <h3>Black Sneakers</h3>
+      <p>₹999</p>
     </div>
-</section>
 
-<section>
-    <h2>Safe Supplements</h2>
-    <div class="grid supplement-icons">
-        <div class="grid-item"><img src="https://via.placeholder.com/50" alt="Multivitamin"><br>Supradyn Daily</div>
-        <div class="grid-item"><img src="https://via.placeholder.com/50" alt="Vitamin D3"><br>Vitamin D3 (if doctor recommends)</div>
-        <div class="grid-item"><img src="https://via.placeholder.com/50" alt="Calcium"><br>Calcium (if milk intake low)</div>
+    <div class="card">
+      <img src="https://via.placeholder.com/300">
+      <h3>Oversized Tee</h3>
+      <p>₹599</p>
     </div>
+
+    <div class="card">
+      <img src="https://via.placeholder.com/300">
+      <h3>Street Hoodie</h3>
+      <p>₹1299</p>
+    </div>
+
+  </div>
 </section>
 
-<section>
-    <h2>Tips & Notes</h2>
-    <ul>
-        <li>Focus on a balanced diet first; supplements only fill gaps</li>
-        <li>Drink 2–3 liters of water daily</li>
-        <li>Sleep 7–9 hours for recovery and growth</li>
-        <li>Moderate peanut butter, honey, and cocoa for extra calories</li>
-        <li>Consistency and patience are key for healthy muscle gain</li>
-    </ul>
-    <p class="note">*Always check with a parent/guardian and doctor before starting supplements.*</p>
+<section class="about fade">
+  <h2>About Us</h2>
+  <p>
+    Malemist is a premium streetwear brand focused on minimalism, quality, and confidence.
+  </p>
 </section>
+
+<footer>
+  <p>Contact: 8952999816</p>
+  <p>© 2026 Malemist</p>
+</footer>
+
+<script>
+const elements = document.querySelectorAll('.fade');
+
+window.addEventListener('scroll', () => {
+  elements.forEach(el => {
+    const position = el.getBoundingClientRect().top;
+    if(position < window.innerHeight - 100){
+      el.classList.add('show');
+    }
+  });
+});
+</script>
 
 </body>
 </html>
