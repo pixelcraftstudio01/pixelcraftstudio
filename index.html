@@ -3,292 +3,380 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>The Birthday Universe</title>
+<title>A Gift From Manish</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
 
 <style>
+
 *{
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:Segoe UI,sans-serif;
 }
 
 body{
-background:#050505;
-overflow-x:hidden;
+height:100vh;
+overflow:hidden;
+background:
+radial-gradient(circle at top,#16223d,#050505 60%);
+font-family:Poppins,sans-serif;
+display:flex;
+justify-content:center;
+align-items:center;
+perspective:2000px;
 color:white;
 }
 
-section{
-height:100vh;
-display:flex;
-flex-direction:column;
-align-items:center;
-justify-content:center;
-position:relative;
-text-align:center;
-padding:30px;
-}
-
-.hero{
-background:radial-gradient(circle at center,#0A1020,#050505);
-}
-
-.gold{
-color:#D4AF37;
-}
-
-h1{
-font-size:4rem;
-margin-bottom:20px;
-}
-
-p{
-max-width:700px;
-font-size:1.2rem;
-line-height:1.8;
-}
-
-.scroll{
-position:absolute;
-bottom:30px;
-animation:float 2s infinite;
-}
-
-@keyframes float{
-0%,100%{transform:translateY(0)}
-50%{transform:translateY(10px)}
+.stars{
+position:fixed;
+inset:0;
+overflow:hidden;
 }
 
 .star{
-position:fixed;
+position:absolute;
 width:2px;
 height:2px;
 background:white;
 border-radius:50%;
-animation:twinkle 4s infinite;
+animation:twinkle 3s infinite;
 }
 
 @keyframes twinkle{
-0%,100%{opacity:.2}
-50%{opacity:1}
+50%{opacity:.2}
 }
 
-.chapter{
-background:#050505;
-border-top:1px solid rgba(212,175,55,.15);
+.scene{
+transform-style:preserve-3d;
 }
 
-.chapter:nth-child(even){
-background:#0A1020;
+.gift-container{
+display:flex;
+flex-direction:column;
+align-items:center;
+gap:30px;
 }
 
-.fade{
+.title{
+font-family:Cinzel,serif;
+letter-spacing:6px;
+font-size:18px;
+color:#F7E7CE;
+text-transform:uppercase;
+}
+
+.gift{
+width:220px;
+height:220px;
+position:relative;
+transform-style:preserve-3d;
+animation:float 4s ease-in-out infinite;
+cursor:pointer;
+}
+
+@keyframes float{
+50%{
+transform:
+translateY(-15px)
+rotateY(12deg);
+}
+}
+
+.box{
+position:absolute;
+width:100%;
+height:100%;
+background:
+linear-gradient(135deg,#D4AF37,#F7E7CE,#B8860B);
+border-radius:20px;
+box-shadow:
+0 0 60px rgba(212,175,55,.45);
+}
+
+.ribbon-v{
+position:absolute;
+width:35px;
+height:100%;
+background:#fff5d6;
+left:50%;
+transform:translateX(-50%);
+}
+
+.ribbon-h{
+position:absolute;
+height:35px;
+width:100%;
+background:#fff5d6;
+top:50%;
+transform:translateY(-50%);
+}
+
+.tag{
+position:absolute;
+top:-45px;
+left:50%;
+transform:translateX(-50%);
+background:rgba(255,255,255,.08);
+backdrop-filter:blur(10px);
+padding:12px 25px;
+border-radius:40px;
+font-size:14px;
+letter-spacing:2px;
+border:1px solid rgba(255,255,255,.15);
+}
+
+.card-scene{
+display:none;
+position:absolute;
+width:100%;
+height:100%;
+justify-content:center;
+align-items:center;
+}
+
+.card{
+width:340px;
+height:450px;
+transform-style:preserve-3d;
+animation:cardAppear 1.5s ease;
+}
+
+@keyframes cardAppear{
+from{
 opacity:0;
-transform:translateY(40px);
-transition:1s;
+transform:translateY(100px) rotateX(-40deg);
 }
-
-.fade.show{
+to{
 opacity:1;
 transform:translateY(0);
 }
-
-.creator{
-background:black;
 }
 
-.creator h1{
-font-size:5rem;
-letter-spacing:8px;
+.card-inner{
+position:relative;
+width:100%;
+height:100%;
+transform-style:preserve-3d;
+transition:1.5s;
+}
+
+.card.open .card-inner{
+transform:rotateY(-160deg);
+}
+
+.front,
+.inside{
+position:absolute;
+width:100%;
+height:100%;
+border-radius:20px;
+backface-visibility:hidden;
+overflow:hidden;
+}
+
+.front{
+background:
+linear-gradient(145deg,#D4AF37,#F7E7CE);
+display:flex;
+justify-content:center;
+align-items:center;
+font-family:Cinzel,serif;
+font-size:34px;
+color:#111;
+}
+
+.inside{
+background:white;
+color:#111;
+padding:40px;
+transform:rotateY(180deg);
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+}
+
+.inside h2{
+font-family:Cinzel,serif;
+font-size:34px;
+margin-bottom:20px;
+color:#B8860B;
+}
+
+.inside p{
+line-height:1.8;
+font-size:16px;
+}
+
+.small{
+margin-top:30px;
+font-size:12px;
+opacity:.7;
+letter-spacing:2px;
+}
+
+.open-btn{
+margin-top:25px;
+padding:14px 28px;
+border:none;
+background:#D4AF37;
+color:#111;
+font-weight:700;
+border-radius:50px;
+cursor:pointer;
 }
 
 .final{
-font-size:1.4rem;
-max-width:800px;
-margin-top:30px;
+display:none;
+position:absolute;
+inset:0;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+background:black;
+text-align:center;
+padding:30px;
 }
+
+.final h1{
+font-family:Cinzel,serif;
+font-size:55px;
+color:#D4AF37;
+margin-bottom:20px;
+}
+
+.final p{
+max-width:700px;
+line-height:2;
+font-size:18px;
+}
+
+.designed{
+position:absolute;
+bottom:20px;
+font-size:12px;
+opacity:.5;
+}
+
 </style>
 </head>
 <body>
 
-<div id="stars"></div>
+<div class="stars" id="stars"></div>
 
-<section class="hero">
-<h1 class="gold">Tonight Is Different</h1>
+<div class="gift-container" id="giftContainer">
+
+<div class="title">A Gift From Manish</div>
+
+<div class="gift" onclick="openGift()">
+
+<div class="tag">
+FOR SOMEONE SPECIAL
+</div>
+
+<div class="box"></div>
+<div class="ribbon-v"></div>
+<div class="ribbon-h"></div>
+
+</div>
+
+</div>
+
+<div class="card-scene" id="cardScene">
+
+<div class="card" id="card">
+
+<div class="card-inner">
+
+<div class="front">
+Tap To Open
+</div>
+
+<div class="inside">
+<h2>Happy Birthday</h2>
+
 <p>
-Welcome to a universe created for one unforgettable birthday.
-Not a card. Not a wish.
-An experience.
-</p>
-<div class="scroll">▼ Scroll ▼</div>
-</section>
+Some gifts can be bought.
 
-<section class="chapter fade">
-<h1>The Universe Awakens</h1>
+Some gifts can be wrapped.
+
+But the most meaningful gifts are created with time,
+thought, and care.
+
+Today is your day.
+
+May your year be filled with happiness,
+success, beautiful surprises,
+and unforgettable memories.
+</p>
+
+<button class="open-btn" onclick="showFinal()">
+Continue Journey
+</button>
+
+<div class="small">
+CREATED SPECIALLY BY MANISH
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="final" id="final">
+
+<h1>You Are Special</h1>
+
 <p>
-Stars begin to align. A cosmic celebration starts across galaxies.
-</p>
-</section>
+Most people receive a birthday wish.
 
-<section class="chapter fade">
-<h1>The Hall of Wonders</h1>
-<p>
-Infinite corridors of golden light reveal secrets, surprises and dreams.
-</p>
-</section>
+Some receive a gift.
 
-<section class="chapter fade">
-<h1>The City Above The Clouds</h1>
-<p>
-Floating architecture, lanterns, and endless skies welcome you.
-</p>
-</section>
+A few receive a memory.
 
-<section class="chapter fade">
-<h1>The Infinite Library</h1>
-<p>
-Every dream ever imagined exists here as glowing pages.
-</p>
-</section>
+May this birthday remind you how valuable,
+important and appreciated you are.
 
-<section class="chapter fade">
-<h1>The Garden of Dreams</h1>
-<p>
-Golden butterflies and bioluminescent flowers dance around you.
+Wishing you happiness, success,
+beautiful moments and countless reasons to smile.
 </p>
-</section>
 
-<section class="chapter fade">
-<h1>The Golden Observatory</h1>
-<p>
-Constellations move to celebrate this special day.
-</p>
-</section>
+<div class="designed">
+Designed by Manish
+</div>
 
-<section class="chapter fade">
-<h1>The Floating Kingdom</h1>
-<p>
-A kingdom suspended among the stars welcomes its guest of honor.
-</p>
-</section>
-
-<section class="chapter fade">
-<h1>The Impossible Ocean</h1>
-<p>
-Water flows upward. Reality bends.
-</p>
-</section>
-
-<section class="chapter fade">
-<h1>The Crystal Mountains</h1>
-<p>
-Mountains of crystal reflect a million golden lights.
-</p>
-</section>
-
-<section class="chapter fade">
-<h1>The Hidden Vault</h1>
-<p>
-A giant vault slowly opens revealing treasures beyond imagination.
-</p>
-</section>
-
-<section class="chapter fade">
-<h1>The Memory Constellation</h1>
-<p>
-Stars connect to form stories and moments worth remembering.
-</p>
-</section>
-
-<section class="chapter fade">
-<h1>The Portal Beyond Time</h1>
-<p>
-Past, present and future merge into a single breathtaking moment.
-</p>
-</section>
-
-<section class="chapter fade">
-<h1>The Room Without Gravity</h1>
-<p>
-Everything floats peacefully through endless space.
-</p>
-</section>
-
-<section class="chapter fade">
-<h1>The Sky Of Wishes</h1>
-<p>
-Thousands of lanterns rise carrying dreams into the night.
-</p>
-</section>
-
-<section class="chapter fade">
-<h1>The Palace Of Light</h1>
-<p>
-Golden reflections illuminate an endless palace of wonder.
-</p>
-</section>
-
-<section class="chapter fade">
-<h1>The Secret Dimension</h1>
-<p>
-A hidden world appears where imagination becomes reality.
-</p>
-</section>
-
-<section class="chapter fade">
-<h1>The Celestial Festival</h1>
-<p>
-Fireworks bloom among galaxies and floating stars.
-</p>
-</section>
-
-<section class="chapter fade">
-<h1>The Crown Of Stars</h1>
-<p>
-A crown forged from constellations appears in the heavens.
-</p>
-</section>
-
-<section class="chapter fade">
-<h1>The Final Revelation</h1>
-<p>
-Every chapter was leading to one unforgettable moment.
-</p>
-</section>
-
-<section class="creator">
-<h1 class="gold">DESIGNED & CREATED BY</h1>
-<h1>MANISH</h1>
-
-<p class="final">
-Most people receive a birthday wish.<br><br>
-A few receive a memory.<br><br>
-You received an entire universe.
-</p>
-</section>
+</div>
 
 <script>
-for(let i=0;i<250;i++){
-const star=document.createElement('div');
-star.className='star';
-star.style.left=Math.random()*100+'vw';
-star.style.top=Math.random()*100+'vh';
-star.style.animationDelay=Math.random()*5+'s';
-document.body.appendChild(star);
+
+for(let i=0;i<300;i++){
+let s=document.createElement("div");
+s.className="star";
+s.style.left=Math.random()*100+"vw";
+s.style.top=Math.random()*100+"vh";
+s.style.animationDelay=Math.random()*3+"s";
+document.getElementById("stars").appendChild(s);
 }
 
-const observer=new IntersectionObserver(entries=>{
-entries.forEach(entry=>{
-if(entry.isIntersecting){
-entry.target.classList.add('show');
-}
-});
-});
+function openGift(){
+document.getElementById("giftContainer").style.display="none";
+document.getElementById("cardScene").style.display="flex";
 
-document.querySelectorAll('.fade').forEach(el=>{
-observer.observe(el);
-});
+setTimeout(()=>{
+document.getElementById("card").classList.add("open");
+},500);
+}
+
+function showFinal(){
+document.getElementById("cardScene").style.display="none";
+document.getElementById("final").style.display="flex";
+}
+
 </script>
 
 </body>
