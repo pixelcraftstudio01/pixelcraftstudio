@@ -3,43 +3,36 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>For Hunny ❤️</title>
+<title>For Hunny ✨</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
 
 <style>
 *{
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:Arial,sans-serif;
 scroll-behavior:smooth;
 }
 
 body{
-background:linear-gradient(135deg,#f8f5f2,#f7e7e7);
-color:#222;
+font-family:Poppins,sans-serif;
+background:linear-gradient(-45deg,#ffdce8,#fff0f5,#ffe4ec,#fff7fa);
+background-size:400% 400%;
+animation:bg 12s ease infinite;
+overflow-x:hidden;
+color:#333;
 }
 
-nav{
-position:fixed;
-top:0;
-width:100%;
-background:white;
-padding:20px;
-text-align:center;
-box-shadow:0 2px 10px rgba(0,0,0,.1);
-z-index:1000;
-}
-
-nav a{
-margin:0 15px;
-text-decoration:none;
-color:#222;
-font-weight:bold;
+@keyframes bg{
+0%{background-position:0% 50%;}
+50%{background-position:100% 50%;}
+100%{background-position:0% 50%;}
 }
 
 section{
 min-height:100vh;
-padding:120px 10%;
+padding:100px 10%;
 display:flex;
 flex-direction:column;
 justify-content:center;
@@ -47,49 +40,134 @@ align-items:center;
 text-align:center;
 }
 
-.hero{
-background:#111;
+h1,h2{
+font-family:'Playfair Display',serif;
+}
+
+.hero h1{
+font-size:4rem;
+background:linear-gradient(45deg,#b8860b,#ffd700,#fff0a5);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+animation:float 3s infinite ease-in-out;
+}
+
+@keyframes float{
+50%{transform:translateY(-10px);}
+}
+
+.hero p{
+max-width:700px;
+font-size:1.2rem;
+margin:30px 0;
+}
+
+.btn{
+padding:16px 40px;
+border:none;
+border-radius:50px;
+background:linear-gradient(45deg,#ff69b4,#d4af37);
 color:white;
+font-size:18px;
+cursor:pointer;
+box-shadow:0 10px 30px rgba(0,0,0,.15);
+transition:.4s;
 }
 
-h1{
-font-size:50px;
-margin-bottom:20px;
+.btn:hover{
+transform:scale(1.08);
 }
 
-h2{
-margin-bottom:20px;
-}
-
-.card-container{
+.cards{
+width:100%;
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:20px;
-width:100%;
-margin-top:30px;
+gap:25px;
+margin-top:50px;
 }
 
 .card{
-background:white;
+background:rgba(255,255,255,.4);
+backdrop-filter:blur(12px);
 padding:30px;
-border-radius:15px;
-box-shadow:0 5px 15px rgba(0,0,0,.1);
-transition:.3s;
+border-radius:25px;
+box-shadow:0 15px 35px rgba(0,0,0,.1);
+transition:.5s;
+transform-style:preserve-3d;
 }
 
 .card:hover{
-transform:translateY(-10px);
+transform:rotateY(10deg) rotateX(10deg) translateY(-10px);
 }
 
-button{
-padding:15px 30px;
-border:none;
-background:#d4af7f;
-color:white;
-border-radius:30px;
-font-size:18px;
+.envelope{
+width:350px;
+height:220px;
+background:linear-gradient(45deg,#ff8fb1,#ff69b4);
+border-radius:12px;
+position:relative;
 cursor:pointer;
-margin-top:30px;
+box-shadow:0 20px 40px rgba(0,0,0,.2);
+margin-top:40px;
+}
+
+.envelope::before{
+content:"💌";
+font-size:80px;
+position:absolute;
+left:50%;
+top:50%;
+transform:translate(-50%,-50%);
+}
+
+.letter{
+max-width:850px;
+background:white;
+padding:50px;
+margin-top:40px;
+border-radius:20px;
+display:none;
+box-shadow:0 20px 50px rgba(0,0,0,.15);
+animation:openLetter 1s forwards;
+}
+
+@keyframes openLetter{
+from{transform:scale(.2) rotateX(90deg);opacity:0;}
+to{transform:scale(1) rotateX(0);opacity:1;}
+}
+
+.certificate{
+border:10px double gold;
+padding:30px;
+background:#fffdf6;
+}
+
+.certificate h1{
+font-family:'Great Vibes',cursive;
+font-size:4rem;
+color:#d4af37;
+}
+
+.seal{
+display:inline-block;
+padding:12px 20px;
+border-radius:50px;
+background:gold;
+font-weight:bold;
+margin-bottom:20px;
+}
+
+.timeline{
+max-width:700px;
+width:100%;
+}
+
+.item{
+background:white;
+padding:25px;
+margin:20px 0;
+border-radius:20px;
+box-shadow:0 10px 25px rgba(0,0,0,.08);
 }
 
 .final{
@@ -97,16 +175,23 @@ background:#111;
 color:white;
 }
 
-footer{
-background:black;
-color:white;
-padding:30px;
-text-align:center;
+.gallery{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+width:100%;
+}
+
+.gallery img{
+width:100%;
+height:300px;
+object-fit:cover;
+border-radius:20px;
 }
 
 @media(max-width:768px){
-h1{
-font-size:32px;
+.hero h1{
+font-size:2.5rem;
 }
 }
 </style>
@@ -114,117 +199,179 @@ font-size:32px;
 
 <body>
 
-<nav>
-<a href="#why">Why</a>
-<a href="#special">Special</a>
-<a href="#timeline">Timeline</a>
-<a href="#letter">Letter</a>
-</nav>
-
 <section class="hero">
-<h1>Some people walk into our lives quietly... and somehow leave a lasting impression.</h1>
 
-<p>Hi Hunny, this little website exists because some people deserve something different.</p>
+<h1>For Hunny ✨</h1>
 
-<a href="#why">
-<button>Begin The Journey</button>
+<p>
+Some people walk into our lives quietly... and somehow leave a lasting impression.
+</p>
+
+<p>
+Hi Hunny, this little website exists because some people deserve something different.
+</p>
+
+<a href="#special">
+<button class="btn">Begin The Journey</button>
 </a>
-</section>
 
-<section id="why">
-<h2>Why did I make this?</h2>
-
-<p>In a world full of ordinary messages, I wanted to make something special for you.</p>
-
-<div class="card-container">
-<div class="card">Your Kindness</div>
-<div class="card">Your Smile</div>
-<div class="card">Your Personality</div>
-<div class="card">The comfort in our conversations</div>
-</div>
 </section>
 
 <section id="special">
+
 <h2>The Things That Make You Special</h2>
 
-<div class="card-container">
-<div class="card">You have the kind of presence that makes conversations memorable.</div>
-<div class="card">Some people remain in our thoughts much longer.</div>
-<div class="card">You carry a warmth that naturally makes people comfortable.</div>
-<div class="card">You have a beautiful balance of simplicity and charm.</div>
-</div>
-</section>
-
-<section>
-<h2>Little Compliments</h2>
-
-<div class="card-container">
-<div class="card">You have a smile capable of improving someone's entire day.</div>
-<div class="card">You effortlessly stand out.</div>
-<div class="card">Talking to you feels surprisingly easy.</div>
-<div class="card">You have a rare and unforgettable energy.</div>
-</div>
-</section>
-
-<section id="timeline">
-<h2>Timeline</h2>
-
-<div class="card-container">
-<div class="card">2 Years Ago — Life moved on.</div>
-<div class="card">Yesterday — Conversations restarted.</div>
-<div class="card">Today — A website was created.</div>
-<div class="card">Future — More memories ahead.</div>
-</div>
-</section>
-
-<section>
-<h2>Secret Messages</h2>
-
-<div class="card-container">
-<div class="card">You probably weren't expecting this website.</div>
-<div class="card">You are truly special.</div>
-<div class="card">I hope this made you smile.</div>
-<div class="card">Mission: Make Hunny blush.</div>
-</div>
-</section>
-
-<section id="letter">
-<h2>Letter To Hunny</h2>
+<div class="cards">
 
 <div class="card">
-Dear Hunny,<br><br>
+You have the kind of presence that makes conversations memorable.
+</div>
 
-Life gives us countless interactions, but only a few people leave a genuine impression. You are one of those people.<br><br>
+<div class="card">
+You carry a warmth that naturally makes people comfortable.
+</div>
 
-This website is simply my way of saying that I appreciate knowing you and I'm happy we started talking again.<br><br>
+<div class="card">
+Talking to you feels surprisingly easy and special.
+</div>
 
-Thank you for being exactly who you are.<br><br>
+<div class="card">
+Some people are remembered. Some become unforgettable.
+</div>
 
-— Manish
+</div>
+
+</section>
+
+<section>
+
+<h2>Little Compliments</h2>
+
+<div class="cards">
+
+<div class="card">Your smile can improve someone's entire day.</div>
+
+<div class="card">You effortlessly stand out.</div>
+
+<div class="card">You have a rare and beautiful energy.</div>
+
+<div class="card">Elegance would probably borrow a few qualities from you.</div>
+
+</div>
+
+</section>
+
+<section>
+
+<h2>Our Timeline</h2>
+
+<div class="timeline">
+
+<div class="item">2 Years Ago — Life moved on.</div>
+
+<div class="item">Yesterday — Conversations restarted.</div>
+
+<div class="item">Today — A website was created.</div>
+
+<div class="item">Future — More conversations, laughter and memories.</div>
+
+</div>
+
+</section>
+
+<section>
+
+<h2>Open Your Special Letter 💌</h2>
+
+<div class="envelope" onclick="showLetter()"></div>
+
+<div class="letter" id="letter">
+
+<div class="certificate">
+
+<div class="seal">
+MINISTRY OF ADMIRATION
+</div>
+
+<h2>Certificate Of Appreciation</h2>
+
+<p>This certificate is proudly presented to</p>
+
+<h1>Hunny</h1>
+
+<p>
+For being genuinely kind, beautiful, memorable and effortlessly special.
+</p>
+
+<br>
+
+<p>
+Some people enter our lives unexpectedly and quietly become important.
+Thank you for being exactly who you are.
+</p>
+
+<br>
+
+<p>
+Official Remark:
+You are officially declared one of the most wonderful people ever encountered.
+</p>
+
+<br><br>
+
+<h3>Issued With Appreciation</h3>
+<p>— Manish</p>
+
+</div>
+
+</div>
+
+</section>
+
+<section>
+
+<h2>Photo Gallery</h2>
+
+<div class="gallery">
+
+<img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=800&q=80">
+
+<img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=800&q=80">
+
+<img src="https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?auto=format&fit=crop&w=800&q=80">
+
 </div>
 
 </section>
 
 <section class="final">
 
-<h1>Thank You, Hunny ❤️</h1>
+<h1>Thank You, Hunny ✨</h1>
 
 <p>This little corner of the internet was made especially for you.</p>
 
-<button onclick="showMessage()">
+<br>
+
+<p>And yes... you are definitely someone special.</p>
+
+<br>
+
+<button class="btn" onclick="reaction()">
 Send Me Your Reaction 😊
 </button>
 
 </section>
 
-<footer>
-Made with care by Manish ❤️
-</footer>
-
 <script>
-function showMessage(){
+
+function showLetter(){
+document.getElementById("letter").style.display="block";
+}
+
+function reaction(){
 alert("I hope this surprise made you smile 😊");
 }
+
 </script>
 
 </body>
