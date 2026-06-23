@@ -5,9 +5,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>For Hunny ✨</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 <style>
+
 *{
 margin:0;
 padding:0;
@@ -17,7 +18,7 @@ scroll-behavior:smooth;
 
 body{
 font-family:Poppins,sans-serif;
-background:linear-gradient(-45deg,#ffdce8,#fff0f5,#ffe4ec,#fff7fa);
+background:linear-gradient(-45deg,#ffe5ec,#fff0f3,#fff7f8,#fde2e4);
 background-size:400% 400%;
 animation:bg 12s ease infinite;
 overflow-x:hidden;
@@ -32,7 +33,7 @@ color:#333;
 
 section{
 min-height:100vh;
-padding:100px 10%;
+padding:90px 10%;
 display:flex;
 flex-direction:column;
 justify-content:center;
@@ -40,15 +41,11 @@ align-items:center;
 text-align:center;
 }
 
-h1,h2{
-font-family:'Playfair Display',serif;
-}
-
 .hero h1{
-font-size:4rem;
-background:linear-gradient(45deg,#b8860b,#ffd700,#fff0a5);
--webkit-background-clip:text;
--webkit-text-fill-color:transparent;
+font-family:'Great Vibes',cursive;
+font-size:5rem;
+color:#c89b3c;
+text-shadow:0 10px 30px rgba(0,0,0,.15);
 animation:float 3s infinite ease-in-out;
 }
 
@@ -57,25 +54,32 @@ animation:float 3s infinite ease-in-out;
 }
 
 .hero p{
-max-width:700px;
 font-size:1.2rem;
-margin:30px 0;
+max-width:700px;
+margin:25px auto;
 }
 
 .btn{
 padding:16px 40px;
 border:none;
 border-radius:50px;
-background:linear-gradient(45deg,#ff69b4,#d4af37);
+background:linear-gradient(45deg,#c89b3c,#f7d774);
 color:white;
 font-size:18px;
 cursor:pointer;
-box-shadow:0 10px 30px rgba(0,0,0,.15);
+box-shadow:0 15px 30px rgba(0,0,0,.15);
 transition:.4s;
 }
 
 .btn:hover{
-transform:scale(1.08);
+transform:translateY(-8px) scale(1.05);
+}
+
+.title{
+font-family:'Playfair Display',serif;
+font-size:2.7rem;
+margin-bottom:40px;
+color:#b8860b;
 }
 
 .cards{
@@ -83,66 +87,73 @@ width:100%;
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
 gap:25px;
-margin-top:50px;
 }
 
 .card{
-background:rgba(255,255,255,.4);
+background:rgba(255,255,255,.45);
 backdrop-filter:blur(12px);
-padding:30px;
+padding:35px;
 border-radius:25px;
-box-shadow:0 15px 35px rgba(0,0,0,.1);
+box-shadow:0 15px 35px rgba(0,0,0,.08);
 transition:.5s;
-transform-style:preserve-3d;
 }
 
 .card:hover{
-transform:rotateY(10deg) rotateX(10deg) translateY(-10px);
+transform:translateY(-12px) rotateY(8deg);
+}
+
+.timeline{
+width:100%;
+max-width:700px;
+}
+
+.item{
+background:white;
+padding:25px;
+margin:20px 0;
+border-left:8px solid gold;
+border-radius:20px;
+box-shadow:0 10px 25px rgba(0,0,0,.08);
+text-align:left;
 }
 
 .envelope{
-width:350px;
+width:340px;
 height:220px;
-background:linear-gradient(45deg,#ff8fb1,#ff69b4);
-border-radius:12px;
+background:linear-gradient(45deg,#ff8fab,#ff5d8f);
+border-radius:15px;
 position:relative;
 cursor:pointer;
 box-shadow:0 20px 40px rgba(0,0,0,.2);
-margin-top:40px;
 }
 
-.envelope::before{
+.envelope:before{
 content:"💌";
-font-size:80px;
 position:absolute;
+font-size:90px;
 left:50%;
 top:50%;
 transform:translate(-50%,-50%);
 }
 
 .letter{
-max-width:850px;
-background:white;
-padding:50px;
-margin-top:40px;
-border-radius:20px;
 display:none;
-box-shadow:0 20px 50px rgba(0,0,0,.15);
-animation:openLetter 1s forwards;
+max-width:850px;
+margin-top:40px;
+background:#fffef7;
+padding:50px;
+border-radius:25px;
+border:10px double #d4af37;
+box-shadow:0 20px 50px rgba(0,0,0,.12);
+animation:appear 1s forwards;
 }
 
-@keyframes openLetter{
-from{transform:scale(.2) rotateX(90deg);opacity:0;}
-to{transform:scale(1) rotateX(0);opacity:1;}
+@keyframes appear{
+from{opacity:0;transform:translateY(100px) scale(.5);}
+to{opacity:1;transform:translateY(0) scale(1);}
 }
 
-.certificate{
-border:10px double gold;
-padding:30px;
-background:#fffdf6;
-}
-
-.certificate h1{
+.letter h1{
 font-family:'Great Vibes',cursive;
 font-size:4rem;
 color:#d4af37;
@@ -150,24 +161,11 @@ color:#d4af37;
 
 .seal{
 display:inline-block;
-padding:12px 20px;
+padding:12px 22px;
 border-radius:50px;
 background:gold;
 font-weight:bold;
-margin-bottom:20px;
-}
-
-.timeline{
-max-width:700px;
-width:100%;
-}
-
-.item{
-background:white;
-padding:25px;
-margin:20px 0;
-border-radius:20px;
-box-shadow:0 10px 25px rgba(0,0,0,.08);
+margin-bottom:25px;
 }
 
 .final{
@@ -175,25 +173,21 @@ background:#111;
 color:white;
 }
 
-.gallery{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:20px;
-width:100%;
-}
-
-.gallery img{
-width:100%;
-height:300px;
-object-fit:cover;
-border-radius:20px;
+.final h1{
+font-family:'Great Vibes',cursive;
+font-size:5rem;
+color:#f7d774;
 }
 
 @media(max-width:768px){
-.hero h1{
-font-size:2.5rem;
+.hero h1,.final h1{
+font-size:3.2rem;
+}
+.title{
+font-size:2rem;
 }
 }
+
 </style>
 </head>
 
@@ -219,7 +213,7 @@ Hi Hunny, this little website exists because some people deserve something diffe
 
 <section id="special">
 
-<h2>The Things That Make You Special</h2>
+<h2 class="title">Things That Make You Special</h2>
 
 <div class="cards">
 
@@ -228,15 +222,15 @@ You have the kind of presence that makes conversations memorable.
 </div>
 
 <div class="card">
-You carry a warmth that naturally makes people comfortable.
+Talking to you feels surprisingly easy and comforting.
 </div>
 
 <div class="card">
-Talking to you feels surprisingly easy and special.
+Some people are remembered. Some quietly become unforgettable.
 </div>
 
 <div class="card">
-Some people are remembered. Some become unforgettable.
+You have a beautiful balance of simplicity, kindness and charm.
 </div>
 
 </div>
@@ -245,17 +239,25 @@ Some people are remembered. Some become unforgettable.
 
 <section>
 
-<h2>Little Compliments</h2>
+<h2 class="title">Little Compliments</h2>
 
 <div class="cards">
 
-<div class="card">Your smile can improve someone's entire day.</div>
+<div class="card">
+Your smile has the power to improve someone's entire day.
+</div>
 
-<div class="card">You effortlessly stand out.</div>
+<div class="card">
+You effortlessly stand out without even trying.
+</div>
 
-<div class="card">You have a rare and beautiful energy.</div>
+<div class="card">
+You have a rare energy that feels calm, genuine and unforgettable.
+</div>
 
-<div class="card">Elegance would probably borrow a few qualities from you.</div>
+<div class="card">
+If elegance had a personality, it would probably borrow a few qualities from you.
+</div>
 
 </div>
 
@@ -263,17 +265,29 @@ Some people are remembered. Some become unforgettable.
 
 <section>
 
-<h2>Our Timeline</h2>
+<h2 class="title">Our Timeline</h2>
 
 <div class="timeline">
 
-<div class="item">2 Years Ago — Life moved on.</div>
+<div class="item">
+<b>2 Years Ago</b><br>
+Life moved on.
+</div>
 
-<div class="item">Yesterday — Conversations restarted.</div>
+<div class="item">
+<b>Yesterday</b><br>
+Conversations restarted.
+</div>
 
-<div class="item">Today — A website was created.</div>
+<div class="item">
+<b>Today</b><br>
+A website was created.
+</div>
 
-<div class="item">Future — More conversations, laughter and memories.</div>
+<div class="item">
+<b>Future</b><br>
+More conversations, laughter and beautiful memories.
+</div>
 
 </div>
 
@@ -281,64 +295,61 @@ Some people are remembered. Some become unforgettable.
 
 <section>
 
-<h2>Open Your Special Letter 💌</h2>
+<h2 class="title">Secret Messages</h2>
 
-<div class="envelope" onclick="showLetter()"></div>
+<div class="cards">
+
+<div class="card">
+You probably weren't expecting someone to build an entire website for you.
+</div>
+
+<div class="card">
+I hope this surprise made you smile at least once.
+</div>
+
+<div class="card">
+Mission: Make Hunny blush.<br><br>Status: In Progress ✨
+</div>
+
+<div class="card">
+Some people are simply worth the effort.
+</div>
+
+</div>
+
+</section>
+
+<section>
+
+<h2 class="title">Open Your Letter 💌</h2>
+
+<div class="envelope" onclick="openLetter()"></div>
 
 <div class="letter" id="letter">
 
-<div class="certificate">
-
 <div class="seal">
-MINISTRY OF ADMIRATION
+OFFICIALLY DECLARED WONDERFUL
 </div>
 
 <h2>Certificate Of Appreciation</h2>
 
-<p>This certificate is proudly presented to</p>
-
 <h1>Hunny</h1>
 
-<p>
-For being genuinely kind, beautiful, memorable and effortlessly special.
-</p>
+<p style="margin-top:20px;font-size:18px;line-height:2">
 
-<br>
+This certificate is proudly presented to Hunny for being genuinely kind, beautiful, memorable and effortlessly special.<br><br>
 
-<p>
-Some people enter our lives unexpectedly and quietly become important.
-Thank you for being exactly who you are.
-</p>
+Some people enter our lives unexpectedly and quietly become important. Thank you for being exactly who you are.<br><br>
 
-<br>
+May you always keep smiling, because your smile deserves to be seen by the world.
 
-<p>
-Official Remark:
-You are officially declared one of the most wonderful people ever encountered.
 </p>
 
 <br><br>
 
-<h3>Issued With Appreciation</h3>
-<p>— Manish</p>
-
-</div>
-
-</div>
-
-</section>
-
-<section>
-
-<h2>Photo Gallery</h2>
-
-<div class="gallery">
-
-<img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=800&q=80">
-
-<img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=800&q=80">
-
-<img src="https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?auto=format&fit=crop&w=800&q=80">
+<p style="font-family:Great Vibes,cursive;font-size:42px;color:#c89b3c">
+Manish
+</p>
 
 </div>
 
@@ -348,15 +359,19 @@ You are officially declared one of the most wonderful people ever encountered.
 
 <h1>Thank You, Hunny ✨</h1>
 
-<p>This little corner of the internet was made especially for you.</p>
+<p style="max-width:650px;font-size:1.2rem">
+Thank you for visiting this little corner made especially for you.
+</p>
 
 <br>
 
-<p>And yes... you are definitely someone special.</p>
+<p style="font-size:1.4rem">
+And yes... you are definitely someone special.
+</p>
 
 <br>
 
-<button class="btn" onclick="reaction()">
+<button class="btn" onclick="showMessage()">
 Send Me Your Reaction 😊
 </button>
 
@@ -364,11 +379,12 @@ Send Me Your Reaction 😊
 
 <script>
 
-function showLetter(){
+function openLetter(){
 document.getElementById("letter").style.display="block";
+window.scrollBy({top:300,behavior:'smooth'});
 }
 
-function reaction(){
+function showMessage(){
 alert("I hope this surprise made you smile 😊");
 }
 
