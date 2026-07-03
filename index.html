@@ -9,7 +9,6 @@
 
 <style>
 
-/* BACKGROUND */
 body{
 margin:0;
 background:linear-gradient(135deg,#fffaf3,#f6efe3,#fdf7f0);
@@ -17,7 +16,6 @@ font-family:'Playfair Display';
 overflow-x:hidden;
 }
 
-/* HEARTS */
 .heart{
 position:fixed;
 width:8px;height:8px;
@@ -40,36 +38,33 @@ from{transform:translateY(100vh) rotate(45deg);}
 to{transform:translateY(-10vh) rotate(45deg);}
 }
 
-/* SECTION SPACING FIX (IMPORTANT) */
+/* LONG STORY STYLE */
 .section{
-max-width:900px;
-margin:28px auto; /* ⬅️ MORE GAP FIXED */
-padding:26px;
+max-width:720px;
+margin:40px auto;
+padding:55px 60px;
 background:white;
-border-radius:16px;
+border-radius:18px;
 border:1px solid #e7d3b0;
-box-shadow:0 18px 50px rgba(0,0,0,0.06);
+box-shadow:0 20px 60px rgba(0,0,0,0.06);
 animation:fadeUp 1s ease;
 }
 
-/* ANIMATION */
 @keyframes fadeUp{
-from{opacity:0;transform:translateY(20px);}
+from{opacity:0;transform:translateY(25px);}
 to{opacity:1;transform:translateY(0);}
 }
 
-/* TITLE */
 .title{
 text-align:center;
 font-family:'Great Vibes';
-font-size:3.5rem;
+font-size:4rem;
 color:#b88a44;
 }
 
-/* TEXT */
 p{
-font-size:1.4rem;
-line-height:2.6;
+font-size:1.45rem;
+line-height:3;
 margin:0;
 color:#3b2f2a;
 }
@@ -78,66 +73,59 @@ color:#3b2f2a;
 .shayari{
 text-align:center;
 font-family:'Great Vibes';
-font-size:1.8rem;
+font-size:2rem;
 color:#b88a44;
-margin:25px 0;
-animation:fadeUp 1.2s ease;
+margin:35px 0;
 }
 
 /* ENVELOPE */
 .envelope{
-max-width:450px;
-margin:40px auto;
+max-width:520px;
+margin:60px auto;
 background:white;
-border-radius:16px;
+border-radius:18px;
 border:1px solid #e0c28a;
 overflow:hidden;
 box-shadow:0 30px 80px rgba(0,0,0,0.15);
-animation:fadeUp 1s ease;
 }
 
-/* HEADER */
 .header{
 background:linear-gradient(135deg,#e7c78b,#b88a44);
 padding:18px;
 text-align:center;
 font-family:'Great Vibes';
-font-size:2.2rem;
+font-size:2.3rem;
 color:white;
 cursor:pointer;
 }
 
-/* CONTENT */
 .content{
 max-height:0;
 overflow:hidden;
 transition:1s ease;
-padding:0 20px;
+padding:0 25px;
 }
 
 .envelope.open .content{
-max-height:1000px;
-padding:20px;
+max-height:1400px;
+padding:25px;
 }
 
-/* BIG LETTER (IMPORTANT FIX) */
 .letter{
 font-size:1.5rem;
-line-height:2.8;
+line-height:3;
 color:#3b2f2a;
-font-family:'Playfair Display';
 }
 
-/* BUTTONS INSIDE LETTER ONLY */
 .buttons{
 display:flex;
 justify-content:center;
-gap:15px;
-margin-top:25px;
+gap:18px;
+margin-top:30px;
 }
 
 button{
-padding:12px 26px;
+padding:13px 28px;
 border-radius:10px;
 cursor:pointer;
 font-weight:600;
@@ -147,13 +135,12 @@ border:none;
 .yes{background:#b88a44;color:white;}
 .no{background:transparent;border:1px solid #b88a44;color:#b88a44;}
 
-/* SIGNATURE */
 .signature{
 text-align:center;
 font-family:'Great Vibes';
-font-size:2.4rem;
+font-size:2.6rem;
 color:#b88a44;
-margin-top:25px;
+margin-top:35px;
 }
 
 </style>
@@ -162,7 +149,7 @@ margin-top:25px;
 <body>
 
 <script>
-for(let i=0;i<70;i++){
+for(let i=0;i<80;i++){
 let h=document.createElement("div");
 h.className="heart";
 h.style.left=Math.random()*100+"vw";
@@ -174,16 +161,28 @@ document.body.appendChild(h);
 <!-- TITLE -->
 <div class="section">
 <div class="title">Happy Birthday Mishu ❤️</div>
-<p>Today is the day the world became more beautiful because you exist in it.</p>
+<p>
+Today is not just a birthday… it is the day the world became softer, kinder, and more meaningful just because you were born into it.
+</p>
 </div>
 
-<!-- ROMANTIC -->
+<!-- ROMANTIC LONG STORY -->
 <div class="section">
-<p>You didn’t enter my life loudly… you entered like a feeling that stayed forever.</p>
+<p>
+You didn’t come into my life like a storm… you came like silence that slowly turned into something I couldn’t ignore anymore.
+</p>
 </div>
 
 <div class="section">
-<p>Now even silence feels incomplete without thinking about you.</p>
+<p>
+And now even my quiet moments feel like they are missing something… and that something is you.
+</p>
+</div>
+
+<div class="section">
+<p>
+I don’t know when it started, but I know it stayed… and that staying turned into feelings.
+</p>
 </div>
 
 <!-- SHAYARI -->
@@ -192,13 +191,29 @@ document.body.appendChild(h);
 तुझसे दूर रहकर भी तुझमें ही रह जाता हूँ।
 </div>
 
-<!-- FLIRTY -->
+<!-- FLIRTY BLOCKS -->
 <div class="section">
-<p>You don’t even try… yet you become the most distracting thought.</p>
+<p>
+You really don’t understand your effect… you walk into thoughts without permission.
+</p>
 </div>
 
 <div class="section">
-<p>If liking you is wrong… I don’t want to be right.</p>
+<p>
+If I had to explain you… I’d say you are the distraction I never want to recover from.
+</p>
+</div>
+
+<div class="section">
+<p>
+Honestly, you should be charged for occupying so much space in someone’s mind.
+</p>
+</div>
+
+<div class="section">
+<p>
+Because the way you exist… it’s not normal, it’s dangerous in a soft way.
+</p>
 </div>
 
 <!-- SHAYARI -->
@@ -207,7 +222,57 @@ document.body.appendChild(h);
 तू खुद ही वजह बन गई ज़िन्दगी की।
 </div>
 
-<!-- ENVELOPE FINAL (FIXED BIG LETTER) -->
+<!-- MORE ROMANTIC -->
+<div class="section">
+<p>
+I never believed in “meant to be”… until you started becoming a pattern in my thoughts.
+</p>
+</div>
+
+<div class="section">
+<p>
+And now I don’t fight it anymore… I just let it stay.
+</p>
+</div>
+
+<div class="section">
+<p>
+Because some feelings are not chosen… they are discovered.
+</p>
+</div>
+
+<div class="section">
+<p>
+And I discovered you slowly… in everything I didn’t expect.
+</p>
+</div>
+
+<!-- MORE FLIRTY -->
+<div class="section">
+<p>
+You know what’s funny? Even when I try not to think about you… my mind refuses to cooperate.
+</p>
+</div>
+
+<div class="section">
+<p>
+It’s like you quietly became a habit I never agreed to form.
+</p>
+</div>
+
+<div class="section">
+<p>
+And now I don’t even want to break it.
+</p>
+</div>
+
+<!-- FINAL SHAYARI -->
+<div class="shayari">
+दिल चाहता है तुझे हर पल पास रखूँ,<br>
+तेरी हर मुस्कान को अपनी सांस रखूँ।
+</div>
+
+<!-- ENVELOPE -->
 <div class="envelope" id="env">
 
 <div class="header"
@@ -223,11 +288,11 @@ Mishu ❤️<br><br>
 
 Will you marry me?<br><br>
 
-This is not just a question… it is every feeling I could never say directly.<br><br>
+This is not just a question… it is every emotion I was never able to say out loud.<br><br>
 
-You became that emotion I never planned but never want to lose.<br><br>
+You became that feeling I didn’t plan, but also don’t want to lose.<br><br>
 
-Every moment with you feels like something I don’t want to end.<br><br>
+Every moment with you feels like something I want to stay inside forever.<br><br>
 
 <div class="buttons">
 <form action="https://formspree.io/f/meeonbba" method="POST">
@@ -248,7 +313,9 @@ Every moment with you feels like something I don’t want to end.<br><br>
 
 <!-- END -->
 <div class="section">
-<p>And if destiny listens quietly… I hope it chooses us.</p>
+<p>
+And if destiny ever writes silently… I hope it writes us together.
+</p>
 
 <div class="signature">
 Yours, Chuzaa ❤️
