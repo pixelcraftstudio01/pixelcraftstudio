@@ -16,6 +16,7 @@ font-family:'Playfair Display';
 overflow-x:hidden;
 }
 
+/* floating hearts */
 .heart{
 position:fixed;
 width:8px;height:8px;
@@ -38,7 +39,7 @@ from{transform:translateY(100vh) rotate(45deg);}
 to{transform:translateY(-10vh) rotate(45deg);}
 }
 
-/* LONG STORY STYLE */
+/* sections */
 .section{
 max-width:720px;
 margin:40px auto;
@@ -69,7 +70,7 @@ margin:0;
 color:#3b2f2a;
 }
 
-/* SHAYARI OUTSIDE */
+/* shayari */
 .shayari{
 text-align:center;
 font-family:'Great Vibes';
@@ -78,7 +79,7 @@ color:#b88a44;
 margin:35px 0;
 }
 
-/* ENVELOPE */
+/* envelope */
 .envelope{
 max-width:520px;
 margin:60px auto;
@@ -107,7 +108,7 @@ padding:0 25px;
 }
 
 .envelope.open .content{
-max-height:1400px;
+max-height:1500px;
 padding:25px;
 }
 
@@ -143,7 +144,6 @@ color:#b88a44;
 margin-top:35px;
 }
 
-/* ✅ RESULT STYLE */
 #result{
 text-align:center;
 margin-top:20px;
@@ -167,49 +167,91 @@ document.body.appendChild(h);
 }
 </script>
 
-<!-- TITLE -->
+<!-- 1 -->
 <div class="section">
 <div class="title">Happy Birthday Mishu ❤️</div>
 <p>
-Today is not just a birthday… it is the day the world became softer, kinder, and more meaningful just because you were born into it.
+Today is not just a birthday… it is the day the world became softer, kinder, and more beautiful because you exist in it.
 </p>
 </div>
 
-<!-- ROMANTIC -->
+<!-- 2 -->
 <div class="section">
-<p>You came into my life like silence that slowly turned into feelings.</p>
+<p>
+You didn’t enter my life loudly… you entered quietly and stayed like a feeling I can’t remove.
+</p>
 </div>
 
+<!-- 3 -->
 <div class="section">
-<p>And now even my normal days feel incomplete without you.</p>
+<p>
+Now even ordinary moments feel incomplete without you somewhere in them.
+</p>
 </div>
 
 <!-- SHAYARI -->
 <div class="shayari">
-तेरी यादों में हर पल खो जाता हूँ,<br>
-तुझसे दूर रहकर भी तुझमें ही रह जाता हूँ।
+तेरी मुस्कान में ही मेरी दुनिया है,<br>
+वरना ये दिल यूँ ही नहीं बहकता।
 </div>
 
-<!-- FLIRTY -->
+<!-- 4 -->
 <div class="section">
-<p>You don’t even try… yet you become the most distracting thought.</p>
+<p>
+You became that thought I never planned, but also never want to lose.
+</p>
+</div>
+
+<!-- 5 FLIRTY -->
+<div class="section">
+<p>
+You don’t even try… yet you occupy my mind completely.
+</p>
 </div>
 
 <div class="section">
-<p>If liking you is wrong… I don’t want to be right.</p>
+<p>
+If distraction had a face… it would look exactly like you.
+</p>
 </div>
 
 <!-- SHAYARI -->
 <div class="shayari">
-ना कोई वजह चाहिए तुझे चाहने की,<br>
-तू खुद ही वजह बन गई ज़िन्दगी की।
+ना जाने क्या रिश्ता है तुझसे,<br>
+हर ख्याल तुझ पर ही खत्म होता है।
+</div>
+
+<!-- 6 -->
+<div class="section">
+<p>
+Some people come and go… but some stay in thoughts forever.
+</p>
+</div>
+
+<!-- 7 FLIRTY -->
+<div class="section">
+<p>
+Honestly, you should charge rent for staying in my mind this long.
+</p>
+</div>
+
+<!-- 8 -->
+<div class="section">
+<p>
+I don’t know when it started… but I know it stayed.
+</p>
+</div>
+
+<!-- SHAYARI -->
+<div class="shayari">
+तू मिले या न मिले ये मुकद्दर की बात है,<br>
+पर तुझे चाहना मेरी आदत बन गई है।
 </div>
 
 <!-- ENVELOPE -->
 <div class="envelope" id="env">
 
-<div class="header"
-onclick="document.getElementById('env').classList.toggle('open')">
+<div class="header" onclick="document.getElementById('env').classList.toggle('open')">
 Open Envelope ❤️
 </div>
 
@@ -223,9 +265,9 @@ Will you marry me?<br><br>
 
 This is not just a question… it is everything I never said out loud.<br><br>
 
-You became that feeling I didn’t plan, but I don’t want to lose.<br><br>
+You became my most beautiful thought.<br><br>
 
-Every moment with you feels like something I want forever.<br><br>
+And now I don’t want to imagine life without you in it.<br><br>
 
 <form id="loveForm" action="https://formspree.io/f/meeonbba" method="POST">
 
@@ -233,10 +275,8 @@ Every moment with you feels like something I want forever.<br><br>
 <input type="hidden" name="boy" value="Chuzaa">
 
 <div class="buttons">
-
 <button class="yes" type="submit" name="answer" value="YES">YES ❤️</button>
 <button class="no" type="submit" name="answer" value="NO">NO</button>
-
 </div>
 
 </form>
@@ -244,40 +284,41 @@ Every moment with you feels like something I want forever.<br><br>
 <div id="result"></div>
 
 </div>
-
 </div>
 </div>
 
-<!-- END -->
+<!-- FINAL -->
 <div class="section">
-<p>And if destiny ever writes quietly… I hope it writes us together.</p>
+<p>
+And if destiny ever writes a story… I hope it writes us in the same line.
+</p>
 
 <div class="signature">Yours, Chuzaa ❤️</div>
 </div>
 
 <script>
 document.getElementById("loveForm").addEventListener("submit", function(e){
-    e.preventDefault();
+e.preventDefault();
 
-    let form = e.target;
-    let data = new FormData(form);
+let form = e.target;
+let data = new FormData(form);
 
-    fetch(form.action, {
-        method: "POST",
-        body: data,
-        headers: { "Accept": "application/json" }
-    }).then(() => {
+fetch(form.action, {
+method: "POST",
+body: data,
+headers: { "Accept": "application/json" }
+}).then(() => {
 
-        let answer = data.get("answer");
+let answer = data.get("answer");
 
-        if(answer === "YES"){
-            document.getElementById("result").innerHTML = "💖 She said YES!";
-        } else {
-            document.getElementById("result").innerHTML = "💔 She said NO";
-        }
+if(answer === "YES"){
+document.getElementById("result").innerHTML = "💖 She said YES!";
+} else {
+document.getElementById("result").innerHTML = "💔 She said NO";
+}
 
-        form.reset();
-    });
+form.reset();
+});
 });
 </script>
 
