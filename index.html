@@ -5,160 +5,83 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Mishu ❤️ From Chuzza</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Cormorant+Garamond:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Lora:wght@400;500;600&display=swap" rel="stylesheet">
 
 <style>
 
+/* ===== GLOBAL ===== */
 body{
 margin:0;
-background:#06050A;
-color:#F8F3F6;
+background:#0B1020;
+color:#FFF7FA;
 overflow-x:hidden;
+font-family:'Lora',serif;
 }
 
-/* ================= BACKGROUND ================= */
-.glow{
-position:fixed;
-width:900px;
-height:900px;
-background:radial-gradient(circle,#ff2e6340,transparent 60%);
-filter:blur(120px);
-top:-250px;
-left:-250px;
-z-index:-1;
-}
-
-.glow2{
-position:fixed;
-width:800px;
-height:800px;
-background:radial-gradient(circle,#ffffff10,transparent 60%);
-bottom:-250px;
-right:-250px;
-filter:blur(120px);
-z-index:-1;
-}
-
-/* ================= SCENES ================= */
 section{
 min-height:100vh;
 display:flex;
 flex-direction:column;
 justify-content:center;
-padding:80px 10vw;
+padding:8vw;
 }
 
-/* ================= TEXT ================= */
-h1{
-font-family:'Playfair Display';
-font-size:5rem;
-color:#ff2e63;
+/* ===== TITLE ===== */
+h1,h2{
+font-family:'Cinzel',serif;
+letter-spacing:1px;
 margin:0;
-text-shadow:0 0 50px #ff2e6340;
+}
+
+h1{
+font-size:5rem;
+color:#F6D6E6;
 }
 
 h2{
-font-family:'Playfair Display';
 font-size:3rem;
-color:#ff4d8d;
-margin-bottom:10px;
+color:#C8A45D;
 }
 
+/* ===== LONG TEXT ===== */
 p{
-font-family:'Cormorant Garamond';
-font-size:1.8rem;
-line-height:2.1;
-color:#f5f0f3;
-margin:0;
-}
-
-/* ================= INTRO ================= */
-.intro{
-position:fixed;
-width:100%;
-height:100vh;
-background:black;
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items:center;
-z-index:9999;
-animation:fade 4s ease 4s forwards;
-}
-
-@keyframes fade{
-to{opacity:0;visibility:hidden;}
-}
-
-.logo{
-font-size:3rem;
-color:#ff2e63;
-font-family:'Playfair Display';
-animation:zoom 2s ease;
-}
-
-@keyframes zoom{
-0%{transform:scale(0);opacity:0;}
-100%{transform:scale(1);opacity:1;}
-}
-
-/* ================= CARD ================= */
-.card{
-width:260px;
-height:320px;
-background:#111;
-border:1px solid #ff2e6350;
-border-radius:14px;
-display:flex;
-justify-content:center;
-align-items:center;
-font-family:'Playfair Display';
-color:#ff2e63;
+font-size:1.5rem;
+line-height:2.2;
+max-width:900px;
 margin-top:20px;
+color:#FFF7FA;
 }
 
-/* ================= CERTIFICATE ================= */
-.certificate{
-background:white;
-color:black;
-padding:25px;
-border-radius:12px;
-width:360px;
-font-family:'Cormorant Garamond';
-font-size:1.6rem;
-box-shadow:0 0 40px rgba(255,46,99,0.3);
+/* ===== BACKGROUND ===== */
+.glow{
+position:fixed;
+width:900px;
+height:900px;
+background:radial-gradient(circle,#8B1E3F40,transparent 60%);
+filter:blur(120px);
+top:-300px;
+left:-300px;
+z-index:-1;
 }
 
-/* ================= BOUQUET ================= */
-.bouquet{
-font-size:110px;
-animation:float 3s ease-in-out infinite;
-filter:drop-shadow(0 0 20px #ff2e6350);
-}
-
-@keyframes float{
-0%{transform:translateY(0);}
-50%{transform:translateY(-30px);}
-100%{transform:translateY(0);}
-}
-
-/* ================= ENVELOPE ================= */
+/* ===== ENVELOPE ===== */
 .envelope{
-width:360px;
-height:220px;
+width:420px;
+height:240px;
 background:#111;
-border:1px solid #ff2e63;
+margin-top:40px;
+border:1px solid #C8A45D;
 position:relative;
 cursor:pointer;
 overflow:hidden;
-border-radius:10px;
+box-shadow:0 0 60px #000;
 }
 
 .flap{
 position:absolute;
 width:100%;
 height:100%;
-background:linear-gradient(135deg,#ff2e63,#ff4d8d);
+background:linear-gradient(135deg,#8B1E3F,#C8A45D);
 clip-path:polygon(0 0,100% 0,50% 55%);
 transform-origin:top;
 transition:0.9s;
@@ -168,60 +91,45 @@ transition:0.9s;
 transform:rotateX(180deg);
 }
 
+/* THIS FIXES TEXT CUTTING ISSUE */
 .letter{
 position:absolute;
+top:0;
+left:0;
 width:100%;
-height:100%;
-background:#f8f3f6;
+min-height:100%;
+background:#FFF7FA;
 color:#111;
-padding:25px;
-transform:translateY(130%);
-transition:0.9s;
-font-family:'Cormorant Garamond';
-font-size:1.6rem;
-line-height:1.8;
+padding:30px;
+transform:translateY(120%);
+transition:1s;
+font-size:1.4rem;
+line-height:2.2;
 }
 
 .envelope.open .letter{
 transform:translateY(0);
 }
 
-/* ================= BUTTONS ================= */
+/* ===== BUTTONS ===== */
 button{
-padding:14px 24px;
+padding:14px 26px;
+margin:10px;
 border:none;
 cursor:pointer;
-margin:10px;
-font-weight:600;
-border-radius:10px;
 font-size:1.1rem;
+font-weight:600;
 }
 
 .yes{
-background:#ff2e63;
+background:#8B1E3F;
 color:white;
-box-shadow:0 0 30px #ff2e6350;
 }
 
 .no{
 background:transparent;
-color:white;
-border:1px solid white;
-}
-
-/* ================= RING ================= */
-.ring{
-width:120px;
-height:120px;
-border:3px solid #ff2e63;
-border-radius:50%;
-animation:pulse 1.5s infinite;
-margin:20px auto;
-}
-
-@keyframes pulse{
-0%{transform:scale(1);opacity:1;}
-100%{transform:scale(1.8);opacity:0;}
+border:1px solid #FFF7FA;
+color:#FFF7FA;
 }
 
 </style>
@@ -229,92 +137,86 @@ margin:20px auto;
 
 <body>
 
-<div class="intro">
-<div class="logo">Mishu ❤️</div>
-<p>From Chuzha… a cinematic love begins</p>
-</div>
-
 <div class="glow"></div>
-<div class="glow2"></div>
 
 <!-- 1 -->
 <section>
-<h1>MISHU ❤️</h1>
+<h1>Mishu</h1>
 <p>
-This is not a website. This is a memory built in code. A place where every line carries emotion, every word carries silence, and every silence carries you.
+I don’t know how to start this without sounding like I’m already lost in you. Because the truth is, I am not writing to you like a normal message… I am writing like someone who has already accepted that you are not just a part of life anymore, you are the feeling life revolves around.
 </p>
 </section>
 
 <!-- 2 -->
 <section>
-<h2>Birthday 🎂</h2>
+<h2>Birthday</h2>
 <p>
-On the day you were born, the world did not just gain a girl… it gained a reason to feel beauty without explanation. You are not ordinary, Mishu. You are the kind of presence that changes the energy of everything around you without trying.
+Today is your birthday, but I keep thinking it should be celebrated differently… not just as a date, but as the moment the world got softer, more beautiful, and slightly more meaningful. You don’t even realize how much presence you carry, Mishu. Even silence around you feels different.
 </p>
 </section>
 
 <!-- 3 -->
 <section>
-<h2>Flirty Truth 😌</h2>
+<h2>What You Do To Me</h2>
 <p>
-I tried acting normal around you… but my thoughts refused to cooperate. They keep repeating your name like it’s the only language they understand.
+Whenever your name appears in my mind, everything else becomes background noise. I start smiling without reason, overthinking without control, and feeling something I cannot explain properly in words. You didn’t ask for this effect… but you have it on me anyway.
 </p>
 </section>
 
 <!-- 4 -->
 <section>
-<h2>Memory</h2>
-<div class="card">Your Smile</div>
+<h2>Flirty Truth</h2>
 <p>
-That smile of yours is not just beautiful… it interrupts my entire thought process every single time without permission.
+I tried to act normal around you once… it didn’t work. Because every time I look at you, my thoughts forget discipline and start behaving like they belong only to you. And honestly, I don’t even want to fix that.
 </p>
 </section>
 
 <!-- 5 -->
 <section>
-<h2>Love Certificate 💍</h2>
-<div class="certificate">
-This certifies that Mishu is the most beautiful girl ever experienced in the emotional universe of Chuzha. Not by opinion… but by impact.
-</div>
+<h2>Memory</h2>
+<p>
+There is one thing I keep replaying again and again… your smile. Not because it is just beautiful, but because it has this strange power to pause everything inside me for a second, like the world itself is checking if I noticed you properly.
+</p>
 </section>
 
 <!-- 6 -->
 <section>
-<h2>Truth Again</h2>
+<h2>Certificate</h2>
 <p>
-You didn’t slowly enter my life… you instantly replaced the silence I didn’t even know I had.
+If there was ever an official way to measure beauty, I would not need a second opinion. Because in my experience, no comparison has ever survived your presence. You are not “one of the beautiful people”… you are the reference point.
 </p>
 </section>
 
 <!-- 7 -->
 <section>
-<h2>Bouquet 💐</h2>
-<div class="bouquet">💐</div>
+<h2>Something Honest</h2>
 <p>
-If emotions had a physical shape… they would look like this moment right now.
+I don’t think I fell in love suddenly. I think I slowly stopped being the same person after I started noticing you more than I noticed anything else.
 </p>
 </section>
 
 <!-- 8 -->
 <section>
-<h2>Love Letter 📜</h2>
+<h2>Envelope</h2>
 
-<div class="envelope" onclick="toggle()">
+<div class="envelope" onclick="openLetter()">
 <div class="flap"></div>
+
 <div class="letter">
 Dear Mishu,<br><br>
-You are not a part of my story… you are the reason the story exists at all. Everything before you feels like silence, everything after you feels like music.
+If I had to explain you in one sentence, I would fail. Because you are not a sentence… you are a feeling that keeps expanding every time I try to understand it. You are calm, you are chaos, you are everything I didn’t know I was missing.<br><br>
+And now I don’t want to miss it anymore.
 </div>
+
 </div>
 
 </section>
 
 <!-- 9 -->
 <section>
-<h2>Ring Moment 💍</h2>
-<div class="ring"></div>
+<h2>Truth</h2>
 <p>
-One question has the power to redefine everything.
+If I ever become too quiet around you, it’s not because I have nothing to say… it’s because I am busy noticing how unreal it feels that someone like you exists in my reality.
 </p>
 </section>
 
@@ -322,19 +224,19 @@ One question has the power to redefine everything.
 <section>
 <h2>Final Question</h2>
 
-<p style="font-size:2rem;">
-Will you marry me, Mishu?
+<p>
+I am not asking this as a formality. I am asking this as someone who already feels the answer in everything I think.
 </p>
 
-<button class="yes" onclick="send('YES')">YES ❤️ Created by Chuzha</button>
-<button class="no" onclick="send('NO')">NO</button>
+<button class="yes" onclick="send('YES')">Will You Marry Me ❤️ (Created by Chuza)</button>
+<button class="no" onclick="send('NO')">No</button>
 
 </section>
 
 <script>
 
-function toggle(){
-document.querySelector('.envelope').classList.toggle('open');
+function openLetter(){
+document.querySelector(".envelope").classList.toggle("open");
 }
 
 function send(ans){
@@ -343,12 +245,12 @@ method:"POST",
 headers:{"Content-Type":"application/json"},
 body:JSON.stringify({
 girl:"Mishu",
-boy:"Chuzha",
+boy:"Chuza",
 answer:ans
 })
 });
 
-alert("Response sent ❤️");
+alert("Response recorded ❤️");
 }
 
 </script>
