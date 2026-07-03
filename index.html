@@ -143,6 +143,15 @@ color:#b88a44;
 margin-top:35px;
 }
 
+/* ✅ RESULT STYLE */
+#result{
+text-align:center;
+margin-top:20px;
+font-size:1.6rem;
+color:#b88a44;
+font-family:'Great Vibes';
+}
+
 </style>
 </head>
 
@@ -166,23 +175,13 @@ Today is not just a birthday… it is the day the world became softer, kinder, a
 </p>
 </div>
 
-<!-- ROMANTIC LONG STORY -->
+<!-- ROMANTIC -->
 <div class="section">
-<p>
-You didn’t come into my life like a storm… you came like silence that slowly turned into something I couldn’t ignore anymore.
-</p>
+<p>You came into my life like silence that slowly turned into feelings.</p>
 </div>
 
 <div class="section">
-<p>
-And now even my quiet moments feel like they are missing something… and that something is you.
-</p>
-</div>
-
-<div class="section">
-<p>
-I don’t know when it started, but I know it stayed… and that staying turned into feelings.
-</p>
+<p>And now even my normal days feel incomplete without you.</p>
 </div>
 
 <!-- SHAYARI -->
@@ -191,85 +190,19 @@ I don’t know when it started, but I know it stayed… and that staying turned 
 तुझसे दूर रहकर भी तुझमें ही रह जाता हूँ।
 </div>
 
-<!-- FLIRTY BLOCKS -->
+<!-- FLIRTY -->
 <div class="section">
-<p>
-You really don’t understand your effect… you walk into thoughts without permission.
-</p>
+<p>You don’t even try… yet you become the most distracting thought.</p>
 </div>
 
 <div class="section">
-<p>
-If I had to explain you… I’d say you are the distraction I never want to recover from.
-</p>
-</div>
-
-<div class="section">
-<p>
-Honestly, you should be charged for occupying so much space in someone’s mind.
-</p>
-</div>
-
-<div class="section">
-<p>
-Because the way you exist… it’s not normal, it’s dangerous in a soft way.
-</p>
+<p>If liking you is wrong… I don’t want to be right.</p>
 </div>
 
 <!-- SHAYARI -->
 <div class="shayari">
 ना कोई वजह चाहिए तुझे चाहने की,<br>
 तू खुद ही वजह बन गई ज़िन्दगी की।
-</div>
-
-<!-- MORE ROMANTIC -->
-<div class="section">
-<p>
-I never believed in “meant to be”… until you started becoming a pattern in my thoughts.
-</p>
-</div>
-
-<div class="section">
-<p>
-And now I don’t fight it anymore… I just let it stay.
-</p>
-</div>
-
-<div class="section">
-<p>
-Because some feelings are not chosen… they are discovered.
-</p>
-</div>
-
-<div class="section">
-<p>
-And I discovered you slowly… in everything I didn’t expect.
-</p>
-</div>
-
-<!-- MORE FLIRTY -->
-<div class="section">
-<p>
-You know what’s funny? Even when I try not to think about you… my mind refuses to cooperate.
-</p>
-</div>
-
-<div class="section">
-<p>
-It’s like you quietly became a habit I never agreed to form.
-</p>
-</div>
-
-<div class="section">
-<p>
-And now I don’t even want to break it.
-</p>
-</div>
-
-<!-- FINAL SHAYARI -->
-<div class="shayari">
-दिल चाहता है तुझे हर पल पास रखूँ,<br>
-तेरी हर मुस्कान को अपनी सांस रखूँ।
 </div>
 
 <!-- ENVELOPE -->
@@ -288,23 +221,27 @@ Mishu ❤️<br><br>
 
 Will you marry me?<br><br>
 
-This is not just a question… it is every emotion I was never able to say out loud.<br><br>
+This is not just a question… it is everything I never said out loud.<br><br>
 
-You became that feeling I didn’t plan, but also don’t want to lose.<br><br>
+You became that feeling I didn’t plan, but I don’t want to lose.<br><br>
 
-Every moment with you feels like something I want to stay inside forever.<br><br>
+Every moment with you feels like something I want forever.<br><br>
 
-<div class="buttons">
-<form action="https://formspree.io/f/meeonbba" method="POST">
+<form id="loveForm" action="https://formspree.io/f/meeonbba" method="POST">
 
 <input type="hidden" name="girl" value="Mishu ❤️">
 <input type="hidden" name="boy" value="Chuzaa">
 
-<button class="yes">YES ❤️</button>
-<button class="no">NO</button>
+<div class="buttons">
+
+<button class="yes" type="submit" name="answer" value="YES">YES ❤️</button>
+<button class="no" type="submit" name="answer" value="NO">NO</button>
+
+</div>
 
 </form>
-</div>
+
+<div id="result"></div>
 
 </div>
 
@@ -313,14 +250,36 @@ Every moment with you feels like something I want to stay inside forever.<br><br
 
 <!-- END -->
 <div class="section">
-<p>
-And if destiny ever writes silently… I hope it writes us together.
-</p>
+<p>And if destiny ever writes quietly… I hope it writes us together.</p>
 
-<div class="signature">
-Yours, Chuzaa ❤️
+<div class="signature">Yours, Chuzaa ❤️</div>
 </div>
-</div>
+
+<script>
+document.getElementById("loveForm").addEventListener("submit", function(e){
+    e.preventDefault();
+
+    let form = e.target;
+    let data = new FormData(form);
+
+    fetch(form.action, {
+        method: "POST",
+        body: data,
+        headers: { "Accept": "application/json" }
+    }).then(() => {
+
+        let answer = data.get("answer");
+
+        if(answer === "YES"){
+            document.getElementById("result").innerHTML = "💖 She said YES!";
+        } else {
+            document.getElementById("result").innerHTML = "💔 She said NO";
+        }
+
+        form.reset();
+    });
+});
+</script>
 
 </body>
 </html>
