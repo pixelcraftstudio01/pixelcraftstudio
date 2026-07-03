@@ -14,78 +14,111 @@ background:#050407;
 color:white;
 font-family:'Inter',sans-serif;
 overflow-x:hidden;
+scroll-behavior:smooth;
 }
 
+/* CINEMATIC BACKGROUND GLOW */
+.glow{
+position:fixed;
+width:800px;
+height:800px;
+background:radial-gradient(circle,#ff2e63 0%,transparent 60%);
+filter:blur(100px);
+top:-250px;
+left:-250px;
+z-index:-2;
+}
+
+.glow2{
+position:fixed;
+width:700px;
+height:700px;
+background:radial-gradient(circle,rgba(255,255,255,0.08),transparent 60%);
+bottom:-250px;
+right:-250px;
+filter:blur(90px);
+z-index:-2;
+}
+
+/* PAGE SECTIONS */
 section{
-display:none;
-height:100vh;
-padding:60px 20px;
-text-align:center;
+min-height:100vh;
+display:flex;
+flex-direction:column;
 justify-content:center;
 align-items:center;
-flex-direction:column;
+text-align:center;
+padding:60px 20px;
 }
 
-section.active{
-display:flex;
-}
-
-/* NAV */
-nav{
-position:fixed;
-top:0;
-width:100%;
-display:flex;
-justify-content:center;
-gap:15px;
-padding:12px;
-background:rgba(0,0,0,0.5);
-backdrop-filter:blur(10px);
-z-index:1000;
-}
-
-nav button{
-background:none;
-border:none;
-color:#ccc;
-cursor:pointer;
-font-size:12px;
-}
-
-nav button:hover{
-color:#ff2e63;
-}
-
-/* HERO */
+/* TYPOGRAPHY */
 h1,h2{
 font-family:'Playfair Display',serif;
 }
 
 h1{
-font-size:3.5rem;
+font-size:4.5rem;
 color:#ff2e63;
-text-shadow:0 0 40px #ff2e63;
+text-shadow:0 0 60px rgba(255,46,99,0.6);
 }
 
-/* CARDS */
-.card{
-width:200px;
-height:250px;
+/* TEXT BOX */
+.text{
+max-width:700px;
+opacity:0.85;
+line-height:1.7;
+}
+
+/* NETFLIX INTRO */
+.intro{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100vh;
+background:black;
+display:flex;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+z-index:9999;
+animation:fadeOut 4s ease 4s forwards;
+}
+
+.logo{
+font-size:3rem;
+font-family:'Playfair Display';
+color:#ff2e63;
+animation:zoom 2s ease;
+}
+
+@keyframes zoom{
+0%{transform:scale(0);opacity:0;}
+100%{transform:scale(1);opacity:1;}
+}
+
+@keyframes fadeOut{
+to{opacity:0;visibility:hidden;}
+}
+
+/* 3D CARD */
+.card3d{
+width:230px;
+height:270px;
 perspective:1000px;
-margin:10px;
-display:inline-block;
+margin-top:20px;
 }
 
 .inner{
 width:100%;
 height:100%;
-transition:0.8s;
+transition:1s;
 transform-style:preserve-3d;
-cursor:pointer;
 position:relative;
+cursor:pointer;
 }
 
-.card:hover .inner{
+.card3d:hover .inner{
 transform:rotateY(180deg);
 }
 
@@ -94,11 +127,11 @@ position:absolute;
 width:100%;
 height:100%;
 backface-visibility:hidden;
-border-radius:10px;
+border-radius:14px;
 display:flex;
-justify-content:center;
 align-items:center;
-padding:10px;
+justify-content:center;
+padding:15px;
 }
 
 .front{
@@ -111,24 +144,48 @@ transform:rotateY(180deg);
 border:1px solid rgba(255,255,255,0.1);
 }
 
+/* CERTIFICATE */
+.certificate{
+background:white;
+color:black;
+padding:25px;
+border-radius:12px;
+width:340px;
+box-shadow:0 0 40px rgba(255,46,99,0.3);
+}
+
+/* BOUQUET */
+.bouquet{
+font-size:100px;
+animation:float 3s ease-in-out infinite;
+filter:drop-shadow(0 0 20px rgba(255,46,99,0.4));
+}
+
+@keyframes float{
+0%{transform:translateY(0);}
+50%{transform:translateY(-25px);}
+100%{transform:translateY(0);}
+}
+
 /* ENVELOPE */
 .envelope{
-width:300px;
-height:180px;
+width:340px;
+height:200px;
 background:#111;
-position:relative;
 border:1px solid #ff2e63;
+position:relative;
 cursor:pointer;
+overflow:hidden;
 }
 
 .flap{
 position:absolute;
 width:100%;
 height:100%;
-background:#ff2e63;
+background:linear-gradient(45deg,#ff2e63,#ff4d6d);
 clip-path:polygon(0 0,100% 0,50% 55%);
 transform-origin:top;
-transition:0.8s;
+transition:0.9s;
 }
 
 .envelope.open .flap{
@@ -141,98 +198,122 @@ width:100%;
 height:100%;
 background:white;
 color:black;
-transform:translateY(120%);
-transition:0.8s;
-padding:15px;
+padding:20px;
+transform:translateY(130%);
+transition:0.9s;
 }
 
 .envelope.open .letter{
 transform:translateY(0);
 }
 
+/* BUTTONS */
 button{
-padding:10px 15px;
+padding:12px 22px;
 border:none;
 cursor:pointer;
-margin:5px;
+margin:8px;
 font-weight:bold;
+border-radius:8px;
+transition:0.3s;
 }
 
-.yes{background:#ff2e63;color:white;}
-.no{background:#111;color:white;border:1px solid white;}
+.yes{
+background:#ff2e63;
+color:white;
+box-shadow:0 0 25px rgba(255,46,99,0.6);
+}
 
+.no{
+background:#111;
+color:white;
+border:1px solid #fff;
+}
+
+/* RING EFFECT */
+.ring{
+width:120px;
+height:120px;
+border:3px solid #ff2e63;
+border-radius:50%;
+animation:pulse 1.5s infinite;
+margin:20px;
+}
+
+@keyframes pulse{
+0%{transform:scale(1);opacity:1;}
+100%{transform:scale(1.8);opacity:0;}
+}
 </style>
 </head>
 
 <body>
 
-<nav>
-<button onclick="show(0)">Home</button>
-<button onclick="show(1)">Birthday</button>
-<button onclick="show(2)">Story</button>
-<button onclick="show(3)">Memories</button>
-<button onclick="show(4)">Certificate</button>
-<button onclick="show(5)">Application</button>
-<button onclick="show(6)">Letter</button>
-<button onclick="show(7)">Proposal</button>
-</nav>
+<!-- NETFLIX INTRO -->
+<div class="intro">
+<div class="logo">Mishu ❤️</div>
+<p>A love story by Chuzza</p>
+</div>
 
-<!-- 1 HOME -->
-<section class="active">
+<div class="glow"></div>
+<div class="glow2"></div>
+
+<!-- 1 -->
+<section>
 <h1>Mishu ❤️</h1>
-<p>A cinematic love story by Chuzza</p>
+<p class="text">This is not a website… this is a cinematic love story written in silence, feelings, and endless admiration from Chuzza.</p>
 </section>
 
-<!-- 2 BIRTHDAY -->
+<!-- 2 -->
 <section>
-<h2>Happy Birthday Mishu 🎂</h2>
-<p>You are not just special… you are my favorite feeling.</p>
+<h2>Birthday Scene 🎂</h2>
+<p class="text">Happy Birthday Mishu… the world became more beautiful the day you entered it.</p>
 </section>
 
-<!-- 3 STORY -->
+<!-- 3 -->
 <section>
-<h2>Our Story ❤️</h2>
-<p>From strangers → to my everything.</p>
+<h2>Flirty Truth 😏</h2>
+<p class="text">If beauty was a crime… you would be serving a lifetime sentence without parole in my heart.</p>
 </section>
 
-<!-- 4 MEMORIES -->
+<!-- 4 -->
 <section>
-<h2>Memories 💖</h2>
+<h2>Memory 3D Card 💖</h2>
 
-<div class="card"><div class="inner">
-<div class="face front">First Talk</div>
-<div class="face back">Still remembered ❤️</div>
-</div></div>
-
-<div class="card"><div class="inner">
-<div class="face front">Smile</div>
-<div class="face back">My weakness 💕</div>
-</div></div>
-
-<div class="card"><div class="inner">
-<div class="face front">You</div>
-<div class="face back">My whole world 🌹</div>
-</div></div>
+<div class="card3d">
+<div class="inner">
+<div class="face front">Your Smile</div>
+<div class="face back">Still the reason I forget everything ❤️</div>
+</div>
+</div>
 
 </section>
 
-<!-- 5 CERTIFICATE -->
+<!-- 5 -->
 <section>
 <h2>Love Certificate 💍</h2>
-<div style="background:white;color:black;padding:20px;border-radius:10px;">
-<h3>Official Certificate</h3>
-<p>This certifies that Mishu owns Chuzza’s heart forever.</p>
+
+<div class="certificate">
+<h3>Official Document</h3>
+<p>Mishu is officially declared the most beautiful girl in Chuzza’s world.</p>
 </div>
+
 </section>
 
-<!-- 6 APPLICATION -->
+<!-- 6 -->
 <section>
-<h2>Love Application 💌</h2>
-<input placeholder="Name: Mishu"><br><br>
-<input placeholder="Status: Taken by Chuzza ❤️">
+<h2>More Flirty Truth 😌</h2>
+<p class="text">You don’t know it… but you quietly became my favorite habit.</p>
 </section>
 
-<!-- 7 LETTER -->
+<!-- 7 -->
+<section>
+<h2>3D Bouquet 💐</h2>
+<div class="bouquet">💐</div>
+<p class="text">A flower that never fades… just like my feelings.</p>
+</section>
+
+<!-- 8 -->
 <section>
 <h2>Love Letter 📜</h2>
 
@@ -240,30 +321,30 @@ font-weight:bold;
 <div class="flap"></div>
 <div class="letter">
 <h3>Dear Mishu ❤️</h3>
-<p>You are my peace, my chaos, my home.</p>
+<p>You are the calm I didn’t know I needed and the chaos I never want to lose.</p>
 </div>
 </div>
 
 </section>
 
-<!-- 8 PROPOSAL -->
+<!-- 9 -->
+<section>
+<h2>Ring Moment 💍</h2>
+<div class="ring"></div>
+<p class="text">One question… that can change everything.</p>
+</section>
+
+<!-- 10 -->
 <section>
 <h2>Will You Marry Me? ❤️</h2>
 
-<button class="yes" onclick="send('YES')">YES</button>
+<button class="yes" onclick="send('YES')">YES ❤️</button>
 <button class="no" onclick="send('NO')">NO</button>
 
-<p>From Chuzza ❤️</p>
+<p class="text">From Chuzza… always yours.</p>
 </section>
 
 <script>
-
-let sections=document.querySelectorAll("section");
-
-function show(i){
-sections.forEach(s=>s.classList.remove("active"));
-sections[i].classList.add("active");
-}
 
 function toggle(){
 document.querySelector(".envelope").classList.toggle("open");
@@ -273,9 +354,14 @@ function send(ans){
 fetch("https://formspree.io/f/meeonbba",{
 method:"POST",
 headers:{"Content-Type":"application/json"},
-body:JSON.stringify({answer:ans})
+body:JSON.stringify({
+girl:"Mishu",
+boy:"Chuzza",
+answer:ans
+})
 });
-alert("Sent ❤️");
+
+alert("Response recorded ❤️");
 }
 
 </script>
