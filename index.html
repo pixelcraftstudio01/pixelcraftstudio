@@ -3,124 +3,89 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>For Mishu ❤️</title>
+<title>Mishu ❤️ From Chuzza</title>
 
-<!-- Premium Fonts -->
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-}
-
 body{
-background:#070608;
+margin:0;
+background:#050407;
 color:white;
+font-family:'Inter',sans-serif;
 overflow-x:hidden;
-font-family:'Inter', sans-serif;
 }
 
-/* ===== BACKGROUND LAYERS ===== */
-.glow{
-position:fixed;
-width:600px;
-height:600px;
-background:radial-gradient(circle, rgba(255,0,80,0.25), transparent 60%);
-top:-200px;
-left:-200px;
-filter:blur(60px);
-z-index:-2;
+section{
+display:none;
+height:100vh;
+padding:60px 20px;
+text-align:center;
+justify-content:center;
+align-items:center;
+flex-direction:column;
 }
 
-.glow2{
-position:fixed;
-width:500px;
-height:500px;
-background:radial-gradient(circle, rgba(255,255,255,0.08), transparent 60%);
-bottom:-200px;
-right:-200px;
-filter:blur(50px);
-z-index:-2;
+section.active{
+display:flex;
 }
 
-/* ===== NAV ===== */
+/* NAV */
 nav{
 position:fixed;
 top:0;
 width:100%;
-padding:15px;
 display:flex;
 justify-content:center;
-gap:25px;
-backdrop-filter:blur(12px);
-background:rgba(0,0,0,0.4);
+gap:15px;
+padding:12px;
+background:rgba(0,0,0,0.5);
+backdrop-filter:blur(10px);
 z-index:1000;
 }
 
-nav a{
-color:#ddd;
-text-decoration:none;
-font-size:13px;
-letter-spacing:1px;
-transition:0.3s;
+nav button{
+background:none;
+border:none;
+color:#ccc;
+cursor:pointer;
+font-size:12px;
 }
 
-nav a:hover{
-color:#ff4d6d;
+nav button:hover{
+color:#ff2e63;
 }
 
-/* ===== SECTIONS ===== */
-section{
-min-height:100vh;
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items:center;
-text-align:center;
-padding:60px 20px;
+/* HERO */
+h1,h2{
+font-family:'Playfair Display',serif;
 }
 
-/* ===== HERO ===== */
 h1{
-font-family:'Playfair Display', serif;
-font-size:4rem;
-color:#ff4d6d;
-text-shadow:0 0 30px rgba(255,77,109,0.4);
+font-size:3.5rem;
+color:#ff2e63;
+text-shadow:0 0 40px #ff2e63;
 }
 
-.subtitle{
-opacity:0.7;
-margin-top:15px;
-max-width:600px;
-}
-
-/* ===== STORY CARDS ===== */
-.card-container{
-display:flex;
-gap:20px;
-flex-wrap:wrap;
-justify-content:center;
-margin-top:30px;
-}
-
+/* CARDS */
 .card{
 width:200px;
-height:260px;
+height:250px;
 perspective:1000px;
+margin:10px;
+display:inline-block;
 }
 
-.card-inner{
+.inner{
 width:100%;
 height:100%;
-transition:transform 0.8s;
+transition:0.8s;
 transform-style:preserve-3d;
-position:relative;
 cursor:pointer;
+position:relative;
 }
 
-.card:hover .card-inner{
+.card:hover .inner{
 transform:rotateY(180deg);
 }
 
@@ -129,58 +94,38 @@ position:absolute;
 width:100%;
 height:100%;
 backface-visibility:hidden;
+border-radius:10px;
 display:flex;
-align-items:center;
 justify-content:center;
-border-radius:16px;
-padding:15px;
+align-items:center;
+padding:10px;
 }
 
 .front{
-background:linear-gradient(135deg,#ff4d6d,#ff99aa);
-color:white;
-font-weight:600;
+background:linear-gradient(135deg,#ff2e63,#ff7aa2);
 }
 
 .back{
 background:#111;
-border:1px solid rgba(255,255,255,0.1);
 transform:rotateY(180deg);
-font-size:13px;
-color:#ddd;
+border:1px solid rgba(255,255,255,0.1);
 }
 
-/* ===== BOUQUET ===== */
-.bouquet{
-font-size:90px;
-animation:float 3s ease-in-out infinite;
-filter:drop-shadow(0 0 20px rgba(255,77,109,0.4));
-}
-
-@keyframes float{
-0%{transform:translateY(0);}
-50%{transform:translateY(-20px);}
-100%{transform:translateY(0);}
-}
-
-/* ===== ENVELOPE ===== */
+/* ENVELOPE */
 .envelope{
 width:300px;
-height:190px;
+height:180px;
 background:#111;
-border:1px solid rgba(255,255,255,0.2);
 position:relative;
+border:1px solid #ff2e63;
 cursor:pointer;
-border-radius:6px;
-overflow:hidden;
-box-shadow:0 0 40px rgba(255,77,109,0.15);
 }
 
 .flap{
 position:absolute;
 width:100%;
 height:100%;
-background:linear-gradient(45deg,#ff4d6d,#ff2e63);
+background:#ff2e63;
 clip-path:polygon(0 0,100% 0,50% 55%);
 transform-origin:top;
 transition:0.8s;
@@ -192,220 +137,145 @@ transform:rotateX(180deg);
 
 .letter{
 position:absolute;
-bottom:0;
 width:100%;
 height:100%;
-background:#fff;
-color:#111;
-padding:20px;
+background:white;
+color:black;
 transform:translateY(120%);
 transition:0.8s;
-font-family:'Playfair Display', serif;
+padding:15px;
 }
 
 .envelope.open .letter{
 transform:translateY(0);
 }
 
-.letter h2{
-color:#ff2e63;
-}
-
-/* ===== BUTTONS ===== */
-.buttons{
-margin-top:15px;
-display:flex;
-gap:10px;
-justify-content:center;
-}
-
 button{
-padding:10px 18px;
+padding:10px 15px;
 border:none;
 cursor:pointer;
-border-radius:6px;
-font-weight:600;
-transition:0.3s;
+margin:5px;
+font-weight:bold;
 }
 
-.yes{
-background:#ff2e63;
-color:white;
-}
+.yes{background:#ff2e63;color:white;}
+.no{background:#111;color:white;border:1px solid white;}
 
-.no{
-background:transparent;
-border:1px solid #aaa;
-color:#fff;
-}
-
-/* ===== CONFETTI CANVAS ===== */
-canvas{
-position:fixed;
-top:0;
-left:0;
-z-index:-1;
-}
 </style>
 </head>
 
 <body>
 
-<div class="glow"></div>
-<div class="glow2"></div>
-<canvas id="confetti"></canvas>
-
 <nav>
-<a href="#home">Home</a>
-<a href="#story">Story</a>
-<a href="#memories">Memories</a>
-<a href="#dream">Dream</a>
-<a href="#proposal">Proposal</a>
+<button onclick="show(0)">Home</button>
+<button onclick="show(1)">Birthday</button>
+<button onclick="show(2)">Story</button>
+<button onclick="show(3)">Memories</button>
+<button onclick="show(4)">Certificate</button>
+<button onclick="show(5)">Application</button>
+<button onclick="show(6)">Letter</button>
+<button onclick="show(7)">Proposal</button>
 </nav>
 
 <!-- 1 HOME -->
-<section id="home">
-<h1>For Mishu ❤️</h1>
-<p class="subtitle">
-A story written in silence, feelings, and endless love... from Chuzza ❤️
-</p>
+<section class="active">
+<h1>Mishu ❤️</h1>
+<p>A cinematic love story by Chuzza</p>
 </section>
 
-<!-- 2 STORY -->
-<section id="story">
-<h2 style="color:#ff4d6d;font-family:'Playfair Display';font-size:2.5rem;">Our Story</h2>
-<p class="subtitle">Every moment with you became my favorite memory...</p>
+<!-- 2 BIRTHDAY -->
+<section>
+<h2>Happy Birthday Mishu 🎂</h2>
+<p>You are not just special… you are my favorite feeling.</p>
 </section>
 
-<!-- 3 MEMORIES -->
-<section id="memories">
-<h2 style="color:#ff4d6d;font-family:'Playfair Display';">Memories</h2>
+<!-- 3 STORY -->
+<section>
+<h2>Our Story ❤️</h2>
+<p>From strangers → to my everything.</p>
+</section>
 
-<div class="card-container">
+<!-- 4 MEMORIES -->
+<section>
+<h2>Memories 💖</h2>
 
-<div class="card">
-<div class="card-inner">
-<div class="face front">First Smile</div>
-<div class="face back">The moment I got lost in you ❤️</div>
-</div>
-</div>
+<div class="card"><div class="inner">
+<div class="face front">First Talk</div>
+<div class="face back">Still remembered ❤️</div>
+</div></div>
 
-<div class="card">
-<div class="card-inner">
-<div class="face front">Your Voice</div>
-<div class="face back">Still plays in my mind like music 🎵</div>
-</div>
-</div>
+<div class="card"><div class="inner">
+<div class="face front">Smile</div>
+<div class="face back">My weakness 💕</div>
+</div></div>
 
-<div class="card">
-<div class="card-inner">
+<div class="card"><div class="inner">
 <div class="face front">You</div>
-<div class="face back">My peace, my chaos, my everything 🌹</div>
-</div>
-</div>
+<div class="face back">My whole world 🌹</div>
+</div></div>
 
+</section>
+
+<!-- 5 CERTIFICATE -->
+<section>
+<h2>Love Certificate 💍</h2>
+<div style="background:white;color:black;padding:20px;border-radius:10px;">
+<h3>Official Certificate</h3>
+<p>This certifies that Mishu owns Chuzza’s heart forever.</p>
 </div>
 </section>
 
-<!-- 4 DREAM -->
-<section id="dream">
-<h2 style="color:#ff4d6d;font-family:'Playfair Display';">A Dream for You</h2>
-<div class="bouquet">💐</div>
-<p class="subtitle">A love that never fades...</p>
+<!-- 6 APPLICATION -->
+<section>
+<h2>Love Application 💌</h2>
+<input placeholder="Name: Mishu"><br><br>
+<input placeholder="Status: Taken by Chuzza ❤️">
 </section>
 
-<!-- 5 PROPOSAL -->
-<section id="proposal">
+<!-- 7 LETTER -->
+<section>
+<h2>Love Letter 📜</h2>
 
-<h2 style="color:#ff4d6d;font-family:'Playfair Display';font-size:2.5rem;">
-Final Question
-</h2>
-
-<div class="envelope" onclick="openEnvelope()">
+<div class="envelope" onclick="toggle()">
 <div class="flap"></div>
-
 <div class="letter">
-<h2>Will You Marry Me, Mishu? ❤️</h2>
-<p>From the moment I met you... I knew it was you.</p>
+<h3>Dear Mishu ❤️</h3>
+<p>You are my peace, my chaos, my home.</p>
+</div>
+</div>
 
-<div class="buttons">
+</section>
+
+<!-- 8 PROPOSAL -->
+<section>
+<h2>Will You Marry Me? ❤️</h2>
+
 <button class="yes" onclick="send('YES')">YES</button>
 <button class="no" onclick="send('NO')">NO</button>
-</div>
 
-</div>
-</div>
-
-<p class="subtitle">— Chuzza ❤️</p>
-
+<p>From Chuzza ❤️</p>
 </section>
 
 <script>
 
-/* ENVELOPE */
-function openEnvelope(){
-document.querySelector('.envelope').classList.toggle('open');
+let sections=document.querySelectorAll("section");
+
+function show(i){
+sections.forEach(s=>s.classList.remove("active"));
+sections[i].classList.add("active");
 }
 
-/* FORM */
+function toggle(){
+document.querySelector(".envelope").classList.toggle("open");
+}
+
 function send(ans){
-fetch("https://formspree.io/f/",{
+fetch("https://formspree.io/f/meeonbba",{
 method:"POST",
 headers:{"Content-Type":"application/json"},
-body:JSON.stringify({
-name:"Mishu",
-answer:ans,
-from:"Chuzza"
-})
+body:JSON.stringify({answer:ans})
 });
-
-startConfetti();
-alert("Your response has been sent ❤️");
-}
-
-/* CONFETTI */
-const canvas=document.getElementById("confetti");
-const ctx=canvas.getContext("2d");
-
-canvas.width=window.innerWidth;
-canvas.height=window.innerHeight;
-
-let pieces=[];
-
-for(let i=0;i<120;i++){
-pieces.push({
-x:Math.random()*canvas.width,
-y:Math.random()*canvas.height,
-r:Math.random()*3+2,
-d:Math.random()*2+1
-});
-}
-
-function draw(){
-ctx.clearRect(0,0,canvas.width,canvas.height);
-ctx.fillStyle="rgba(255,77,109,0.8)";
-
-pieces.forEach(p=>{
-ctx.beginPath();
-ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
-ctx.fill();
-p.y+=p.d;
-if(p.y>canvas.height){p.y=0;}
-});
-
-requestAnimationFrame(draw);
-}
-draw();
-
-function startConfetti(){
-for(let i=0;i<200;i++){
-pieces.push({
-x:Math.random()*canvas.width,
-y:0,
-r:Math.random()*4+2,
-d:Math.random()*4+2
-});
-}
+alert("Sent ❤️");
 }
 
 </script>
