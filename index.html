@@ -1,262 +1,1505 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Modern Landing Page</title>
-    <style>
-        /* Modern Reset and CSS Variables */
-        :root {
-            --bg-primary: #0f172a;
-            --bg-surface: #1e293b;
-            --text-main: #f8fafc;
-            --text-muted: #94a3b8;
-            --accent: #38bdf8;
-            --accent-hover: #7dd3fc;
-        }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        body {
-            background-color: var(--bg-primary);
-            color: var(--text-main);
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
+<title>Happy Birthday Mishu ❤️ | Forever Yours Chuzza ❤️</title>
 
-        /* Navbar */
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1.5rem 10%;
-            background-color: rgba(15, 23, 42, 0.8);
-            backdrop-filter: blur(10px);
-            position: fixed;
-            top: 0;
-            width: 100%;
-            z-index: 1000;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-        }
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-        .logo {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--text-main);
-            text-decoration: none;
-        }
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-        .logo span {
-            color: var(--accent);
-        }
+<style>
 
-        nav a {
-            color: var(--text-muted);
-            text-decoration: none;
-            margin-left: 2rem;
-            transition: color 0.3s;
-        }
+:root{
 
-        nav a:hover {
-            color: var(--accent);
-        }
+--black:#0D0D0D;
+--red:#8B0000;
+--pink:#FF4F8B;
+--white:#ffffff;
+--gold:#d4af37;
+--rose:#e7b8a7;
 
-        /* Hero Section */
-        .hero {
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 0 1rem;
-            background: radial-gradient(circle at center, rgba(56, 189, 248, 0.1) 0%, transparent 70%);
-        }
+}
 
-        .hero h1 {
-            font-size: 3.5rem;
-            font-weight: 800;
-            margin-bottom: 1rem;
-            letter-spacing: -1px;
-        }
+*{
 
-        .hero h1 span {
-            color: var(--accent);
-        }
+margin:0;
+padding:0;
+box-sizing:border-box;
 
-        .hero p {
-            font-size: 1.25rem;
-            color: var(--text-muted);
-            max-width: 600px;
-            margin-bottom: 2rem;
-        }
+}
 
-        .cta-btn {
-            background-color: var(--accent);
-            color: var(--bg-primary);
-            padding: 0.8rem 2rem;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 14px rgba(56, 189, 248, 0.3);
-        }
+html{
 
-        .cta-btn:hover {
-            background-color: var(--accent-hover);
-            transform: translateY(-2px);
-        }
+scroll-behavior:smooth;
 
-        /* Features Section */
-        .features {
-            padding: 5rem 10%;
-            background-color: var(--bg-surface);
-        }
+}
 
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
+body{
 
-        .feature-card {
-            background-color: var(--bg-primary);
-            padding: 2.5rem 2rem;
-            border-radius: 12px;
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            transition: transform 0.3s;
-        }
+background:linear-gradient(180deg,#050505,#180202,#050505);
+font-family:Poppins,sans-serif;
+overflow-x:hidden;
+color:white;
 
-        .feature-card:hover {
-            transform: translateY(-5px);
-        }
+}
 
-        .feature-card h3 {
-            margin-bottom: 1rem;
-            color: var(--accent);
-        }
+::-webkit-scrollbar{
 
-        .feature-card p {
-            color: var(--text-muted);
-            font-size: 0.95rem;
-        }
+width:8px;
 
-        /* Interactive Counter Section */
-        .counter-section {
-            padding: 4rem 10%;
-            text-align: center;
-        }
+}
 
-        .counter-box {
-            display: inline-block;
-            background: var(--bg-surface);
-            padding: 2rem 4rem;
-            border-radius: 16px;
-            border: 1px solid rgba(255, 255, 255, 0.05);
-        }
+::-webkit-scrollbar-thumb{
 
-        .counter-box h2 {
-            font-size: 1.5rem;
-            margin-bottom: 0.5rem;
-        }
+background:linear-gradient(var(--pink),var(--gold));
+border-radius:30px;
 
-        .counter-value {
-            font-size: 3rem;
-            font-weight: 700;
-            color: var(--accent);
-            margin-bottom: 1rem;
-        }
+}
 
-        .interactive-btn {
-            background: transparent;
-            border: 2px solid var(--accent);
-            color: var(--accent);
-            padding: 0.5rem 1.5rem;
-            border-radius: 6px;
-            cursor: pointer;
-            font-weight: 600;
-            transition: all 0.2s;
-        }
+section{
 
-        .interactive-btn:hover {
-            background: var(--accent);
-            color: var(--bg-primary);
-        }
+min-height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+padding:80px 8%;
+position:relative;
 
-        /* Footer */
-        footer {
-            text-align: center;
-            padding: 2rem;
-            color: var(--text-muted);
-            font-size: 0.9rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.05);
-        }
+}
 
-        /* Responsive */
-        @media (max-width: 768px) {
-            .hero h1 { font-size: 2.5rem; }
-            nav { display: none; } /* Kept simple for standard single-file paste */
-        }
-    </style>
+canvas{
+
+position:fixed;
+left:0;
+top:0;
+width:100%;
+height:100%;
+pointer-events:none;
+z-index:-1;
+
+}
+
+.glass{
+
+background:rgba(255,255,255,.08);
+border:1px solid rgba(255,255,255,.15);
+backdrop-filter:blur(18px);
+border-radius:25px;
+box-shadow:0 25px 80px rgba(0,0,0,.45);
+
+}
+
+.fade{
+
+opacity:0;
+transform:translateY(70px);
+transition:1.2s;
+
+}
+
+.fade.show{
+
+opacity:1;
+transform:none;
+
+}
+
+h1{
+
+font-family:Great Vibes;
+font-size:85px;
+text-align:center;
+color:white;
+
+}
+
+h2{
+
+font-family:"Playfair Display";
+font-size:48px;
+margin-bottom:30px;
+
+}
+
+p{
+
+font-size:18px;
+line-height:1.8;
+max-width:850px;
+text-align:center;
+
+}
+
+.btn{
+
+padding:18px 45px;
+border:none;
+border-radius:50px;
+cursor:pointer;
+font-size:18px;
+background:linear-gradient(135deg,var(--pink),var(--red));
+color:white;
+margin-top:40px;
+transition:.4s;
+
+}
+
+.btn:hover{
+
+transform:translateY(-8px) scale(1.05);
+
+box-shadow:0 0 30px var(--pink);
+
+}
+
+#loader{
+
+position:fixed;
+inset:0;
+background:black;
+display:flex;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+z-index:999999;
+
+}
+
+.loaderHeart{
+
+font-size:95px;
+animation:pulse 1s infinite;
+
+}
+
+.progress{
+
+margin-top:25px;
+font-size:42px;
+color:var(--gold);
+
+}
+
+.loadingText{
+
+margin-top:15px;
+letter-spacing:3px;
+
+}
+
+.credit{
+
+margin-top:35px;
+font-family:Great Vibes;
+font-size:34px;
+color:var(--rose);
+
+}
+
+@keyframes pulse{
+
+0%{transform:scale(.9);}
+50%{transform:scale(1.15);}
+100%{transform:scale(.9);}
+
+}
+
+#hero{
+
+overflow:hidden;
+
+}
+
+#hero::before{
+
+content:"";
+position:absolute;
+inset:0;
+
+background:
+
+radial-gradient(circle,
+rgba(255,79,139,.35),
+transparent 70%);
+
+animation:bg 10s infinite alternate;
+
+}
+
+@keyframes bg{
+
+100%{
+
+transform:scale(1.4);
+
+}
+
+}
+
+.heroCard{
+
+width:360px;
+height:220px;
+padding:25px;
+margin-top:60px;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+font-size:24px;
+transform-style:preserve-3d;
+animation:float 5s ease-in-out infinite;
+
+}
+
+@keyframes float{
+
+50%{
+
+transform:
+
+translateY(-18px)
+rotateY(12deg);
+
+}
+
+}
+
+.hearts{
+
+position:absolute;
+inset:0;
+overflow:hidden;
+pointer-events:none;
+
+}
+
+.hearts span{
+
+position:absolute;
+bottom:-50px;
+font-size:24px;
+animation:rise linear forwards;
+
+}
+
+@keyframes rise{
+
+100%{
+
+transform:translateY(-120vh);
+opacity:0;
+
+}
+
+}
+
+.cursor{
+
+width:22px;
+height:22px;
+border:2px solid var(--pink);
+border-radius:50%;
+position:fixed;
+pointer-events:none;
+z-index:99999;
+transition:.08s;
+
+box-shadow:0 0 18px var(--pink);
+
+}
+
+</style>
+
 </head>
+
 <body>
 
-    <header>
-        <a href="#" class="logo">Launch<span>Pad</span></a>
-        <nav>
-            <a href="#features">Features</a>
-            <a href="#interactive">Interactive</a>
-        </nav>
-    </header>
+<canvas id="particles"></canvas>
 
-    <section class="hero">
-        <h1>Your Next Big Idea Starts <span>Here</span></h1>
-        <p>A beautiful, responsive, single-file HTML template ready to be customized into your dream website project.</p>
-        <a href="#features" class="cta-btn">Explore Features</a>
-    </section>
+<div class="cursor"></div>
 
-    <section id="features" class="features">
-        <h2 style="text-align: center; font-size: 2rem;">Why Choose Us</h2>
-        <div class="features-grid">
-            <div class="feature-card">
-                <h3>Clean Code</h3>
-                <p>Built with semantic HTML5 and modern CSS variables, making it incredibly easy to customize and scale.</p>
-            </div>
-            <div class="feature-card">
-                <h3>Fully Responsive</h3>
-                <p>Looks gorgeous on desktops, tablets, and mobile devices automatically right out of the box.</p>
-            </div>
-            <div class="feature-card">
-                <h3>Blazing Fast</h3>
-                <p>Zero external frameworks or bulky libraries means instant loading times for your visitors.</p>
-            </div>
-        </div>
-    </section>
+<div id="loader">
 
-    <section id="interactive" class="counter-section">
-        <div class="counter-box">
-            <h2>Live Interactive Feature</h2>
-            <div class="counter-value" id="counter">0</div>
-            <button class="interactive-btn" onclick="incrementCounter()">Click Me!</button>
-        </div>
-    </section>
+<div class="loaderHeart">
 
-    <footer>
-        <p>&copy; 2026 LaunchPad. All rights reserved.</p>
-    </footer>
+❤️
 
-    <script>
-        let count = 0;
-        function incrementCounter() {
-            count++;
-            document.getElementById('counter').innerText = count;
-        }
-    </script>
+</div>
+
+<div class="progress">
+
+0%
+
+</div>
+
+<div class="loadingText">
+
+Preparing Something Magical...
+
+</div>
+
+<div class="credit">
+
+Made With Love By Chuzza ❤️
+
+</div>
+
+</div>
+
+<div class="hearts" id="hearts"></div>
+
+<section id="hero">
+
+<h1 class="fade">
+
+Happy Birthday
+
+<br>
+
+Mishu ❤️
+
+</h1>
+
+<p class="fade">
+
+Every heartbeat writes your name.
+
+Every sunrise reminds me how lucky I am.
+
+Today isn't just your birthday...
+
+It's the day the world celebrates the most beautiful girl I've ever known.
+
+</p>
+
+<button class="btn fade">
+
+Begin Our Love Story ❤️
+
+</button>
+
+<div class="heroCard glass fade">
+
+✨
+
+You are the most beautiful chapter
+of my life,
+and every page after this
+belongs to us.
+
+✨
+
+</div>
+
+</section>
+<!-- ========================================================= -->
+<!-- PART 2 (CORRECTED)                                        -->
+<!-- Paste this immediately after the Hero Section in Part 1    -->
+<!-- ========================================================= -->
+
+<!-- ================= COUNTDOWN ================= -->
+
+<section id="countdown">
+
+<h2 class="fade">Tomorrow Is Your Birthday ❤️</h2>
+
+<div class="glass countdown">
+
+<div class="time">
+<h3 id="days">00</h3>
+<span>Days</span>
+</div>
+
+<div class="time">
+<h3 id="hours">00</h3>
+<span>Hours</span>
+</div>
+
+<div class="time">
+<h3 id="minutes">00</h3>
+<span>Minutes</span>
+</div>
+
+<div class="time">
+<h3 id="seconds">00</h3>
+<span>Seconds</span>
+</div>
+
+</div>
+
+</section>
+
+<!-- ================= GIFT ================= -->
+
+<section id="gift">
+
+<h2 class="fade">A Birthday Surprise 🎁</h2>
+
+<div id="giftBox" class="fade">
+🎁
+</div>
+
+<p id="giftText">
+Tap the gift...
+</p>
+
+</section>
+
+<!-- ================= ROSE ================= -->
+
+<section id="rose">
+
+<h2 class="fade">
+A Bouquet For You 🌹
+</h2>
+
+<div id="bouquet" class="fade">
+💐
+</div>
+
+<p id="roseText">
+Touch the flowers...
+</p>
+
+</section>
+
+<!-- ================= GREETING CARD ================= -->
+
+<section id="greeting">
+
+<h2 class="fade">
+Birthday Greeting ❤️
+</h2>
+
+<div id="card" class="glass">
+
+<div class="front">
+
+Open Card ❤️
+
+</div>
+
+<div class="inside">
+
+Happy Birthday
+
+My Beautiful Mishu ❤️
+
+<br><br>
+
+May your smile always stay brighter than every star.
+
+<br><br>
+
+Forever Yours,
+
+Chuzza ❤️
+
+</div>
+
+</div>
+
+</section>
+
+<style>
+
+.countdown{
+
+display:flex;
+gap:25px;
+flex-wrap:wrap;
+justify-content:center;
+padding:40px;
+
+}
+
+.time{
+
+width:110px;
+height:110px;
+display:flex;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+
+background:rgba(255,255,255,.06);
+
+border-radius:20px;
+
+}
+
+.time h3{
+
+font-size:40px;
+color:var(--gold);
+
+}
+
+#giftBox{
+
+font-size:140px;
+
+cursor:pointer;
+
+transition:.5s;
+
+}
+
+#giftBox:hover{
+
+transform:scale(1.1);
+
+}
+
+#giftText{
+
+margin-top:25px;
+
+font-family:Great Vibes;
+
+font-size:34px;
+
+}
+
+#bouquet{
+
+font-size:150px;
+
+cursor:pointer;
+
+transition:.5s;
+
+}
+
+#bouquet:hover{
+
+transform:scale(1.1);
+
+}
+
+#roseText{
+
+margin-top:20px;
+
+font-family:Great Vibes;
+
+font-size:34px;
+
+}
+
+#card{
+
+width:340px;
+
+height:220px;
+
+position:relative;
+
+cursor:pointer;
+
+transform-style:preserve-3d;
+
+transition:1s;
+
+}
+
+#card.open{
+
+transform:rotateY(180deg);
+
+}
+
+.front,
+.inside{
+
+position:absolute;
+
+inset:0;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+padding:25px;
+
+border-radius:20px;
+
+backface-visibility:hidden;
+
+}
+
+.inside{
+
+transform:rotateY(180deg);
+
+text-align:center;
+
+font-family:Great Vibes;
+
+font-size:30px;
+
+}
+
+</style>
+
+<script>
+
+/* Loader */
+
+let p=0;
+
+const loader=document.getElementById("loader");
+
+const progress=document.querySelector(".progress");
+
+let loading=setInterval(()=>{
+
+p++;
+
+progress.innerHTML=p+"%";
+
+if(p>=100){
+
+clearInterval(loading);
+
+loader.style.opacity="0";
+
+setTimeout(()=>{
+
+loader.remove();
+
+},700);
+
+}
+
+},25);
+
+/* Cursor */
+
+const cursor=document.querySelector(".cursor");
+
+document.addEventListener("mousemove",e=>{
+
+cursor.style.left=e.clientX+"px";
+
+cursor.style.top=e.clientY+"px";
+
+});
+
+/* Floating Hearts */
+
+const hearts=document.getElementById("hearts");
+
+setInterval(()=>{
+
+let h=document.createElement("span");
+
+h.innerHTML=Math.random()>.5?"❤️":"🌹";
+
+h.style.left=Math.random()*100+"%";
+
+h.style.animationDuration=(5+Math.random()*5)+"s";
+
+h.style.fontSize=(20+Math.random()*25)+"px";
+
+hearts.appendChild(h);
+
+setTimeout(()=>h.remove(),10000);
+
+},300);
+
+/* Scroll Animation */
+
+document.querySelectorAll(".fade").forEach(el=>{
+
+new IntersectionObserver(entries=>{
+
+entries.forEach(entry=>{
+
+if(entry.isIntersecting){
+
+entry.target.classList.add("show");
+
+}
+
+});
+
+}).observe(el);
+
+});
+
+/* Countdown */
+
+const birthday=new Date();
+
+birthday.setDate(birthday.getDate()+1);
+
+setInterval(()=>{
+
+const now=new Date();
+
+const diff=birthday-now;
+
+days.innerHTML=Math.max(0,Math.floor(diff/86400000));
+
+hours.innerHTML=Math.max(0,Math.floor(diff%86400000/3600000));
+
+minutes.innerHTML=Math.max(0,Math.floor(diff%3600000/60000));
+
+seconds.innerHTML=Math.max(0,Math.floor(diff%60000/1000));
+
+},1000);
+
+/* Gift */
+
+giftBox.onclick=function(){
+
+giftBox.innerHTML="💖";
+
+giftBox.style.transform="scale(1.4) rotate(360deg)";
+
+giftText.innerHTML="Happy Birthday My Princess ❤️";
+
+};
+
+/* Bouquet */
+
+bouquet.onclick=function(){
+
+bouquet.innerHTML="🌹🌹🌹";
+
+roseText.innerHTML="Every Rose Reminds Me Of You ❤️";
+
+};
+
+/* Greeting Card */
+
+card.onclick=function(){
+
+card.classList.toggle("open");
+
+};
+
+</script>
+<!-- ========================================================= -->
+<!-- PART 3 -->
+<!-- Paste immediately after Part 2 -->
+<!-- ========================================================= -->
+
+<!-- ================= SECTION : REASONS ================= -->
+
+<section id="reasons">
+
+<h2 class="fade">
+12 Reasons I Love You ❤️
+</h2>
+
+<div class="reasonGrid">
+
+<div class="glass reason fade">❤️ Your Smile Lights Up My World</div>
+<div class="glass reason fade">🥰 Your Caring Heart</div>
+<div class="glass reason fade">🌹 Your Kindness</div>
+<div class="glass reason fade">✨ Your Beautiful Soul</div>
+<div class="glass reason fade">😊 You Always Understand Me</div>
+<div class="glass reason fade">💖 Your Love Gives Me Strength</div>
+<div class="glass reason fade">🌙 Every Late Night Conversation</div>
+<div class="glass reason fade">🌸 Your Beautiful Eyes</div>
+<div class="glass reason fade">🎀 Your Cute Expressions</div>
+<div class="glass reason fade">🤍 You Make Me A Better Person</div>
+<div class="glass reason fade">💍 I See My Future With You</div>
+<div class="glass reason fade">👑 Because You're Simply You</div>
+
+</div>
+
+</section>
+
+<!-- ================= SECTION : TIMELINE ================= -->
+
+<section id="timeline">
+
+<h2 class="fade">
+Our Love Story ❤️
+</h2>
+
+<div class="timeline">
+
+<div class="glass event fade">
+<h3>🌸 The Beginning</h3>
+<p>Destiny quietly brought us together.</p>
+</div>
+
+<div class="glass event fade">
+<h3>💬 Endless Conversations</h3>
+<p>Every conversation became a beautiful memory.</p>
+</div>
+
+<div class="glass event fade">
+<h3>❤️ Falling In Love</h3>
+<p>You slowly became my favorite person.</p>
+</div>
+
+<div class="glass event fade">
+<h3>🎂 Today</h3>
+<p>Celebrating the birthday of the most precious girl.</p>
+</div>
+
+<div class="glass event fade">
+<h3>💍 Forever</h3>
+<p>One day... husband and wife. Forever.</p>
+</div>
+
+</div>
+
+</section>
+
+<!-- ================= SECTION : PROMISES ================= -->
+
+<section id="promises">
+
+<h2 class="fade">
+My Promises To You ❤️
+</h2>
+
+<div class="promiseGrid">
+
+<div class="glass promise fade">🤍 I Promise To Respect You</div>
+
+<div class="glass promise fade">❤️ I Promise To Love You Forever</div>
+
+<div class="glass promise fade">🌹 I Promise To Protect Your Smile</div>
+
+<div class="glass promise fade">✨ I Promise To Stand Beside You</div>
+
+<div class="glass promise fade">🌙 I Promise To Support Every Dream</div>
+
+<div class="glass promise fade">💍 I Promise To Choose You Every Day</div>
+
+</div>
+
+</section>
+
+<style>
+
+.reasonGrid,
+.promiseGrid{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+
+gap:25px;
+
+width:100%;
+
+max-width:1200px;
+
+margin-top:45px;
+
+}
+
+.reason,
+.promise{
+
+padding:35px;
+
+text-align:center;
+
+font-size:20px;
+
+transition:.45s;
+
+cursor:pointer;
+
+}
+
+.reason:hover,
+.promise:hover{
+
+transform:translateY(-10px) rotateY(10deg);
+
+box-shadow:0 0 30px rgba(255,79,139,.45);
+
+}
+
+.timeline{
+
+width:100%;
+
+max-width:900px;
+
+display:flex;
+
+flex-direction:column;
+
+gap:30px;
+
+margin-top:50px;
+
+}
+
+.event{
+
+padding:30px;
+
+border-left:4px solid var(--gold);
+
+}
+
+.event h3{
+
+font-family:"Playfair Display";
+
+margin-bottom:10px;
+
+color:var(--gold);
+
+}
+
+</style>
+<!-- ========================================================= -->
+<!-- PART 4 -->
+<!-- Paste immediately after Part 3 -->
+<!-- ========================================================= -->
+
+<!-- ================= LOVE LETTER ================= -->
+
+<section id="loveLetter">
+
+<h2 class="fade">
+A Letter From My Heart 💌
+</h2>
+
+<div id="envelope" class="glass fade">
+
+<div id="letter">
+
+<h3>My Dearest Mishu ❤️</h3>
+
+<p>
+
+Happy Birthday, My Love.
+
+Every day with you feels like the most beautiful dream.
+
+Thank you for making my life brighter, happier, and more meaningful.
+
+I don't know what tomorrow holds, but I know one thing...
+
+I want every tomorrow to be with you.
+
+No matter what happens,
+
+I will always stand beside you,
+
+make you smile,
+
+and love you with all my heart.
+
+Happy Birthday once again,
+
+My Princess.
+
+❤️
+
+</p>
+
+<h4>
+
+Forever Yours,
+
+<br>
+
+Chuzza ❤️
+
+</h4>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ================= CERTIFICATE ================= -->
+
+<section id="certificate">
+
+<h2 class="fade">
+
+Royal Certificate 👑
+
+</h2>
+
+<div class="certificate glass fade">
+
+<h3>
+
+Certificate Of Love
+
+</h3>
+
+<br>
+
+Presented To
+
+<br><br>
+
+<h1 style="font-size:55px;font-family:Great Vibes;">
+
+Mishu ❤️
+
+</h1>
+
+<br>
+
+Officially Declared
+
+<br><br>
+
+✨ Most Beautiful Girl
+
+<br>
+
+✨ Most Caring
+
+<br>
+
+✨ Most Precious
+
+<br>
+
+✨ Most Loved
+
+<br><br>
+
+Forever Certified By
+
+<br>
+
+<b>Chuzza ❤️</b>
+
+</div>
+
+</section>
+
+<!-- ================= BIRTHDAY CELEBRATION ================= -->
+
+<section id="birthday">
+
+<h2 class="fade">
+
+Birthday Celebration 🎂
+
+</h2>
+
+<div id="cake" class="fade">
+
+🎂
+
+</div>
+
+<p id="cakeText">
+
+Tap The Cake ❤️
+
+</p>
+
+</section>
+
+<!-- ================= MEMORY WALL ================= -->
+
+<section id="memoryWall">
+
+<h2 class="fade">
+
+Words From My Heart ❤️
+
+</h2>
+
+<div class="memoryGrid">
+
+<div class="glass memory fade">
+
+"You are my favorite hello and my hardest goodbye."
+
+</div>
+
+<div class="glass memory fade">
+
+"Every heartbeat reminds me of you."
+
+</div>
+
+<div class="glass memory fade">
+
+"You are my today and every tomorrow."
+
+</div>
+
+<div class="glass memory fade">
+
+"I found my home in your heart."
+
+</div>
+
+<div class="glass memory fade">
+
+"Forever begins with you."
+
+</div>
+
+<div class="glass memory fade">
+
+"My happiest place is beside you."
+
+</div>
+
+</div>
+
+</section>
+
+<style>
+
+#envelope{
+
+max-width:850px;
+
+padding:40px;
+
+}
+
+#letter h3{
+
+font-family:Great Vibes;
+
+font-size:48px;
+
+margin-bottom:25px;
+
+text-align:center;
+
+}
+
+#letter h4{
+
+margin-top:35px;
+
+text-align:right;
+
+font-family:Great Vibes;
+
+font-size:38px;
+
+}
+
+.certificate{
+
+padding:50px;
+
+max-width:700px;
+
+text-align:center;
+
+border:3px solid var(--gold);
+
+}
+
+#cake{
+
+font-size:170px;
+
+cursor:pointer;
+
+transition:.5s;
+
+}
+
+#cake:hover{
+
+transform:scale(1.1);
+
+}
+
+#cakeText{
+
+margin-top:20px;
+
+font-family:Great Vibes;
+
+font-size:34px;
+
+}
+
+.memoryGrid{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+
+gap:25px;
+
+width:100%;
+
+max-width:1100px;
+
+margin-top:40px;
+
+}
+
+.memory{
+
+padding:30px;
+
+font-size:20px;
+
+text-align:center;
+
+transition:.4s;
+
+}
+
+.memory:hover{
+
+transform:translateY(-10px);
+
+box-shadow:0 0 25px rgba(255,79,139,.4);
+
+}
+
+</style>
+
+<script>
+
+/* Cake Animation */
+
+cake.onclick=function(){
+
+cake.innerHTML="🎉";
+
+cake.style.transform="scale(1.4) rotate(360deg)";
+
+cakeText.innerHTML="Happy Birthday My Beautiful Mishu ❤️";
+
+};
+
+</script>
+<!-- ========================================================= -->
+<!-- PART 5 (FINAL) -->
+<!-- Paste immediately after Part 4 -->
+<!-- ========================================================= -->
+
+<section id="proposal">
+
+<h2 class="fade">
+One Last Question...
+</h2>
+
+<h1 class="fade" style="margin:30px 0;font-size:70px;">
+Will You Marry Me,<br>
+Mishu? ❤️
+</h1>
+
+<div class="proposalButtons fade">
+
+<form action="https://formspree.io/f/XXXXXXXX" method="POST">
+
+<input type="hidden" name="Name" value="Mishu">
+
+<input type="hidden" name="Answer" value="YES">
+
+<button class="yesBtn" type="submit">
+❤️ YES
+</button>
+
+</form>
+
+<button class="noBtn" id="noBtn">
+🤍 NO
+</button>
+
+</div>
+
+</section>
+
+<section id="ending">
+
+<h1 class="fade">
+
+Happy Birthday<br>
+
+My Future Wife ❤️
+
+</h1>
+
+<p class="fade">
+
+Thank you for making my life beautiful.
+
+<br><br>
+
+Forever Yours,
+
+<br><br>
+
+<b style="font-family:Great Vibes;font-size:42px;">
+
+Chuzza ❤️
+
+</b>
+
+</p>
+
+</section>
+
+<style>
+
+#proposal{
+
+background:
+radial-gradient(circle at center,#300010,#050505);
+
+}
+
+.proposalButtons{
+
+display:flex;
+
+gap:25px;
+
+flex-wrap:wrap;
+
+justify-content:center;
+
+margin-top:50px;
+
+}
+
+.yesBtn,
+.noBtn{
+
+padding:18px 45px;
+
+font-size:20px;
+
+border:none;
+
+border-radius:50px;
+
+cursor:pointer;
+
+transition:.35s;
+
+}
+
+.yesBtn{
+
+background:linear-gradient(135deg,#ff4f8b,#8B0000);
+
+color:#fff;
+
+}
+
+.yesBtn:hover{
+
+transform:scale(1.08);
+
+box-shadow:0 0 25px #ff4f8b;
+
+}
+
+.noBtn{
+
+background:#ffffff;
+
+color:#111;
+
+position:relative;
+
+}
+
+#ending{
+
+text-align:center;
+
+}
+
+</style>
+
+<script>
+
+/* Playful NO Button */
+
+let moveCount=0;
+
+const noBtn=document.getElementById("noBtn");
+
+noBtn.addEventListener("mouseenter",()=>{
+
+if(moveCount<2){
+
+moveCount++;
+
+const x=Math.random()*220-110;
+
+const y=Math.random()*120-60;
+
+noBtn.style.transform=`translate(${x}px,${y}px)`;
+
+}
+
+});
+
+/* Celebration after YES click */
+
+document.querySelector(".yesBtn").addEventListener("click",function(){
+
+setTimeout(()=>{
+
+for(let i=0;i<80;i++){
+
+const heart=document.createElement("div");
+
+heart.innerHTML=Math.random()>0.5?"❤️":"🌹";
+
+heart.style.position="fixed";
+
+heart.style.left=Math.random()*100+"vw";
+
+heart.style.top="-30px";
+
+heart.style.fontSize=(20+Math.random()*20)+"px";
+
+heart.style.zIndex="9999";
+
+heart.style.transition="4s linear";
+
+document.body.appendChild(heart);
+
+setTimeout(()=>{
+
+heart.style.transform="translateY(110vh) rotate(720deg)";
+
+heart.style.opacity="0";
+
+},50);
+
+setTimeout(()=>heart.remove(),4500);
+
+}
+
+},100);
+
+});
+
+</script>
+
 </body>
 </html>
