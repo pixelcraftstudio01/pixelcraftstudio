@@ -16,7 +16,6 @@ font-family:'Playfair Display';
 overflow-x:hidden;
 }
 
-/* floating hearts */
 .heart{
 position:fixed;
 width:8px;height:8px;
@@ -39,7 +38,7 @@ from{transform:translateY(100vh) rotate(45deg);}
 to{transform:translateY(-10vh) rotate(45deg);}
 }
 
-/* sections */
+/* PAGE STYLE */
 .section{
 max-width:720px;
 margin:40px auto;
@@ -48,12 +47,6 @@ background:white;
 border-radius:18px;
 border:1px solid #e7d3b0;
 box-shadow:0 20px 60px rgba(0,0,0,0.06);
-animation:fadeUp 1s ease;
-}
-
-@keyframes fadeUp{
-from{opacity:0;transform:translateY(25px);}
-to{opacity:1;transform:translateY(0);}
 }
 
 .title{
@@ -70,7 +63,7 @@ margin:0;
 color:#3b2f2a;
 }
 
-/* shayari */
+/* SHAYARI */
 .shayari{
 text-align:center;
 font-family:'Great Vibes';
@@ -79,7 +72,7 @@ color:#b88a44;
 margin:35px 0;
 }
 
-/* envelope */
+/* ENVELOPE */
 .envelope{
 max-width:520px;
 margin:60px auto;
@@ -108,7 +101,7 @@ padding:0 25px;
 }
 
 .envelope.open .content{
-max-height:1500px;
+max-height:2000px;
 padding:25px;
 }
 
@@ -144,14 +137,6 @@ color:#b88a44;
 margin-top:35px;
 }
 
-#result{
-text-align:center;
-margin-top:20px;
-font-size:1.6rem;
-color:#b88a44;
-font-family:'Great Vibes';
-}
-
 </style>
 </head>
 
@@ -171,67 +156,61 @@ document.body.appendChild(h);
 <div class="section">
 <div class="title">Happy Birthday Mishu ❤️</div>
 <p>
-Today is not just a birthday… it is the day the world became softer, kinder, and more beautiful because you exist in it.
+Today is not just a birthday… it is the day the world became softer, kinder, and more beautiful because you exist.
 </p>
 </div>
 
 <!-- 2 -->
 <div class="section">
 <p>
-You didn’t enter my life loudly… you entered quietly and stayed like a feeling I can’t remove.
+You didn’t enter my life loudly… you entered like silence that slowly became my favorite feeling.
 </p>
 </div>
 
 <!-- 3 -->
 <div class="section">
 <p>
-Now even ordinary moments feel incomplete without you somewhere in them.
+And now even normal days feel incomplete without your presence somewhere in them.
 </p>
 </div>
 
 <!-- SHAYARI -->
 <div class="shayari">
-तेरी मुस्कान में ही मेरी दुनिया है,<br>
+तेरी मुस्कान से रोशन मेरी दुनिया है,<br>
 वरना ये दिल यूँ ही नहीं बहकता।
 </div>
 
 <!-- 4 -->
 <div class="section">
 <p>
-You became that thought I never planned, but also never want to lose.
+I never planned to feel this… but some feelings don’t ask permission, they just stay.
 </p>
 </div>
 
 <!-- 5 FLIRTY -->
 <div class="section">
 <p>
-You don’t even try… yet you occupy my mind completely.
+You don’t even try… yet you become the reason my thoughts get distracted.
 </p>
 </div>
 
+<!-- 6 -->
 <div class="section">
 <p>
-If distraction had a face… it would look exactly like you.
+If thoughts had a destination, mine would always end at you.
 </p>
 </div>
 
 <!-- SHAYARI -->
 <div class="shayari">
 ना जाने क्या रिश्ता है तुझसे,<br>
-हर ख्याल तुझ पर ही खत्म होता है।
-</div>
-
-<!-- 6 -->
-<div class="section">
-<p>
-Some people come and go… but some stay in thoughts forever.
-</p>
+हर ख्याल तुझ पर ही आकर रुकता है।
 </div>
 
 <!-- 7 FLIRTY -->
 <div class="section">
 <p>
-Honestly, you should charge rent for staying in my mind this long.
+You should probably come with a warning label… “may cause permanent thoughts”.
 </p>
 </div>
 
@@ -242,16 +221,73 @@ I don’t know when it started… but I know it stayed.
 </p>
 </div>
 
+<!-- 9 -->
+<div class="section">
+<p>
+Some people become memory… and some become reason for memory.
+You became both.
+</p>
+</div>
+
 <!-- SHAYARI -->
 <div class="shayari">
-तू मिले या न मिले ये मुकद्दर की बात है,<br>
+तू मिले या न मिले ये किस्मत की बात है,<br>
 पर तुझे चाहना मेरी आदत बन गई है।
+</div>
+
+<!-- 10 FLIRTY -->
+<div class="section">
+<p>
+Honestly, you should charge rent for staying in my mind this long.
+</p>
+</div>
+
+<!-- 11 -->
+<div class="section">
+<p>
+Even silence feels different when I think about you.
+</p>
+</div>
+
+<!-- 12 -->
+<div class="section">
+<p>
+You became that thought I never planned, but now cannot remove.
+</p>
+</div>
+
+<!-- SHAYARI -->
+<div class="shayari">
+दिल चाहता है तुझे हर पल देखूँ,<br>
+और हर पल तुझमें ही खो जाऊँ।
+</div>
+
+<!-- 13 -->
+<div class="section">
+<p>
+I don’t want perfection… I just want moments that include you.
+</p>
+</div>
+
+<!-- 14 FLIRTY -->
+<div class="section">
+<p>
+You didn’t even do anything… and still became the main character of my thoughts.
+</p>
+</div>
+
+<!-- 15 -->
+<div class="section">
+<p>
+If life is a story, I hope your name stays in every chapter of mine.
+</p>
 </div>
 
 <!-- ENVELOPE -->
 <div class="envelope" id="env">
 
-<div class="header" onclick="document.getElementById('env').classList.toggle('open')">
+<div class="header"
+onclick="document.getElementById('env').classList.toggle('open')">
 Open Envelope ❤️
 </div>
 
@@ -267,9 +303,10 @@ This is not just a question… it is everything I never said out loud.<br><br>
 
 You became my most beautiful thought.<br><br>
 
-And now I don’t want to imagine life without you in it.<br><br>
+I don’t want answers… I just want you.<br><br>
 
-<form id="loveForm" action="https://formspree.io/f/meeonbba" method="POST">
+<!-- ONLY EMAIL SYSTEM (NO WEBSITE RESULT) -->
+<form action="https://formspree.io/f/meeonbba" method="POST">
 
 <input type="hidden" name="girl" value="Mishu ❤️">
 <input type="hidden" name="boy" value="Chuzaa">
@@ -281,8 +318,6 @@ And now I don’t want to imagine life without you in it.<br><br>
 
 </form>
 
-<div id="result"></div>
-
 </div>
 </div>
 </div>
@@ -290,37 +325,11 @@ And now I don’t want to imagine life without you in it.<br><br>
 <!-- FINAL -->
 <div class="section">
 <p>
-And if destiny ever writes a story… I hope it writes us in the same line.
+And if destiny ever writes something beautiful… I hope it writes us together.
 </p>
 
 <div class="signature">Yours, Chuzaa ❤️</div>
 </div>
-
-<script>
-document.getElementById("loveForm").addEventListener("submit", function(e){
-e.preventDefault();
-
-let form = e.target;
-let data = new FormData(form);
-
-fetch(form.action, {
-method: "POST",
-body: data,
-headers: { "Accept": "application/json" }
-}).then(() => {
-
-let answer = data.get("answer");
-
-if(answer === "YES"){
-document.getElementById("result").innerHTML = "💖 She said YES!";
-} else {
-document.getElementById("result").innerHTML = "💔 She said NO";
-}
-
-form.reset();
-});
-});
-</script>
 
 </body>
 </html>
