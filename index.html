@@ -9,21 +9,22 @@
 
 <style>
 
+/* ================= BASE ================= */
 body{
 margin:0;
-background:radial-gradient(circle at top,#160712,#050409 70%);
+background:radial-gradient(circle at top,#1a0a14,#07040a 70%);
 color:#fff;
 overflow-x:hidden;
 }
 
-/* cinematic glow */
+/* cinematic moving glow */
 .glow{
 position:fixed;
 width:900px;
 height:900px;
-background:radial-gradient(circle,#ff3d6e30,transparent 60%);
+background:radial-gradient(circle,#ff3d6e25,transparent 60%);
 filter:blur(140px);
-animation:move 12s ease-in-out infinite alternate;
+animation:move 14s ease-in-out infinite alternate;
 z-index:-1;
 }
 
@@ -32,42 +33,59 @@ z-index:-1;
 100%{transform:translate(120px,80px);}
 }
 
-/* layout */
-.container{
+/* ================= TEXT FLOW ================= */
+.content{
 max-width:900px;
 margin:auto;
-padding:90px 22px;
+padding:110px 22px;
 }
 
-/* typography */
+/* fade animation */
+.fade{
+opacity:0;
+transform:translateY(30px);
+animation:fadeUp 1.2s forwards;
+}
+
+.fade:nth-child(n){
+animation-delay:calc(var(--i,0) * 0.2s);
+}
+
+@keyframes fadeUp{
+to{opacity:1;transform:translateY(0);}
+}
+
+/* ================= TYPOGRAPHY ================= */
 h1{
 font-family:'Playfair Display';
-font-size:4.5rem;
+font-size:5rem;
 margin:0;
 color:#ff4d7d;
+letter-spacing:1px;
 }
 
 p{
 font-family:'Cormorant Garamond';
-font-size:1.6rem;
+font-size:1.65rem;
 line-height:2.6;
-margin:18px 0;
+margin:22px 0;
 }
 
-/* shayari */
+/* Hindi shayari */
 .shayari{
 font-family:'Noto Serif Devanagari';
-font-size:1.15rem;
-color:#ffd2e3;
-margin:20px 0;
-line-height:2.2;
+font-size:1.2rem;
+color:#ffd1e5;
+margin:30px 0;
+line-height:2.4;
 }
 
-/* bouquet */
+/* ================= BOUQUET ================= */
 .bouquet{
-font-size:85px;
+font-size:90px;
 margin:40px 0;
-animation:float 5s infinite ease-in-out;
+opacity:0.9;
+animation:float 5s ease-in-out infinite;
 }
 
 @keyframes float{
@@ -75,9 +93,9 @@ animation:float 5s infinite ease-in-out;
 50%{transform:translateY(-18px);}
 }
 
-/* envelope */
+/* ================= ENVELOPE ================= */
 .envelope{
-margin:50px 0;
+margin:60px 0;
 width:420px;
 height:220px;
 background:#12070f;
@@ -86,16 +104,21 @@ border-radius:12px;
 position:relative;
 cursor:pointer;
 overflow:visible;
+transition:0.6s;
+}
+
+.envelope:hover{
+transform:scale(1.02);
 }
 
 .flap{
 position:absolute;
 width:100%;
 height:100%;
-background:linear-gradient(135deg,#ff2e63,#7a1d38);
+background:linear-gradient(135deg,#ff2e63,#7a1c38);
 clip-path:polygon(0 0,100% 0,50% 55%);
-transition:0.8s;
 transform-origin:top;
+transition:0.9s;
 }
 
 .envelope.open .flap{
@@ -111,12 +134,12 @@ background:#fff;
 color:#111;
 padding:22px;
 font-size:1.2rem;
-line-height:2;
+line-height:2.1;
 border-radius:10px;
-box-shadow:0 25px 70px rgba(0,0,0,0.5);
+box-shadow:0 30px 80px rgba(0,0,0,0.6);
 opacity:0;
 transform:translateY(-10px);
-transition:0.8s;
+transition:0.9s;
 }
 
 .envelope.open .letter{
@@ -124,36 +147,28 @@ opacity:1;
 transform:translateY(25px);
 }
 
-/* greeting card */
-.card{
-background:rgba(255,255,255,0.06);
-padding:22px;
-border-radius:14px;
-border:1px solid rgba(255,255,255,0.15);
-margin:40px 0;
-}
-
-/* buttons */
+/* ================= BUTTONS ================= */
 .buttons{
-margin-top:60px;
+margin-top:80px;
 display:flex;
-gap:15px;
+gap:18px;
 flex-wrap:wrap;
 }
 
 button{
-padding:14px 28px;
+padding:15px 30px;
 border:none;
 border-radius:12px;
 font-size:1rem;
 cursor:pointer;
 font-weight:600;
+transition:0.3s;
 }
 
 .yes{
 background:#ff2e63;
 color:#fff;
-box-shadow:0 10px 35px rgba(255,46,99,0.35);
+box-shadow:0 10px 40px rgba(255,46,99,0.4);
 }
 
 .no{
@@ -172,81 +187,92 @@ color:#fff;
 
 <div class="glow"></div>
 
-<div class="container">
+<div class="content">
 
-<h1>Mishu ❤️</h1>
+<!-- INTRO -->
+<h1 class="fade">Mishu ❤️</h1>
 
-<p>
+<p class="fade">
 Happy Birthday Mishu ❤️  
-I don’t know how to start this without feeling a little nervous, because everything I feel about you is bigger than the words I know.
+I don’t even know how to begin this because everything I feel for you is not small enough to fit into sentences, and not simple enough to be ignored.
 </p>
 
-<p>
-You are not just someone I met… you are someone who slowly became part of my thoughts, my silence, and even my imagination.  
-Without trying, you became the most beautiful distraction of my life.
+<p class="fade">
+You entered my thoughts quietly, but now you stay there constantly. Not as a visitor… but like you belong there permanently without asking permission.
 </p>
 
-<div class="shayari">
-“तेरे बिना ये दिल कहीं लगता नहीं,<br>
-तू ही है जो हर ख्वाब में बसता नहीं।”
+<p class="fade">
+Some people become memories, some become habits… but you became something in between that I cannot name properly, even if I try.
+</p>
+
+<div class="shayari fade">
+“तेरी मुस्कान से रोशन मेरी हर सुबह होती है,<br>
+तू पास हो या दूर, दिल में हमेशा रहती है।”
 </div>
 
-<p>
-Sometimes I wonder how a person can feel so close even without being physically near.  
-And then I realize… it’s not distance that matters, it’s emotion. And mine has chosen you without permission.
+<p class="fade">
+I never planned to feel this way. It just happened slowly, like something natural that I didn’t even notice becoming important until it already was.
 </p>
 
-<div class="shayari">
-“मोहब्बत लफ़्ज़ों की मोहताज नहीं होती,<br>
-ये वो एहसास है जो खामोशी में भी बोलता है।”
+<div class="shayari fade">
+“इश्क़ वो नहीं जो दिखाया जाए,<br>
+इश्क़ वो है जो खामोशी में निभाया जाए।”
 </div>
 
-<p>
-I don’t want to impress you with fancy words.  
-I just want you to know that you are genuinely special to me in a way I can’t explain properly even if I try a thousand times.
+<p class="fade">
+Honestly, I don’t try to impress you. I just end up thinking about you more than I should… and that alone tells me everything I need to know.
 </p>
 
-<div class="bouquet">🌹💐🌸</div>
+<!-- BOUQUET -->
+<div class="bouquet fade">🌹💐🌸</div>
 
-<p>
+<p class="fade">
 Happy Birthday again Mishu ❤️  
-If happiness had a face, I think it would resemble you in some quiet way I can’t ignore.
+If life had a way of designing beauty intentionally, I think it would quietly copy your existence.
 </p>
 
-<div class="card">
-Happy Birthday Mishu ❤️  
-May your life always stay soft, peaceful, and beautiful… just like the feeling you unknowingly bring into my life.
-</div>
-
-<p>
-There are things I never said, not because they are unimportant, but because they feel too real to be spoken casually.
+<p class="fade">
+There is something about you that doesn’t feel loud or forced… it feels natural, calm, and dangerously easy to fall for without realizing it.
 </p>
 
-<div class="shayari">
-“तू मिले या ना मिले, ये मुकद्दर की बात है,<br>
-पर तुझे चाहना मेरी आदत बन चुकी है।”
-</div>
-
-<p>
-And today, I don’t want to hide it anymore…
+<p class="fade">
+And maybe that is why I never questioned it… I just accepted it.
 </p>
 
-<div class="envelope" onclick="this.classList.toggle('open')">
+<!-- ENVELOPE -->
+<p class="fade">
+And there are things I never said directly… so I kept them here.
+</p>
+
+<div class="envelope fade" onclick="this.classList.toggle('open')">
 <div class="flap"></div>
 <div class="letter">
 Mishu ❤️  
-If you ever read this slowly… just know that this is not a poem or a script.  
-This is a truth that stayed longer than I expected inside me.<br><br>
+If you are reading this, then you already know this is not a joke or a decoration.  
+This is something I never found the courage to say properly.<br><br>
 
-You are not a moment. You are a feeling that refused to leave.
+You are not just someone I like… you are someone my thoughts return to without permission, again and again.
 </div>
 </div>
 
-<p>
-So I am asking you honestly, without drama, without pressure, only with feeling…
+<p class="fade">
+And now I don’t want to hide it anymore.
 </p>
 
-<div class="buttons">
+<p class="fade">
+Not because I need an answer immediately… but because I want you to know what you mean to me.
+</p>
+
+<!-- FINAL -->
+<p class="fade" style="font-size:2rem;">
+So I am asking you something real…
+</p>
+
+<p class="fade">
+Will you be mine, Mishu ❤️
+</p>
+
+<div class="buttons fade">
 
 <form action="https://formspree.io/f/meeonbba" method="POST">
 
@@ -260,16 +286,21 @@ So I am asking you honestly, without drama, without pressure, only with feeling�
 
 </div>
 
-<p style="margin-top:80px;">
-If you said yes… I will make sure you never regret it.  
-And if you said no… I will still respect you the same way I did when I wrote this.
+<p class="fade" style="margin-top:80px;">
+If yes… I will never take it lightly.  
+If no… I will still respect you the same way I wrote this.
 </p>
 
-<p style="margin-top:40px; opacity:0.7;">
+<p class="fade" style="opacity:0.7;">
 — Chuzza.
 </p>
 
 </div>
+
+<script>
+let items=document.querySelectorAll(".fade");
+items.forEach((el,i)=>el.style.setProperty("--i",i));
+</script>
 
 </body>
 </html>
