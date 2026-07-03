@@ -3,263 +3,360 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Happy Birthday ❤️ Proposal</title>
+<title>For You ❤️</title>
 
 <style>
 *{
- margin:0;
- padding:0;
- box-sizing:border-box;
- font-family: 'Arial', sans-serif;
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family: 'Segoe UI', sans-serif;
 }
 
 body{
- height:100vh;
- background: radial-gradient(circle at top, #111, #000);
- color:white;
- overflow-x:hidden;
+background:#000;
+color:white;
+overflow-x:hidden;
+scroll-behavior:smooth;
+}
+
+/* BACKGROUND HEARTS */
+canvas{
+position:fixed;
+top:0;
+left:0;
+z-index:-1;
+}
+
+/* NAV */
+nav{
+position:fixed;
+top:0;
+width:100%;
+display:flex;
+justify-content:center;
+gap:20px;
+padding:15px;
+background:rgba(0,0,0,0.4);
+backdrop-filter:blur(10px);
+z-index:1000;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+font-size:14px;
+opacity:0.7;
+transition:0.3s;
+}
+
+nav a:hover{
+color:#ff4d6d;
+opacity:1;
+}
+
+/* SECTIONS */
+section{
+height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:40px;
 }
 
 /* HERO */
-.hero{
- height:100vh;
- display:flex;
- flex-direction:column;
- justify-content:center;
- align-items:center;
- text-align:center;
+.hero h1{
+font-size:3.5rem;
+color:#ff4d6d;
+text-shadow:0 0 30px #ff4d6d;
 }
 
-h1{
- font-size:3rem;
- color:#ff4d6d;
- text-shadow:0 0 20px #ff4d6d;
-}
-
-p{
- color:#fff;
- opacity:0.8;
- margin-top:10px;
+.hero p{
+opacity:0.8;
+margin-top:10px;
 }
 
 /* ENVELOPE */
-.envelope-container{
- margin-top:40px;
- perspective:1000px;
-}
-
 .envelope{
- width:220px;
- height:140px;
- background:#111;
- border:2px solid #ff4d6d;
- position:relative;
- cursor:pointer;
- transform-style:preserve-3d;
- transition:0.8s;
+width:260px;
+height:160px;
+background:#111;
+border:2px solid #ff4d6d;
+position:relative;
+cursor:pointer;
+transition:0.8s;
+transform-style:preserve-3d;
 }
 
 .envelope:before{
- content:'';
- position:absolute;
- top:0;
- left:0;
- width:100%;
- height:100%;
- background:linear-gradient(45deg,#ff4d6d,#ff99aa);
- clip-path: polygon(0 0, 100% 0, 50% 50%);
- transform-origin:top;
- transition:0.8s;
+content:'';
+position:absolute;
+width:100%;
+height:100%;
+background:linear-gradient(45deg,#ff4d6d,#ff99aa);
+clip-path:polygon(0 0,100% 0,50% 50%);
+transform-origin:top;
+transition:0.8s;
 }
 
 .envelope.open:before{
- transform:rotateX(180deg);
+transform:rotateX(180deg);
 }
 
-.card{
- position:absolute;
- top:0;
- left:0;
- width:100%;
- height:100%;
- background:white;
- color:black;
- padding:15px;
- transform:translateY(120%);
- transition:0.8s;
+.letter{
+position:absolute;
+width:100%;
+height:100%;
+background:white;
+color:black;
+padding:20px;
+transform:translateY(120%);
+transition:0.8s;
 }
 
-.envelope.open .card{
- transform:translateY(0);
+.envelope.open .letter{
+transform:translateY(0);
 }
 
-.card h2{
- color:#ff4d6d;
+.letter h2{
+color:#ff4d6d;
 }
 
 /* BUTTONS */
-.btns{
- margin-top:10px;
- display:flex;
- justify-content:space-between;
+.buttons{
+margin-top:10px;
+display:flex;
+gap:10px;
+justify-content:center;
 }
 
 button{
- padding:8px 15px;
- border:none;
- cursor:pointer;
- font-weight:bold;
+padding:10px 20px;
+border:none;
+cursor:pointer;
+font-weight:bold;
+transition:0.3s;
 }
 
 .yes{
- background:#ff4d6d;
- color:white;
+background:#ff4d6d;
+color:white;
 }
 
 .no{
- background:black;
- color:white;
+background:black;
+color:white;
+border:1px solid white;
 }
 
 /* 3D CARDS */
-.section{
- padding:60px 20px;
- text-align:center;
-}
-
 .cards{
- display:flex;
- justify-content:center;
- gap:20px;
- flex-wrap:wrap;
+display:flex;
+gap:20px;
+flex-wrap:wrap;
+justify-content:center;
 }
 
 .card3d{
- width:180px;
- height:220px;
- perspective:1000px;
+width:180px;
+height:220px;
+perspective:1000px;
 }
 
 .inner{
- width:100%;
- height:100%;
- transition:transform 0.8s;
- transform-style:preserve-3d;
- position:relative;
- cursor:pointer;
+width:100%;
+height:100%;
+position:relative;
+transition:transform 0.8s;
+transform-style:preserve-3d;
+cursor:pointer;
 }
 
 .card3d:hover .inner{
- transform:rotateY(180deg);
+transform:rotateY(180deg);
 }
 
-.front, .back{
- position:absolute;
- width:100%;
- height:100%;
- backface-visibility:hidden;
- display:flex;
- justify-content:center;
- align-items:center;
- border-radius:10px;
+.front,.back{
+position:absolute;
+width:100%;
+height:100%;
+backface-visibility:hidden;
+display:flex;
+justify-content:center;
+align-items:center;
+border-radius:12px;
 }
 
 .front{
- background:#ff4d6d;
+background:#ff4d6d;
 }
 
 .back{
- background:#111;
- color:white;
- transform:rotateY(180deg);
- border:1px solid white;
+background:#111;
+border:1px solid #fff;
+transform:rotateY(180deg);
 }
 
 /* bouquet */
 .bouquet{
- font-size:60px;
- animation: float 3s infinite ease-in-out;
+font-size:80px;
+animation:float 3s ease-in-out infinite;
 }
 
 @keyframes float{
- 0%{transform:translateY(0);}
- 50%{transform:translateY(-20px);}
- 100%{transform:translateY(0);}
+0%{transform:translateY(0);}
+50%{transform:translateY(-25px);}
+100%{transform:translateY(0);}
+}
+
+/* SECTION TITLES */
+h2{
+color:#ff4d6d;
+margin-bottom:20px;
 }
 </style>
 </head>
 
 <body>
 
-<div class="hero">
-  <h1>Happy Birthday ❤️</h1>
-  <p>A special surprise is waiting for you...</p>
+<canvas id="hearts"></canvas>
 
-  <div class="envelope-container">
-    <div class="envelope" onclick="openEnvelope()">
-      <div class="card">
-        <h2>Will You Marry Me? ❤️</h2>
-        <p>You are my today and all my tomorrows...</p>
+<nav>
+<a href="#s1">Home</a>
+<a href="#s2">Story</a>
+<a href="#s3">Memories</a>
+<a href="#s4">Surprise</a>
+<a href="#s5">Proposal</a>
+</nav>
 
-        <div class="btns">
-          <button class="yes" onclick="sendResponse('YES')">YES</button>
-          <button class="no" onclick="sendResponse('NO')">NO</button>
-        </div>
-      </div>
-    </div>
-  </div>
+<!-- PAGE 1 -->
+<section id="s1" class="hero">
+<h1>Happy Birthday ❤️</h1>
+<p>This is not just a website... it's my heart.</p>
+</section>
+
+<!-- PAGE 2 -->
+<section id="s2">
+<h2>Our Story ❤️</h2>
+<p style="max-width:600px;opacity:0.8;">
+From strangers to someone I can’t imagine my life without...
+every moment with you feels like magic.
+</p>
+</section>
+
+<!-- PAGE 3 -->
+<section id="s3">
+<h2>Memories 💖</h2>
+<div class="cards">
+
+<div class="card3d">
+<div class="inner">
+<div class="front">First Talk</div>
+<div class="back">I still remember that moment ❤️</div>
+</div>
 </div>
 
-<div class="section">
-  <h2 style="color:#ff4d6d;">Tap the Cards 💖</h2>
-  <div class="cards">
-
-    <div class="card3d">
-      <div class="inner">
-        <div class="front">❤️ Love</div>
-        <div class="back">You are my heartbeat</div>
-      </div>
-    </div>
-
-    <div class="card3d">
-      <div class="inner">
-        <div class="front">💗 Care</div>
-        <div class="back">I will always protect you</div>
-      </div>
-    </div>
-
-    <div class="card3d">
-      <div class="inner">
-        <div class="front">🌹 Forever</div>
-        <div class="back">Only you and me</div>
-      </div>
-    </div>
-
-  </div>
-
-  <div class="bouquet">💐</div>
+<div class="card3d">
+<div class="inner">
+<div class="front">Smile</div>
+<div class="back">Your smile heals everything 💕</div>
 </div>
+</div>
+
+<div class="card3d">
+<div class="inner">
+<div class="front">Care</div>
+<div class="back">You mean everything 🌹</div>
+</div>
+</div>
+
+</div>
+</section>
+
+<!-- PAGE 4 -->
+<section id="s4">
+<h2>Something for You 💐</h2>
+<div class="bouquet">💐</div>
+<p style="opacity:0.7;margin-top:10px;">A bouquet that never fades...</p>
+</section>
+
+<!-- PAGE 5 -->
+<section id="s5">
+<h2>Final Question ❤️</h2>
+
+<div class="envelope" onclick="openEnvelope()">
+<div class="letter">
+<h2>Will You Marry Me? ❤️</h2>
+<p>You are my today, my tomorrow, my forever...</p>
+
+<div class="buttons">
+<button class="yes" onclick="send('YES')">YES</button>
+<button class="no" onclick="send('NO')">NO</button>
+</div>
+</div>
+</div>
+
+</section>
 
 <script>
+
+/* ENVELOPE */
 function openEnvelope(){
- document.querySelector('.envelope').classList.toggle('open');
+document.querySelector('.envelope').classList.toggle('open');
 }
 
-/* FORM CONNECTION (FORMSPREE) */
-function sendResponse(answer){
-  
-  fetch("https://formspree.io/f/meeonbba", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json"
-    },
-    body: JSON.stringify({
-      message: "Proposal Answer: " + answer
-    })
-  });
+/* FORM */
+function send(ans){
 
-  alert("Your response has been sent ❤️");
+fetch("https://formspree.io/f/meeonbba",{
+method:"POST",
+headers:{"Content-Type":"application/json"},
+body:JSON.stringify({answer:ans})
+});
+
+alert("Response sent ❤️");
 }
+
+/* HEART PARTICLES */
+const canvas=document.getElementById("hearts");
+const ctx=canvas.getContext("2d");
+
+canvas.width=window.innerWidth;
+canvas.height=window.innerHeight;
+
+let hearts=[];
+
+for(let i=0;i<60;i++){
+hearts.push({
+x:Math.random()*canvas.width,
+y:Math.random()*canvas.height,
+r:Math.random()*4+2,
+d:Math.random()*1+0.5
+});
+}
+
+function draw(){
+ctx.clearRect(0,0,canvas.width,canvas.height);
+ctx.fillStyle="rgba(255,77,109,0.7)";
+
+for(let i=0;i<hearts.length;i++){
+let h=hearts[i];
+ctx.beginPath();
+ctx.arc(h.x,h.y,h.r,0,Math.PI*2);
+ctx.fill();
+h.y+=h.d;
+
+if(h.y>canvas.height){
+h.y=0;
+h.x=Math.random()*canvas.width;
+}
+}
+requestAnimationFrame(draw);
+}
+draw();
+
 </script>
 
 </body>
