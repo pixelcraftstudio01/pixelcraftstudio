@@ -40,81 +40,108 @@ from{transform:translateY(100vh) rotate(45deg);}
 to{transform:translateY(-10vh) rotate(45deg);}
 }
 
-/* SECTIONS */
+/* SECTION SPACING FIX (IMPORTANT) */
 .section{
 max-width:900px;
-margin:14px auto;
-padding:20px;
+margin:28px auto; /* ⬅️ MORE GAP FIXED */
+padding:26px;
 background:white;
 border-radius:16px;
 border:1px solid #e7d3b0;
-box-shadow:0 15px 40px rgba(0,0,0,0.06);
+box-shadow:0 18px 50px rgba(0,0,0,0.06);
+animation:fadeUp 1s ease;
 }
 
-/* TITLES */
+/* ANIMATION */
+@keyframes fadeUp{
+from{opacity:0;transform:translateY(20px);}
+to{opacity:1;transform:translateY(0);}
+}
+
+/* TITLE */
 .title{
 text-align:center;
 font-family:'Great Vibes';
-font-size:3.2rem;
+font-size:3.5rem;
 color:#b88a44;
 }
 
-/* TEXT INSIDE BOX */
+/* TEXT */
 p{
-font-size:1.35rem;
-line-height:2.5;
+font-size:1.4rem;
+line-height:2.6;
 margin:0;
 color:#3b2f2a;
 }
 
-/* SHAYARI OUTSIDE BOX */
+/* SHAYARI OUTSIDE */
 .shayari{
 text-align:center;
 font-family:'Great Vibes';
-font-size:1.7rem;
+font-size:1.8rem;
 color:#b88a44;
-margin:18px 0;
+margin:25px 0;
+animation:fadeUp 1.2s ease;
 }
 
 /* ENVELOPE */
 .envelope{
-max-width:420px;
-margin:20px auto;
+max-width:450px;
+margin:40px auto;
 background:white;
-border-radius:14px;
+border-radius:16px;
 border:1px solid #e0c28a;
 overflow:hidden;
-box-shadow:0 25px 70px rgba(0,0,0,0.15);
+box-shadow:0 30px 80px rgba(0,0,0,0.15);
+animation:fadeUp 1s ease;
 }
 
+/* HEADER */
 .header{
 background:linear-gradient(135deg,#e7c78b,#b88a44);
-padding:16px;
+padding:18px;
 text-align:center;
 font-family:'Great Vibes';
-font-size:2rem;
+font-size:2.2rem;
 color:white;
 cursor:pointer;
 }
 
+/* CONTENT */
 .content{
 max-height:0;
 overflow:hidden;
-transition:0.8s;
-padding:0 18px;
+transition:1s ease;
+padding:0 20px;
 }
 
 .envelope.open .content{
-max-height:900px;
-padding:18px;
+max-height:1000px;
+padding:20px;
 }
 
-/* BUTTONS */
+/* BIG LETTER (IMPORTANT FIX) */
+.letter{
+font-size:1.5rem;
+line-height:2.8;
+color:#3b2f2a;
+font-family:'Playfair Display';
+}
+
+/* BUTTONS INSIDE LETTER ONLY */
+.buttons{
+display:flex;
+justify-content:center;
+gap:15px;
+margin-top:25px;
+}
+
 button{
-padding:12px 24px;
-border:none;
+padding:12px 26px;
 border-radius:10px;
 cursor:pointer;
+font-weight:600;
+border:none;
 }
 
 .yes{background:#b88a44;color:white;}
@@ -124,9 +151,9 @@ cursor:pointer;
 .signature{
 text-align:center;
 font-family:'Great Vibes';
-font-size:2.2rem;
+font-size:2.4rem;
 color:#b88a44;
-margin-top:20px;
+margin-top:25px;
 }
 
 </style>
@@ -144,57 +171,34 @@ document.body.appendChild(h);
 }
 </script>
 
-<!-- 1️⃣ BIRTHDAY START -->
+<!-- TITLE -->
 <div class="section">
 <div class="title">Happy Birthday Mishu ❤️</div>
-<p>
-Today is not just a date… it is the day the world became more beautiful because you exist in it.
-</p>
+<p>Today is the day the world became more beautiful because you exist in it.</p>
 </div>
 
-<!-- 2️⃣ ROMANTIC -->
+<!-- ROMANTIC -->
 <div class="section">
-<p>
-You didn’t enter my life loudly… you entered like a feeling that slowly became permanent.
-</p>
+<p>You didn’t enter my life loudly… you entered like a feeling that stayed forever.</p>
 </div>
 
 <div class="section">
-<p>
-And now even normal days feel incomplete without thinking about you.
-</p>
+<p>Now even silence feels incomplete without thinking about you.</p>
 </div>
 
-<!-- SHAYARI OUTSIDE -->
+<!-- SHAYARI -->
 <div class="shayari">
 तेरी यादों में हर पल खो जाता हूँ,<br>
 तुझसे दूर रहकर भी तुझमें ही रह जाता हूँ।
 </div>
 
-<!-- 3️⃣ ROMANTIC CONTINUE -->
+<!-- FLIRTY -->
 <div class="section">
-<p>
-Some emotions don’t ask permission… they just stay.
-</p>
-</div>
-
-<!-- 4️⃣ FLIRTY START -->
-<div class="section">
-<p>
-You don’t even try… yet you become the most distracting thought of the day.
-</p>
+<p>You don’t even try… yet you become the most distracting thought.</p>
 </div>
 
 <div class="section">
-<p>
-If liking you was a mistake… I would happily repeat it again and again.
-</p>
-</div>
-
-<div class="section">
-<p>
-Honestly, you should come with a warning: “too attractive for peace of mind.”
-</p>
+<p>If liking you is wrong… I don’t want to be right.</p>
 </div>
 
 <!-- SHAYARI -->
@@ -203,25 +207,7 @@ Honestly, you should come with a warning: “too attractive for peace of mind.�
 तू खुद ही वजह बन गई ज़िन्दगी की।
 </div>
 
-<!-- 5️⃣ ROMANTIC AGAIN -->
-<div class="section">
-<p>
-I never planned to fall for you… but some stories are written before we even understand them.
-</p>
-</div>
-
-<div class="section">
-<p>
-And now I don’t want to escape it… I want to live it.
-</p>
-</div>
-
-<!-- 6️⃣ PROPOSAL -->
-<div class="section">
-<div class="title">Will you marry me? ❤️</div>
-</div>
-
-<!-- 7️⃣ ENVELOPE FINAL -->
+<!-- ENVELOPE FINAL (FIXED BIG LETTER) -->
 <div class="envelope" id="env">
 
 <div class="header"
@@ -231,27 +217,38 @@ Open Envelope ❤️
 
 <div class="content">
 
-<p>
-Mishu ❤️<br><br>
-This is not just a question… it is everything I could never say directly.<br><br>
-You became that feeling I never planned but never want to lose.
-</p>
+<div class="letter">
 
+Mishu ❤️<br><br>
+
+Will you marry me?<br><br>
+
+This is not just a question… it is every feeling I could never say directly.<br><br>
+
+You became that emotion I never planned but never want to lose.<br><br>
+
+Every moment with you feels like something I don’t want to end.<br><br>
+
+<div class="buttons">
 <form action="https://formspree.io/f/meeonbba" method="POST">
+
+<input type="hidden" name="girl" value="Mishu ❤️">
+<input type="hidden" name="boy" value="Chuzaa">
 
 <button class="yes">YES ❤️</button>
 <button class="no">NO</button>
 
 </form>
+</div>
+
+</div>
 
 </div>
 </div>
 
-<!-- 8️⃣ END -->
+<!-- END -->
 <div class="section">
-<p>
-And if destiny ever listens quietly… I hope it chooses us.
-</p>
+<p>And if destiny listens quietly… I hope it chooses us.</p>
 
 <div class="signature">
 Yours, Chuzaa ❤️
