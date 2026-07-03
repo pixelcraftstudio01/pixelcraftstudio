@@ -3,117 +3,204 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>For You ❤️</title>
+<title>For Mishu ❤️</title>
+
+<!-- Premium Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
 *{
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family: 'Segoe UI', sans-serif;
 }
 
 body{
-background:#000;
+background:#070608;
 color:white;
 overflow-x:hidden;
-scroll-behavior:smooth;
+font-family:'Inter', sans-serif;
 }
 
-/* BACKGROUND HEARTS */
-canvas{
+/* ===== BACKGROUND LAYERS ===== */
+.glow{
 position:fixed;
-top:0;
-left:0;
-z-index:-1;
+width:600px;
+height:600px;
+background:radial-gradient(circle, rgba(255,0,80,0.25), transparent 60%);
+top:-200px;
+left:-200px;
+filter:blur(60px);
+z-index:-2;
 }
 
-/* NAV */
+.glow2{
+position:fixed;
+width:500px;
+height:500px;
+background:radial-gradient(circle, rgba(255,255,255,0.08), transparent 60%);
+bottom:-200px;
+right:-200px;
+filter:blur(50px);
+z-index:-2;
+}
+
+/* ===== NAV ===== */
 nav{
 position:fixed;
 top:0;
 width:100%;
+padding:15px;
 display:flex;
 justify-content:center;
-gap:20px;
-padding:15px;
+gap:25px;
+backdrop-filter:blur(12px);
 background:rgba(0,0,0,0.4);
-backdrop-filter:blur(10px);
 z-index:1000;
 }
 
 nav a{
-color:white;
+color:#ddd;
 text-decoration:none;
-font-size:14px;
-opacity:0.7;
+font-size:13px;
+letter-spacing:1px;
 transition:0.3s;
 }
 
 nav a:hover{
 color:#ff4d6d;
-opacity:1;
 }
 
-/* SECTIONS */
+/* ===== SECTIONS ===== */
 section{
-height:100vh;
+min-height:100vh;
 display:flex;
 flex-direction:column;
 justify-content:center;
 align-items:center;
 text-align:center;
-padding:40px;
+padding:60px 20px;
 }
 
-/* HERO */
-.hero h1{
-font-size:3.5rem;
+/* ===== HERO ===== */
+h1{
+font-family:'Playfair Display', serif;
+font-size:4rem;
 color:#ff4d6d;
-text-shadow:0 0 30px #ff4d6d;
+text-shadow:0 0 30px rgba(255,77,109,0.4);
 }
 
-.hero p{
-opacity:0.8;
-margin-top:10px;
+.subtitle{
+opacity:0.7;
+margin-top:15px;
+max-width:600px;
 }
 
-/* ENVELOPE */
-.envelope{
-width:260px;
-height:160px;
-background:#111;
-border:2px solid #ff4d6d;
+/* ===== STORY CARDS ===== */
+.card-container{
+display:flex;
+gap:20px;
+flex-wrap:wrap;
+justify-content:center;
+margin-top:30px;
+}
+
+.card{
+width:200px;
+height:260px;
+perspective:1000px;
+}
+
+.card-inner{
+width:100%;
+height:100%;
+transition:transform 0.8s;
+transform-style:preserve-3d;
 position:relative;
 cursor:pointer;
-transition:0.8s;
-transform-style:preserve-3d;
 }
 
-.envelope:before{
-content:'';
+.card:hover .card-inner{
+transform:rotateY(180deg);
+}
+
+.face{
 position:absolute;
 width:100%;
 height:100%;
-background:linear-gradient(45deg,#ff4d6d,#ff99aa);
-clip-path:polygon(0 0,100% 0,50% 50%);
+backface-visibility:hidden;
+display:flex;
+align-items:center;
+justify-content:center;
+border-radius:16px;
+padding:15px;
+}
+
+.front{
+background:linear-gradient(135deg,#ff4d6d,#ff99aa);
+color:white;
+font-weight:600;
+}
+
+.back{
+background:#111;
+border:1px solid rgba(255,255,255,0.1);
+transform:rotateY(180deg);
+font-size:13px;
+color:#ddd;
+}
+
+/* ===== BOUQUET ===== */
+.bouquet{
+font-size:90px;
+animation:float 3s ease-in-out infinite;
+filter:drop-shadow(0 0 20px rgba(255,77,109,0.4));
+}
+
+@keyframes float{
+0%{transform:translateY(0);}
+50%{transform:translateY(-20px);}
+100%{transform:translateY(0);}
+}
+
+/* ===== ENVELOPE ===== */
+.envelope{
+width:300px;
+height:190px;
+background:#111;
+border:1px solid rgba(255,255,255,0.2);
+position:relative;
+cursor:pointer;
+border-radius:6px;
+overflow:hidden;
+box-shadow:0 0 40px rgba(255,77,109,0.15);
+}
+
+.flap{
+position:absolute;
+width:100%;
+height:100%;
+background:linear-gradient(45deg,#ff4d6d,#ff2e63);
+clip-path:polygon(0 0,100% 0,50% 55%);
 transform-origin:top;
 transition:0.8s;
 }
 
-.envelope.open:before{
+.envelope.open .flap{
 transform:rotateX(180deg);
 }
 
 .letter{
 position:absolute;
+bottom:0;
 width:100%;
 height:100%;
-background:white;
-color:black;
+background:#fff;
+color:#111;
 padding:20px;
 transform:translateY(120%);
 transition:0.8s;
+font-family:'Playfair Display', serif;
 }
 
 .envelope.open .letter{
@@ -121,182 +208,135 @@ transform:translateY(0);
 }
 
 .letter h2{
-color:#ff4d6d;
+color:#ff2e63;
 }
 
-/* BUTTONS */
+/* ===== BUTTONS ===== */
 .buttons{
-margin-top:10px;
+margin-top:15px;
 display:flex;
 gap:10px;
 justify-content:center;
 }
 
 button{
-padding:10px 20px;
+padding:10px 18px;
 border:none;
 cursor:pointer;
-font-weight:bold;
+border-radius:6px;
+font-weight:600;
 transition:0.3s;
 }
 
 .yes{
-background:#ff4d6d;
+background:#ff2e63;
 color:white;
 }
 
 .no{
-background:black;
-color:white;
-border:1px solid white;
+background:transparent;
+border:1px solid #aaa;
+color:#fff;
 }
 
-/* 3D CARDS */
-.cards{
-display:flex;
-gap:20px;
-flex-wrap:wrap;
-justify-content:center;
-}
-
-.card3d{
-width:180px;
-height:220px;
-perspective:1000px;
-}
-
-.inner{
-width:100%;
-height:100%;
-position:relative;
-transition:transform 0.8s;
-transform-style:preserve-3d;
-cursor:pointer;
-}
-
-.card3d:hover .inner{
-transform:rotateY(180deg);
-}
-
-.front,.back{
-position:absolute;
-width:100%;
-height:100%;
-backface-visibility:hidden;
-display:flex;
-justify-content:center;
-align-items:center;
-border-radius:12px;
-}
-
-.front{
-background:#ff4d6d;
-}
-
-.back{
-background:#111;
-border:1px solid #fff;
-transform:rotateY(180deg);
-}
-
-/* bouquet */
-.bouquet{
-font-size:80px;
-animation:float 3s ease-in-out infinite;
-}
-
-@keyframes float{
-0%{transform:translateY(0);}
-50%{transform:translateY(-25px);}
-100%{transform:translateY(0);}
-}
-
-/* SECTION TITLES */
-h2{
-color:#ff4d6d;
-margin-bottom:20px;
+/* ===== CONFETTI CANVAS ===== */
+canvas{
+position:fixed;
+top:0;
+left:0;
+z-index:-1;
 }
 </style>
 </head>
 
 <body>
 
-<canvas id="hearts"></canvas>
+<div class="glow"></div>
+<div class="glow2"></div>
+<canvas id="confetti"></canvas>
 
 <nav>
-<a href="#s1">Home</a>
-<a href="#s2">Story</a>
-<a href="#s3">Memories</a>
-<a href="#s4">Surprise</a>
-<a href="#s5">Proposal</a>
+<a href="#home">Home</a>
+<a href="#story">Story</a>
+<a href="#memories">Memories</a>
+<a href="#dream">Dream</a>
+<a href="#proposal">Proposal</a>
 </nav>
 
-<!-- PAGE 1 -->
-<section id="s1" class="hero">
-<h1>Happy Birthday ❤️</h1>
-<p>This is not just a website... it's my heart.</p>
-</section>
-
-<!-- PAGE 2 -->
-<section id="s2">
-<h2>Our Story ❤️</h2>
-<p style="max-width:600px;opacity:0.8;">
-From strangers to someone I can’t imagine my life without...
-every moment with you feels like magic.
+<!-- 1 HOME -->
+<section id="home">
+<h1>For Mishu ❤️</h1>
+<p class="subtitle">
+A story written in silence, feelings, and endless love... from Chuzza ❤️
 </p>
 </section>
 
-<!-- PAGE 3 -->
-<section id="s3">
-<h2>Memories 💖</h2>
-<div class="cards">
+<!-- 2 STORY -->
+<section id="story">
+<h2 style="color:#ff4d6d;font-family:'Playfair Display';font-size:2.5rem;">Our Story</h2>
+<p class="subtitle">Every moment with you became my favorite memory...</p>
+</section>
 
-<div class="card3d">
-<div class="inner">
-<div class="front">First Talk</div>
-<div class="back">I still remember that moment ❤️</div>
+<!-- 3 MEMORIES -->
+<section id="memories">
+<h2 style="color:#ff4d6d;font-family:'Playfair Display';">Memories</h2>
+
+<div class="card-container">
+
+<div class="card">
+<div class="card-inner">
+<div class="face front">First Smile</div>
+<div class="face back">The moment I got lost in you ❤️</div>
 </div>
 </div>
 
-<div class="card3d">
-<div class="inner">
-<div class="front">Smile</div>
-<div class="back">Your smile heals everything 💕</div>
+<div class="card">
+<div class="card-inner">
+<div class="face front">Your Voice</div>
+<div class="face back">Still plays in my mind like music 🎵</div>
 </div>
 </div>
 
-<div class="card3d">
-<div class="inner">
-<div class="front">Care</div>
-<div class="back">You mean everything 🌹</div>
+<div class="card">
+<div class="card-inner">
+<div class="face front">You</div>
+<div class="face back">My peace, my chaos, my everything 🌹</div>
 </div>
 </div>
 
 </div>
 </section>
 
-<!-- PAGE 4 -->
-<section id="s4">
-<h2>Something for You 💐</h2>
+<!-- 4 DREAM -->
+<section id="dream">
+<h2 style="color:#ff4d6d;font-family:'Playfair Display';">A Dream for You</h2>
 <div class="bouquet">💐</div>
-<p style="opacity:0.7;margin-top:10px;">A bouquet that never fades...</p>
+<p class="subtitle">A love that never fades...</p>
 </section>
 
-<!-- PAGE 5 -->
-<section id="s5">
-<h2>Final Question ❤️</h2>
+<!-- 5 PROPOSAL -->
+<section id="proposal">
+
+<h2 style="color:#ff4d6d;font-family:'Playfair Display';font-size:2.5rem;">
+Final Question
+</h2>
 
 <div class="envelope" onclick="openEnvelope()">
+<div class="flap"></div>
+
 <div class="letter">
-<h2>Will You Marry Me? ❤️</h2>
-<p>You are my today, my tomorrow, my forever...</p>
+<h2>Will You Marry Me, Mishu? ❤️</h2>
+<p>From the moment I met you... I knew it was you.</p>
 
 <div class="buttons">
 <button class="yes" onclick="send('YES')">YES</button>
 <button class="no" onclick="send('NO')">NO</button>
 </div>
+
 </div>
 </div>
+
+<p class="subtitle">— Chuzza ❤️</p>
 
 </section>
 
@@ -309,53 +349,64 @@ document.querySelector('.envelope').classList.toggle('open');
 
 /* FORM */
 function send(ans){
-
 fetch("https://formspree.io/f/meeonbba",{
 method:"POST",
 headers:{"Content-Type":"application/json"},
-body:JSON.stringify({answer:ans})
+body:JSON.stringify({
+name:"Mishu",
+answer:ans,
+from:"Chuzza"
+})
 });
 
-alert("Response sent ❤️");
+startConfetti();
+alert("Your response has been sent ❤️");
 }
 
-/* HEART PARTICLES */
-const canvas=document.getElementById("hearts");
+/* CONFETTI */
+const canvas=document.getElementById("confetti");
 const ctx=canvas.getContext("2d");
 
 canvas.width=window.innerWidth;
 canvas.height=window.innerHeight;
 
-let hearts=[];
+let pieces=[];
 
-for(let i=0;i<60;i++){
-hearts.push({
+for(let i=0;i<120;i++){
+pieces.push({
 x:Math.random()*canvas.width,
 y:Math.random()*canvas.height,
-r:Math.random()*4+2,
-d:Math.random()*1+0.5
+r:Math.random()*3+2,
+d:Math.random()*2+1
 });
 }
 
 function draw(){
 ctx.clearRect(0,0,canvas.width,canvas.height);
-ctx.fillStyle="rgba(255,77,109,0.7)";
+ctx.fillStyle="rgba(255,77,109,0.8)";
 
-for(let i=0;i<hearts.length;i++){
-let h=hearts[i];
+pieces.forEach(p=>{
 ctx.beginPath();
-ctx.arc(h.x,h.y,h.r,0,Math.PI*2);
+ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
 ctx.fill();
-h.y+=h.d;
+p.y+=p.d;
+if(p.y>canvas.height){p.y=0;}
+});
 
-if(h.y>canvas.height){
-h.y=0;
-h.x=Math.random()*canvas.width;
-}
-}
 requestAnimationFrame(draw);
 }
 draw();
+
+function startConfetti(){
+for(let i=0;i<200;i++){
+pieces.push({
+x:Math.random()*canvas.width,
+y:0,
+r:Math.random()*4+2,
+d:Math.random()*4+2
+});
+}
+}
 
 </script>
 
