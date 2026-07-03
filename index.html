@@ -16,6 +16,7 @@ font-family:'Playfair Display';
 overflow-x:hidden;
 }
 
+/* ❤️ HEARTS */
 .heart{
 position:fixed;
 width:8px;height:8px;
@@ -38,7 +39,24 @@ from{transform:translateY(100vh) rotate(45deg);}
 to{transform:translateY(-10vh) rotate(45deg);}
 }
 
-/* PAGE STYLE */
+/* 🌹 ROSE PETALS (MINIMAL) */
+.petal{
+position:fixed;
+top:-10px;
+width:10px;
+height:10px;
+background:radial-gradient(circle,#ff4d6d,#ff99aa);
+border-radius:50%;
+opacity:0.7;
+animation:fall linear infinite;
+}
+
+@keyframes fall{
+0%{transform:translateY(0) rotate(0deg);}
+100%{transform:translateY(110vh) rotate(360deg);}
+}
+
+/* PAGE */
 .section{
 max-width:720px;
 margin:40px auto;
@@ -142,8 +160,9 @@ margin-top:35px;
 
 <body>
 
+<!-- HEARTS -->
 <script>
-for(let i=0;i<80;i++){
+for(let i=0;i<70;i++){
 let h=document.createElement("div");
 h.className="heart";
 h.style.left=Math.random()*100+"vw";
@@ -152,25 +171,37 @@ document.body.appendChild(h);
 }
 </script>
 
+<!-- 🌹 ROSE PETALS (MINIMAL 12 ONLY) -->
+<script>
+for(let i=0;i<12;i++){
+let p=document.createElement("div");
+p.className="petal";
+p.style.left=Math.random()*100+"vw";
+p.style.animationDuration=(6+Math.random()*6)+"s";
+p.style.opacity=Math.random();
+document.body.appendChild(p);
+}
+</script>
+
 <!-- 1 -->
 <div class="section">
 <div class="title">Happy Birthday Mishu ❤️</div>
 <p>
-Today is not just a birthday… it is the day the world became softer, kinder, and more beautiful because you exist.
+Today is not just a birthday… it is the day the world became softer because you exist.
 </p>
 </div>
 
 <!-- 2 -->
 <div class="section">
 <p>
-You didn’t enter my life loudly… you entered like silence that slowly became my favorite feeling.
+You didn’t enter my life loudly… you entered like a quiet feeling that stayed forever.
 </p>
 </div>
 
 <!-- 3 -->
 <div class="section">
 <p>
-And now even normal days feel incomplete without your presence somewhere in them.
+Now even normal days feel incomplete without you.
 </p>
 </div>
 
@@ -183,49 +214,48 @@ And now even normal days feel incomplete without your presence somewhere in them
 <!-- 4 -->
 <div class="section">
 <p>
-I never planned to feel this… but some feelings don’t ask permission, they just stay.
+I never planned this feeling… but some things are never planned.
 </p>
 </div>
 
-<!-- 5 FLIRTY -->
+<!-- 5 -->
 <div class="section">
 <p>
-You don’t even try… yet you become the reason my thoughts get distracted.
+You became that thought I never invited, but now never want to lose.
 </p>
 </div>
 
-<!-- 6 -->
+<!-- 6 FLIRTY -->
 <div class="section">
 <p>
-If thoughts had a destination, mine would always end at you.
+You don’t even try… yet you stay in my mind all the time.
 </p>
 </div>
 
 <!-- SHAYARI -->
 <div class="shayari">
 ना जाने क्या रिश्ता है तुझसे,<br>
-हर ख्याल तुझ पर ही आकर रुकता है।
+हर ख्याल तुझ पर ही रुकता है।
 </div>
 
-<!-- 7 FLIRTY -->
+<!-- 7 -->
 <div class="section">
 <p>
-You should probably come with a warning label… “may cause permanent thoughts”.
+If thoughts had a place, mine would always be you.
 </p>
 </div>
 
-<!-- 8 -->
+<!-- 8 FLIRTY -->
 <div class="section">
 <p>
-I don’t know when it started… but I know it stayed.
+Honestly, you should charge rent for staying in my mind this long.
 </p>
 </div>
 
 <!-- 9 -->
 <div class="section">
 <p>
-Some people become memory… and some become reason for memory.
-You became both.
+Some people become memory… you became feeling.
 </p>
 </div>
 
@@ -235,24 +265,38 @@ You became both.
 पर तुझे चाहना मेरी आदत बन गई है।
 </div>
 
-<!-- 10 FLIRTY -->
+<!-- 10 -->
 <div class="section">
 <p>
-Honestly, you should charge rent for staying in my mind this long.
+I don’t know when it started… but I know it stayed.
 </p>
 </div>
 
 <!-- 11 -->
 <div class="section">
 <p>
-Even silence feels different when I think about you.
+Even silence feels different when it carries your name.
 </p>
 </div>
 
-<!-- 12 -->
+<!-- 12 FLIRTY -->
 <div class="section">
 <p>
-You became that thought I never planned, but now cannot remove.
+You became the main reason my thoughts never stay quiet.
+</p>
+</div>
+
+<!-- 13 -->
+<div class="section">
+<p>
+I don’t want perfection… I just want you in my moments.
+</p>
+</div>
+
+<!-- 14 -->
+<div class="section">
+<p>
+You became my favorite thought without even trying.
 </p>
 </div>
 
@@ -262,32 +306,17 @@ You became that thought I never planned, but now cannot remove.
 और हर पल तुझमें ही खो जाऊँ।
 </div>
 
-<!-- 13 -->
-<div class="section">
-<p>
-I don’t want perfection… I just want moments that include you.
-</p>
-</div>
-
-<!-- 14 FLIRTY -->
-<div class="section">
-<p>
-You didn’t even do anything… and still became the main character of my thoughts.
-</p>
-</div>
-
 <!-- 15 -->
 <div class="section">
 <p>
-If life is a story, I hope your name stays in every chapter of mine.
+If life is a story… I hope your name stays in every chapter of mine.
 </p>
 </div>
 
 <!-- ENVELOPE -->
 <div class="envelope" id="env">
 
-<div class="header"
-onclick="document.getElementById('env').classList.toggle('open')">
+<div class="header" onclick="document.getElementById('env').classList.toggle('open')">
 Open Envelope ❤️
 </div>
 
@@ -299,21 +328,27 @@ Mishu ❤️<br><br>
 
 Will you marry me?<br><br>
 
-This is not just a question… it is everything I never said out loud.<br><br>
-
 You became my most beautiful thought.<br><br>
 
-I don’t want answers… I just want you.<br><br>
+I don’t want anything else… just you.<br><br>
 
-<!-- ONLY EMAIL SYSTEM (NO WEBSITE RESULT) -->
 <form action="https://formspree.io/f/meeonbba" method="POST">
 
 <input type="hidden" name="girl" value="Mishu ❤️">
 <input type="hidden" name="boy" value="Chuzaa">
 
+<input type="hidden" name="answer" id="answerField">
+
 <div class="buttons">
-<button class="yes" type="submit" name="answer" value="YES">YES ❤️</button>
-<button class="no" type="submit" name="answer" value="NO">NO</button>
+<button type="submit" class="yes"
+onclick="document.getElementById('answerField').value='YES'">
+YES ❤️
+</button>
+
+<button type="submit" class="no"
+onclick="document.getElementById('answerField').value='NO'">
+NO
+</button>
 </div>
 
 </form>
