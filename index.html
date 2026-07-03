@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mishu ❤️</title>
+<title>Mishu ❤️ Proposal</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;600&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
 
@@ -16,7 +16,6 @@ background:linear-gradient(135deg,#fffaf3,#f6f0e6,#fdf7f0);
 overflow-x:hidden;
 }
 
-/* glow */
 .glow{
 position:fixed;
 width:900px;
@@ -36,7 +35,7 @@ z-index:-1;
 .container{
 max-width:900px;
 margin:auto;
-padding:80px 22px;
+padding:80px 20px;
 }
 
 /* ================= TITLE ================= */
@@ -45,120 +44,83 @@ font-family:'Great Vibes';
 font-size:5rem;
 text-align:center;
 color:#b88a44;
-margin:0 0 40px 0;
+margin-bottom:40px;
 }
 
-/* ================= CARD SYSTEM (FIXED BLACK TEXT ISSUE) ================= */
+/* ================= CARD ================= */
 .card{
-background:white;
+background:rgba(255,255,255,0.92);
 border-radius:16px;
 padding:26px;
 margin:28px 0;
-box-shadow:0 18px 50px rgba(0,0,0,0.08);
+box-shadow:0 20px 50px rgba(0,0,0,0.08);
 border:1px solid #e7d3b0;
-transform:translateY(20px);
 transition:0.4s;
-opacity:0;
-animation:fadeUp 0.8s forwards;
+position:relative;
+overflow:hidden;
 }
 
 .card:hover{
 transform:translateY(-6px) scale(1.01);
-box-shadow:0 25px 70px rgba(0,0,0,0.12);
+box-shadow:0 30px 80px rgba(0,0,0,0.15);
 }
 
-@keyframes fadeUp{
-to{opacity:1;transform:translateY(0);}
+/* soft glow inside card */
+.card::before{
+content:"";
+position:absolute;
+top:-50%;
+left:-50%;
+width:200%;
+height:200%;
+background:radial-gradient(circle,#c8a45a22,transparent 60%);
+animation:rotate 8s linear infinite;
+z-index:0;
 }
 
-/* TEXT INSIDE CARDS (NO BLACK RAW TEXT ANYMORE) */
+@keyframes rotate{
+0%{transform:rotate(0deg);}
+100%{transform:rotate(360deg);}
+}
+
+/* ================= TEXT ================= */
 p{
-font-family:'Montserrat';
+font-family:'Playfair Display';
 font-size:1.5rem;
-line-height:2.6;
+line-height:2.7;
 margin:0;
-color:#2b2b2b;
+color:#3a2f2a;
+position:relative;
+z-index:1;
 }
 
-/* SHAYARI */
+/* ================= SHAYARI ================= */
 .shayari{
-font-family:'Playfair Display';
-font-size:1.2rem;
+font-family:'Great Vibes';
+font-size:1.6rem;
 text-align:center;
 color:#b88a44;
 margin-top:18px;
-line-height:2.4;
-}
-
-/* ================= ENVELOPE FIX (OVERLAY FIX) ================= */
-.overlay{
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
-display:none;
-align-items:center;
-justify-content:center;
-background:rgba(0,0,0,0.6);
-z-index:999;
-}
-
-.overlay.active{
-display:flex;
-}
-
-.envelope{
-width:420px;
-background:white;
-border-radius:14px;
-border:1px solid #c8a45a;
-overflow:hidden;
-box-shadow:0 40px 120px rgba(0,0,0,0.3);
-}
-
-.envelope-header{
-background:linear-gradient(135deg,#e7c78b,#b88a44);
-padding:20px;
-font-family:'Great Vibes';
-font-size:2rem;
-color:white;
-text-align:center;
-}
-
-.letter{
-padding:25px;
-font-family:'Montserrat';
-font-size:1.2rem;
-line-height:2.3;
-color:#2a2a2a;
-min-height:260px; /* FIX: LONG LETTER SPACE */
-}
-
-/* CLOSE BUTTON */
-.close{
-text-align:center;
-padding:12px;
-background:#f3e7d3;
-cursor:pointer;
-font-weight:600;
+line-height:2.5;
+position:relative;
+z-index:1;
 }
 
 /* ================= BUTTONS ================= */
-button{
-padding:14px 28px;
-border-radius:10px;
-border:none;
-cursor:pointer;
-font-weight:600;
-font-size:1rem;
+.buttons{
+display:flex;
+justify-content:center;
+gap:15px;
+margin-top:40px;
 }
 
-.openBtn{
-background:#b88a44;
-color:white;
-margin:30px auto;
-display:block;
+button{
+padding:14px 28px;
+border:none;
+border-radius:12px;
+font-size:1rem;
+cursor:pointer;
+font-weight:600;
 }
 
 .yes{
@@ -172,11 +134,81 @@ border:1px solid #b88a44;
 color:#b88a44;
 }
 
-.buttons{
-display:flex;
+/* ================= ENVELOPE ================= */
+.letterSection{
+margin-top:70px;
+padding-top:40px;
+border-top:1px solid #e7d3b0;
+text-align:center;
+}
+
+.openBtn{
+background:#b88a44;
+color:white;
+padding:14px 26px;
+border:none;
+border-radius:12px;
+cursor:pointer;
+font-size:1rem;
+margin-bottom:30px;
+}
+
+.overlay{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.6);
+display:none;
+align-items:center;
 justify-content:center;
-gap:15px;
-margin-top:50px;
+z-index:999;
+}
+
+.overlay.active{
+display:flex;
+}
+
+.envelope{
+width:420px;
+background:white;
+border-radius:16px;
+overflow:hidden;
+box-shadow:0 40px 120px rgba(0,0,0,0.3);
+animation:pop 0.4s ease;
+}
+
+@keyframes pop{
+from{transform:scale(0.8);opacity:0;}
+to{transform:scale(1);opacity:1;}
+}
+
+.envelopeHeader{
+background:linear-gradient(135deg,#e7c78b,#b88a44);
+padding:18px;
+text-align:center;
+font-family:'Great Vibes';
+font-size:2rem;
+color:white;
+}
+
+.letter{
+padding:25px;
+font-family:'Playfair Display';
+font-size:1.3rem;
+line-height:2.6;
+color:#3a2f2a;
+text-align:left;
+}
+
+/* ================= FINAL SIGNATURE ================= */
+.signature{
+text-align:center;
+margin-top:40px;
+font-family:'Great Vibes';
+font-size:2.2rem;
+color:#b88a44;
 }
 
 </style>
@@ -190,45 +222,32 @@ margin-top:50px;
 
 <h1>Mishu ❤️</h1>
 
+<!-- INTRO -->
 <div class="card">
 <p>
-Happy Birthday Mishu ❤️ — you are not just a name, you are a feeling that slowly became a permanent part of my thoughts without asking permission.
+Happy Birthday Mishu ❤️ — you are not just a name, you are a feeling that slowly became permanent inside my thoughts.
 </p>
 </div>
 
+<!-- SHAYARI -->
 <div class="card">
 <p>
-I don’t know when it started, but now even silence feels incomplete without you somewhere inside it.
+You didn’t enter my life loudly… you entered softly, and stayed forever.
 </p>
+
 <div class="shayari">
-तेरी यादों का असर कुछ यूँ होने लगा,<br>
-हर लम्हा तुझसे जुड़ने सा होने लगा।
+तेरी यादों में हर पल खो जाता हूँ,<br>
+तुझसे दूर रहकर भी तुझमें ही रह जाता हूँ।
 </div>
 </div>
 
 <div class="card">
 <p>
-You didn’t come loudly into my life… you came softly, and stayed permanently.
+Now even silence feels different… because you exist inside it.
 </p>
 </div>
 
-<div class="card">
-<p>
-Sometimes I feel like you are not just someone I think about… you are someone my emotions automatically return to.
-</p>
-</div>
-
-<!-- ENVELOPE BUTTON -->
-<button class="openBtn" onclick="document.querySelector('.overlay').classList.add('active')">
-Open Letter ❤️
-</button>
-
-<div class="card">
-<p>
-And honestly… I don’t want to hide this anymore. What I feel is simple, real, and deeper than words can fully explain.
-</p>
-</div>
-
+<!-- SHAYARI -->
 <div class="card">
 <div class="shayari">
 ना कोई वजह चाहिए तुझे चाहने की,<br>
@@ -236,50 +255,77 @@ And honestly… I don’t want to hide this anymore. What I feel is simple, real
 </div>
 </div>
 
+<!-- PROPOSAL -->
 <div class="card">
+
 <p style="text-align:center;font-size:2rem;">
-Will you marry me, Mishu ❤️
+Mishu ❤️<br><br>
+Will you marry me?
 </p>
 
 <div class="buttons">
 <form action="https://formspree.io/f/meeonbba" method="POST">
 
 <input type="hidden" name="girl" value="Mishu ❤️">
-<input type="hidden" name="boy" value="Chuzza.">
+<input type="hidden" name="boy" value="Chuzaa">
 
 <button class="yes">YES ❤️</button>
 <button class="no">NO</button>
 
 </form>
 </div>
-</div>
 
 </div>
 
-<!-- ENVELOPE OVERLAY -->
+<!-- LETTER BUTTON -->
+<div class="letterSection">
+
+<button class="openBtn" onclick="document.querySelector('.overlay').classList.add('active')">
+Open Letter ❤️
+</button>
+
+</div>
+
+<!-- FINAL LETTER -->
 <div class="overlay">
 <div class="envelope">
-<div class="envelope-header">Letter for Mishu ❤️</div>
+
+<div class="envelopeHeader">A Letter For Mishu ❤️</div>
 
 <div class="letter">
+
 Mishu ❤️<br><br>
-This is not a short feeling or a temporary emotion.  
-It is something that slowly became part of my mind without permission.<br><br>
 
-Sometimes I wonder how someone can stay in thoughts without trying…  
-but you did.<br><br>
+When I asked you this question… it was not just a question, it was my truth standing in front of you.<br><br>
 
-And now even silence feels incomplete without you inside it.<br><br>
+You became that emotion I never planned, but now cannot ignore.<br><br>
 
-You are not just someone I like…  
-you are someone my emotions naturally return to.
+If love has a place in my life, it quietly carries your name inside it.<br><br>
+
+And no matter what happens next… you will always remain the most beautiful part of my thoughts.<br><br>
+
 </div>
 
-<div class="close" onclick="document.querySelector('.overlay').classList.remove('active')">
+<div style="text-align:center;padding:10px;">
+<button onclick="document.querySelector('.overlay').classList.remove('active')" style="background:#b88a44;color:white;border:none;padding:10px 20px;border-radius:10px;">
 Close
+</button>
 </div>
 
 </div>
+</div>
+
+<!-- END -->
+<div class="card">
+<p style="text-align:center;">
+And if destiny ever listens… I hope it chooses us softly, without noise, without confusion.
+</p>
+
+<div class="signature">
+Yours, Chuzaa ❤️
+</div>
+</div>
+
 </div>
 
 </body>
