@@ -5,97 +5,139 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Mishu ❤️ From Chuza</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Lora:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Source+Serif+4:wght@300;400;600&family=Noto+Serif+Devanagari:wght@400;600&display=swap" rel="stylesheet">
 
 <style>
 
 body{
 margin:0;
-background:#0B1020;
-color:#FFF7FA;
+background:radial-gradient(circle at top,#0b1020,#05060a);
+color:#fff;
 overflow-x:hidden;
-font-family:'Lora',serif;
 }
 
+/* floating cinematic light */
 .glow{
 position:fixed;
 width:900px;
 height:900px;
-background:radial-gradient(circle,#8B1E3F40,transparent 60%);
+background:radial-gradient(circle,#ff2e6340,transparent 60%);
 filter:blur(120px);
-top:-250px;
-left:-250px;
+animation:move 10s infinite alternate;
 z-index:-1;
-animation:move 10s ease-in-out infinite;
 }
 
 @keyframes move{
-0%,100%{transform:translate(0,0);}
-50%{transform:translate(80px,50px);}
+0%{transform:translate(0,0);}
+100%{transform:translate(120px,80px);}
 }
 
+/* layout boxes */
 section{
-min-height:100vh;
 display:flex;
-flex-direction:column;
 justify-content:center;
-padding:8vw;
-opacity:0;
-transform:translateY(30px);
-animation:fade 1s forwards;
+padding:60px 16px;
 }
 
-section:nth-child(n){animation-delay:0.2s;}
+.box{
+width:95%;
+max-width:900px;
+background:rgba(255,255,255,0.06);
+backdrop-filter:blur(16px);
+border:1px solid rgba(255,255,255,0.12);
+border-radius:18px;
+padding:26px;
+box-shadow:0 20px 60px rgba(0,0,0,0.6);
+transform:translateY(30px);
+opacity:0;
+animation:fadeUp 1s forwards;
+}
 
-@keyframes fade{
+section:nth-child(1) .box{animation-delay:0.1s;}
+section:nth-child(2) .box{animation-delay:0.2s;}
+section:nth-child(3) .box{animation-delay:0.3s;}
+section:nth-child(4) .box{animation-delay:0.4s;}
+section:nth-child(5) .box{animation-delay:0.5s;}
+section:nth-child(6) .box{animation-delay:0.6s;}
+section:nth-child(7) .box{animation-delay:0.7s;}
+section:nth-child(8) .box{animation-delay:0.8s;}
+section:nth-child(9) .box{animation-delay:0.9s;}
+section:nth-child(10) .box{animation-delay:1s;}
+
+@keyframes fadeUp{
 to{opacity:1;transform:translateY(0);}
 }
 
+/* text */
 h1,h2{
-font-family:'Cinzel';
+font-family:'Playfair Display';
 margin:0;
 }
 
-h1{
-font-size:5rem;
-color:#F6D6E6;
-}
-
-h2{
-font-size:3rem;
-color:#C8A45D;
-}
+h1{font-size:3.2rem;color:#ff4d8d;}
+h2{font-size:2.1rem;color:#caa35a;}
 
 p{
-font-size:1.5rem;
-line-height:2.3;
-max-width:900px;
+font-family:'Source Serif 4';
+font-size:1.15rem;
+line-height:2;
 }
 
-/* ENVELOPE */
-.envelope{
-width:420px;
-height:240px;
-background:#111;
-border:1px solid #C8A45D;
+/* shayari */
+.shayari{
+font-family:'Noto Serif Devanagari';
+margin-top:12px;
+color:#ffd6e7;
+line-height:2;
+}
+
+/* bouquet */
+.bouquet{
+width:140px;
+height:140px;
 position:relative;
-cursor:pointer;
-overflow:visible;
-margin-top:30px;
-border-radius:10px;
-transform:perspective(900px);
-transition:0.5s;
+margin-top:20px;
+animation:float 4s ease-in-out infinite;
 }
 
-.envelope:hover{
-transform:perspective(900px) rotateX(5deg) scale(1.02);
+.petal{
+position:absolute;
+width:55px;
+height:55px;
+border-radius:50%;
+background:radial-gradient(circle,#ff2e63,#8b1e3f);
+}
+
+.p1{top:0;left:40px;}
+.p2{top:25px;left:10px;}
+.p3{top:25px;right:10px;}
+.p4{bottom:25px;left:20px;}
+.p5{bottom:25px;right:20px;}
+
+@keyframes float{
+0%,100%{transform:translateY(0);}
+50%{transform:translateY(-18px);}
+}
+
+/* envelope */
+.envelope{
+width:100%;
+max-width:420px;
+height:220px;
+margin-top:20px;
+position:relative;
+background:#111;
+border-radius:12px;
+border:1px solid #ff4d8d;
+overflow:visible;
+cursor:pointer;
 }
 
 .flap{
 position:absolute;
 width:100%;
 height:100%;
-background:linear-gradient(135deg,#8B1E3F,#C8A45D);
+background:linear-gradient(135deg,#ff2e63,#caa35a);
 clip-path:polygon(0 0,100% 0,50% 55%);
 transition:0.8s;
 transform-origin:top;
@@ -105,19 +147,16 @@ transform-origin:top;
 transform:rotateX(180deg);
 }
 
-/* FIXED LETTER (NO CUTTING) */
 .letter{
 position:absolute;
 top:100%;
 left:0;
 width:100%;
-background:#FFF7FA;
+background:#fff;
 color:#111;
-padding:25px;
-font-size:1.4rem;
-line-height:2.2;
+padding:22px;
 border-radius:10px;
-box-shadow:0 20px 60px rgba(0,0,0,0.4);
+box-shadow:0 20px 50px rgba(0,0,0,0.4);
 opacity:0;
 transform:translateY(-10px);
 transition:0.8s;
@@ -128,33 +167,37 @@ opacity:1;
 transform:translateY(25px);
 }
 
-/* BUTTONS */
+/* button system */
+.buttons{
+display:flex;
+gap:12px;
+margin-top:15px;
+flex-wrap:wrap;
+}
+
 button{
-padding:14px 24px;
-margin:10px;
+padding:12px 22px;
 border:none;
-cursor:pointer;
-font-size:1.1rem;
 border-radius:10px;
+cursor:pointer;
 font-weight:600;
+transition:0.3s;
 }
 
 .yes{
-background:#8B1E3F;
+background:#ff2e63;
 color:white;
-animation:pulse 2s infinite;
+box-shadow:0 0 20px rgba(255,46,99,0.4);
 }
 
 .no{
 background:transparent;
-border:1px solid #FFF7FA;
-color:#FFF7FA;
+border:1px solid #fff;
+color:#fff;
 }
 
-@keyframes pulse{
-0%,100%{transform:scale(1);}
-50%{transform:scale(1.05);}
-}
+.yes:hover{transform:scale(1.05);}
+.no:hover{opacity:0.7;}
 
 </style>
 </head>
@@ -163,141 +206,133 @@ color:#FFF7FA;
 
 <div class="glow"></div>
 
-<!-- 1 INTRO -->
+<!-- 1 -->
 <section>
+<div class="box">
 <h1>Mishu ❤️</h1>
 <p>
-I don’t just think about you… I quietly live in the thought of you.
-<br><br>
-“तेरी यादें भी अब मेरी आदत बन चुकी हैं…”
+You are not just someone I think about… you are the reason my thoughts feel alive.
 </p>
+<div class="shayari">
+“तेरी यादें भी अब मेरी साँसों में बस गई हैं,<br>
+तेरे बिना हर खुशी अधूरी लगती है।”
+</div>
+</div>
 </section>
 
-<!-- 2 BIRTHDAY -->
+<!-- 2 -->
 <section>
+<div class="box">
 <h2>Birthday 🎂</h2>
 <p>
-Your birthday is not just a date… it feels like the universe paused to create something rare.
-<br><br>
-“तेरी मुस्कान से रोशन है मेरी दुनिया…”
+Your existence feels like a soft miracle that never needed explanation.
 </p>
+<div class="shayari">
+“तेरा होना ही मेरी दुनिया की सबसे खूबसूरत वजह है,<br>
+वरना ये दिल पहले भी खाली सा था।”
+</div>
+</div>
 </section>
 
-<!-- 3 FLIRTY -->
+<!-- 3 -->
 <section>
+<div class="box">
 <h2>Flirty Truth</h2>
 <p>
-Whenever I try to act normal, your thought interrupts me like it owns my mind.
-<br><br>
-“तू सामने नहीं होती फिर भी सबसे करीब लगती है…”
+I try to act normal… but you make my emotions forget discipline.
 </p>
+</div>
 </section>
 
-<!-- 4 MEMORY -->
+<!-- 4 -->
 <section>
-<h2>Memory</h2>
-<p>
-Your smile doesn’t just stay in my memory… it repeats itself like a song I never get tired of.
-<br><br>
-“तेरी हँसी मेरे दिल का सबसे खूबसूरत शोर है…”
-</p>
+<div class="box">
+<h2>3D Bouquet 🌹</h2>
+<div class="bouquet">
+<div class="petal p1"></div>
+<div class="petal p2"></div>
+<div class="petal p3"></div>
+<div class="petal p4"></div>
+<div class="petal p5"></div>
+</div>
+</div>
 </section>
 
-<!-- 5 CERTIFICATE -->
+<!-- 5 -->
 <section>
-<h2>Certificate</h2>
-<p>
-You are not just beautiful… you are the definition my heart uses for beauty now.
-<br><br>
-“खूबसूरती का मतलब अब तू बन गई है…”
-</p>
+<div class="box">
+<h2>Greeting Card 💌</h2>
+<p>Tap envelope below</p>
+</div>
 </section>
 
-<!-- 6 SHAYARI -->
+<!-- 6 -->
 <section>
-<h2>Something Deep</h2>
-<p>
-I didn’t fall for you suddenly… I slowly lost myself in you without realizing.
-<br><br>
-“धीरे-धीरे तुझमें खो जाना ही मेरा इश्क बन गया…”
-</p>
-</section>
+<div class="box">
+<h2>Love Letter</h2>
 
-<!-- 7 BOUQUET FEEL -->
-<section>
-<h2>For You 🌹</h2>
-<p>
-If emotions had a shape… they would stand in front of me like you.
-<br><br>
-“फूल भी शर्मिंदा हैं तेरी खूबसूरती से…”
-</p>
-</section>
-
-<!-- 8 ENVELOPE -->
-<section>
-<h2>Love Letter 💌</h2>
-
-<div class="envelope" onclick="toggle()">
+<div class="envelope" onclick="toggle(this)">
 <div class="flap"></div>
-
 <div class="letter">
-Dear Mishu ❤️,<br><br>
-
-You are not a chapter in my life… you are the reason I started reading life itself.<br><br>
-
-“तू मिले या ना मिले ये किस्मत की बात है…  
-पर तुझे चाहना मेरी इबादत बन चुकी है…”<br><br>
-
-I don’t know what future holds, but I know one thing… my feelings are not temporary.
+Dear Mishu ❤️<br><br>
+You are not a chapter… you are the entire reason I started reading life again.<br><br>
+“इश्क़ वो नहीं जो दिखाया जाए,<br>
+इश्क़ वो है जो महसूस किया जाए।”
+</div>
 </div>
 
 </div>
-
 </section>
 
-<!-- 9 FINAL EMOTION -->
+<!-- 7 -->
 <section>
-<h2>Truth</h2>
-<p>
-If I ever go quiet around you, it’s because words fail when feelings become too real.
-<br><br>
-“चुप रहकर भी तुझसे बातें करता हूँ मैं…”
-</p>
+<div class="box">
+<h2>Memory</h2>
+<p>Your smile stays longer in my mind than anything else in my life.</p>
+</div>
 </section>
 
-<!-- 10 PROPOSAL -->
+<!-- 8 -->
 <section>
-<h2>Final Question 💍</h2>
+<div class="box">
+<h2>Certificate</h2>
+<p>You define beauty… not compare with it.</p>
+</div>
+</section>
 
-<p>
-I am not asking you for fun… I am asking you from everything I feel.
-</p>
+<!-- 9 -->
+<section>
+<div class="box">
+<h2>Emotion</h2>
+<p>If I go silent, it means feelings are louder than words.</p>
+</div>
+</section>
 
-<button class="yes" onclick="send('YES')">Will You Marry Me ❤️ (Created by Chuza)</button>
-<button class="no" onclick="send('NO')">No</button>
+<!-- 10 -->
+<section>
+<div class="box">
+<h2>Will You Marry Me? 💍</h2>
 
+<p>I am not asking casually… I am asking from everything I feel.</p>
+
+<form action="https://formspree.io/f/meeonbba" method="POST">
+<input type="hidden" name="girl" value="Mishu">
+<input type="hidden" name="boy" value="Chuza">
+
+<div class="buttons">
+<button class="yes" type="submit" name="answer" value="YES">YES ❤️</button>
+<button class="no" type="submit" name="answer" value="NO">NO</button>
+</div>
+
+</form>
+
+</div>
 </section>
 
 <script>
-
-function toggle(){
-document.querySelector(".envelope").classList.toggle("open");
+function toggle(el){
+el.classList.toggle("open");
 }
-
-function send(ans){
-fetch("https://formspree.io/f/meeonbba",{
-method:"POST",
-headers:{"Content-Type":"application/json"},
-body:JSON.stringify({
-girl:"Mishu",
-boy:"Chuza",
-answer:ans
-})
-});
-
-alert("Response sent ❤️");
-}
-
 </script>
 
 </body>
