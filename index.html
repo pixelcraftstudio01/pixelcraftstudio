@@ -3,27 +3,27 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mishu ❤️ Cinematic Love</title>
+<title>Mishu ❤️</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Cormorant+Garamond:wght@300;400;600&family=Great+Vibes&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Montserrat:wght@300;400;600&family=Parisienne&display=swap" rel="stylesheet">
 
 <style>
 
-/* ===== BASE CINEMATIC THEME ===== */
+/* ================= NEW LUXURY COLOR SYSTEM ================= */
 body{
 margin:0;
-background:radial-gradient(circle at top,#1a0b14,#06040a 70%);
-color:#f3e7d3;
 overflow-x:hidden;
+background:linear-gradient(135deg,#0b0b12,#1a0f1f,#2a1020);
+color:#f6e7d7;
 }
 
-/* cinematic moving light */
+/* soft cinematic light */
 .glow{
 position:fixed;
 width:900px;
 height:900px;
-background:radial-gradient(circle,#ff3d6e25,transparent 60%);
-filter:blur(130px);
+background:radial-gradient(circle,#ff4d6d33,transparent 60%);
+filter:blur(140px);
 animation:move 14s infinite alternate;
 z-index:-1;
 }
@@ -33,81 +33,79 @@ z-index:-1;
 100%{transform:translate(120px,80px);}
 }
 
-/* ===== FLOW LAYOUT (NO EMPTY FEEL) ===== */
+/* ================= FLOW ================= */
 .scene{
 min-height:100vh;
 display:flex;
 align-items:center;
 justify-content:center;
-padding:80px 24px;
+padding:90px 24px;
 opacity:0;
 transform:translateY(30px);
-animation:fadeUp 1s forwards;
+animation:fade 1s forwards;
 }
 
 .scene:nth-child(n){
-animation-delay:calc(var(--i) * 0.18s);
+animation-delay:calc(var(--i) * 0.15s);
 }
 
-@keyframes fadeUp{
+@keyframes fade{
 to{opacity:1;transform:translateY(0);}
 }
 
 .content{
-max-width:860px;
+max-width:900px;
 }
 
-/* ===== TYPOGRAPHY ===== */
+/* ================= TYPOGRAPHY (NEW PREMIUM) ================= */
 h1{
-font-family:'Great Vibes';
-font-size:5rem;
+font-family:'Parisienne';
+font-size:5.2rem;
 text-align:center;
-color:#ffb86b;
+color:#ff5c8a;
 margin:0;
 }
 
 p{
-font-family:'Cormorant Garamond';
-font-size:1.6rem;
-line-height:2.7;
+font-family:'Montserrat';
+font-size:1.55rem;
+line-height:2.5;
 margin:18px 0;
 text-align:justify;
-color:#f2dfc2;
+color:#f3e2d2;
 }
 
-/* ===== SHAYARI STYLE ===== */
+/* shayari upgraded */
 .shayari{
-font-family:'Playfair Display';
-font-size:1.15rem;
+font-family:'DM Serif Display';
+font-size:1.2rem;
 text-align:center;
 margin:28px 0;
-color:#ffd39a;
-line-height:2.2;
+color:#ffd2a8;
+line-height:2.3;
 }
 
-/* ===== ENVELOPE FIXED (NO BUG) ===== */
+/* ================= ENVELOPE FIX ================= */
 .envelope{
 width:420px;
 height:230px;
-margin:40px auto;
-background:#12070f;
-border:1px solid #ffb86b;
+margin:50px auto;
+background:#1a0f1f;
+border:1px solid #ff5c8a;
 border-radius:14px;
 position:relative;
 cursor:pointer;
 overflow:visible;
-perspective:1000px;
 }
 
 .flap{
 position:absolute;
 width:100%;
 height:100%;
-background:linear-gradient(135deg,#ffb86b,#7a1c38);
+background:linear-gradient(135deg,#ff5c8a,#ffb86b);
 clip-path:polygon(0 0,100% 0,50% 55%);
 transform-origin:top;
 transition:0.8s;
-z-index:2;
 }
 
 .envelope.open .flap{
@@ -119,15 +117,14 @@ position:absolute;
 top:100%;
 left:0;
 width:100%;
-background:#fff;
-color:#1a1a1a;
+background:white;
+color:#111;
 padding:22px;
 border-radius:12px;
 box-shadow:0 40px 90px rgba(0,0,0,0.6);
 opacity:0;
 transform:translateY(-10px);
 transition:0.8s;
-z-index:10;
 }
 
 .envelope.open .letter{
@@ -135,7 +132,7 @@ opacity:1;
 transform:translateY(28px);
 }
 
-/* ===== BUTTONS ===== */
+/* ================= BUTTONS ================= */
 .buttons{
 display:flex;
 justify-content:center;
@@ -147,25 +144,29 @@ button{
 padding:14px 28px;
 border:none;
 border-radius:12px;
-font-weight:600;
 cursor:pointer;
+font-weight:600;
 font-size:1rem;
 }
 
 .yes{
-background:#ffb86b;
-color:#1a0b14;
-box-shadow:0 10px 35px rgba(255,184,107,0.35);
+background:#ff5c8a;
+color:white;
+box-shadow:0 10px 35px rgba(255,92,138,0.4);
 }
 
 .no{
 background:transparent;
-border:1px solid #ffb86b;
-color:#ffb86b;
+border:1px solid #ff5c8a;
+color:#ff5c8a;
 }
 
-.yes:hover{transform:scale(1.06);}
-.no:hover{opacity:0.7;}
+/* ================= ANIMATION ================= */
+.fade{
+opacity:0;
+transform:translateY(20px);
+animation:fade 1s forwards;
+}
 
 </style>
 </head>
@@ -179,7 +180,8 @@ color:#ffb86b;
 <div class="content">
 <h1>Mishu ❤️</h1>
 <p>
-Some names don’t feel like words… they feel like emotion. Yours became one of those quiet emotions I never learned how to ignore.
+Happy Birthday Mishu ❤️  
+You are not just a person in my life… you are a feeling that slowly became permanent without asking permission.
 </p>
 </div>
 </div>
@@ -188,12 +190,11 @@ Some names don’t feel like words… they feel like emotion. Yours became one o
 <div class="scene" style="--i:2">
 <div class="content">
 <p>
-I didn’t notice when you became important. It happened slowly, like sunrise—without sound, but impossible to miss once it arrives.
+I don’t know when it started, but now even normal moments feel incomplete without thinking about you somewhere in between them.
 </p>
-
 <div class="shayari">
-“तेरे बिना भी तेरा एहसास रहता है,<br>
-हर सांस में बस तेरा ही नाम रहता है।”
+“तू पास नहीं फिर भी एहसास रहता है,<br>
+दिल हर वक्त बस तेरे ही पास रहता है।”
 </div>
 </div>
 </div>
@@ -202,7 +203,7 @@ I didn’t notice when you became important. It happened slowly, like sunrise—
 <div class="scene" style="--i:3">
 <div class="content">
 <p>
-There is something about you that doesn’t try to attract attention… it simply becomes the center of it without effort.
+You didn’t enter my life loudly… you entered quietly and stayed permanently.
 </p>
 </div>
 </div>
@@ -211,8 +212,8 @@ There is something about you that doesn’t try to attract attention… it simpl
 <div class="scene" style="--i:4">
 <div class="content">
 <div class="shayari">
-“तू सामने नहीं फिर भी करीब लगता है,<br>
-ये इश्क़ अजीब नहीं, बस नसीब लगता है।”
+“तेरी हँसी में जो सुकून मिलता है,<br>
+वो किसी दुआ में भी नहीं मिलता है।”
 </div>
 </div>
 </div>
@@ -221,7 +222,8 @@ There is something about you that doesn’t try to attract attention… it simpl
 <div class="scene" style="--i:5">
 <div class="content">
 <p>
-Even silence feels different now… because your presence exists inside it.
+Sometimes I wonder how someone can become so important without even trying.
+And the answer is always you.
 </p>
 </div>
 </div>
@@ -230,8 +232,7 @@ Even silence feels different now… because your presence exists inside it.
 <div class="scene" style="--i:6">
 <div class="content">
 <p>
-Happy Birthday Mishu ❤️  
-I hope your life becomes softer than your smile and brighter than your thoughts.
+There is a softness in your existence that I cannot explain, only feel.
 </p>
 </div>
 </div>
@@ -239,16 +240,14 @@ I hope your life becomes softer than your smile and brighter than your thoughts.
 <!-- 7 -->
 <div class="scene" style="--i:7">
 <div class="content">
-
 <div class="envelope" onclick="this.classList.toggle('open')">
 <div class="flap"></div>
 <div class="letter">
 Mishu ❤️<br><br>
-This is not a message written in excitement… it is something that stayed longer than I expected.<br><br>
-You became a thought I never planned to keep, but now I cannot remove.
+This is not something I wrote quickly… this is something that stayed inside me for too long.<br><br>
+You became part of my thoughts without asking, and now I cannot remove you even if I try.
 </div>
 </div>
-
 </div>
 </div>
 
@@ -256,7 +255,7 @@ You became a thought I never planned to keep, but now I cannot remove.
 <div class="scene" style="--i:8">
 <div class="content">
 <p>
-I don’t want to impress you. I just want to be honest about something that became real without permission.
+I don’t want to impress you with words… I just want to be honest with what I feel.
 </p>
 </div>
 </div>
@@ -265,8 +264,8 @@ I don’t want to impress you. I just want to be honest about something that bec
 <div class="scene" style="--i:9">
 <div class="content">
 <div class="shayari">
-“चाहत शब्दों में नहीं होती बयान,<br>
-ये तो बस दिल में रहती है हर शाम।”
+“इश्क़ वो नहीं जो दिखाया जाए,<br>
+इश्क़ वो है जो निभाया जाए।”
 </div>
 </div>
 </div>
@@ -275,7 +274,7 @@ I don’t want to impress you. I just want to be honest about something that bec
 <div class="scene" style="--i:10">
 <div class="content">
 <p>
-And now I reach the part where silence is no longer enough to hide what I feel.
+And now I reach the point where silence feels too heavy to carry.
 </p>
 </div>
 </div>
@@ -283,19 +282,24 @@ And now I reach the part where silence is no longer enough to hide what I feel.
 <!-- 11 -->
 <div class="scene" style="--i:11">
 <div class="content">
+
 <p style="text-align:center;font-size:2rem;">
 Will you marry me, Mishu ❤️
 </p>
 
-<form action="https://formspree.io/f/meeonbba" method="POST" class="buttons">
+<div class="buttons">
+
+<form action="https://formspree.io/f/meeonbba" method="POST">
 
 <input type="hidden" name="girl" value="Mishu ❤️">
 <input type="hidden" name="boy" value="Chuzza.">
 
-<button class="yes" type="submit" name="answer" value="YES">YES ❤️</button>
-<button class="no" type="submit" name="answer" value="NO">NO</button>
+<button class="yes" type="submit">YES ❤️</button>
+<button class="no" type="submit">NO</button>
 
 </form>
+
+</div>
 
 </div>
 </div>
