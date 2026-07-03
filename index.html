@@ -1,1061 +1,262 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<title>Happy Birthday Mishu ❤️ | A Proposal by Chuzza</title>
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<link rel="preconnect" href="https://fonts.googleapis.com"/>
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet"/>
-<style>
-:root{
-  --black:#0D0D0D;--deep-red:#8B0000;--pink:#FF4F8B;--white:#FFFFFF;
-  --gold:#D4AF37;--soft-gold:#E5C985;--bg:#050505;
-  --glass:rgba(255,255,255,0.06);--gb:rgba(255,255,255,0.12)
-}
-*{box-sizing:border-box;margin:0;padding:0}
-html,body{
-  height:100%;background:var(--bg);color:var(--white);
-  font-family:Poppins,sans-serif;overflow-x:hidden;scroll-behavior:smooth
-}
-/* cursor */
-.cursor{
-  position:fixed;width:18px;height:18px;border-radius:50%;
-  border:1px solid var(--gold);
-  background:radial-gradient(circle at 30% 30%,var(--gold),transparent);
-  transform:translate(-50%,-50%);pointer-events:none;z-index:9999;
-  transition:width .2s,height .2s;background .2s
-}
-.cursor.hover{
-  width:28px;height:28px;
-  background:radial-gradient(circle at 30% 30%,var(--pink),transparent);
-  border-color:var(--pink)
-}
-/* sections */
-section{
-  position:relative;width:100%;min-height:100vh;
-  display:flex;align-items:center;justify-content:center;
-  overflow:hidden;padding:80px 20px
-}
-/* backgrounds */
-.bg-lux{
-  position:absolute;inset:0;
-  background:
-    radial-gradient(1200px 800px at 20% 10%,rgba(212,175,55,0.08),transparent 60%),
-    radial-gradient(1000px 700px at 80% 20%,rgba(255,79,139,0.10),transparent 60%),
-    radial-gradient(900px 900px at 50% 90%,rgba(139,0,0,0.12),transparent 60%),
-    linear-gradient(180deg,var(--bg),#0D0D0D);
-  z-index:-2
-}
-.bg-stars{
-  position:absolute;inset:0;
-  background-image:
-    radial-gradient(2px 2px at 10% 20%,var(--soft-gold),transparent),
-    radial-gradient(1.5px 1.5px at 30% 70%,var(--gold),transparent),
-    radial-gradient(1.2px 1.2px at 60% 30%,var(--soft-gold),transparent),
-    radial-gradient(1.8px 1.8px at 80% 80%,var(--gold),transparent);
-  background-size:300px,400px,250px,500px;
-  opacity:.6;z-index:-1;animation:stMove 120s linear infinite
-}
-@keyframes stMove{
-  0%{transform:translateY(0)}
-  100%{transform:translateY(-300px)}
-}
-/* glass */
-.glass{
-  background:var(--glass);border:1px solid var(--gb);border-radius:24px;
-  box-shadow:0 8px 40px rgba(0,0,0,0.5),0 0 30px rgba(212,175,55,0.08);
-  backdrop-filter:blur(12px)
-}
-.glow{
-  background:var(--glass);border:1px solid rgba(255,79,139,0.25);border-radius:24px;
-  box-shadow:0 8px 40px rgba(0,0,0,0.5),0 0 50px rgba(255,79,139,0.25);
-  backdrop-filter:blur(12px);transition:transform .4s,box-shadow .4s
-}
-.glow:hover{
-  transform:translateY(-6px) rotateX(2deg);
-  box-shadow:0 16px 60px rgba(0,0,0,0.6),0 0 80px rgba(255,79,139,0.4)
-}
-/* typography */
-h1,h2,h3{font-family:Playfair Display,serif;letter-spacing:.5px}
-.vibes{font-family:Great Vibes,serif;font-weight:400}
-.title-xl{
-  font-size:clamp(3rem,8vw,7rem);line-height:1.1;text-align:center;
-  background:linear-gradient(180deg,var(--white),var(--soft-gold));
-  -webkit-background-clip:text;background-clip:text;color:transparent;
-  filter:drop-shadow(0 0 30px rgba(212,175,55,0.3))
-}
-.title-lg{font-size:clamp(2rem,5vw,4rem);text-align:center;color:var(--white)}
-.title-md{font-size:clamp(1.4rem,3vw,2.2rem);text-align:center;color:var(--white)}
-.text-sub{
-  font-size:clamp(.9rem,2vw,1.1rem);text-align:center;opacity:.85;max-width:700px
-}
-/* buttons */
-.btn{
-  display:inline-flex;align-items:center;justify-content:center;
-  padding:16px 36px;border-radius:50px;
-  background:linear-gradient(180deg,var(--deep-red),var(--pink));
-  border:1px solid rgba(255,255,255,0.2);color:var(--white);
-  font-family:Poppins,sans-serif;font-weight:600;letter-spacing:.8px;
-  cursor:pointer;
-  box-shadow:0 10px 40px rgba(255,79,139,0.35),0 0 60px rgba(212,175,55,0.15);
-  transition:transform .3s,box-shadow .3s;text-decoration:none
-}
-.btn:hover{
-  transform:translateY(-4px);
-  box-shadow:0 18px 60px rgba(255,79,139,0.45),0 0 90px rgba(212,175,55,0.25)
-}
-.btn-out{
-  padding:14px 32px;border-radius:50px;background:transparent;
-  border:1px solid var(--gold);color:var(--gold);
-  font-family:Poppins,sans-serif;font-weight:600;letter-spacing:.6px;
-  cursor:pointer;transition:transform .3s,background .3s,color .3s
-}
-.btn-out:hover{
-  background:linear-gradient(180deg,rgba(212,175,55,0.15),rgba(212,175,55,0.05));
-  color:var(--white);transform:translateY(-3px)
-}
-/* animations */
-.fade{opacity:0;transform:translateY(30px);transition:opacity 1s,transform 1s}
-.fade.show{opacity:1;transform:translateY(0)}
-.scale{opacity:0;transform:scale(.92);transition:opacity 1s,transform 1.2s}
-.scale.show{opacity:1;transform:scale(1)}
-.rotate{opacity:0;transform:rotateX(20deg) translateY(40px);transition:opacity 1.2s,transform 1.4s}
-.rotate.show{opacity:1;transform:rotateX(0) translateY(0)}
-#particles{position:fixed;inset:0;z-index:999;pointer-events:none}
-.sp{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,var(--gold),var(--pink));width:0;z-index:10000}
-/* loading */
-#loading{
-  position:fixed;inset:0;background:var(--bg);
-  display:flex;align-items:center;justify-content:center;z-index:20000
-}
-.ldc{display:flex;flex-direction:column;align-items:center;gap:24px}
-.logo{
-  font-family:Great Vibes,serif;font-size:clamp(2rem,5vw,3.5rem);
-  color:var(--soft-gold);text-shadow:0 0 30px rgba(212,175,55,0.4)
-}
-.lh{width:80px;height:80px;position:relative;animation:glh 2s ease-in-out infinite}
-.lh::before,.lh::after{
-  content:"";position:absolute;width:40px;height:64px;
-  background:var(--pink);border-radius:40px 40px 0 0;top:0
-}
-.lh::before{left:0;transform:rotate(-45deg);transform-origin:100% 100%}
-.lh::after{right:0;transform:rotate(45deg);transform-origin:0 100%}
-@keyframes glh{
-  0%,100%{filter:drop-shadow(0 0 10px rgba(255,79,139,0.4))}
-  50%{filter:drop-shadow(0 0 30px rgba(255,79,139,0.8),0 0 60px rgba(212,175,55,0.4))}
-}
-.ldt{font-family:Poppins,sans-serif;font-size:.95rem;opacity:.85;text-align:center}
-.ldp{font-family:Playfair Display,serif;font-size:1.6rem;color:var(--soft-gold)}
-/* hero */
-.hero{display:flex;flex-direction:column;align-items:center;gap:28px;z-index:2}
-.card3{padding:40px 30px;max-width:800px;text-align:center;transform-style:preserve-3d;transition:transform .6s}
-/* countdown */
-.cnt{display:flex;gap:18px;align-items:center;justify-content:center}
-.cblk{
-  display:flex;flex-direction:column;align-items:center;
-  padding:18px 22px;border-radius:18px;background:var(--glass);
-  border:1px solid var(--gb);box-shadow:0 10px 40px rgba(0,0,0,0.5)
-}
-.cval{font-family:Playfair Display,serif;font-size:2.2rem;color:var(--soft-gold)}
-.clbl{font-size:.75rem;opacity:.7;margin-top:4px}
-/* gift */
-.gift{
-  width:140px;height:140px;position:relative;
-  transform:rotateX(10deg) rotateY(-10deg);
-  transform-style:preserve-3d;transition:transform .6s;cursor:pointer
-}
-.gift:hover{transform:rotateX(0) rotateY(0) scale(1.05)}
-.gf{
-  position:absolute;width:140px;height:140px;
-  background:linear-gradient(180deg,var(--deep-red),var(--pink));
-  border:1px solid rgba(255,255,255,0.2);box-shadow:0 0 40px rgba(255,79,139,0.3)
-}
-.gfront{transform:translateZ(70px)}
-.gback{transform:rotateY(180deg) translateZ(70px)}
-.gright{transform:rotateY(90deg) translateZ(70px)}
-.gleft{transform:rotateY(-90deg) translateZ(70px)}
-.gtop{transform:rotateX(90deg) translateZ(70px)}
-.gbottom{transform:rotateX(-90deg) translateZ(70px)}
-.glid{
-  position:absolute;width:140px;height:40px;
-  background:linear-gradient(180deg,var(--deep-red),#a01030);
-  transform:rotateX(90deg) translateZ(90px);
-  transition:transform 1s;pointer-events:none
-}
-.gift.open .glid{transform:rotateX(140deg) translateZ(90px)}
-/* bouquet */
-.bou{
-  width:220px;height:220px;position:relative;cursor:pointer;
-  transform:rotateX(8deg);transition:transform .6s
-}
-.bou:hover{transform:rotateX(0) scale(1.04)}
-.rose{
-  position:absolute;width:60px;height:60px;
-  background:radial-gradient(circle at 30% 30%,var(--pink),var(--deep-red));
-  border-radius:50%;box-shadow:0 0 30px rgba(255,79,139,0.4);
-  transition:transform .8s,filter .8s
-}
-.rose.bloom{transform:scale(1.4);filter:drop-shadow(0 0 40px rgba(255,79,139,0.7))}
-/* card */
-.gc{
-  width:340px;height:460px;position:relative;
-  transform-style:preserve-3d;transform:rotateY(8deg);
-  transition:transform .8s;cursor:pointer
-}
-.gc:hover{transform:rotateY(0) scale(1.02)}
-.cf,.cb{
-  position:absolute;inset:0;
-  background:linear-gradient(180deg,#1a0b0f,#0f0507);
-  border:1px solid var(--gold);border-radius:18px;
-  box-shadow:0 20px 80px rgba(0,0,0,0.7),0 0 40px rgba(212,175,55,0.15);
-  display:flex;align-items:center;justify-content:center;padding:24px;text-align:center
-}
-.cf{
-  transform:rotateY(0deg);
-  background:linear-gradient(180deg,rgba(212,175,55,0.06),transparent),
-  linear-gradient(180deg,#1a0b0f,#0f0507)
-}
-.cb{
-  transform:rotateY(180deg) translateZ(1px);
-  background:linear-gradient(180deg,rgba(255,79,139,0.06),transparent),
-  linear-gradient(180deg,#1a0b0f,#0f0507)
-}
-.wax{
-  width:44px;height:44px;border-radius:50%;
-  background:radial-gradient(circle at 30% 30%,var(--deep-red),#5a0000);
-  border:2px solid var(--gold);box-shadow:0 6px 20px rgba(0,0,0,0.6);
-  position:absolute;bottom:24px;right:24px
-}
-/* reasons */
-.rgrid{
-  display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
-  gap:18px;max-width:1100px;width:100%
-}
-.rcard{
-  min-height:140px;padding:22px 18px;
-  display:flex;flex-direction:column;align-items:center;
-  justify-content:center;text-align:center;transform-style:preserve-3d;
-  transition:transform .5s,box-shadow .5s
-}
-.rcard:hover{
-  transform:rotateY(6deg) rotateX(4deg) translateY(-6px);
-  box-shadow:0 16px 60px rgba(0,0,0,0.6),0 0 70px rgba(255,79,139,0.35)
-}
-/* timeline */
-.tm{position:relative;max-width:800px;width:100%;padding:20px 0 60px}
-.tline{
-  position:absolute;left:50%;top:0;bottom:0;width:3px;
-  background:linear-gradient(180deg,var(--gold),var(--pink));
-  transform:translateX(-1.5px);box-shadow:0 0 20px rgba(212,175,55,0.3)
-}
-.ti{
-  position:relative;width:45%;margin:30px 0;padding:18px 20px;
-  transform:translateX(0);opacity:0;transition:opacity .8s,transform .8s
-}
-.ti.l{left:0;text-align:right}
-.ti.r{left:55%;text-align:left}
-.ti.show{opacity:1;transform:translateX(0)}
-.tdot{
-  position:absolute;top:18px;width:16px;height:16px;border-radius:50%;
-  background:var(--gold);box-shadow:0 0 18px rgba(212,175,55,0.7)
-}
-.ti.l .tdot{right:-8px}
-.ti.r .tdot{left:-8px}
-/* gallery */
-.gg{
-  display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
-  gap:16px;max-width:1100px;width:100%
-}
-.gmem{
-  position:relative;aspect-ratio:4/5;border-radius:16px;
-  background:linear-gradient(180deg,rgba(255,255,255,0.06),transparent),#120608;
-  border:1px solid var(--gb);box-shadow:0 10px 40px rgba(0,0,0,0.6);
-  overflow:hidden;transition:transform .5s,box-shadow .5s;
-  cursor:pointer;display:flex;align-items:center;justify-content:center;
-  text-align:center;padding:14px;font-family:Great Vibes,serif;
-  font-size:1.2rem;color:var(--soft-gold)
-}
-.gmem:hover{
-  transform:translateY(-8px) rotateX(4deg);
-  box-shadow:0 20px 70px rgba(0,0,0,0.7),0 0 70px rgba(212,175,55,0.25)
-}
-.lb{
-  position:fixed;inset:0;background:rgba(0,0,0,0.92);
-  display:none;align-items:center;justify-content:center;
-  z-index:15000;padding:20px
-}
-.lb.active{display:flex}
-.lbtxt{
-  max-width:85%;max-height:80%;border-radius:18px;border:1px solid var(--gold);
-  box-shadow:0 20px 100px rgba(0,0,0,0.8),0 0 60px rgba(212,175,55,0.2);
-  background:linear-gradient(180deg,#1a0b0f,#0f0507);
-  padding:30px 24px;font-family:Great Vibes,serif;font-size:2rem;
-  color:var(--soft-gold);text-align:center;line-height:1.5
-}
-/* letter */
-.env{
-  width:260px;height:160px;position:relative;
-  background:linear-gradient(180deg,#1a0b0f,#0f0507);
-  border:1px solid var(--gold);border-radius:12px;
-  box-shadow:0 12px 50px rgba(0,0,0,0.7),0 0 40px rgba(212,175,55,0.15);
-  cursor:pointer;transition:transform .6s
-}
-.env:hover{transform:translateY(-6px)}
-.efl{
-  position:absolute;top:0;left:0;width:100%;height:80px;
-  background:linear-gradient(180deg,var(--deep-red),#7a000f);
-  clip-path:polygon(0 0,50% 80%,100% 0);
-  transition:transform .8s;transform-origin:top
-}
-.env.open .efl{transform:rotateX(180deg)}
-.lp{
-  position:absolute;left:12%;bottom:10%;width:76%;height:70%;
-  background:linear-gradient(180deg,#fff8f9,#fff0f3);
-  border:1px solid rgba(212,175,55,0.4);border-radius:8px;
-  padding:14px 12px;color:#3a0a12;font-family:Great Vibes,serif;
-  font-size:1.2rem;transform:translateY(20px);
-  transition:transform 1s,height 1s;box-shadow:0 8px 30px rgba(0,0,0,0.4)
-}
-.env.open .lp{transform:translateY(-60px);height:220%;overflow:auto}
-/* certificate */
-.crt{
-  max-width:720px;width:100%;padding:30px 24px;position:relative;
-  background:linear-gradient(180deg,rgba(212,175,55,0.08),transparent),#0f0708;
-  border:2px solid var(--gold);border-radius:18px;
-  box-shadow:0 20px 100px rgba(0,0,0,0.8),0 0 60px rgba(212,175,55,0.2)
-}
-.ctit{font-family:Playfair Display,serif;font-size:2rem;text-align:center;color:var(--soft-gold)}
-.cnm{
-  font-family:Great Vibes,serif;font-size:2.4rem;text-align:center;
-  color:var(--pink);margin:8px 0 20px
-}
-.clst{list-style:none;text-align:center;line-height:1.6;color:var(--white)}
-.cst{
-  position:absolute;bottom:16px;right:16px;width:56px;height:56px;
-  border-radius:50%;background:radial-gradient(circle at 30% 30%,var(--deep-red),#5a0000);
-  border:2px solid var(--gold);box-shadow:0 6px 20px rgba(0,0,0,0.6)
-}
-/* cake */
-.cake{
-  width:180px;height:120px;position:relative;
-  transform:rotateX(6deg);transition:transform .6s
-}
-.cake:hover{transform:rotateX(0) scale(1.04)}
-.cbase{
-  position:absolute;left:0;bottom:0;width:180px;height:60px;
-  background:linear-gradient(180deg,#d98ba3,#a04058);
-  border-radius:10px 10px 0 0;box-shadow:0 10px 40px rgba(0,0,0,0.6)
-}
-.ctop{
-  position:absolute;left:15px;bottom:60px;width:150px;height:40px;
-  background:linear-gradient(180deg,#ffbcd1,#d9708a);
-  border-radius:10px 10px 0 0
-}
-.cnd{
-  position:absolute;left:85px;bottom:100px;width:12px;height:28px;
-  background:linear-gradient(180deg,var(--gold),#a87c18);border-radius:4px
-}
-.flm{
-  position:absolute;left:5px;bottom:28px;width:10px;height:16px;
-  background:radial-gradient(circle at 50% 80%,#fff4d6,#ff8a00);
-  border-radius:10px 10px 10px 10px;animation:flicker .8s ease-in-out infinite
-}
-@keyframes flicker{
-  0%,100%{transform:scaleY(1);opacity:.95}
-  50%{transform:scaleY(1.15);opacity:1}
-}
-/* memory wall */
-.mgrid{
-  display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
-  gap:16px;max-width:1100px;width:100%
-}
-.mq{
-  min-height:120px;padding:18px 14px;border-radius:16px;
-  background:var(--glass);border:1px solid var(--gb);
-  box-shadow:0 10px 40px rgba(0,0,0,0.5);
-  display:flex;align-items:center;justify-content:center;
-  text-align:center;font-family:Great Vibes,serif;font-size:1.1rem;
-  color:var(--soft-gold);transition:transform .4s,box-shadow .4s
-}
-.mq:hover{
-  transform:translateY(-6px) scale(1.02);
-  box-shadow:0 16px 60px rgba(0,0,0,0.6),0 0 60px rgba(255,79,139,0.25)
-}
-/* proposal */
-.prp{
-  position:relative;display:flex;flex-direction:column;
-  align-items:center;gap:28px
-}
-.prbg{
-  position:absolute;inset:0;
-  background:
-    radial-gradient(1200px 800px at 20% 10%,rgba(212,175,55,0.1),transparent 60%),
-    radial-gradient(1000px 700px at 80% 20%,rgba(255,79,139,0.12),transparent 60%),
-    radial-gradient(900px 900px at 50% 90%,rgba(139,0,0,0.15),transparent 60%),
-    linear-gradient(180deg,#050304,#0a0406);
-  z-index:-2
-}
-.dr{
-  width:120px;height:120px;position:relative;
-  transform:rotateX(8deg);transition:transform 1s;cursor:pointer
-}
-.dr:hover{transform:rotateX(0) scale(1.06)}
-.rb{
-  position:absolute;left:20px;top:20px;width:80px;height:80px;
-  border-radius:50%;border:6px solid var(--gold);
-  box-shadow:0 0 30px rgba(212,175,55,0.6),inset 0 0 20px rgba(255,255,255,0.3)
-}
-.dm{
-  position:absolute;left:42px;top:-10px;width:36px;height:36px;
-  background:radial-gradient(circle at 30% 30%,#fff,#b8e6ff);
-  clip-path:polygon(50% 0%,100% 30%,80% 100%,20% 100%,0% 30%);
-  box-shadow:0 0 40px rgba(184,230,255,0.7);
-  transition:transform 1s,box-shadow 1s
-}
-.dm.open{transform:translateY(-20px) scale(1.2);box-shadow:0 0 80px rgba(184,230,255,1)}
-.pq{
-  font-family:Great Vibes,serif;font-size:2.2rem;text-align:center;
-  color:var(--pink);opacity:0;transform:translateY(20px);
-  transition:opacity 1s,transform 1s
-}
-.pq.show{opacity:1;transform:translateY(0)}
-.pb{
-  display:flex;gap:18px;align-items:center;justify-content:center;
-  opacity:0;transform:translateY(20px);transition:opacity 1s,transform 1s
-}
-.pb.show{opacity:1;transform:translateY(0)}
-.btn-no{position:relative;transition:transform .4s}
-/* celebration */
-.celeb{
-  position:fixed;inset:0;background:rgba(0,0,0,0.94);
-  display:none;align-items:center;justify-content:center;
-  flex-direction:column;gap:20px;z-index:25000
-}
-.celeb.active{display:flex}
-.ctxt{
-  font-family:Great Vibes,serif;font-size:3rem;
-  color:var(--pink);text-align:center
-}
-/* final */
-.fin{display:flex;flex-direction:column;align-items:center;gap:24px}
-.ftxt{
-  font-family:Great Vibes,serif;
-  font-size:clamp(2rem,5vw,3.5rem);text-align:center;color:var(--pink)
-}
-.fsub{
-  font-family:Poppins,sans-serif;font-size:1.1rem;text-align:center;
-  opacity:.85;max-width:600px
-}
-/* floaters */
-.flo{
-  position:absolute;pointer-events:none;opacity:.7;
-  animation:flxy 7s ease-in-out infinite
-}
-@keyframes flxy{
-  0%,100%{transform:translate(0,0) rotate(0deg)}
-  50%{transform:translate(10px,-12px) rotate(3deg)}
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Modern Landing Page</title>
+    <style>
+        /* Modern Reset and CSS Variables */
+        :root {
+            --bg-primary: #0f172a;
+            --bg-surface: #1e293b;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --accent: #38bdf8;
+            --accent-hover: #7dd3fc;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-primary);
+            color: var(--text-main);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Navbar */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 10%;
+            background-color: rgba(15, 23, 42, 0.8);
+            backdrop-filter: blur(10px);
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-main);
+            text-decoration: none;
+        }
+
+        .logo span {
+            color: var(--accent);
+        }
+
+        nav a {
+            color: var(--text-muted);
+            text-decoration: none;
+            margin-left: 2rem;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--accent);
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 1rem;
+            background: radial-gradient(circle at center, rgba(56, 189, 248, 0.1) 0%, transparent 70%);
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            letter-spacing: -1px;
+        }
+
+        .hero h1 span {
+            color: var(--accent);
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: var(--text-muted);
+            max-width: 600px;
+            margin-bottom: 2rem;
+        }
+
+        .cta-btn {
+            background-color: var(--accent);
+            color: var(--bg-primary);
+            padding: 0.8rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 14px rgba(56, 189, 248, 0.3);
+        }
+
+        .cta-btn:hover {
+            background-color: var(--accent-hover);
+            transform: translateY(-2px);
+        }
+
+        /* Features Section */
+        .features {
+            padding: 5rem 10%;
+            background-color: var(--bg-surface);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .feature-card {
+            background-color: var(--bg-primary);
+            padding: 2.5rem 2rem;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: transform 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature-card h3 {
+            margin-bottom: 1rem;
+            color: var(--accent);
+        }
+
+        .feature-card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        /* Interactive Counter Section */
+        .counter-section {
+            padding: 4rem 10%;
+            text-align: center;
+        }
+
+        .counter-box {
+            display: inline-block;
+            background: var(--bg-surface);
+            padding: 2rem 4rem;
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .counter-box h2 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .counter-value {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--accent);
+            margin-bottom: 1rem;
+        }
+
+        .interactive-btn {
+            background: transparent;
+            border: 2px solid var(--accent);
+            color: var(--accent);
+            padding: 0.5rem 1.5rem;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.2s;
+        }
+
+        .interactive-btn:hover {
+            background: var(--accent);
+            color: var(--bg-primary);
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            nav { display: none; } /* Kept simple for standard single-file paste */
+        }
+    </style>
 </head>
 <body>
-<div class="cursor" id="cursor"></div>
-<canvas id="particles"></canvas>
-<div class="sp" id="sp"></div>
-<!-- SECTION 1: LOADING -->
-<section id="loading">
-  <div class="bg-lux"></div>
-  <div class="ldc">
-    <div class="logo">Made with Love</div>
-    <div class="lh"></div>
-    <div class="ldp" id="ldp">0%</div>
-    <div class="ldt">Made with Love by Chuzza ❤️</div>
-  </div>
-</section>
 
-<!-- SECTION 2: HERO -->
-<section id="hero">
-  <div class="bg-lux"></div>
-  <div class="bg-stars"></div>
-  <div class="hero fade">
-    <h1 class="title-xl">Happy Birthday Mishu ❤️</h1>
-    <p class="text-sub">A luxury love story, crafted for the most beautiful girl in the world.</p>
-    <div class="glow card3">
-      <p class="vibes" style="font-size:1.6rem;color:var(--soft-gold)">
-        Every moment with you feels like magic.
-      </p>
-    </div>
-    <a href="#countdown" class="btn">Begin Our Story</a>
-  </div>
-</section>
+    <header>
+        <a href="#" class="logo">Launch<span>Pad</span></a>
+        <nav>
+            <a href="#features">Features</a>
+            <a href="#interactive">Interactive</a>
+        </nav>
+    </header>
 
-<!-- SECTION 3: COUNTDOWN -->
-<section id="countdown">
-  <div class="bg-lux"></div>
-  <h2 class="title-lg fade">Tomorrow is your birthday</h2>
-  <p class="text-sub fade">The countdown to your special day:</p>
-  <div class="cnt scale" id="clock">
-    <div class="cblk"><div class="cval" id="days">0</div><div class="clbl">Days</div></div>
-    <div class="cblk"><div class="cval" id="hours">0</div><div class="clbl">Hours</div></div>
-    <div class="cblk"><div class="cval" id="minutes">0</div><div class="clbl">Minutes</div></div>
-    <div class="cblk"><div class="cval" id="seconds">0</div><div class="clbl">Seconds</div></div>
-  </div>
-</section>
+    <section class="hero">
+        <h1>Your Next Big Idea Starts <span>Here</span></h1>
+        <p>A beautiful, responsive, single-file HTML template ready to be customized into your dream website project.</p>
+        <a href="#features" class="cta-btn">Explore Features</a>
+    </section>
 
-<!-- SECTION 4: GIFT -->
-<section id="gift">
-  <div class="bg-lux"></div>
-  <h2 class="title-lg fade">Your Luxury Gift</h2>
-  <p class="text-sub fade">Click to open and celebrate</p>
-  <div class="gift scale" id="giftBox">
-    <div class="gf gfront"></div>
-    <div class="gf gback"></div>
-    <div class="gf gright"></div>
-    <div class="gf gleft"></div>
-    <div class="gf gtop"></div>
-    <div class="gf gbottom"></div>
-    <div class="glid"></div>
-  </div>
-  <div class="fade" id="gm" style="display:none;text-align:center">
-    <h3 class="title-md vibes" style="color:var(--pink)">Happy Birthday, Mishu ❤️</h3>
-    <p class="text-sub">You are the most precious gift in my life.</p>
-  </div>
-</section>
+    <section id="features" class="features">
+        <h2 style="text-align: center; font-size: 2rem;">Why Choose Us</h2>
+        <div class="features-grid">
+            <div class="feature-card">
+                <h3>Clean Code</h3>
+                <p>Built with semantic HTML5 and modern CSS variables, making it incredibly easy to customize and scale.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Fully Responsive</h3>
+                <p>Looks gorgeous on desktops, tablets, and mobile devices automatically right out of the box.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Blazing Fast</h3>
+                <p>Zero external frameworks or bulky libraries means instant loading times for your visitors.</p>
+            </div>
+        </div>
+    </section>
 
-<!-- SECTION 5: BOUQUET -->
-<section id="bouquet">
-  <div class="bg-lux"></div>
-  <h2 class="title-lg fade">A Bouquet for You</h2>
-  <p class="text-sub fade">Click the bouquet to bloom the flowers</p>
-  <div class="bou scale" id="bouquet">
-    <div class="rose" style="left:70px;top:20px"></div>
-    <div class="rose" style="left:30px;top:60px"></div>
-    <div class="rose" style="left:110px;top:60px"></div>
-    <div class="rose" style="left:60px;top:100px"></div>
-  </div>
-  <div class="fade" id="bm" style="display:none;text-align:center">
-    <h3 class="title-md vibes" style="color:var(--pink)">You are my forever rose ❤️</h3>
-  </div>
-</section>
-<!-- SECTION 6: CARD -->
-<section id="card">
-  <div class="bg-lux"></div>
-  <h2 class="title-lg fade">A Luxury Greeting Card</h2>
-  <p class="text-sub fade">Click to open</p>
-  <div class="gc rotate" id="gc">
-    <div class="cf">
-      <div>
-        <div class="vibes" style="font-size:2.2rem;color:var(--soft-gold)">For Mishu</div>
-        <div style="font-size:.95rem;margin-top:6px;opacity:.8">Happy Birthday</div>
-      </div>
-      <div class="wax"></div>
-    </div>
-    <div class="cb">
-      <div style="font-family:Great Vibes,serif;font-size:1.4rem;color:var(--pink)">
-        "Your smile is my favorite sunrise."
-      </div>
-      <div style="font-size:.9rem;margin-top:8px;opacity:.8">– Chuzza ❤️</div>
-    </div>
-  </div>
-</section>
+    <section id="interactive" class="counter-section">
+        <div class="counter-box">
+            <h2>Live Interactive Feature</h2>
+            <div class="counter-value" id="counter">0</div>
+            <button class="interactive-btn" onclick="incrementCounter()">Click Me!</button>
+        </div>
+    </section>
 
-<!-- SECTION 7: REASONS -->
-<section id="reasons">
-  <div class="bg-lux"></div>
-  <h2 class="title-lg fade">Reasons I Love You</h2>
-  <p class="text-sub fade">Hover over each card</p>
-  <div class="rgrid">
-    <div class="glow rcard">
-      <div class="vibes" style="color:var(--soft-gold);font-size:1.3rem">Your kindness</div>
-      <div style="font-size:.85rem;margin-top:6px;opacity:.8">Makes the world softer.</div>
-    </div>
-    <div class="glow rcard">
-      <div class="vibes" style="color:var(--soft-gold);font-size:1.3rem">Your smile</div>
-      <div style="font-size:.85rem;margin-top:6px;opacity:.8">Lights up my darkest days.</div>
-    </div>
-    <div class="glow rcard">
-      <div class="vibes" style="color:var(--soft-gold);font-size:1.3rem">Your laughter</div>
-      <div style="font-size:.85rem;margin-top:6px;opacity:.8">My favorite melody.</div>
-    </div>
-    <div class="glow rcard">
-      <div class="vibes" style="color:var(--soft-gold);font-size:1.3rem">Your warmth</div>
-      <div style="font-size:.85rem;margin-top:6px;opacity:.8">Feels like home.</div>
-    </div>
-    <div class="glow rcard">
-      <div class="vibes" style="color:var(--soft-gold);font-size:1.3rem">Your care</div>
-      <div style="font-size:.85rem;margin-top:6px;opacity:.8">You love so deeply.</div>
-    </div>
-    <div class="glow rcard">
-      <div class="vibes" style="color:var(--soft-gold);font-size:1.3rem">Your beauty</div>
-      <div style="font-size:.85rem;margin-top:6px;opacity:.8">Inside and out.</div>
-    </div>
-    <div class="glow rcard">
-      <div class="vibes" style="color:var(--soft-gold);font-size:1.3rem">Your strength</div>
-      <div style="font-size:.85rem;margin-top:6px;opacity:.8">Inspires me daily.</div>
-    </div>
-    <div class="glow rcard">
-      <div class="vibes" style="color:var(--soft-gold);font-size:1.3rem">Your heart</div>
-      <div style="font-size:.85rem;margin-top:6px;opacity:.8">So pure, so precious.</div>
-    </div>
-    <div class="glow rcard">
-      <div class="vibes" style="color:var(--soft-gold);font-size:1.3rem">Your dreams</div>
-      <div style="font-size:.85rem;margin-top:6px;opacity:.8">I want to chase with you.</div>
-    </div>
-    <div class="glow rcard">
-      <div class="vibes" style="color:var(--soft-gold);font-size:1.3rem">Your presence</div>
-      <div style="font-size:.85rem;margin-top:6px;opacity:.8">Makes life complete.</div>
-    </div>
-    <div class="glow rcard">
-      <div class="vibes" style="color:var(--soft-gold);font-size:1.3rem">Your love</div>
-      <div style="font-size:.85rem;margin-top:6px;opacity:.8">My greatest gift.</div>
-    </div>
-    <div class="glow rcard">
-      <div class="vibes" style="color:var(--soft-gold);font-size:1.3rem">You, Mishu</div>
-      <div style="font-size:.85rem;margin-top:6px;opacity:.8">Exactly as you are.</div>
-    </div>
-  </div>
-</section>
+    <footer>
+        <p>&copy; 2026 LaunchPad. All rights reserved.</p>
+    </footer>
 
-<!-- SECTION 8: TIMELINE -->
-<section id="timeline">
-  <div class="bg-lux"></div>
-  <h2 class="title-lg fade">Our Story So Far</h2>
-  <p class="text-sub fade">From the first moment to forever</p>
-  <div class="tm scale">
-    <div class="tline"></div>
-    <div class="ti l">
-      <div class="tdot"></div>
-      <div class="glass" style="padding:14px">
-        <div class="vibes" style="color:var(--soft-gold);font-size:1.2rem">How we met</div>
-        <div style="font-size:.85rem;margin-top:6px;opacity:.8">The day everything changed.</div>
-      </div>
-    </div>
-    <div class="ti r">
-      <div class="tdot"></div>
-      <div class="glass" style="padding:14px">
-        <div class="vibes" style="color:var(--soft-gold);font-size:1.2rem">First conversations</div>
-        <div style="font-size:.85rem;margin-top:6px;opacity:.8">Words that became memories.</div>
-      </div>
-    </div>
-    <div class="ti l">
-      <div class="tdot"></div>
-      <div class="glass" style="padding:14px">
-        <div class="vibes" style="color:var(--soft-gold);font-size:1.2rem">Little moments</div>
-        <div style="font-size:.85rem;margin-top:6px;opacity:.8">Laughing, sharing, growing.</div>
-      </div>
-    </div>
-    <div class="ti r">
-      <div class="tdot"></div>
-      <div class="glass" style="padding:14px">
-        <div class="vibes" style="color:var(--soft-gold);font-size:1.2rem">Today</div>
-        <div style="font-size:.85rem;margin-top:6px;opacity:.8">Your birthday, our new chapter.</div>
-      </div>
-    </div>
-    <div class="ti l">
-      <div class="tdot"></div>
-      <div class="glass" style="padding:14px">
-        <div class="vibes" style="color:var(--soft-gold);font-size:1.2rem">Our future</div>
-        <div style="font-size:.85rem;margin-top:6px;opacity:.8">Together, forever.</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- SECTION 9: GALLERY -->
-<section id="gallery">
-  <div class="bg-lux"></div>
-  <h2 class="title-lg fade">Our Memories</h2>
-  <p class="text-sub fade">Click each memory to read</p>
-  <div class="gg scale">
-    <div class="gmem" data-text="Our first date together, where I knew you were special.">Our First Date</div>
-    <div class="gmem" data-text="That festival night when we laughed under the lights.">Festival Night</div>
-    <div class="gmem" data-text="Our road trip, where every kilometer felt like a dream.">Road Trip</div>
-    <div class="gmem" data-text="Coffee moments that became our favorite routine.">Coffee Moments</div>
-    <div class="gmem" data-text="Sunset walks where time felt like it stopped.">Sunset Walks</div>
-    <div class="gmem" data-text="All the little joys we share every single day.">Little Joys</div>
-  </div>
-</section>
-<div class="lb" id="lb"><div class="lbtxt" id="lbtxt"></div></div>
-
-<!-- SECTION 10: LETTER -->
-<section id="letter">
-  <div class="bg-lux"></div>
-  <h2 class="title-lg fade">A Love Letter</h2>
-  <p class="text-sub fade">Click the envelope to unfold</p>
-  <div class="env scale" id="env">
-    <div class="efl"></div>
-    <div class="lp">
-      <div>My dearest Mishu,</div>
-      <div style="margin:10px 0">
-        Every day with you feels like a beautiful dream I never want to wake from.
-        Your kindness, your smile, your laughter – they are the music of my life.
-      </div>
-      <div style="margin:10px 0">
-        On your birthday, I want to tell you how grateful I am for you.
-        You make my world brighter, softer, and infinitely more beautiful.
-      </div>
-      <div style="margin:10px 0">
-        Forever Yours,<br>
-        <span class="vibes" style="color:var(--pink)">Chuzza ❤️</span>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- SECTION 11: CERTIFICATE -->
-<section id="certificate">
-  <div class="bg-lux"></div>
-  <h2 class="title-lg fade">Official Declaration</h2>
-  <p class="text-sub fade">Presented with love</p>
-  <div class="crt rotate">
-    <div class="ctit">Certificate of Beauty & Love</div>
-    <div class="cnm">Mishu ❤️</div>
-    <ul class="clst">
-      <li>Officially declared: Most Beautiful Girl</li>
-      <li>Most Caring</li>
-      <li>Most Precious</li>
-      <li>Most Loved</li>
-    </ul>
-    <div class="cst"></div>
-  </div>
-</section>
-
-<!-- SECTION 12: CAKE -->
-<section id="celebrate">
-  <div class="bg-lux"></div>
-  <h2 class="title-lg fade">Birthday Celebration</h2>
-  <p class="text-sub fade">Let's celebrate you</p>
-  <div class="cake scale">
-    <div class="cbase"></div>
-    <div class="ctop"></div>
-    <div class="cnd"><div class="flm"></div></div>
-  </div>
-  <button class="btn" id="cbtn">Play Celebration</button>
-</section>
-
-<!-- SECTION 13: MEMORY WALL -->
-<section id="memories">
-  <div class="bg-lux"></div>
-  <h2 class="title-lg fade">Memory Wall</h2>
-  <p class="text-sub fade">Quotes that remind me of you</p>
-  <div class="mgrid">
-    <div class="mq fade">"You are my today and all of my tomorrow."</div>
-    <div class="mq fade">"In you, I found my home."</div>
-    <div class="mq fade">"Your heart is my favorite place."</div>
-    <div class="mq fade">"Every love story is beautiful, but ours is my favorite."</div>
-    <div class="mq fade">"You are my greatest adventure."</div>
-    <div class="mq fade">"With you, every moment is magic."</div>
-  </div>
-</section>
-
-<!-- SECTION 14: PROPOSAL -->
-<section id="proposal">
-  <div class="prbg"></div>
-  <div class="bg-stars"></div>
-  <h2 class="title-lg fade">The Biggest Surprise</h2>
-  <p class="text-sub fade">Click the ring</p>
-  <div class="dr rotate" id="dr">
-    <div class="rb"></div>
-    <div class="dm" id="dm"></div>
-  </div>
-  <div class="pq" id="pq">"Mishu... Will You Marry Me?"</div>
-  <div class="pb" id="pb">
-    <button class="btn" id="yesBtn">YES ❤️</button>
-    <button class="btn-out btn-no" id="noBtn">NO</button>
-  </div>
-</section>
-
-<!-- CELEBRATION SCREEN -->
-<div class="celeb" id="celeb">
-  <div class="ctxt">Happy Birthday My Future Wife ❤️</div>
-  <div class="text-sub">Thank you for making my life beautiful.</div>
-  <div class="vibes" style="color:var(--soft-gold)">Forever Yours, Chuzza ❤️</div>
-</div>
-
-<!-- SECTION 15: FINAL -->
-<section id="final">
-  <div class="bg-lux"></div>
-  <div class="bg-stars"></div>
-  <div class="ftxt fade">Happy Birthday My Future Wife ❤️</div>
-  <div class="fsub fade">
-    Thank you for making my life beautiful.<br>
-    Forever Yours<br>
-    <span class="vibes" style="color:var(--pink)">Chuzza ❤️</span>
-  </div>
-</section>
-<script>
-// CURSOR
-const cursor=document.getElementById("cursor");
-document.addEventListener("mousemove",e=>{
-  cursor.style.left=e.clientX+"px";
-  cursor.style.top=e.clientY+"px";
-});
-document.querySelectorAll("a,button,.gift,.bou,.gc,.gmem,.env,.dr").forEach(el=>{
-  el.addEventListener("mouseenter",()=>cursor.classList.add("hover"));
-  el.addEventListener("mouseleave",()=>cursor.classList.remove("hover"));
-});
-
-// SCROLL PROGRESS
-const sp=document.getElementById("sp");
-window.addEventListener("scroll",()=>{
-  const h=document.documentElement;
-  sp.style.width=(h.scrollTop/(h.scrollHeight-h.clientHeight))*100+"%";
-});
-
-// REVEAL
-const reveals=document.querySelectorAll(".fade,.scale,.rotate");
-const doReveal=()=> reveals.forEach(el=>{
-  if(el.getBoundingClientRect().top<window.innerHeight*0.85)el.classList.add("show");
-});
-window.addEventListener("scroll",doReveal);
-doReveal();
-
-// LOADING
-let p=0;
-const ldp=document.getElementById("ldp"),ls=document.getElementById("loading");
-const ti=setInterval(()=>{
-  p+=2;if(p>100)p=100;ldp.textContent=p+"%";
-  if(p===100){
-    clearInterval(ti);
-    setTimeout(()=>{
-      ls.style.transition="opacity 1s";
-      ls.style.opacity="0";
-      setTimeout(()=>ls.style.display="none",1000);
-    },600);
-  }
-},40);
-
-// COUNTDOWN
-const tomorrow=new Date();
-tomorrow.setHours(24,0,0,0);
-const upd=()=>{
-  const diff=tomorrow-new Date();
-  if(diff<=0){
-    document.getElementById("days").textContent="0";
-    document.getElementById("hours").textContent="0";
-    document.getElementById("minutes").textContent="0";
-    document.getElementById("seconds").textContent="0";
-    return;
-  }
-  const d=Math.floor(diff/(1000*60*60*24));
-  const h=Math.floor((diff/(1000*60*60))%24);
-  const m=Math.floor((diff/(1000*60))%60);
-  const s=Math.floor((diff/1000)%60);
-  document.getElementById("days").textContent=d;
-  document.getElementById("hours").textContent=h;
-  document.getElementById("minutes").textContent=m;
-  document.getElementById("seconds").textContent=s;
-};
-upd();
-setInterval(upd,1000);
-</script>
-<script>
-// GIFT
-const giftBox=document.getElementById("giftBox"),gm=document.getElementById("gm");
-giftBox.addEventListener("click",()=>{
-  giftBox.classList.add("open");
-  setTimeout(()=>{
-    gm.style.display="block";
-    gm.classList.add("show");
-    confetti();hearts();
-  },900);
-});
-
-// BOUQUET
-const bouquet=document.getElementById("bouquet"),bm=document.getElementById("bm");
-const roses=bouquet.querySelectorAll(".rose");
-bouquet.addEventListener("click",()=>{
-  roses.forEach((r,i)=>setTimeout(()=>r.classList.add("bloom"),i*200));
-  setTimeout(()=>{
-    bm.style.display="block";
-    bm.classList.add("show");
-    petals();
-  },1200);
-});
-
-// GREETING CARD
-const gc=document.getElementById("gc");
-let gcOpen=false;
-gc.addEventListener("click",()=>{
-  gcOpen=!gcOpen;
-  gc.style.transform=gcOpen?"rotateY(180deg)":"rotateY(0deg)";
-});
-
-// TIMELINE
-const tis=document.querySelectorAll(".ti");
-const revT=()=> tis.forEach(i=>{
-  if(i.getBoundingClientRect().top<window.innerHeight*0.8)i.classList.add("show");
-});
-window.addEventListener("scroll",revT);
-revT();
-
-// GALLERY LIGHTBOX
-const gmems=document.querySelectorAll(".gmem"),
-      lb=document.getElementById("lb"),
-      lbtxt=document.getElementById("lbtxt");
-gmems.forEach(c=>c.addEventListener("click",()=>{
-  lbtxt.textContent=c.getAttribute("data-text")||"Our Memory";
-  lb.classList.add("active");
-}));
-lb.addEventListener("click",()=>lb.classList.remove("active"));
-
-// ENVELOPE
-const env=document.getElementById("env");
-env.addEventListener("click",()=>env.classList.toggle("open"));
-
-// CELEBRATE BUTTON
-document.getElementById("cbtn").addEventListener("click",()=>{
-  fireworks();confetti();hearts();
-});
-</script>
-<script>
-// PROPOSAL + YES/NO + FORMSPREE
-const dr=document.getElementById("dr"),
-      dm=document.getElementById("dm"),
-      pq=document.getElementById("pq"),
-      pb=document.getElementById("pb"),
-      yesBtn=document.getElementById("yesBtn"),
-      noBtn=document.getElementById("noBtn"),
-      celeb=document.getElementById("celeb");
-
-// REPLACE WITH YOUR REAL FORMSPREE URL
-const FORMSPREE_URL="https://formspree.io/f/YOUR_FORMSPREE_ENDPOINT";
-
-let drOpen=false;
-dr.addEventListener("click",()=>{
-  if(drOpen)return;
-  drOpen=true;
-  dm.classList.add("open");
-  setTimeout(()=>{
-    pq.classList.add("show");
-    pb.classList.add("show");
-  },800);
-});
-
-let noMov=0;
-noBtn.addEventListener("click",()=>{
-  if(noMov<2){
-    noMov++;
-    const d=noMov===1?-40:40;
-    noBtn.style.transform=`translateX(${d}px)`;
-    setTimeout(()=>noBtn.style.transform="translateX(0)",500);
-    return;
-  }
-  celeb.classList.remove("active");
-});
-
-yesBtn.addEventListener("click",()=>{
-  celeb.classList.add("active");
-  fireworks();confetti();hearts();
-  sendAnswer("YES");
-});
-
-function sendAnswer(ans){
-  fetch(FORMSPREE_URL,{
-    method:"POST",
-    headers:{"Content-Type":"application/json","Accept":"application/json"},
-    body:JSON.stringify({name:"Mishu",answer:ans})
-  })
-  .then(r=>{if(!r.ok)console.warn("Formspree failed but celebration continues")})
-  .catch(e=>console.warn("Could not submit to Formspree:",e));
-}
-
-// PARTICLES
-const canvas=document.getElementById("particles"),
-      ctx=canvas.getContext("2d"),
-      particles=[];
-canvas.width=window.innerWidth;canvas.height=window.innerHeight;
-window.addEventListener("resize",()=>{
-  canvas.width=window.innerWidth;canvas.height=window.innerHeight;
-});
-
-class P{
-  constructor(t){
-    this.t=t;
-    this.x=Math.random()*canvas.width;
-    this.y=Math.random()*canvas.height-canvas.height;
-    this.s=Math.random()*3+1;
-    this.dy=Math.random()*.5+.2;
-    this.dx=Math.random()*.2-.1;
-    this.o=Math.random()*.6+.2;
-    this.r=Math.random()*360;
-    this.dr=Math.random()*2-1;
-  }
-  update(){
-    this.y+=this.dy;this.x+=this.dx;this.r+=this.dr;
-    if(this.y>canvas.height){this.y=-10;this.x=Math.random()*canvas.width}
-  }
-  draw(){
-    ctx.save();ctx.globalAlpha=this.o;
-    ctx.translate(this.x,this.y);ctx.rotate(this.r*Math.PI/180);
-    if(this.t==="heart"){
-      ctx.fillStyle="#FF4F8B";ctx.beginPath();
-      const s=this.s;
-      ctx.moveTo(0,0);
-      ctx.bezierCurveTo(-s,-s,-s*2,s/2,0,s*2);
-      ctx.bezierCurveTo(s*2,s/2,s,-s,0,0);
-      ctx.fill();
-    } else if(this.t==="star"){
-      ctx.fillStyle="#D4AF37";ctx.beginPath();
-      for(let i=0;i<5;i++){
-        const a=(i*2*Math.PI)/5-Math.PI/2,r=s*2;
-        const x=Math.cos(a)*r,y=Math.sin(a)*r;
-        if(i===0)ctx.moveTo(x,y);else ctx.lineTo(x,y);
-      }
-      ctx.closePath();ctx.fill();
-    } else if(this.t==="petal"){
-      ctx.fillStyle="#FF4F8B";ctx.beginPath();
-      ctx.ellipse(0,0,this.s*1.5,this.s,0,0,Math.PI*2);
-      ctx.fill();
-    } else{
-      ctx.fillStyle="#D4AF37";ctx.beginPath();
-      ctx.arc(0,0,this.s,0,Math.PI*2);ctx.fill();
-    }
-    ctx.restore();
-  }
-}
-
-function init(n,t){particles=[];for(let i=0;i<n;i++)particles.push(new P(t))}
-function anim(){
-  ctx.clearRect(0,0,canvas.width,canvas.height);
-  particles.forEach(p=>p.update();p.draw());
-  requestAnimationFrame(anim);
-}
-init(120,"star");anim();
-
-function hearts(){init(150,"heart")}
-function petals(){init(120,"petal")}
-function confetti(){init(160,"star")}
-function fireworks(){
-  for(let i=0;i<5;i++){
-    const x=Math.random()*canvas.width,
-          y=Math.random()*(canvas.height*0.6);
-    for(let j=0;j<40;j++){
-      const p=new P("star");
-      p.x=x;p.y=y;p.dy=Math.random()*2+1;p.dx=Math.random()*2-1;p.o=0.9;
-      particles.push(p);
-    }
-  }
-}
-
-// FLOATERS
-function flo(t){
-  const el=document.createElement("div");el.className="flo";
-  if(t==="heart"){
-    el.style.width="20px";el.style.height="20px";el.style.background="#FF4F8B";
-    el.style.borderRadius="50%";
-    el.style.clipPath="polygon(50% 0%,100% 30%,80% 100%,20% 100%,0% 30%)";
-  } else{
-    el.style.width="14px";el.style.height="22px";el.style.background="#FF4F8B";
-    el.style.borderRadius="10px 10px 0 0";
-  }
-  el.style.left=Math.random()*100+"%";
-  el.style.top=Math.random()*100+"%";
-  el.style.animationDuration=(Math.random()*4+4)+"s";
-  document.body.appendChild(el);
-}
-for(let i=0;i<20;i++)flo("heart");
-for(let i=0;i<10;i++)flo("petal");
-</script>
+    <script>
+        let count = 0;
+        function incrementCounter() {
+            count++;
+            document.getElementById('counter').innerText = count;
+        }
+    </script>
 </body>
 </html>
