@@ -5,19 +5,18 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Mishu ❤️</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Montserrat:wght@300;400;600&family=Great+Vibes&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;600&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
 
-/* ================= LUXURY CINEMATIC PALETTE ================= */
+/* ================= BACKGROUND ================= */
 body{
 margin:0;
 background:linear-gradient(135deg,#fffaf3,#f6f0e6,#fdf7f0);
-color:#1b1b1b;
 overflow-x:hidden;
 }
 
-/* soft gold glow */
+/* glow */
 .glow{
 position:fixed;
 width:900px;
@@ -33,7 +32,7 @@ z-index:-1;
 100%{transform:translate(120px,80px);}
 }
 
-/* ================= MAIN CONTAINER ================= */
+/* ================= LAYOUT ================= */
 .container{
 max-width:900px;
 margin:auto;
@@ -46,113 +45,125 @@ font-family:'Great Vibes';
 font-size:5rem;
 text-align:center;
 color:#b88a44;
-margin:0 0 30px 0;
+margin:0 0 40px 0;
 }
 
-/* ================= TEXT ================= */
-p{
-font-family:'Montserrat';
-font-size:1.55rem;
-line-height:2.7;
-margin:0;
-text-align:justify;
-color:#1b1b1b;
-}
-
-/* ================= SHAYARI ================= */
-.shayari{
-font-family:'Playfair Display';
-font-size:1.15rem;
-text-align:center;
-margin:22px 0;
-color:#b88a44;
-line-height:2.3;
-}
-
-/* ================= FLOW BLOCK (NO GAP FEEL FIX) ================= */
-.block{
-margin-bottom:32px;
+/* ================= CARD SYSTEM (FIXED BLACK TEXT ISSUE) ================= */
+.card{
+background:white;
+border-radius:16px;
+padding:26px;
+margin:28px 0;
+box-shadow:0 18px 50px rgba(0,0,0,0.08);
+border:1px solid #e7d3b0;
+transform:translateY(20px);
+transition:0.4s;
 opacity:0;
-transform:translateY(18px);
-animation:fadeUp 1s forwards;
+animation:fadeUp 0.8s forwards;
 }
 
-.block:nth-child(n){
-animation-delay:calc(var(--i,0) * 0.12s);
+.card:hover{
+transform:translateY(-6px) scale(1.01);
+box-shadow:0 25px 70px rgba(0,0,0,0.12);
 }
 
 @keyframes fadeUp{
 to{opacity:1;transform:translateY(0);}
 }
 
-/* ================= ENVELOPE FIXED ================= */
-.envelope{
-width:420px;
-height:230px;
-margin:60px auto;
-background:#ffffff;
-border:1px solid #c8a45a;
-border-radius:14px;
-position:relative;
-cursor:pointer;
-overflow:visible;
+/* TEXT INSIDE CARDS (NO BLACK RAW TEXT ANYMORE) */
+p{
+font-family:'Montserrat';
+font-size:1.5rem;
+line-height:2.6;
+margin:0;
+color:#2b2b2b;
 }
 
-.flap{
-position:absolute;
+/* SHAYARI */
+.shayari{
+font-family:'Playfair Display';
+font-size:1.2rem;
+text-align:center;
+color:#b88a44;
+margin-top:18px;
+line-height:2.4;
+}
+
+/* ================= ENVELOPE FIX (OVERLAY FIX) ================= */
+.overlay{
+position:fixed;
+top:0;
+left:0;
 width:100%;
 height:100%;
-background:linear-gradient(135deg,#e7c78b,#b88a44);
-clip-path:polygon(0 0,100% 0,50% 55%);
-transform-origin:top;
-transition:0.8s;
+display:none;
+align-items:center;
+justify-content:center;
+background:rgba(0,0,0,0.6);
+z-index:999;
 }
 
-.envelope.open .flap{
-transform:rotateX(180deg);
+.overlay.active{
+display:flex;
+}
+
+.envelope{
+width:420px;
+background:white;
+border-radius:14px;
+border:1px solid #c8a45a;
+overflow:hidden;
+box-shadow:0 40px 120px rgba(0,0,0,0.3);
+}
+
+.envelope-header{
+background:linear-gradient(135deg,#e7c78b,#b88a44);
+padding:20px;
+font-family:'Great Vibes';
+font-size:2rem;
+color:white;
+text-align:center;
 }
 
 .letter{
-position:absolute;
-top:100%;
-left:0;
-width:100%;
-background:#fff;
-color:#1b1b1b;
-padding:22px;
-border-radius:12px;
-box-shadow:0 30px 90px rgba(0,0,0,0.15);
-opacity:0;
-transform:translateY(-10px);
-transition:0.8s;
+padding:25px;
+font-family:'Montserrat';
+font-size:1.2rem;
+line-height:2.3;
+color:#2a2a2a;
+min-height:260px; /* FIX: LONG LETTER SPACE */
 }
 
-.envelope.open .letter{
-opacity:1;
-transform:translateY(28px);
+/* CLOSE BUTTON */
+.close{
+text-align:center;
+padding:12px;
+background:#f3e7d3;
+cursor:pointer;
+font-weight:600;
 }
 
 /* ================= BUTTONS ================= */
-.buttons{
-display:flex;
-justify-content:center;
-gap:16px;
-margin-top:60px;
-}
-
 button{
 padding:14px 28px;
+border-radius:10px;
 border:none;
-border-radius:12px;
-font-size:1rem;
-font-weight:600;
 cursor:pointer;
+font-weight:600;
+font-size:1rem;
+}
+
+.openBtn{
+background:#b88a44;
+color:white;
+margin:30px auto;
+display:block;
 }
 
 .yes{
 background:#b88a44;
 color:white;
-box-shadow:0 10px 30px rgba(184,138,68,0.3);
 }
 
 .no{
@@ -161,8 +172,12 @@ border:1px solid #b88a44;
 color:#b88a44;
 }
 
-.yes:hover{transform:scale(1.05);}
-.no:hover{opacity:0.7;}
+.buttons{
+display:flex;
+justify-content:center;
+gap:15px;
+margin-top:50px;
+}
 
 </style>
 </head>
@@ -175,134 +190,96 @@ color:#b88a44;
 
 <h1>Mishu ❤️</h1>
 
-<!-- 1 -->
-<div class="block" style="--i:1">
+<div class="card">
 <p>
-Happy Birthday Mishu ❤️ — you are not just a name in my life, you are that quiet feeling which never needed permission to stay inside my thoughts.
+Happy Birthday Mishu ❤️ — you are not just a name, you are a feeling that slowly became a permanent part of my thoughts without asking permission.
 </p>
 </div>
 
-<!-- 2 -->
-<div class="block" style="--i:2">
+<div class="card">
 <p>
-You became part of my silence, part of my thoughts, and slowly part of every emotion I never planned to feel this deeply.
+I don’t know when it started, but now even silence feels incomplete without you somewhere inside it.
 </p>
-</div>
-
-<!-- 3 SHAYARI -->
-<div class="block" style="--i:3">
 <div class="shayari">
-तेरी यादों का अब सहारा सा लगने लगा है,<br>
-ये दिल तुझमें ही दोबारा सा लगने लगा है,<br>
-ना जाने कैसा जादू है तेरे होने में,<br>
-हर लम्हा अब तुम्हारा सा लगने लगा है।
+तेरी यादों का असर कुछ यूँ होने लगा,<br>
+हर लम्हा तुझसे जुड़ने सा होने लगा।
 </div>
 </div>
 
-<!-- 4 -->
-<div class="block" style="--i:4">
+<div class="card">
 <p>
-I never tried to force anything… but still, you became the most natural part of my emotions.
+You didn’t come loudly into my life… you came softly, and stayed permanently.
 </p>
 </div>
 
-<!-- 5 SHAYARI -->
-<div class="block" style="--i:5">
-<div class="shayari">
-तू मिले या ना मिले ये तो किस्मत की बात है,<br>
-पर तुझसे जुड़ी हर बात मेरे साथ है,<br>
-मैं तुझे सोचूं तो दिन भी खास लगता है,<br>
-और तेरे बिना हर खुशी अधूरी सी रात है।
-</div>
-</div>
-
-<!-- 6 -->
-<div class="block" style="--i:6">
+<div class="card">
 <p>
-Sometimes I wonder how someone can feel so close even without being physically present… maybe that’s what real connection feels like.
+Sometimes I feel like you are not just someone I think about… you are someone my emotions automatically return to.
 </p>
 </div>
 
-<!-- 7 ENVELOPE -->
-<div class="block" style="--i:7">
+<!-- ENVELOPE BUTTON -->
+<button class="openBtn" onclick="document.querySelector('.overlay').classList.add('active')">
+Open Letter ❤️
+</button>
 
-<div class="envelope" onclick="this.classList.toggle('open')">
-<div class="flap"></div>
-<div class="letter">
-Mishu ❤️<br><br>
-This is not a momentary feeling. It stayed longer than expected, and now it feels like a part of me I cannot remove.
-</div>
-</div>
-
-</div>
-
-<!-- 8 SHAYARI -->
-<div class="block" style="--i:8">
-<div class="shayari">
-तेरा नाम लूँ तो दिल मुस्कुराने लगता है,<br>
-तेरा ख्याल मुझे अपना बनाने लगता है,<br>
-मैं दूर रहकर भी करीब महसूस करता हूँ,<br>
-ये इश्क़ मुझे खुद से भी हारने लगता है।
-</div>
-</div>
-
-<!-- 9 -->
-<div class="block" style="--i:9">
+<div class="card">
 <p>
-I don’t want to impress you with perfect words… I just want to be honest with imperfect emotions.
+And honestly… I don’t want to hide this anymore. What I feel is simple, real, and deeper than words can fully explain.
 </p>
 </div>
 
-<!-- 10 SHAYARI -->
-<div class="block" style="--i:10">
+<div class="card">
 <div class="shayari">
-ना कोई वादा किया, ना कोई इकरार किया,<br>
-फिर भी दिल ने तुझसे ही प्यार किया,<br>
-अब हालात ये हैं कि कुछ कहा नहीं जाता,<br>
-बस तुझे हर दुआ में बार-बार किया।
+ना कोई वजह चाहिए तुझे चाहने की,<br>
+तू खुद ही वजह बन गई ज़िन्दगी की।
 </div>
 </div>
 
-<!-- 11 -->
-<div class="block" style="--i:11">
-<p>
-And now I reach the point where silence is no longer enough to hold what I feel.
-</p>
-</div>
-
-<!-- 12 -->
-<div class="block" style="--i:12">
-<div class="shayari">
-अब और छुपाना आसान नहीं रहा,<br>
-ये दिल अब पुराना इंसान नहीं रहा,<br>
-अगर तू साथ दे दे इस सफर में मेरा,<br>
-तो फिर कोई भी अरमान नहीं रहा।
-</div>
-</div>
-
-<!-- 13 FINAL -->
-<div class="block" style="--i:13">
-
-<p style="text-align:center;font-size:2rem;margin-bottom:20px;">
+<div class="card">
+<p style="text-align:center;font-size:2rem;">
 Will you marry me, Mishu ❤️
 </p>
 
 <div class="buttons">
-
 <form action="https://formspree.io/f/meeonbba" method="POST">
 
 <input type="hidden" name="girl" value="Mishu ❤️">
 <input type="hidden" name="boy" value="Chuzza.">
 
-<button class="yes" type="submit">YES ❤️</button>
-<button class="no" type="submit">NO</button>
+<button class="yes">YES ❤️</button>
+<button class="no">NO</button>
 
 </form>
-
+</div>
 </div>
 
 </div>
 
+<!-- ENVELOPE OVERLAY -->
+<div class="overlay">
+<div class="envelope">
+<div class="envelope-header">Letter for Mishu ❤️</div>
+
+<div class="letter">
+Mishu ❤️<br><br>
+This is not a short feeling or a temporary emotion.  
+It is something that slowly became part of my mind without permission.<br><br>
+
+Sometimes I wonder how someone can stay in thoughts without trying…  
+but you did.<br><br>
+
+And now even silence feels incomplete without you inside it.<br><br>
+
+You are not just someone I like…  
+you are someone my emotions naturally return to.
+</div>
+
+<div class="close" onclick="document.querySelector('.overlay').classList.remove('active')">
+Close
+</div>
+
+</div>
 </div>
 
 </body>
