@@ -3,13 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mishu ❤️ From Chuzza</title>
+<title>Mishu ❤️ From Chuza</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Lora:wght@400;500;600&display=swap" rel="stylesheet">
 
 <style>
 
-/* ===== GLOBAL ===== */
 body{
 margin:0;
 background:#0B1020;
@@ -18,18 +17,42 @@ overflow-x:hidden;
 font-family:'Lora',serif;
 }
 
+.glow{
+position:fixed;
+width:900px;
+height:900px;
+background:radial-gradient(circle,#8B1E3F40,transparent 60%);
+filter:blur(120px);
+top:-250px;
+left:-250px;
+z-index:-1;
+animation:move 10s ease-in-out infinite;
+}
+
+@keyframes move{
+0%,100%{transform:translate(0,0);}
+50%{transform:translate(80px,50px);}
+}
+
 section{
 min-height:100vh;
 display:flex;
 flex-direction:column;
 justify-content:center;
 padding:8vw;
+opacity:0;
+transform:translateY(30px);
+animation:fade 1s forwards;
 }
 
-/* ===== TITLE ===== */
+section:nth-child(n){animation-delay:0.2s;}
+
+@keyframes fade{
+to{opacity:1;transform:translateY(0);}
+}
+
 h1,h2{
-font-family:'Cinzel',serif;
-letter-spacing:1px;
+font-family:'Cinzel';
 margin:0;
 }
 
@@ -43,38 +66,29 @@ font-size:3rem;
 color:#C8A45D;
 }
 
-/* ===== LONG TEXT ===== */
 p{
 font-size:1.5rem;
-line-height:2.2;
+line-height:2.3;
 max-width:900px;
-margin-top:20px;
-color:#FFF7FA;
 }
 
-/* ===== BACKGROUND ===== */
-.glow{
-position:fixed;
-width:900px;
-height:900px;
-background:radial-gradient(circle,#8B1E3F40,transparent 60%);
-filter:blur(120px);
-top:-300px;
-left:-300px;
-z-index:-1;
-}
-
-/* ===== ENVELOPE ===== */
+/* ENVELOPE */
 .envelope{
 width:420px;
 height:240px;
 background:#111;
-margin-top:40px;
 border:1px solid #C8A45D;
 position:relative;
 cursor:pointer;
-overflow:hidden;
-box-shadow:0 0 60px #000;
+overflow:visible;
+margin-top:30px;
+border-radius:10px;
+transform:perspective(900px);
+transition:0.5s;
+}
+
+.envelope:hover{
+transform:perspective(900px) rotateX(5deg) scale(1.02);
 }
 
 .flap{
@@ -83,53 +97,63 @@ width:100%;
 height:100%;
 background:linear-gradient(135deg,#8B1E3F,#C8A45D);
 clip-path:polygon(0 0,100% 0,50% 55%);
+transition:0.8s;
 transform-origin:top;
-transition:0.9s;
 }
 
 .envelope.open .flap{
 transform:rotateX(180deg);
 }
 
-/* THIS FIXES TEXT CUTTING ISSUE */
+/* FIXED LETTER (NO CUTTING) */
 .letter{
 position:absolute;
-top:0;
+top:100%;
 left:0;
 width:100%;
-min-height:100%;
 background:#FFF7FA;
 color:#111;
-padding:30px;
-transform:translateY(120%);
-transition:1s;
+padding:25px;
 font-size:1.4rem;
 line-height:2.2;
+border-radius:10px;
+box-shadow:0 20px 60px rgba(0,0,0,0.4);
+opacity:0;
+transform:translateY(-10px);
+transition:0.8s;
 }
 
 .envelope.open .letter{
-transform:translateY(0);
+opacity:1;
+transform:translateY(25px);
 }
 
-/* ===== BUTTONS ===== */
+/* BUTTONS */
 button{
-padding:14px 26px;
+padding:14px 24px;
 margin:10px;
 border:none;
 cursor:pointer;
 font-size:1.1rem;
+border-radius:10px;
 font-weight:600;
 }
 
 .yes{
 background:#8B1E3F;
 color:white;
+animation:pulse 2s infinite;
 }
 
 .no{
 background:transparent;
 border:1px solid #FFF7FA;
 color:#FFF7FA;
+}
+
+@keyframes pulse{
+0%,100%{transform:scale(1);}
+50%{transform:scale(1.05);}
 }
 
 </style>
@@ -139,93 +163,114 @@ color:#FFF7FA;
 
 <div class="glow"></div>
 
-<!-- 1 -->
+<!-- 1 INTRO -->
 <section>
-<h1>Mishu</h1>
+<h1>Mishu ❤️</h1>
 <p>
-I don’t know how to start this without sounding like I’m already lost in you. Because the truth is, I am not writing to you like a normal message… I am writing like someone who has already accepted that you are not just a part of life anymore, you are the feeling life revolves around.
+I don’t just think about you… I quietly live in the thought of you.
+<br><br>
+“तेरी यादें भी अब मेरी आदत बन चुकी हैं…”
 </p>
 </section>
 
-<!-- 2 -->
+<!-- 2 BIRTHDAY -->
 <section>
-<h2>Birthday</h2>
+<h2>Birthday 🎂</h2>
 <p>
-Today is your birthday, but I keep thinking it should be celebrated differently… not just as a date, but as the moment the world got softer, more beautiful, and slightly more meaningful. You don’t even realize how much presence you carry, Mishu. Even silence around you feels different.
+Your birthday is not just a date… it feels like the universe paused to create something rare.
+<br><br>
+“तेरी मुस्कान से रोशन है मेरी दुनिया…”
 </p>
 </section>
 
-<!-- 3 -->
-<section>
-<h2>What You Do To Me</h2>
-<p>
-Whenever your name appears in my mind, everything else becomes background noise. I start smiling without reason, overthinking without control, and feeling something I cannot explain properly in words. You didn’t ask for this effect… but you have it on me anyway.
-</p>
-</section>
-
-<!-- 4 -->
+<!-- 3 FLIRTY -->
 <section>
 <h2>Flirty Truth</h2>
 <p>
-I tried to act normal around you once… it didn’t work. Because every time I look at you, my thoughts forget discipline and start behaving like they belong only to you. And honestly, I don’t even want to fix that.
+Whenever I try to act normal, your thought interrupts me like it owns my mind.
+<br><br>
+“तू सामने नहीं होती फिर भी सबसे करीब लगती है…”
 </p>
 </section>
 
-<!-- 5 -->
+<!-- 4 MEMORY -->
 <section>
 <h2>Memory</h2>
 <p>
-There is one thing I keep replaying again and again… your smile. Not because it is just beautiful, but because it has this strange power to pause everything inside me for a second, like the world itself is checking if I noticed you properly.
+Your smile doesn’t just stay in my memory… it repeats itself like a song I never get tired of.
+<br><br>
+“तेरी हँसी मेरे दिल का सबसे खूबसूरत शोर है…”
 </p>
 </section>
 
-<!-- 6 -->
+<!-- 5 CERTIFICATE -->
 <section>
 <h2>Certificate</h2>
 <p>
-If there was ever an official way to measure beauty, I would not need a second opinion. Because in my experience, no comparison has ever survived your presence. You are not “one of the beautiful people”… you are the reference point.
+You are not just beautiful… you are the definition my heart uses for beauty now.
+<br><br>
+“खूबसूरती का मतलब अब तू बन गई है…”
 </p>
 </section>
 
-<!-- 7 -->
+<!-- 6 SHAYARI -->
 <section>
-<h2>Something Honest</h2>
+<h2>Something Deep</h2>
 <p>
-I don’t think I fell in love suddenly. I think I slowly stopped being the same person after I started noticing you more than I noticed anything else.
+I didn’t fall for you suddenly… I slowly lost myself in you without realizing.
+<br><br>
+“धीरे-धीरे तुझमें खो जाना ही मेरा इश्क बन गया…”
 </p>
 </section>
 
-<!-- 8 -->
+<!-- 7 BOUQUET FEEL -->
 <section>
-<h2>Envelope</h2>
+<h2>For You 🌹</h2>
+<p>
+If emotions had a shape… they would stand in front of me like you.
+<br><br>
+“फूल भी शर्मिंदा हैं तेरी खूबसूरती से…”
+</p>
+</section>
 
-<div class="envelope" onclick="openLetter()">
+<!-- 8 ENVELOPE -->
+<section>
+<h2>Love Letter 💌</h2>
+
+<div class="envelope" onclick="toggle()">
 <div class="flap"></div>
 
 <div class="letter">
-Dear Mishu,<br><br>
-If I had to explain you in one sentence, I would fail. Because you are not a sentence… you are a feeling that keeps expanding every time I try to understand it. You are calm, you are chaos, you are everything I didn’t know I was missing.<br><br>
-And now I don’t want to miss it anymore.
+Dear Mishu ❤️,<br><br>
+
+You are not a chapter in my life… you are the reason I started reading life itself.<br><br>
+
+“तू मिले या ना मिले ये किस्मत की बात है…  
+पर तुझे चाहना मेरी इबादत बन चुकी है…”<br><br>
+
+I don’t know what future holds, but I know one thing… my feelings are not temporary.
 </div>
 
 </div>
 
 </section>
 
-<!-- 9 -->
+<!-- 9 FINAL EMOTION -->
 <section>
 <h2>Truth</h2>
 <p>
-If I ever become too quiet around you, it’s not because I have nothing to say… it’s because I am busy noticing how unreal it feels that someone like you exists in my reality.
+If I ever go quiet around you, it’s because words fail when feelings become too real.
+<br><br>
+“चुप रहकर भी तुझसे बातें करता हूँ मैं…”
 </p>
 </section>
 
-<!-- 10 -->
+<!-- 10 PROPOSAL -->
 <section>
-<h2>Final Question</h2>
+<h2>Final Question 💍</h2>
 
 <p>
-I am not asking this as a formality. I am asking this as someone who already feels the answer in everything I think.
+I am not asking you for fun… I am asking you from everything I feel.
 </p>
 
 <button class="yes" onclick="send('YES')">Will You Marry Me ❤️ (Created by Chuza)</button>
@@ -235,7 +280,7 @@ I am not asking this as a formality. I am asking this as someone who already fee
 
 <script>
 
-function openLetter(){
+function toggle(){
 document.querySelector(".envelope").classList.toggle("open");
 }
 
@@ -250,7 +295,7 @@ answer:ans
 })
 });
 
-alert("Response recorded ❤️");
+alert("Response sent ❤️");
 }
 
 </script>
