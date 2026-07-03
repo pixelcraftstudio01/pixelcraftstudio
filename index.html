@@ -5,26 +5,26 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Mishu ❤️</title>
 
-<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Montserrat:wght@300;400;600&family=Parisienne&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Montserrat:wght@300;400;600&family=Great+Vibes&display=swap" rel="stylesheet">
 
 <style>
 
-/* ================= NEW LUXURY COLOR SYSTEM ================= */
+/* ================= LUXURY CINEMATIC PALETTE ================= */
 body{
 margin:0;
+background:linear-gradient(135deg,#fffaf3,#f6f0e6,#fdf7f0);
+color:#1b1b1b;
 overflow-x:hidden;
-background:linear-gradient(135deg,#0b0b12,#1a0f1f,#2a1020);
-color:#f6e7d7;
 }
 
-/* soft cinematic light */
+/* soft gold glow */
 .glow{
 position:fixed;
 width:900px;
 height:900px;
-background:radial-gradient(circle,#ff4d6d33,transparent 60%);
-filter:blur(140px);
-animation:move 14s infinite alternate;
+background:radial-gradient(circle,#c8a45a33,transparent 60%);
+filter:blur(120px);
+animation:move 12s infinite alternate;
 z-index:-1;
 }
 
@@ -33,65 +33,65 @@ z-index:-1;
 100%{transform:translate(120px,80px);}
 }
 
-/* ================= FLOW ================= */
-.scene{
-min-height:100vh;
-display:flex;
-align-items:center;
-justify-content:center;
-padding:90px 24px;
-opacity:0;
-transform:translateY(30px);
-animation:fade 1s forwards;
-}
-
-.scene:nth-child(n){
-animation-delay:calc(var(--i) * 0.15s);
-}
-
-@keyframes fade{
-to{opacity:1;transform:translateY(0);}
-}
-
-.content{
+/* ================= MAIN CONTAINER ================= */
+.container{
 max-width:900px;
+margin:auto;
+padding:80px 22px;
 }
 
-/* ================= TYPOGRAPHY (NEW PREMIUM) ================= */
+/* ================= TITLE ================= */
 h1{
-font-family:'Parisienne';
-font-size:5.2rem;
+font-family:'Great Vibes';
+font-size:5rem;
 text-align:center;
-color:#ff5c8a;
-margin:0;
+color:#b88a44;
+margin:0 0 30px 0;
 }
 
+/* ================= TEXT ================= */
 p{
 font-family:'Montserrat';
 font-size:1.55rem;
-line-height:2.5;
-margin:18px 0;
+line-height:2.7;
+margin:0;
 text-align:justify;
-color:#f3e2d2;
+color:#1b1b1b;
 }
 
-/* shayari upgraded */
+/* ================= SHAYARI ================= */
 .shayari{
-font-family:'DM Serif Display';
-font-size:1.2rem;
+font-family:'Playfair Display';
+font-size:1.15rem;
 text-align:center;
-margin:28px 0;
-color:#ffd2a8;
+margin:22px 0;
+color:#b88a44;
 line-height:2.3;
 }
 
-/* ================= ENVELOPE FIX ================= */
+/* ================= FLOW BLOCK (NO GAP FEEL FIX) ================= */
+.block{
+margin-bottom:32px;
+opacity:0;
+transform:translateY(18px);
+animation:fadeUp 1s forwards;
+}
+
+.block:nth-child(n){
+animation-delay:calc(var(--i,0) * 0.12s);
+}
+
+@keyframes fadeUp{
+to{opacity:1;transform:translateY(0);}
+}
+
+/* ================= ENVELOPE FIXED ================= */
 .envelope{
 width:420px;
 height:230px;
-margin:50px auto;
-background:#1a0f1f;
-border:1px solid #ff5c8a;
+margin:60px auto;
+background:#ffffff;
+border:1px solid #c8a45a;
 border-radius:14px;
 position:relative;
 cursor:pointer;
@@ -102,7 +102,7 @@ overflow:visible;
 position:absolute;
 width:100%;
 height:100%;
-background:linear-gradient(135deg,#ff5c8a,#ffb86b);
+background:linear-gradient(135deg,#e7c78b,#b88a44);
 clip-path:polygon(0 0,100% 0,50% 55%);
 transform-origin:top;
 transition:0.8s;
@@ -117,11 +117,11 @@ position:absolute;
 top:100%;
 left:0;
 width:100%;
-background:white;
-color:#111;
+background:#fff;
+color:#1b1b1b;
 padding:22px;
 border-radius:12px;
-box-shadow:0 40px 90px rgba(0,0,0,0.6);
+box-shadow:0 30px 90px rgba(0,0,0,0.15);
 opacity:0;
 transform:translateY(-10px);
 transition:0.8s;
@@ -136,37 +136,33 @@ transform:translateY(28px);
 .buttons{
 display:flex;
 justify-content:center;
-gap:18px;
-margin-top:70px;
+gap:16px;
+margin-top:60px;
 }
 
 button{
 padding:14px 28px;
 border:none;
 border-radius:12px;
-cursor:pointer;
-font-weight:600;
 font-size:1rem;
+font-weight:600;
+cursor:pointer;
 }
 
 .yes{
-background:#ff5c8a;
+background:#b88a44;
 color:white;
-box-shadow:0 10px 35px rgba(255,92,138,0.4);
+box-shadow:0 10px 30px rgba(184,138,68,0.3);
 }
 
 .no{
 background:transparent;
-border:1px solid #ff5c8a;
-color:#ff5c8a;
+border:1px solid #b88a44;
+color:#b88a44;
 }
 
-/* ================= ANIMATION ================= */
-.fade{
-opacity:0;
-transform:translateY(20px);
-animation:fade 1s forwards;
-}
+.yes:hover{transform:scale(1.05);}
+.no:hover{opacity:0.7;}
 
 </style>
 </head>
@@ -175,115 +171,119 @@ animation:fade 1s forwards;
 
 <div class="glow"></div>
 
-<!-- 1 -->
-<div class="scene" style="--i:1">
-<div class="content">
+<div class="container">
+
 <h1>Mishu ❤️</h1>
+
+<!-- 1 -->
+<div class="block" style="--i:1">
 <p>
-Happy Birthday Mishu ❤️  
-You are not just a person in my life… you are a feeling that slowly became permanent without asking permission.
+Happy Birthday Mishu ❤️ — you are not just a name in my life, you are that quiet feeling which never needed permission to stay inside my thoughts.
 </p>
-</div>
 </div>
 
 <!-- 2 -->
-<div class="scene" style="--i:2">
-<div class="content">
+<div class="block" style="--i:2">
 <p>
-I don’t know when it started, but now even normal moments feel incomplete without thinking about you somewhere in between them.
+You became part of my silence, part of my thoughts, and slowly part of every emotion I never planned to feel this deeply.
 </p>
-<div class="shayari">
-“तू पास नहीं फिर भी एहसास रहता है,<br>
-दिल हर वक्त बस तेरे ही पास रहता है।”
-</div>
-</div>
 </div>
 
-<!-- 3 -->
-<div class="scene" style="--i:3">
-<div class="content">
-<p>
-You didn’t enter my life loudly… you entered quietly and stayed permanently.
-</p>
+<!-- 3 SHAYARI -->
+<div class="block" style="--i:3">
+<div class="shayari">
+तेरी यादों का अब सहारा सा लगने लगा है,<br>
+ये दिल तुझमें ही दोबारा सा लगने लगा है,<br>
+ना जाने कैसा जादू है तेरे होने में,<br>
+हर लम्हा अब तुम्हारा सा लगने लगा है।
 </div>
 </div>
 
 <!-- 4 -->
-<div class="scene" style="--i:4">
-<div class="content">
-<div class="shayari">
-“तेरी हँसी में जो सुकून मिलता है,<br>
-वो किसी दुआ में भी नहीं मिलता है।”
-</div>
-</div>
+<div class="block" style="--i:4">
+<p>
+I never tried to force anything… but still, you became the most natural part of my emotions.
+</p>
 </div>
 
-<!-- 5 -->
-<div class="scene" style="--i:5">
-<div class="content">
-<p>
-Sometimes I wonder how someone can become so important without even trying.
-And the answer is always you.
-</p>
+<!-- 5 SHAYARI -->
+<div class="block" style="--i:5">
+<div class="shayari">
+तू मिले या ना मिले ये तो किस्मत की बात है,<br>
+पर तुझसे जुड़ी हर बात मेरे साथ है,<br>
+मैं तुझे सोचूं तो दिन भी खास लगता है,<br>
+और तेरे बिना हर खुशी अधूरी सी रात है।
 </div>
 </div>
 
 <!-- 6 -->
-<div class="scene" style="--i:6">
-<div class="content">
+<div class="block" style="--i:6">
 <p>
-There is a softness in your existence that I cannot explain, only feel.
+Sometimes I wonder how someone can feel so close even without being physically present… maybe that’s what real connection feels like.
 </p>
 </div>
-</div>
 
-<!-- 7 -->
-<div class="scene" style="--i:7">
-<div class="content">
+<!-- 7 ENVELOPE -->
+<div class="block" style="--i:7">
+
 <div class="envelope" onclick="this.classList.toggle('open')">
 <div class="flap"></div>
 <div class="letter">
 Mishu ❤️<br><br>
-This is not something I wrote quickly… this is something that stayed inside me for too long.<br><br>
-You became part of my thoughts without asking, and now I cannot remove you even if I try.
-</div>
-</div>
+This is not a momentary feeling. It stayed longer than expected, and now it feels like a part of me I cannot remove.
 </div>
 </div>
 
-<!-- 8 -->
-<div class="scene" style="--i:8">
-<div class="content">
-<p>
-I don’t want to impress you with words… I just want to be honest with what I feel.
-</p>
+</div>
+
+<!-- 8 SHAYARI -->
+<div class="block" style="--i:8">
+<div class="shayari">
+तेरा नाम लूँ तो दिल मुस्कुराने लगता है,<br>
+तेरा ख्याल मुझे अपना बनाने लगता है,<br>
+मैं दूर रहकर भी करीब महसूस करता हूँ,<br>
+ये इश्क़ मुझे खुद से भी हारने लगता है।
 </div>
 </div>
 
 <!-- 9 -->
-<div class="scene" style="--i:9">
-<div class="content">
-<div class="shayari">
-“इश्क़ वो नहीं जो दिखाया जाए,<br>
-इश्क़ वो है जो निभाया जाए।”
-</div>
-</div>
+<div class="block" style="--i:9">
+<p>
+I don’t want to impress you with perfect words… I just want to be honest with imperfect emotions.
+</p>
 </div>
 
-<!-- 10 -->
-<div class="scene" style="--i:10">
-<div class="content">
-<p>
-And now I reach the point where silence feels too heavy to carry.
-</p>
+<!-- 10 SHAYARI -->
+<div class="block" style="--i:10">
+<div class="shayari">
+ना कोई वादा किया, ना कोई इकरार किया,<br>
+फिर भी दिल ने तुझसे ही प्यार किया,<br>
+अब हालात ये हैं कि कुछ कहा नहीं जाता,<br>
+बस तुझे हर दुआ में बार-बार किया।
 </div>
 </div>
 
 <!-- 11 -->
-<div class="scene" style="--i:11">
-<div class="content">
+<div class="block" style="--i:11">
+<p>
+And now I reach the point where silence is no longer enough to hold what I feel.
+</p>
+</div>
 
-<p style="text-align:center;font-size:2rem;">
+<!-- 12 -->
+<div class="block" style="--i:12">
+<div class="shayari">
+अब और छुपाना आसान नहीं रहा,<br>
+ये दिल अब पुराना इंसान नहीं रहा,<br>
+अगर तू साथ दे दे इस सफर में मेरा,<br>
+तो फिर कोई भी अरमान नहीं रहा।
+</div>
+</div>
+
+<!-- 13 FINAL -->
+<div class="block" style="--i:13">
+
+<p style="text-align:center;font-size:2rem;margin-bottom:20px;">
 Will you marry me, Mishu ❤️
 </p>
 
@@ -302,6 +302,7 @@ Will you marry me, Mishu ❤️
 </div>
 
 </div>
+
 </div>
 
 </body>
