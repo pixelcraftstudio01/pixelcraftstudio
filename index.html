@@ -1,370 +1,1992 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mishu ❤️</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>
+People's Voice Survey
+</title>
+
+<meta name="description"
+content="Independent Public Opinion Survey Platform">
+
+<link rel="preconnect"
+href="https://fonts.googleapis.com">
+
+<link rel="preconnect"
+href="https://fonts.gstatic.com"
+crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+rel="stylesheet">
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
 <style>
 
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Inter',sans-serif;
+}
+
+:root{
+
+--bg:#FAF9F6;
+--card:#FFFFFF;
+
+--primary:#8FB996;
+--secondary:#6FB3B8;
+
+--accent:#D9C27A;
+
+--support:#7CB342;
+--oppose:#E07A5F;
+--undecided:#D9C27A;
+
+--text:#23303B;
+--muted:#64748B;
+
+--border:#E8E8E8;
+
+--shadow:
+0 10px 35px rgba(0,0,0,.05);
+
+}
+
 body{
-margin:0;
-background:linear-gradient(135deg,#fffaf3,#f6efe3,#fdf7f0);
-font-family:'Playfair Display';
-overflow-x:hidden;
+
+background:var(--bg);
+color:var(--text);
+line-height:1.6;
+
 }
 
-/* ❤️ HEARTS */
-.heart{
-position:fixed;
-width:8px;height:8px;
-background:#caa35a55;
-transform:rotate(45deg);
-animation:float 10s linear infinite;
-}
-.heart::before,.heart::after{
-content:"";
-position:absolute;
-width:8px;height:8px;
-background:#caa35a55;
-border-radius:50%;
-}
-.heart::before{left:-4px;}
-.heart::after{top:-4px;}
+.container{
 
-@keyframes float{
-from{transform:translateY(100vh) rotate(45deg);}
-to{transform:translateY(-10vh) rotate(45deg);}
+width:min(1300px,92%);
+margin:auto;
+
 }
 
-/* 🌹 ROSE PETALS (MINIMAL) */
-.petal{
-position:fixed;
-top:-10px;
-width:10px;
-height:10px;
-background:radial-gradient(circle,#ff4d6d,#ff99aa);
-border-radius:50%;
-opacity:0.7;
-animation:fall linear infinite;
+html{
+scroll-behavior:smooth;
 }
 
-@keyframes fall{
-0%{transform:translateY(0) rotate(0deg);}
-100%{transform:translateY(110vh) rotate(360deg);}
+nav{
+
+position:sticky;
+top:0;
+
+z-index:999;
+
+background:
+rgba(255,255,255,.85);
+
+backdrop-filter:
+blur(20px);
+
+border-bottom:
+1px solid var(--border);
+
 }
 
-/* PAGE */
-.section{
-max-width:720px;
-margin:40px auto;
-padding:55px 60px;
-background:white;
-border-radius:18px;
-border:1px solid #e7d3b0;
-box-shadow:0 20px 60px rgba(0,0,0,0.06);
-}
+.nav-inner{
 
-.title{
-text-align:center;
-font-family:'Great Vibes';
-font-size:4rem;
-color:#b88a44;
-}
-
-p{
-font-size:1.45rem;
-line-height:3;
-margin:0;
-color:#3b2f2a;
-}
-
-/* SHAYARI */
-.shayari{
-text-align:center;
-font-family:'Great Vibes';
-font-size:2rem;
-color:#b88a44;
-margin:35px 0;
-}
-
-/* ENVELOPE */
-.envelope{
-max-width:520px;
-margin:60px auto;
-background:white;
-border-radius:18px;
-border:1px solid #e0c28a;
-overflow:hidden;
-box-shadow:0 30px 80px rgba(0,0,0,0.15);
-}
-
-.header{
-background:linear-gradient(135deg,#e7c78b,#b88a44);
-padding:18px;
-text-align:center;
-font-family:'Great Vibes';
-font-size:2.3rem;
-color:white;
-cursor:pointer;
-}
-
-.content{
-max-height:0;
-overflow:hidden;
-transition:1s ease;
-padding:0 25px;
-}
-
-.envelope.open .content{
-max-height:2000px;
-padding:25px;
-}
-
-.letter{
-font-size:1.5rem;
-line-height:3;
-color:#3b2f2a;
-}
-
-.buttons{
 display:flex;
-justify-content:center;
-gap:18px;
-margin-top:30px;
+
+justify-content:
+space-between;
+
+align-items:center;
+
+padding:18px 0;
+
 }
 
-button{
-padding:13px 28px;
-border-radius:10px;
-cursor:pointer;
+.logo{
+
+font-size:1.35rem;
+font-weight:800;
+
+}
+
+.logo span{
+
+color:var(--secondary);
+
+}
+
+.nav-links{
+
+display:flex;
+gap:28px;
+
+}
+
+.nav-links a{
+
+text-decoration:none;
+
+color:var(--text);
+
 font-weight:600;
-border:none;
+
+transition:.3s;
+
 }
 
-.yes{background:#b88a44;color:white;}
-.no{background:transparent;border:1px solid #b88a44;color:#b88a44;}
+.nav-links a:hover{
 
-.signature{
-text-align:center;
-font-family:'Great Vibes';
-font-size:2.6rem;
-color:#b88a44;
-margin-top:35px;
+color:var(--secondary);
+
+}
+
+.hero{
+
+padding:100px 0 70px;
+
+}
+
+.hero h1{
+
+font-size:
+clamp(2.8rem,6vw,5.5rem);
+
+font-weight:900;
+
+line-height:1.1;
+
+max-width:900px;
+
+}
+
+.hero p{
+
+margin-top:25px;
+
+max-width:850px;
+
+font-size:1.1rem;
+
+color:var(--muted);
+
+}
+
+.badge{
+
+display:inline-block;
+
+padding:10px 16px;
+
+border-radius:999px;
+
+background:#EEF7F4;
+
+color:#2F6B55;
+
+font-weight:700;
+
+margin-bottom:20px;
+
+}
+
+.hero-grid{
+
+display:grid;
+
+grid-template-columns:
+1.3fr .7fr;
+
+gap:40px;
+
+align-items:center;
+
+}
+
+.glass-card{
+
+background:var(--card);
+
+border:1px solid var(--border);
+
+border-radius:24px;
+
+padding:30px;
+
+box-shadow:var(--shadow);
+
+}
+
+.notice{
+
+margin-top:25px;
+
+padding:20px;
+
+border-radius:18px;
+
+background:#FFFDF6;
+
+border:1px solid #EFE4BC;
+
+}
+
+.notice h3{
+
+margin-bottom:10px;
+
+}
+
+.stats{
+
+margin-top:40px;
+
+display:grid;
+
+grid-template-columns:
+repeat(4,1fr);
+
+gap:20px;
+
+}
+
+.stat{
+
+background:white;
+
+padding:25px;
+
+border-radius:20px;
+
+border:1px solid var(--border);
+
+box-shadow:var(--shadow);
+
+}
+
+.stat-title{
+
+font-size:.95rem;
+
+color:var(--muted);
+
+}
+
+.stat-number{
+
+font-size:2rem;
+
+font-weight:800;
+
+margin-top:10px;
+
+}
+
+.section{
+
+padding:90px 0;
+
+}
+
+.section-title{
+
+font-size:2.4rem;
+
+font-weight:800;
+
+margin-bottom:15px;
+
+}
+
+.section-sub{
+
+color:var(--muted);
+
+max-width:850px;
+
+margin-bottom:40px;
+
+}
+
+.privacy-box{
+
+background:white;
+
+padding:35px;
+
+border-radius:24px;
+
+border:1px solid var(--border);
+
+box-shadow:var(--shadow);
+
+}
+
+.privacy-grid{
+
+display:grid;
+
+grid-template-columns:
+repeat(2,1fr);
+
+gap:25px;
+
+margin-top:30px;
+
+}
+
+.safe-card{
+
+padding:22px;
+
+border-radius:18px;
+
+background:#F8FCFA;
+
+border:1px solid #DCEEE4;
+
+}
+
+.safe-card h4{
+
+margin-bottom:10px;
+
+}
+
+.safe-card p{
+
+color:var(--muted);
+
+}
+
+@media(max-width:950px){
+
+.hero-grid{
+
+grid-template-columns:1fr;
+
+}
+
+.stats{
+
+grid-template-columns:
+repeat(2,1fr);
+
+}
+
+.privacy-grid{
+
+grid-template-columns:1fr;
+
+}
+
+}
+
+@media(max-width:650px){
+
+.stats{
+
+grid-template-columns:1fr;
+
+}
+
+.hero{
+
+padding:60px 0;
+
+}
+
+.hero h1{
+
+font-size:2.5rem;
+
+}
+
+.nav-links{
+
+display:none;
+
+}
+
 }
 
 </style>
+
 </head>
 
 <body>
 
-<!-- HEARTS -->
-<script>
-for(let i=0;i<70;i++){
-let h=document.createElement("div");
-h.className="heart";
-h.style.left=Math.random()*100+"vw";
-h.style.animationDuration=(6+Math.random()*8)+"s";
-document.body.appendChild(h);
-}
-</script>
+<nav>
 
-<!-- 🌹 ROSE PETALS (MINIMAL 12 ONLY) -->
-<script>
-for(let i=0;i<12;i++){
-let p=document.createElement("div");
-p.className="petal";
-p.style.left=Math.random()*100+"vw";
-p.style.animationDuration=(6+Math.random()*6)+"s";
-p.style.opacity=Math.random();
-document.body.appendChild(p);
-}
-</script>
+<div class="container nav-inner">
 
-<!-- 1 -->
-<div class="section">
-<div class="title">Happy Birthday Mishu ❤️</div>
+<div class="logo">
+
+People's Voice
+<span>Survey</span>
+
+</div>
+
+<div class="nav-links">
+
+<a href="#home">Home</a>
+
+<a href="#survey">Survey</a>
+
+<a href="#results">Results</a>
+
+<a href="#methodology">
+Methodology
+</a>
+
+</div>
+
+</div>
+
+</nav>
+
+<section
+class="hero"
+id="home">
+
+<div class="container">
+
+<div class="hero-grid">
+
+<div>
+
+<div class="badge">
+
+Independent Public Opinion Survey
+
+</div>
+
+<h1>
+
+Understanding Public Opinion Through Transparent Participation
+
+</h1>
+
 <p>
-Today is not just a birthday… it is the day the world became softer because you exist.
-</p>
-</div>
 
-<!-- 2 -->
-<div class="section">
+People's Voice Survey is an independent public opinion platform designed to collect and analyze voluntary survey responses.
+
+This platform is not affiliated with any political party, government body, ministry, election commission, educational institution, advocacy group, campaign organization, or public authority.
+
+Results displayed on this website represent only the opinions of participants and are not official polling, election data, or government statistics.
+
+</p>
+
+<div class="notice">
+
+<h3>
+Survey Purpose
+</h3>
+
 <p>
-You didn’t enter my life loudly… you entered like a quiet feeling that stayed forever.
+
+This platform exists solely for survey, research, transparency, and public participation purposes.
+
+Participation is completely voluntary.
+
 </p>
+
 </div>
 
-<!-- 3 -->
-<div class="section">
+</div>
+
+<div class="glass-card">
+
+<h3>
+Public Dashboard Overview
+</h3>
+
+<br>
+
 <p>
-Now even normal days feel incomplete without you.
+
+✔ Total Participants
+
+<br>
+
+✔ Support Percentage
+
+<br>
+
+✔ Oppose Percentage
+
+<br>
+
+✔ Undecided Percentage
+
+<br>
+
+✔ India State Analysis
+
+<br>
+
+✔ Country Participation Analysis
+
+<br>
+
+✔ Real-Time Charts
+
 </p>
+
 </div>
 
-<!-- SHAYARI -->
-<div class="shayari">
-तेरी मुस्कान से रोशन मेरी दुनिया है,<br>
-वरना ये दिल यूँ ही नहीं बहकता।
 </div>
 
-<!-- 4 -->
-<div class="section">
+<div class="stats">
+
+<div class="stat">
+
+<div class="stat-title">
+Total Participants
+</div>
+
+<div
+class="stat-number"
+id="totalVotes">
+0
+</div>
+
+</div>
+
+<div class="stat">
+
+<div class="stat-title">
+Support
+</div>
+
+<div
+class="stat-number"
+id="supportVotes">
+0
+</div>
+
+</div>
+
+<div class="stat">
+
+<div class="stat-title">
+Oppose
+</div>
+
+<div
+class="stat-number"
+id="opposeVotes">
+0
+</div>
+
+</div>
+
+<div class="stat">
+
+<div class="stat-title">
+Undecided
+</div>
+
+<div
+class="stat-number"
+id="undecidedVotes">
+0
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<div class="container">
+
+<div class="privacy-box">
+
+<h2 class="section-title">
+
+Privacy & Data Security
+
+</h2>
+
+<p class="section-sub">
+
+Your privacy is important.
+
+Personal information is stored securely and is not publicly displayed.
+
+Only aggregated statistics and participation counts are shown on public dashboards.
+
+</p>
+
+<div class="privacy-grid">
+
+<div class="safe-card">
+
+<h4>
+Stored Securely
+</h4>
+
 <p>
-I never planned this feeling… but some things are never planned.
+
+Name, email address, occupation, location information, and survey responses are stored securely in the database.
+
 </p>
+
 </div>
 
-<!-- 5 -->
-<div class="section">
+<div class="safe-card">
+
+<h4>
+Not Publicly Visible
+</h4>
+
 <p>
-You became that thought I never invited, but now never want to lose.
+
+Individual names, emails, occupations, cities, and detailed responses are never shown publicly.
+
 </p>
+
 </div>
 
-<!-- 6 FLIRTY -->
-<div class="section">
+<div class="safe-card">
+
+<h4>
+Public Dashboard
+</h4>
+
 <p>
-You don’t even try… yet you stay in my mind all the time.
+
+Only total counts, percentages, state participation, country participation, and charts are displayed.
+
 </p>
+
 </div>
 
-<!-- SHAYARI -->
-<div class="shayari">
-ना जाने क्या रिश्ता है तुझसे,<br>
-हर ख्याल तुझ पर ही रुकता है।
-</div>
+<div class="safe-card">
 
-<!-- 7 -->
-<div class="section">
+<h4>
+Independent Platform
+</h4>
+
 <p>
-If thoughts had a place, mine would always be you.
+
+This survey is independent and not affiliated with any government, ministry, political organization, or election authority.
+
 </p>
+
 </div>
 
-<!-- 8 FLIRTY -->
-<div class="section">
-<p>
-Honestly, you should charge rent for staying in my mind this long.
+</div>
+
+</div>
+
+</div>
+
+</section>
+<section
+class="section"
+id="survey">
+
+<div class="container">
+
+<h2 class="section-title">
+Participate in the Survey
+</h2>
+
+<p class="section-sub">
+
+Complete the survey below to share your opinion.
+
+Personal information is stored securely and is not displayed publicly.
+
+Only aggregated statistics are shown on public dashboards.
+
 </p>
+
+<div class="glass-card">
+
+<form id="surveyForm">
+
+<div class="form-grid">
+
+<div class="field">
+<label>Full Name *</label>
+<input
+type="text"
+id="name"
+required
+placeholder="Enter your full name">
 </div>
 
-<!-- 9 -->
-<div class="section">
-<p>
-Some people become memory… you became feeling.
-</p>
+<div class="field">
+<label>Email Address *</label>
+<input
+type="email"
+id="email"
+required
+placeholder="Enter your email">
 </div>
 
-<!-- SHAYARI -->
-<div class="shayari">
-तू मिले या न मिले ये किस्मत की बात है,<br>
-पर तुझे चाहना मेरी आदत बन गई है।
+<div class="field">
+<label>Country *</label>
+<input
+type="text"
+id="country"
+required
+placeholder="Country">
 </div>
 
-<!-- 10 -->
-<div class="section">
-<p>
-I don’t know when it started… but I know it stayed.
-</p>
+<div class="field">
+<label>State / Province *</label>
+<input
+type="text"
+id="state"
+required
+placeholder="State / Province">
 </div>
 
-<!-- 11 -->
-<div class="section">
-<p>
-Even silence feels different when it carries your name.
-</p>
+<div class="field">
+<label>City *</label>
+<input
+type="text"
+id="city"
+required
+placeholder="City / District">
 </div>
 
-<!-- 12 FLIRTY -->
-<div class="section">
-<p>
-You became the main reason my thoughts never stay quiet.
-</p>
+<div class="field">
+<label>Occupation *</label>
+<input
+type="text"
+id="occupation"
+required
+placeholder="Occupation">
 </div>
 
-<!-- 13 -->
-<div class="section">
-<p>
-I don’t want perfection… I just want you in my moments.
-</p>
 </div>
 
-<!-- 14 -->
-<div class="section">
-<p>
-You became my favorite thought without even trying.
-</p>
+<div style="height:25px"></div>
+
+<div class="field">
+
+<label>
+Age Group *
+</label>
+
+<select
+id="ageGroup"
+required>
+
+<option value="">
+Select Age Group
+</option>
+
+<option>
+Under 18
+</option>
+
+<option>
+18–25
+</option>
+
+<option>
+26–40
+</option>
+
+<option>
+41–60
+</option>
+
+<option>
+60+
+</option>
+
+</select>
+
 </div>
 
-<!-- SHAYARI -->
-<div class="shayari">
-दिल चाहता है तुझे हर पल देखूँ,<br>
-और हर पल तुझमें ही खो जाऊँ।
+<div style="height:20px"></div>
+
+<div class="field">
+
+<label>
+Survey Question *
+</label>
+
+<select
+id="opinion"
+required>
+
+<option value="">
+Choose an option
+</option>
+
+<option>
+Support Resignation
+</option>
+
+<option>
+Oppose Resignation
+</option>
+
+<option>
+Undecided
+</option>
+
+</select>
+
 </div>
 
-<!-- 15 -->
-<div class="section">
-<p>
-If life is a story… I hope your name stays in every chapter of mine.
-</p>
+<div style="height:20px"></div>
+
+<div class="field">
+
+<label>
+Reason / Comments
+</label>
+
+<textarea
+id="reason"
+rows="6"
+placeholder="Share your thoughts (optional)">
+</textarea>
+
 </div>
 
-<!-- ENVELOPE -->
-<div class="envelope" id="env">
+<div style="height:25px"></div>
 
-<div class="header" onclick="document.getElementById('env').classList.toggle('open')">
-Open Envelope ❤️
+<div class="consent-box">
+
+<input
+type="checkbox"
+required
+id="consent">
+
+<label for="consent">
+
+I understand that my information will be stored securely for survey and analytical purposes.
+
+I understand that personal information will not be displayed publicly and that only aggregated statistics may be shown on public dashboards.
+
+</label>
+
 </div>
 
-<div class="content">
+<div style="height:25px"></div>
 
-<div class="letter">
+<button
+type="submit"
+class="submit-btn"
+id="submitBtn">
 
-Mishu ❤️<br><br>
+Submit Survey Response
 
-Will you marry me?<br><br>
-
-You became my most beautiful thought.<br><br>
-
-I don’t want anything else… just you.<br><br>
-
-<form action="https://formspree.io/f/meeonbba" method="POST">
-
-<input type="hidden" name="girl" value="Mishu ❤️">
-<input type="hidden" name="boy" value="Chuzaa">
-
-<input type="hidden" name="answer" id="answerField">
-
-<div class="buttons">
-<button type="submit" class="yes"
-onclick="document.getElementById('answerField').value='YES'">
-YES ❤️
 </button>
 
-<button type="submit" class="no"
-onclick="document.getElementById('answerField').value='NO'">
-NO
-</button>
+<div
+id="successBox"
+style="display:none;">
+
+<div class="success-card">
+
+<h3>
+Thank You
+</h3>
+
+<p>
+
+Your survey response has been submitted successfully.
+
+Thank you for participating.
+
+</p>
+
+</div>
+
 </div>
 
 </form>
 
 </div>
-</div>
+
 </div>
 
-<!-- FINAL -->
-<div class="section">
-<p>
-And if destiny ever writes something beautiful… I hope it writes us together.
+</section>
+
+<style>
+
+.form-grid{
+
+display:grid;
+
+grid-template-columns:
+repeat(2,1fr);
+
+gap:20px;
+
+}
+
+.field label{
+
+display:block;
+
+margin-bottom:8px;
+
+font-weight:600;
+
+}
+
+.field input,
+.field select,
+.field textarea{
+
+width:100%;
+
+padding:15px;
+
+border-radius:14px;
+
+border:1px solid var(--border);
+
+background:white;
+
+font-size:1rem;
+
+outline:none;
+
+transition:.3s;
+
+}
+
+.field input:focus,
+.field select:focus,
+.field textarea:focus{
+
+border-color:
+var(--secondary);
+
+box-shadow:
+0 0 0 4px
+rgba(111,179,184,.12);
+
+}
+
+.consent-box{
+
+display:flex;
+
+gap:12px;
+
+align-items:flex-start;
+
+padding:18px;
+
+border-radius:16px;
+
+background:#F7FBFC;
+
+border:1px solid #DDEEF1;
+
+}
+
+.submit-btn{
+
+background:
+linear-gradient(
+135deg,
+#6FB3B8,
+#8FB996
+);
+
+border:none;
+
+padding:16px 26px;
+
+border-radius:16px;
+
+color:white;
+
+font-size:1rem;
+
+font-weight:700;
+
+cursor:pointer;
+
+transition:.3s;
+
+}
+
+.submit-btn:hover{
+
+transform:
+translateY(-2px);
+
+}
+
+.success-card{
+
+margin-top:20px;
+
+padding:22px;
+
+border-radius:18px;
+
+background:#F0FBF5;
+
+border:1px solid #D8EFE2;
+
+}
+
+@media(max-width:850px){
+
+.form-grid{
+
+grid-template-columns:1fr;
+
+}
+
+}
+
+</style>
+<section
+class="section"
+id="methodology">
+
+<div class="container">
+
+<div class="privacy-box">
+
+<h2 class="section-title">
+Methodology & Transparency
+</h2>
+
+<p class="section-sub">
+
+This platform collects voluntary responses submitted by participants.
+
+Results displayed on public dashboards represent only the opinions of participating users and should not be interpreted as official polling, election data, government statistics, or representative population research.
+
 </p>
 
-<div class="signature">Yours, Chuzaa ❤️</div>
+<div class="privacy-grid">
+
+<div class="safe-card">
+
+<h4>
+Data Collection
+</h4>
+
+<p>
+
+Responses are submitted voluntarily through the survey form and stored securely for analytical purposes.
+
+</p>
+
 </div>
+
+<div class="safe-card">
+
+<h4>
+Public Statistics
+</h4>
+
+<p>
+
+Only aggregated participation statistics, charts, country counts, and state participation counts are displayed publicly.
+
+</p>
+
+</div>
+
+<div class="safe-card">
+
+<h4>
+Privacy Protection
+</h4>
+
+<p>
+
+Names, email addresses, occupations, cities, and detailed comments are not publicly displayed.
+
+</p>
+
+</div>
+
+<div class="safe-card">
+
+<h4>
+Survey Limitations
+</h4>
+
+<p>
+
+Participation is voluntary and results reflect only respondents who choose to participate.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<script>
+
+const SUPABASE_URL =
+"PASTE_YOUR_SUPABASE_URL";
+
+const SUPABASE_ANON_KEY =
+"PASTE_YOUR_SUPABASE_ANON_KEY";
+
+const supabase =
+window.supabase.createClient(
+SUPABASE_URL,
+SUPABASE_ANON_KEY
+);
+
+const surveyForm =
+document.getElementById(
+"surveyForm"
+);
+
+const submitBtn =
+document.getElementById(
+"submitBtn"
+);
+
+surveyForm.addEventListener(
+"submit",
+async (e)=>{
+
+e.preventDefault();
+
+submitBtn.disabled = true;
+
+submitBtn.innerHTML =
+"Submitting...";
+
+try{
+
+const email =
+document.getElementById(
+"email"
+).value.trim();
+
+const { data: existing } =
+await supabase
+.from("survey_responses")
+.select("email")
+.eq("email",email)
+.limit(1);
+
+if(existing &&
+existing.length > 0){
+
+alert(
+"This email has already submitted a response."
+);
+
+submitBtn.disabled = false;
+
+submitBtn.innerHTML =
+"Submit Survey Response";
+
+return;
+
+}
+
+const payload = {
+
+name:
+document.getElementById(
+"name"
+).value.trim(),
+
+email:
+email,
+
+country:
+document.getElementById(
+"country"
+).value.trim(),
+
+state:
+document.getElementById(
+"state"
+).value.trim(),
+
+city:
+document.getElementById(
+"city"
+).value.trim(),
+
+occupation:
+document.getElementById(
+"occupation"
+).value.trim(),
+
+age_group:
+document.getElementById(
+"ageGroup"
+).value,
+
+opinion:
+document.getElementById(
+"opinion"
+).value,
+
+reason:
+document.getElementById(
+"reason"
+).value.trim()
+
+};
+
+const { error } =
+await supabase
+.from("survey_responses")
+.insert([payload]);
+
+if(error){
+
+console.error(error);
+
+alert(
+"Submission failed. Please try again."
+);
+
+}else{
+
+document.getElementById(
+"successBox"
+).style.display =
+"block";
+
+surveyForm.reset();
+
+loadStatistics();
+
+}
+
+}catch(err){
+
+console.error(err);
+
+alert(
+"Something went wrong."
+);
+
+}
+
+submitBtn.disabled = false;
+
+submitBtn.innerHTML =
+"Submit Survey Response";
+
+});
+
+</script>
+<section class="section" id="results">
+
+<div class="container">
+
+<h2 class="section-title">
+Live Public Analytics Dashboard
+</h2>
+
+<p class="section-sub">
+
+Only aggregated statistics are displayed publicly.
+
+Personal information, email addresses, occupations, cities, and detailed responses are never shown on this dashboard.
+
+</p>
+
+<div class="stats">
+
+<div class="stat">
+<div class="stat-title">Total Participants</div>
+<div class="stat-number" id="dashboardTotal">0</div>
+</div>
+
+<div class="stat">
+<div class="stat-title">Support</div>
+<div class="stat-number" id="dashboardSupport">0</div>
+</div>
+
+<div class="stat">
+<div class="stat-title">Oppose</div>
+<div class="stat-number" id="dashboardOppose">0</div>
+</div>
+
+<div class="stat">
+<div class="stat-title">Undecided</div>
+<div class="stat-number" id="dashboardUndecided">0</div>
+</div>
+
+</div>
+
+<div style="height:35px"></div>
+
+<div class="analytics-grid">
+
+<div class="chart-card">
+<h3>Opinion Distribution</h3>
+<canvas id="opinionChart"></canvas>
+</div>
+
+<div class="chart-card">
+<h3>Participation Percentages</h3>
+
+<div class="percentage-box">
+
+<div class="percentage-item">
+<span>Support</span>
+<strong id="supportPercent">0%</strong>
+</div>
+
+<div class="percentage-item">
+<span>Oppose</span>
+<strong id="opposePercent">0%</strong>
+</div>
+
+<div class="percentage-item">
+<span>Undecided</span>
+<strong id="undecidedPercent">0%</strong>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<div style="height:35px"></div>
+
+<div class="chart-card">
+
+<h3>
+India State Participation Analysis
+</h3>
+
+<p class="chart-note">
+States and Union Territories ranked by number of participants.
+</p>
+
+<canvas id="stateChart"></canvas>
+
+</div>
+
+<div style="height:35px"></div>
+
+<div class="chart-card">
+
+<h3>
+Country Participation Analysis
+</h3>
+
+<p class="chart-note">
+Participation counts grouped by country.
+</p>
+
+<canvas id="countryChart"></canvas>
+
+</div>
+
+<div style="height:35px"></div>
+
+<div class="chart-card">
+
+<h3>
+State-wise Participation Table
+</h3>
+
+<div id="stateTable"></div>
+
+</div>
+
+<div style="height:35px"></div>
+
+<div class="chart-card">
+
+<h3>
+Country-wise Participation Table
+</h3>
+
+<div id="countryTable"></div>
+
+</div>
+
+</div>
+
+</section>
+
+<style>
+
+.analytics-grid{
+
+display:grid;
+
+grid-template-columns:
+1fr 1fr;
+
+gap:25px;
+
+}
+
+.chart-card{
+
+background:white;
+
+padding:30px;
+
+border-radius:24px;
+
+border:1px solid var(--border);
+
+box-shadow:var(--shadow);
+
+}
+
+.chart-card h3{
+
+margin-bottom:18px;
+
+}
+
+.chart-note{
+
+margin-bottom:20px;
+
+color:var(--muted);
+
+}
+
+.percentage-box{
+
+display:flex;
+
+flex-direction:column;
+
+gap:18px;
+
+}
+
+.percentage-item{
+
+display:flex;
+
+justify-content:space-between;
+
+padding:18px;
+
+border-radius:16px;
+
+background:#F8FAFB;
+
+border:1px solid #EDF0F2;
+
+}
+
+.percentage-item strong{
+
+font-size:1.2rem;
+
+}
+
+.data-row{
+
+display:flex;
+
+justify-content:space-between;
+
+padding:14px 0;
+
+border-bottom:1px solid #ECECEC;
+
+}
+
+.data-row:last-child{
+
+border-bottom:none;
+
+}
+
+@media(max-width:950px){
+
+.analytics-grid{
+
+grid-template-columns:1fr;
+
+}
+
+}
+
+</style>
+
+<script>
+
+let opinionChart;
+let stateChart;
+let countryChart;
+
+function createOrUpdateChart(
+existingChart,
+canvasId,
+type,
+labels,
+data,
+colors
+){
+
+if(existingChart){
+existingChart.destroy();
+}
+
+return new Chart(
+document.getElementById(canvasId),
+{
+type:type,
+data:{
+labels:labels,
+datasets:[{
+data:data,
+backgroundColor:colors,
+borderWidth:0
+}]
+},
+options:{
+responsive:true,
+maintainAspectRatio:true
+}
+}
+);
+
+}
+
+async function loadStatistics(){
+
+const { data, error } =
+await supabase
+.from("survey_responses")
+.select(`
+country,
+state,
+opinion
+`);
+
+if(error){
+
+console.error(error);
+return;
+
+}
+
+const total =
+data.length;
+
+const support =
+data.filter(
+x =>
+x.opinion ===
+"Support Resignation"
+).length;
+
+const oppose =
+data.filter(
+x =>
+x.opinion ===
+"Oppose Resignation"
+).length;
+
+const undecided =
+data.filter(
+x =>
+x.opinion ===
+"Undecided"
+).length;
+
+document.getElementById(
+"totalVotes"
+).innerText = total;
+
+document.getElementById(
+"supportVotes"
+).innerText = support;
+
+document.getElementById(
+"opposeVotes"
+).innerText = oppose;
+
+document.getElementById(
+"undecidedVotes"
+).innerText = undecided;
+
+document.getElementById(
+"dashboardTotal"
+).innerText = total;
+
+document.getElementById(
+"dashboardSupport"
+).innerText = support;
+
+document.getElementById(
+"dashboardOppose"
+).innerText = oppose;
+
+document.getElementById(
+"dashboardUndecided"
+).innerText = undecided;
+
+const supportPercent =
+total
+? ((support/total)*100).toFixed(1)
+: 0;
+
+const opposePercent =
+total
+? ((oppose/total)*100).toFixed(1)
+: 0;
+
+const undecidedPercent =
+total
+? ((undecided/total)*100).toFixed(1)
+: 0;
+
+document.getElementById(
+"supportPercent"
+).innerText =
+supportPercent + "%";
+
+document.getElementById(
+"opposePercent"
+).innerText =
+opposePercent + "%";
+
+document.getElementById(
+"undecidedPercent"
+).innerText =
+undecidedPercent + "%";
+
+opinionChart =
+createOrUpdateChart(
+opinionChart,
+"opinionChart",
+"doughnut",
+[
+"Support",
+"Oppose",
+"Undecided"
+],
+[
+support,
+oppose,
+undecided
+],
+[
+"#7CB342",
+"#E07A5F",
+"#D9C27A"
+]
+);
+
+generateStateAnalytics(data);
+
+generateCountryAnalytics(data);
+
+}
+
+</script>
+<script>
+
+function generateStateAnalytics(data){
+
+const stateCounts = {};
+
+data.forEach(item=>{
+
+const state =
+(item.state || "Unknown").trim();
+
+stateCounts[state] =
+(stateCounts[state] || 0) + 1;
+
+});
+
+const sortedStates =
+Object.entries(stateCounts)
+.sort((a,b)=>b[1]-a[1]);
+
+const stateLabels =
+sortedStates.map(x=>x[0]);
+
+const stateValues =
+sortedStates.map(x=>x[1]);
+
+const stateColors =
+stateLabels.map((_,i)=>{
+
+const colors = [
+"#8FB996",
+"#6FB3B8",
+"#D9C27A",
+"#E07A5F",
+"#A8DADC",
+"#84A59D",
+"#F6BD60",
+"#81B29A",
+"#A5A58D",
+"#B8C0C8"
+];
+
+return colors[
+i % colors.length
+];
+
+});
+
+stateChart =
+createOrUpdateChart(
+stateChart,
+"stateChart",
+"bar",
+stateLabels,
+stateValues,
+stateColors
+);
+
+const stateTable =
+document.getElementById(
+"stateTable"
+);
+
+stateTable.innerHTML = "";
+
+sortedStates.forEach(item=>{
+
+const row =
+document.createElement("div");
+
+row.className =
+"data-row";
+
+row.innerHTML = `
+
+<span>
+${item[0]}
+</span>
+
+<strong>
+${item[1]} Participants
+</strong>
+
+`;
+
+stateTable.appendChild(row);
+
+});
+
+}
+
+function generateCountryAnalytics(data){
+
+const countryCounts = {};
+
+data.forEach(item=>{
+
+const country =
+(item.country || "Unknown").trim();
+
+countryCounts[country] =
+(countryCounts[country] || 0) + 1;
+
+});
+
+const sortedCountries =
+Object.entries(countryCounts)
+.sort((a,b)=>b[1]-a[1]);
+
+const countryLabels =
+sortedCountries.map(x=>x[0]);
+
+const countryValues =
+sortedCountries.map(x=>x[1]);
+
+const countryColors =
+countryLabels.map((_,i)=>{
+
+const colors = [
+
+"#6FB3B8",
+"#8FB996",
+"#D9C27A",
+"#E07A5F",
+"#A8DADC",
+"#84A59D",
+"#F6BD60",
+"#81B29A",
+"#A5A58D",
+"#B8C0C8"
+
+];
+
+return colors[
+i % colors.length
+];
+
+});
+
+countryChart =
+createOrUpdateChart(
+countryChart,
+"countryChart",
+"bar",
+countryLabels,
+countryValues,
+countryColors
+);
+
+const countryTable =
+document.getElementById(
+"countryTable"
+);
+
+countryTable.innerHTML = "";
+
+sortedCountries.forEach(item=>{
+
+const row =
+document.createElement("div");
+
+row.className =
+"data-row";
+
+row.innerHTML = `
+
+<span>
+${item[0]}
+</span>
+
+<strong>
+${item[1]} Participants
+</strong>
+
+`;
+
+countryTable.appendChild(row);
+
+});
+
+}
+
+loadStatistics();
+
+setInterval(
+loadStatistics,
+30000
+);
+
+</script>
+
+<section class="section">
+
+<div class="container">
+
+<div class="privacy-box">
+
+<h2 class="section-title">
+Legal Notice & Disclaimer
+</h2>
+
+<p>
+
+People's Voice Survey is an independent public opinion platform.
+
+This website is not affiliated with any government body, ministry, election commission, political party, educational institution, public authority, campaign organization, or advocacy group.
+
+</p>
+
+<br>
+
+<p>
+
+Survey participation is voluntary.
+
+Results displayed on this website represent only the responses submitted by participants and should not be interpreted as official polling, election results, government statistics, or scientifically representative population research.
+
+</p>
+
+<br>
+
+<p>
+
+Personal information including names, email addresses, occupations, cities, and detailed comments is stored securely and is not displayed publicly.
+
+Only aggregated participation statistics, percentages, charts, country counts, and state/province counts are displayed on public dashboards.
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<footer>
+
+<div class="container">
+
+<div style="
+padding:40px;
+text-align:center;
+color:#64748B;
+">
+
+<p>
+
+© 2026 People's Voice Survey
+
+</p>
+
+<br>
+
+<p>
+
+Independent Public Opinion Survey Platform
+
+</p>
+
+<br>
+
+<p>
+
+Privacy Focused • Analytics Driven • Public Participation
+
+</p>
+
+</div>
+
+</div>
+
+</footer>
 
 </body>
 </html>
