@@ -1,183 +1,1345 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<title>Indian Law Master Revision Manual</title>
-<style>
-  @page {
-    size: A4;
-    margin: 15mm 12mm 15mm 12mm;
-  }
-  body {
-    font-family: Arial, Helvetica, sans-serif;
-    line-height: 1.45;
-    color: #1a1a1a;
-    background-color: #ffffff;
-    margin: 0;
-    padding: 10px;
-    font-size: 10pt;
-  }
-  h1 {
-    font-size: 18pt;
-    text-align: center;
-    border-bottom: 2px solid #2b5797;
-    padding-bottom: 6px;
-    margin: 0 0 4px 0;
-    color: #2b5797;
-  }
-  .sub {
-    text-align: center;
-    font-size: 9.5pt;
-    font-weight: bold;
-    color: #555;
-    margin-bottom: 18px;
-  }
-  .card {
-    border: 1px solid #dcdcdc;
-    border-left: 4px solid #2b5797;
-    padding: 10px 14px;
-    margin-bottom: 12px;
-    page-break-inside: avoid;
-    border-radius: 3px;
-  }
-  .title {
-    font-size: 11.5pt;
-    font-weight: bold;
-    color: #2b5797;
-    margin-bottom: 6px;
-    border-bottom: 1px solid #eee;
-    padding-bottom: 3px;
-  }
-  .row {
-    margin-bottom: 5px;
-  }
-  .lbl {
-    font-weight: bold;
-    color: #222;
-  }
-  ul {
-    margin: 3px 0 5px 18px;
-    padding: 0;
-  }
-  li {
-    margin-bottom: 2px;
-  }
-  .box-punish {
-    background-color: #fdf2f0;
-    border-left: 3px solid #d9534f;
-    padding: 4px 8px;
-    margin: 4px 0;
-    font-size: 9.5pt;
-  }
-  .box-except {
-    background-color: #f0f8f0;
-    border-left: 3px solid #5cb85c;
-    padding: 4px 8px;
-    margin: 4px 0;
-    font-size: 9.5pt;
-  }
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>To My Chandu ❤️</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --burgundy: #641E32;
+            --blush: #F5DDE3;
+            --ivory: #FFF9F5;
+            --gold: #D4AF75;
+            --rose: #E8A0B0;
+            --text: #51323B;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: var(--ivory);
+            color: var(--text);
+            overflow-x: hidden;
+        }
+
+        button {
+            font-family: inherit;
+            cursor: pointer;
+            border: none;
+        }
+
+        .section {
+            min-height: 100vh;
+            padding: 100px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 900px;
+            margin: auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        h1, h2 {
+            font-family: 'Playfair Display', serif;
+            color: var(--burgundy);
+            font-weight: 500;
+        }
+
+        h2 {
+            font-size: clamp(2rem, 5vw, 3.2rem);
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        p {
+            font-size: 1rem;
+            line-height: 1.9;
+            margin-bottom: 18px;
+        }
+
+        .subtitle {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.4rem;
+            font-style: italic;
+            text-align: center;
+            color: #986C78;
+            margin-bottom: 35px;
+        }
+
+        .gold-line {
+            width: 65px;
+            height: 2px;
+            background: var(--gold);
+            margin: 25px auto;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.75);
+            border: 1px solid rgba(212, 175, 117, 0.3);
+            border-radius: 18px;
+            padding: 35px;
+            box-shadow: 0 12px 40px rgba(100, 30, 50, 0.06);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 18px 45px rgba(100, 30, 50, 0.1);
+        }
+
+        .primary-btn {
+            display: inline-block;
+            padding: 16px 32px;
+            border-radius: 50px;
+            background: var(--burgundy);
+            color: white;
+            font-size: 0.9rem;
+            letter-spacing: 0.5px;
+            transition: all 0.3s ease;
+        }
+
+        .primary-btn:hover {
+            background: #842A43;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(100, 30, 50, 0.2);
+        }
+
+        /* Floating hearts */
+
+        .floating-hearts {
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .heart {
+            position: absolute;
+            bottom: -50px;
+            color: rgba(232, 160, 176, 0.35);
+            animation: floatUp linear infinite;
+        }
+
+        @keyframes floatUp {
+            0% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 0;
+            }
+
+            15% {
+                opacity: 0.7;
+            }
+
+            85% {
+                opacity: 0.5;
+            }
+
+            100% {
+                transform: translateY(-110vh) rotate(40deg);
+                opacity: 0;
+            }
+        }
+
+        /* Welcome */
+
+        #welcome {
+            background:
+                radial-gradient(circle at 20% 20%, #FFF1F4, transparent 45%),
+                radial-gradient(circle at 80% 80%, #F5DDE3, transparent 45%),
+                var(--ivory);
+            text-align: center;
+        }
+
+        .welcome-content {
+            max-width: 750px;
+        }
+
+        .welcome-heart {
+            font-size: 4rem;
+            display: inline-block;
+            animation: heartbeat 2s infinite;
+            margin-bottom: 20px;
+        }
+
+        @keyframes heartbeat {
+            0%, 100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.12);
+            }
+        }
+
+        .welcome-title {
+            font-size: clamp(3rem, 8vw, 5rem);
+            margin-bottom: 25px;
+        }
+
+        .welcome-message {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.7rem;
+            margin-bottom: 15px;
+        }
+
+        .welcome-small {
+            font-size: 0.9rem;
+            color: #986C78;
+            margin-bottom: 40px;
+        }
+
+        /* Letter */
+
+        .letter {
+            background: linear-gradient(135deg, #FFFFFF, #FFF5F7);
+            border-left: 3px solid var(--gold);
+        }
+
+        .letter p {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.3rem;
+        }
+
+        /* Discovery cards */
+
+        .discovery-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .discovery-card {
+            text-align: center;
+            padding: 30px 20px;
+        }
+
+        .discovery-icon {
+            font-size: 2rem;
+            margin-bottom: 15px;
+        }
+
+        .discovery-card p {
+            font-size: 0.95rem;
+        }
+
+        /* Relationship cards */
+
+        .relationship-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .relationship-card h3 {
+            font-family: 'Playfair Display', serif;
+            color: var(--burgundy);
+            font-size: 1.25rem;
+            margin-bottom: 15px;
+        }
+
+        .relationship-card p {
+            font-size: 0.95rem;
+        }
+
+        /* Promise */
+
+        .promise-card {
+            background: linear-gradient(135deg, #FFF9F5, #FCEEF1);
+            border: 1px solid rgba(212, 175, 117, 0.4);
+            border-radius: 18px;
+            padding: 45px;
+        }
+
+        .promise-card p {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.3rem;
+        }
+
+        /* Proposal */
+
+        #proposal {
+            background:
+                radial-gradient(circle at 15% 20%, rgba(212, 175, 117, 0.12), transparent 35%),
+                radial-gradient(circle at 85% 80%, rgba(232, 160, 176, 0.12), transparent 35%),
+                var(--burgundy);
+            color: var(--ivory);
+            text-align: center;
+        }
+
+        #proposal h2 {
+            color: var(--ivory);
+        }
+
+        #proposal .subtitle {
+            color: var(--gold);
+        }
+
+        #proposal p {
+            color: #F5DDE3;
+        }
+
+        .proposal-heart {
+            font-size: 3.5rem;
+            margin-bottom: 25px;
+            animation: heartbeat 2s infinite;
+        }
+
+        .proposal-question {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(1.8rem, 5vw, 3rem);
+            line-height: 1.5;
+            margin: 35px 0;
+            color: #FFF9F5;
+        }
+
+        .proposal-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 40px;
+        }
+
+        .yes-btn {
+            background: var(--gold);
+            color: var(--burgundy);
+            padding: 17px 32px;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .yes-btn:hover {
+            background: #E5C895;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(212, 175, 117, 0.3);
+        }
+
+        .no-btn {
+            background: transparent;
+            border: 1px solid rgba(255, 249, 245, 0.6);
+            color: var(--ivory);
+            padding: 17px 32px;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+        }
+
+        .no-btn:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        #responseStatus {
+            margin-top: 20px;
+            font-size: 0.9rem;
+            color: var(--gold);
+        }
+
+        /* Response screens */
+
+        .response-screen {
+            display: none;
+            min-height: 100vh;
+            padding: 40px 20px;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background:
+                radial-gradient(circle at 20% 20%, #FFF1F4, transparent 45%),
+                var(--ivory);
+            overflow: hidden;
+        }
+
+        .response-screen.active {
+            display: flex;
+            animation: fadeIn 1s ease;
+        }
+
+        .response-content {
+            max-width: 750px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .response-content h1 {
+            font-size: clamp(2.3rem, 6vw, 4rem);
+            margin-bottom: 30px;
+            animation: revealTitle 1.2s ease forwards;
+        }
+
+        .response-content p {
+            font-size: 1.05rem;
+        }
+
+        .response-heart {
+            font-size: 4rem;
+            margin-bottom: 25px;
+            animation: heartBeat 1.5s ease-in-out infinite;
+        }
+
+        @keyframes revealTitle {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes heartBeat {
+            0%, 100% {
+                transform: scale(1);
+            }
+
+            25% {
+                transform: scale(1.15);
+            }
+
+            50% {
+                transform: scale(1);
+            }
+
+            75% {
+                transform: scale(1.1);
+            }
+        }
+
+        /* Confetti */
+
+        .confetti {
+            position: fixed;
+            top: -20px;
+            width: 8px;
+            height: 12px;
+            pointer-events: none;
+            z-index: 9999;
+            animation: confettiFall 3s linear forwards;
+        }
+
+        @keyframes confettiFall {
+            to {
+                transform: translateY(110vh) rotate(720deg);
+                opacity: 0;
+            }
+        }
+
+        /* Heart burst */
+
+        .heart-burst {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            font-size: 40px;
+            pointer-events: none;
+            z-index: 9999;
+            animation: burst 1.5s ease-out forwards;
+        }
+
+        @keyframes burst {
+            0% {
+                opacity: 1;
+                transform: translate(-50%, -50%) scale(0.2);
+            }
+
+            100% {
+                opacity: 0;
+                transform:
+                    translate(
+                        calc(-50% + var(--x)),
+                        calc(-50% + var(--y))
+                    )
+                    scale(1.5);
+            }
+        }
+
+        /* Footer */
+
+        footer {
+            background: var(--ivory);
+            text-align: center;
+            padding: 30px 20px;
+            color: #986C78;
+            font-size: 0.85rem;
+        }
+
+        /* Scroll animation */
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(25px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        @media (max-width: 650px) {
+            .section {
+                padding: 80px 18px;
+            }
+
+            .card {
+                padding: 25px;
+            }
+
+            .discovery-grid,
+            .relationship-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .welcome-title {
+                font-size: 3.2rem;
+            }
+
+            .welcome-message {
+                font-size: 1.4rem;
+            }
+
+            .letter p,
+            .promise-card p {
+                font-size: 1.15rem;
+            }
+
+            .proposal-buttons {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .proposal-buttons button {
+                width: 100%;
+            }
+
+            .promise-card {
+                padding: 28px;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+                scroll-behavior: auto !important;
+            }
+        }
+    </style>
 </head>
+
 <body>
 
-<h1>Indian Law Master Revision Manual</h1>
-<div class="sub">Criminal Law, Constitutional Safeguards, Torts, Contracts, and Intellectual Property Rights</div>
+    <div class="floating-hearts" id="floatingHearts"></div>
+    <!-- SECTION 1: WELCOME -->
 
-<div class="card">
-  <div class="title">1. Constitutional Law Safeguards & Immunities</div>
-  <div class="row"><span class="lbl">Part III Protections in Penal Matters:</span></div>
-  <ul>
-    <li><strong>Article 20 1:</strong> Protection against ex post facto penal laws; no retrospective criminal liability or enhanced penalty.</li>
-    <li><strong>Article 20 2:</strong> Protection against double jeopardy; no individual can be prosecuted and punished twice for the same offense.</li>
-    <li><strong>Article 20 3:</strong> Right against self-incrimination; an accused cannot be compelled to give testimony against themselves.</li>
-  </ul>
-  <div class="row"><span class="lbl">Sovereign & Legislative Immunities:</span></div>
-  <ul>
-    <li><strong>Article 105 2 & Article 194 2:</strong> Complete immunity for Members of Parliament and State Legislative Assemblies for speech or votes inside legislatures.</li>
-    <li><strong>Article 361 2 & 3:</strong> Absolute immunity for the President and Governors; no criminal proceedings or arrest warrants during office.</li>
-  </ul>
-</div>
+    <section class="section" id="welcome">
+        <div class="container welcome-content fade-in">
 
-<div class="card">
-  <div class="title">2. General Exceptions IPC Ch IV & BNS Ch III</div>
-  <div class="row"><span class="lbl">Universal Defenses Declaring Conduct as NO OFFENSE:</span></div>
-  <ul>
-    <li><strong>Mistake of Fact IPC 76 & 79 / BNS 14 & 17:</strong> Acts done under good-faith mistake of fact believing oneself bound or justified by law. Mistake of law is not excused.</li>
-    <li><strong>Judicial Acts & Orders IPC 77 & 78 / BNS 15 & 16:</strong> Acts of judges within bona fide jurisdiction; ministerial execution of warrants.</li>
-    <li><strong>Accident IPC 80 / BNS 18:</strong> Lawful act done with lawful means and reasonable care without criminal intent.</li>
-    <li><strong>Necessity IPC 81 / BNS 19:</strong> Acts done without criminal intention to avoid greater imminent harm.</li>
-    <li><strong>Infancy IPC 82 & 83 / BNS 20 & 21:</strong> Absolute immunity under 7 years doli incapax; qualified immunity between 7 and 12 years if immature.</li>
-    <li><strong>Insanity IPC 84 / BNS 22:</strong> Unsoundness of mind destroying capacity to know the nature or wrongfulness of the act McNaughten Rule.</li>
-    <li><strong>Involuntary Intoxication IPC 85 / BNS 23:</strong> Intoxicating substance administered without knowledge or against will.</li>
-    <li><strong>Private Defense IPC 96–106 / BNS 34–44:</strong> Justifiable force for defending body or property. Extends to causing death IPC 100/103 & BNS 38/41 against threats of death, grievous hurt, rape, robbery, or night house-breaking.</li>
-  </ul>
-</div>
+            <div class="welcome-heart">❤️</div>
 
-<div class="card">
-  <div class="title">3. Substantive Penal Offenses IPC & BNS</div>
-  
-  <div class="row"><span class="lbl">A. Criminal Negligence:</span> IPC Sec 304A / BNS Sec 106 1; Hit-and-run BNS Sec 106 2.</div>
-  <div class="box-punish"><span class="lbl">Punishment:</span> IPC 304A up to 2 years or fine; BNS 106 1 up to 5 years and fine doctors up to 2 years; Hit-and-run up to 10 years and fine.</div>
-  <div class="box-except"><span class="lbl">When NOT Punishable:</span> Pure unavoidable accidents with due care; professional errors without gross negligence.</div>
+            <h1 class="welcome-title">Hey Chandu</h1>
 
-  <div class="row" style="margin-top:6px;"><span class="lbl">B. Culpable Homicide & Murder:</span> Homicide IPC 299/304 & BNS 100/105; Murder IPC 300/302 & BNS 101/103.</div>
-  <div class="box-punish"><span class="lbl">Punishment:</span> Culpable Homicide: Life or up to 10 years and fine. Murder: Death or Life Imprisonment, and fine.</div>
-  <div class="box-except"><span class="lbl">When NOT Murder:</span> Grave and sudden provocation, bona fide excess of self-defense, sudden fight, or adult consent. Not an offense if within lawful self-defense.</div>
+            <p class="welcome-message">
+                Someone has something special to tell you...
+            </p>
 
-  <div class="row" style="margin-top:6px;"><span class="lbl">C. Wrongful Restraint & Confinement:</span> Restraint IPC 339/341 & BNS 126; Confinement IPC 340/342 & BNS 127.</div>
-  <div class="box-punish"><span class="lbl">Punishment:</span> Restraint up to 1 month or ₹500 fine; Confinement up to 1 year or ₹1000 fine up to 3 years if exceeding 10 days.</div>
-  <div class="box-except"><span class="lbl">When NOT Punishable:</span> Good-faith obstruction of private way over land/water; lawful police arrest.</div>
+            <p class="welcome-small">
+                Made with a little courage and a lot of sincerity, just for you.
+            </p>
 
-  <div class="row" style="margin-top:6px;"><span class="lbl">D. Sexual Offenses Rape:</span> IPC Sec 375/376 & BNS Sec 63/64; Gang rape IPC 376D / BNS 70 1.</div>
-  <div class="box-punish"><span class="lbl">Punishment:</span> Standard: Rigorous imprisonment not less than 10 years up to natural life; Gang rape: not less than 20 years up to life; Minor under 12: 20 years to life or death.</div>
-  <div class="box-except"><span class="lbl">When NOT Punishable:</span> Consensual acts between two adults aged 18 or above; legitimate surgical care.</div>
+            <button class="primary-btn" onclick="openSurprise()">
+                Open Your Surprise
+            </button>
 
-  <div class="row" style="margin-top:6px;"><span class="lbl">E. Property Crimes Theft, Extortion, Robbery, Dacoity:</span> Theft IPC 378/379 & BNS 303; Extortion IPC 383/384 & BNS 308; Robbery IPC 390/392 & BNS 309; Dacoity IPC 391/395 & BNS 310.</div>
-  <div class="box-punish"><span class="lbl">Punishment:</span> Theft/Extortion: Up to 3 years or fine; Robbery: Rigorous imprisonment up to 10 years up to 14 on highway at night; Dacoity: Life or rigorous imprisonment up to 10 years.</div>
-  <div class="box-except"><span class="lbl">When NOT Punishable:</span> Bona fide claim of legal ownership; lawful attachment under court warrant.</div>
+        </div>
+    </section>
 
-  <div class="row" style="margin-top:6px;"><span class="lbl">F. Commercial & White-Collar Offenses:</span> Misappropriation IPC 403 / BNS 314; Breach of Trust IPC 405/406 & BNS 316; Cheating IPC 415/420 & BNS 318.</div>
-  <div class="box-punish"><span class="lbl">Punishment:</span> Misappropriation up to 2 years; Breach of Trust up to 3 years up to 5 under BNS; Cheating with delivery of property Sec 420 up to 7 years and fine.</div>
-  <div class="box-except"><span class="lbl">When NOT Punishable:</span> Pure civil breach of contract without initial fraudulent intent; bonafide lost-property safekeeping.</div>
-</div>
+    <!-- SECTION 2: TODAY -->
 
-<div class="card">
-  <div class="title">4. Law of Torts Civil Wrongs</div>
-  <div class="row"><span class="lbl">Foundational Maxims:</span> Injuria Sine Damno legal wrong without damage is actionable Ashby v White; Damnum Sine Injuria damage without legal wrong is not actionable Gloucester Grammar School.</div>
-  <div class="row"><span class="lbl">Universal Tort Defenses When NOT Liable:</span> Volenti non fit injuria consent, Act of God vis major, inevitable accident, private defense, statutory authority.</div>
-  <div class="row"><span class="lbl">Core Liability Doctrines:</span></div>
-  <ul>
-    <li><strong>Strict Liability Rylands v Fletcher:</strong> Non-natural use of land and escape of dangerous thing. Defenses: act of God, plaintiff fault, third party act.</li>
-    <li><strong>Absolute Liability MC Mehta v UOI:</strong> Inherently hazardous or dangerous activity; strict liability with no defenses or exceptions.</li>
-    <li><strong>Vicarious Liability:</strong> Master liable for torts of servant committed in the course of employment.</li>
-  </ul>
-</div>
+    <section class="section" id="today">
+        <div class="container fade-in">
 
-<div class="card">
-  <div class="title">5. Law of Contracts Indian Contract Act 1872</div>
-  <div class="row"><span class="lbl">Valid Contract Essentials Sec 10:</span> Offer, acceptance, lawful consideration, capacity, free consent, lawful object.</div>
-  <div class="row"><span class="lbl">Agreements Void Ab Initio No Legal Effect:</span></div>
-  <ul>
-    <li><strong>Minor Agreement Sec 11:</strong> Completely void from the start Mohori Bibee v Dharmodas Ghose.</li>
-    <li><strong>Unlawful Object/Consideration Sec 23:</strong> Forbidden by law or contrary to public policy.</li>
-    <li><strong>Restraint of Trade Sec 27 & Legal Proceedings Sec 28:</strong> Void to that extent.</li>
-    <li><strong>Wagering Agreements Sec 30:</strong> Betting agreements are void.</li>
-    <li><strong>Doctrine of Frustration Sec 56:</strong> Performance becoming impossible or unlawful post-formation without fault.</li>
-  </ul>
-  <div class="row"><span class="lbl">Voidable Contracts Vitiated Consent:</span> Coercion Sec 15, Undue Influence Sec 16, Fraud Sec 17, Misrepresentation Sec 18.</div>
-</div>
+            <h2>Today Was the Beginning of Something New</h2>
 
-<div class="card">
-  <div class="title">6. Intellectual Property Rights IPR</div>
-  <div class="row"><span class="lbl">Trade Marks Act 1999:</span> Protects distinctive brand names, logos, and marks. Term: 10 years renewable indefinitely. Infringement punishment: Imprisonment 6 months to 3 years, and fine ₹50000 to ₹200000. Not infringement: Non-commercial use, honest concurrent use.</div>
-  <div class="row"><span class="lbl">Copyright Act 1957:</span> Protects original literary, dramatic, musical, and artistic works. Term: Author life plus 60 years. Infringement punishment: Imprisonment 6 months to 3 years, and fine ₹50000 to ₹200000. Not infringement Sec 52: Fair dealing for research, private study, review, or reporting.</div>
-  <div class="row"><span class="lbl">Patents Act 1970:</span> Protects new, non-obvious industrial inventions. Term: 20 years non-renewable. Remedy: Civil injunctions and damages. Not infringement: Experimental research or government compulsory licensing.</div>
-</div>
+            <div class="gold-line"></div>
 
-<script>
-  window.onload = function() {
-    window.print();
-  };
-</script>
+            <div class="card letter">
+
+                <p>Hey Chandini,</p>
+
+                <p>
+                    We only met today, but I really enjoyed getting to know you.
+                </p>
+
+                <p>
+                    Sometimes, even a short conversation can make you curious
+                    about someone and leave you wanting to know more about them.
+                </p>
+
+                <p>That's exactly how I feel about you.</p>
+
+                <p>
+                    I don't want to rush anything or make big promises before
+                    we have truly gotten to know each other.
+                </p>
+
+                <p>
+                    I just wanted to tell you that meeting you made me smile,
+                    and I would love to get to know you better.
+                </p>
+
+                <p>
+                    And yes, I already have a cute nickname for you...
+                    <strong>Chandu ❤️</strong>
+                </p>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 3: GETTING TO KNOW HER -->
+
+    <section class="section" id="discover">
+        <div class="container fade-in">
+
+            <h2>Things That Made Me Curious About You</h2>
+
+            <p class="subtitle">
+                There is still so much I would love to discover.
+            </p>
+
+            <div class="discovery-grid">
+
+                <div class="card discovery-card">
+                    <div class="discovery-icon">✨</div>
+
+                    <p>
+                        What makes you happy, what makes you laugh,
+                        and what makes your day special.
+                    </p>
+                </div>
+
+                <div class="card discovery-card">
+                    <div class="discovery-icon">🎵</div>
+
+                    <p>
+                        Your favorite songs, favorite places,
+                        and little things you enjoy.
+                    </p>
+                </div>
+
+                <div class="card discovery-card">
+                    <div class="discovery-icon">🌷</div>
+
+                    <p>
+                        Your dreams, your goals, and the things
+                        that matter most to you.
+                    </p>
+                </div>
+
+                <div class="card discovery-card">
+                    <div class="discovery-icon">💌</div>
+
+                    <p>
+                        Who you really are, one conversation
+                        and one smile at a time.
+                    </p>
+                </div>
+
+            </div>
+
+            <div class="gold-line"></div>
+
+            <p style="text-align:center; max-width:700px; margin:30px auto 0;">
+                I may not know everything about you yet, but I would genuinely
+                love to discover more about you. I don't want to assume anything.
+                I want to discover who you really are, one conversation at a time.
+            </p>
+
+        </div>
+    </section>
+
+    <!-- SECTION 4: RELATIONSHIP HOPES -->
+
+    <section class="section" id="relationship">
+        <div class="container fade-in">
+
+            <h2>If We Decide to Give This a Chance...</h2>
+
+            <p class="subtitle">
+                A few things I would genuinely hope for.
+            </p>
+
+            <p style="text-align:center; max-width:700px; margin:0 auto 40px;">
+                I know that we have only just met, so I don't expect us
+                to know everything about each other right now.
+            </p>
+
+            <div class="relationship-grid">
+
+                <div class="card relationship-card">
+
+                    <h3>01. Trust and Loyalty</h3>
+
+                    <p>
+                        I believe trust and loyalty are important in a relationship.
+                        I want us to be honest with each other and build something
+                        where we both feel secure and respected.
+                    </p>
+
+                    <p>
+                        I promise to be loyal to you, and I hope we can give
+                        each other the same commitment.
+                    </p>
+
+                </div>
+
+                <div class="card relationship-card">
+
+                    <h3>02. Time and Effort</h3>
+
+                    <p>
+                        I understand that we both have our own lives,
+                        responsibilities, and priorities.
+                    </p>
+
+                    <p>
+                        I don't expect you to be available all the time.
+                        I just hope that if we start a relationship,
+                        we can both make time for each other.
+                    </p>
+
+                </div>
+
+                <div class="card relationship-card">
+
+                    <h3>03. Long Distance</h3>
+
+                    <p>
+                        I know that long distance can sometimes be challenging.
+                    </p>
+
+                    <p>
+                        But I believe that with trust, communication,
+                        patience, and effort, two people can make it work.
+                    </p>
+
+                    <p>
+                        I would love for us to find our own way of
+                        staying connected, even when we are far apart.
+                    </p>
+
+                </div>
+
+                <div class="card relationship-card">
+
+                    <h3>04. Understanding</h3>
+
+                    <p>
+                        I want us to be comfortable sharing our thoughts
+                        and feelings.
+                    </p>
+
+                    <p>
+                        I want us to listen to each other, respect each
+                        other's boundaries, and handle misunderstandings
+                        with patience.
+                    </p>
+
+                    <p>
+                        I hope we can be ourselves around each other
+                        without feeling judged.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- SECTION 5: HONESTY ABOUT THE PAST -->
+
+    <section class="section" id="past">
+        <div class="container fade-in">
+
+            <h2>You Can Always Be Honest With Me</h2>
+
+            <p class="subtitle">
+                Your past does not change your worth.
+            </p>
+
+            <div class="card letter">
+
+                <p>
+                    Chandu, I want you to know that I respect your past.
+                </p>
+
+                <p>
+                    Whether you have been in a relationship before,
+                    have kissed someone, or have had other experiences,
+                    I don't want you to feel judged by me.
+                </p>
+
+                <p>
+                    Your past is your own, and it doesn't change your worth
+                    as a person.
+                </p>
+
+                <p>
+                    I don't expect you to share anything before you feel
+                    comfortable.
+                </p>
+
+                <p>
+                    I just want us to be honest with each other and build
+                    a relationship where we can talk openly.
+                </p>
+
+                <p>
+                    I care about getting to know the person you are today,
+                    and I would love to understand your experiences,
+                    your feelings, and your dreams whenever you choose
+                    to share them.
+                </p>
+
+                <p>
+                    You deserve respect, kindness, and understanding.
+                </p>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- SECTION 6: MY FEELINGS -->
+
+    <section class="section" id="feelings">
+        <div class="container fade-in">
+
+            <h2>A Little Honesty From My Heart</h2>
+
+            <div class="gold-line"></div>
+
+            <div class="card">
+
+                <p>
+                    Chandu, I want to be honest with you.
+                </p>
+
+                <p>
+                    I am new to relationships, and there are still many
+                    things I have to learn.
+                </p>
+
+                <p>
+                    I may not always know the perfect thing to say,
+                    but I promise to communicate honestly and make
+                    an effort to understand you.
+                </p>
+
+                <p>
+                    I don't want to rush you or make you feel like
+                    you have to make a decision before you are ready.
+                </p>
+
+                <p>
+                    I want us to enjoy getting to know each other
+                    and see where our connection takes us.
+                </p>
+
+                <p>
+                    If we both feel happy and comfortable with each other,
+                    I would love for us to build something meaningful together.
+                </p>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- SECTION 7: MY PROMISE -->
+
+    <section class="section" id="promise">
+        <div class="container fade-in">
+
+            <h2>What I Can Promise You</h2>
+
+            <p class="subtitle">
+                A promise made with sincerity.
+            </p>
+
+            <div class="promise-card">
+
+                <p>
+                    I promise to respect your feelings and your decisions.
+                </p>
+
+                <p>
+                    I promise to be honest with you and to listen
+                    when you need someone to talk to.
+                </p>
+
+                <p>
+                    I promise to respect your boundaries and never
+                    pressure you into anything.
+                </p>
+
+                <p>
+                    I promise to make an effort to understand you,
+                    even when we don't agree.
+                </p>
+
+                <p>
+                    I promise to treat you with kindness,
+                    respect, and loyalty.
+                </p>
+
+                <p>
+                    I know that a relationship takes time,
+                    patience, and effort.
+                </p>
+
+                <p>
+                    I don't promise to be perfect, but I promise
+                    to keep learning and trying to be a better partner.
+                </p>
+
+                <p>
+                    And if your feelings ever change, I hope you will
+                    feel comfortable telling me honestly.
+                </p>
+
+                <p>
+                    I would rather hear the truth from you than have
+                    either of us stay in a relationship where we are unhappy.
+                </p>
+
+                <p>
+                    Your happiness and comfort matter to me.
+                </p>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- SECTION 8: FINAL PROPOSAL -->
+
+    <section class="section" id="proposal">
+        <div class="container fade-in">
+
+            <div class="proposal-heart">❤️</div>
+
+            <h2>Chandu, I Have One Little Question...</h2>
+
+            <p class="subtitle">
+                A little courage, a sincere heart, and one special question.
+            </p>
+
+            <div class="gold-line"></div>
+
+            <p>
+                We only met today, but I really enjoyed meeting you.
+            </p>
+
+            <p>
+                I don't know what the future holds, and I don't want to rush anything.
+            </p>
+
+            <p>
+                But I do know that I would love to get to know you better
+                and see where this connection takes us.
+            </p>
+
+            <p>
+                If you feel the same way, I would be really happy
+                to start this journey with you.
+            </p>
+
+            <div class="proposal-question">
+                Chandini, would you like to be my girlfriend
+                and give us a chance to build something beautiful together? ❤️
+            </div>
+
+            <div class="proposal-buttons">
+
+                <button class="yes-btn" onclick="submitResponse('YES')">
+                    YES, LET'S GIVE IT A CHANCE ❤️
+                </button>
+
+                <button class="no-btn" onclick="submitResponse('NO')">
+                    NO, THANK YOU
+                </button>
+
+            </div>
+
+            <p id="responseStatus" aria-live="polite"></p>
+
+        </div>
+    </section>
+
+    <!-- YES RESPONSE -->
+
+    <section class="response-screen" id="yesResponse">
+
+        <div class="response-content">
+
+            <div class="response-heart">❤️</div>
+
+            <h1>YOU JUST MADE ME REALLY HAPPY, CHANDU ❤️</h1>
+
+            <p>
+                Thank you for giving us a chance.
+            </p>
+
+            <p>
+                I know we have only just met, and there is still so much
+                for us to discover about each other.
+            </p>
+
+            <p>
+                I am excited to get to know you better, create beautiful
+                memories, and see where this journey takes us.
+            </p>
+
+            <p>
+                Let's take things one step at a time and make
+                this beginning something special.
+            </p>
+
+            <div class="gold-line"></div>
+
+            <h2>Here's to a Beautiful Beginning ❤️</h2>
+
+            <p>
+                With love and sincerity, just for you.
+            </p>
+
+        </div>
+
+    </section>
+
+    <!-- NO RESPONSE -->
+
+    <section class="response-screen" id="noResponse">
+
+        <div class="response-content">
+
+            <div class="response-heart">🌷</div>
+
+            <h1>Thank You for Being Honest, Chandu ❤️</h1>
+
+            <p>
+                I respect your feelings and your decision.
+            </p>
+
+            <p>
+                I am glad we got to meet, and I hope you have
+                a beautiful day.
+            </p>
+
+            <p>
+                You never have to feel pressured to say yes
+                to something you don't want.
+            </p>
+
+            <div class="gold-line"></div>
+
+            <p>
+                Wishing you happiness and all the best.
+            </p>
+
+        </div>
+
+    </section>
+
+    <footer id="footer">
+        Made with love and a little courage, just for Chandu ❤️
+    </footer>
+    <script>
+
+        /*
+         * FORMSPREE CONFIGURATION
+         *
+         * Replace YOUR_FORMSPREE_ID with your actual Formspree form ID.
+         *
+         * Example:
+         * https://formspree.io/f/abcdwxyz
+         */
+
+        const FORMSPREE_URL = "https://formspree.io/f/YOUR_FORMSPREE_ID";
+
+        let responseSubmitted = false;
+
+        // Open the surprise.
+
+        function openSurprise() {
+            document.getElementById("today").scrollIntoView({
+                behavior: "smooth"
+            });
+        }
+
+        // Floating hearts.
+
+        const heartsContainer = document.getElementById("floatingHearts");
+
+        function createHeart() {
+
+            const heart = document.createElement("div");
+
+            heart.className = "heart";
+            heart.innerHTML = "♥";
+
+            heart.style.left = Math.random() * 100 + "%";
+
+            heart.style.fontSize =
+                (12 + Math.random() * 22) + "px";
+
+            heart.style.animationDuration =
+                (8 + Math.random() * 12) + "s";
+
+            heartsContainer.appendChild(heart);
+
+            setTimeout(() => {
+                heart.remove();
+            }, 20000);
+        }
+
+        setInterval(createHeart, 1200);
+
+        // Fade-in animations.
+
+        const observer = new IntersectionObserver((entries) => {
+
+            entries.forEach(entry => {
+
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("visible");
+                }
+
+            });
+
+        }, {
+            threshold: 0.12
+        });
+
+        document.querySelectorAll(".fade-in").forEach(section => {
+            observer.observe(section);
+        });
+
+        // Confetti animation.
+
+        function createConfetti() {
+
+            const symbols = ["♥", "✦", "✧", "♡"];
+
+            for (let i = 0; i < 65; i++) {
+
+                const piece = document.createElement("div");
+
+                piece.className = "confetti";
+
+                piece.innerHTML =
+                    symbols[Math.floor(Math.random() * symbols.length)];
+
+                piece.style.left = Math.random() * 100 + "vw";
+
+                piece.style.fontSize =
+                    (10 + Math.random() * 15) + "px";
+
+                piece.style.color = [
+                    "#D4AF75",
+                    "#E8A0B0",
+                    "#641E32",
+                    "#F5DDE3"
+                ][Math.floor(Math.random() * 4)];
+
+                piece.style.animationDuration =
+                    (2 + Math.random() * 3) + "s";
+
+                document.body.appendChild(piece);
+
+                setTimeout(() => {
+                    piece.remove();
+                }, 5000);
+            }
+        }
+
+        // Heart burst animation.
+
+        function createHeartBurst() {
+
+            const hearts = ["❤️", "💕", "💗", "💖", "💘"];
+
+            for (let i = 0; i < 35; i++) {
+
+                const heart = document.createElement("div");
+
+                heart.className = "heart-burst";
+
+                heart.textContent =
+                    hearts[Math.floor(Math.random() * hearts.length)];
+
+                const angle = Math.random() * Math.PI * 2;
+
+                const distance = 100 + Math.random() * 250;
+
+                heart.style.setProperty(
+                    "--x",
+                    Math.cos(angle) * distance + "px"
+                );
+
+                heart.style.setProperty(
+                    "--y",
+                    Math.sin(angle) * distance + "px"
+                );
+
+                document.body.appendChild(heart);
+
+                setTimeout(() => {
+                    heart.remove();
+                }, 1600);
+            }
+        }
+
+        // Submit response to Formspree.
+
+        async function submitResponse(answer) {
+
+            if (responseSubmitted) {
+                return;
+            }
+
+            const status = document.getElementById("responseStatus");
+
+            const buttons = document.querySelectorAll(
+                ".proposal-buttons button"
+            );
+
+            buttons.forEach(button => {
+                button.disabled = true;
+            });
+
+            status.textContent = "Sending your response...";
+
+            try {
+
+                const response = await fetch(FORMSPREE_URL, {
+
+                    method: "POST",
+
+                    headers: {
+                        "Content-Type": "application/json",
+                        "Accept": "application/json"
+                    },
+
+                    body: JSON.stringify({
+
+                        name: "Chandini",
+
+                        nickname: "Chandu",
+
+                        answer: answer,
+
+                        message: answer === "YES"
+                            ? "She agreed to give the relationship a chance."
+                            : "She politely declined the proposal.",
+
+                        date: new Date().toLocaleString()
+
+                    })
+
+                });
+
+                if (!response.ok) {
+                    throw new Error("Unable to submit response.");
+                }
+
+                responseSubmitted = true;
+
+                if (answer === "YES") {
+                    acceptProposal();
+                } else {
+                    declineProposal();
+                }
+
+            } catch (error) {
+
+                status.textContent =
+                    "Your response could not be sent. Please try again.";
+
+                buttons.forEach(button => {
+                    button.disabled = false;
+                });
+
+            }
+        }
+
+        // YES response.
+
+        function acceptProposal() {
+
+            document.getElementById("proposal").style.display = "none";
+
+            document.getElementById("yesResponse").classList.add("active");
+
+            document.getElementById("footer").style.display = "none";
+
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+
+            createConfetti();
+
+            createHeartBurst();
+        }
+
+        // NO response.
+
+        function declineProposal() {
+
+            document.getElementById("proposal").style.display = "none";
+
+            document.getElementById("noResponse").classList.add("active");
+
+            document.getElementById("footer").style.display = "none";
+
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+        }
+
+    </script>
+
 </body>
+
 </html>
